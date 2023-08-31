@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import MobileScore from '../images/Mobile_Score.png'
+
 const seo = {
 	title: 'Showcase',
 	description: 'Homepage description m8'
@@ -7,6 +10,7 @@ const seo = {
 ---
 
 <Layout {seo}>
+	<Image src={MobileScore} alt="Tablet of Figma design" width="200" height="175" quality="max" transition:name='mobile_score'/>
 	<main>
 		<h1>Hello there</h1>
 		<h2>Secondary Heading</h2>
