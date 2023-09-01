@@ -2,6 +2,9 @@
 import { SEO } from 'astro-seo';
 import { ViewTransitions } from 'astro:transitions';
 import '../styles/tailwind.css';
+import Navigation from '../components/layout/navigation/Navigation.svelte';
+import SiteLogo from '../components/SiteLogo.astro'
+import Container from '../components/layout/Container.astro';
 
 export interface Props {
     seo: {
@@ -22,7 +25,12 @@ const { seo } = Astro.props as Props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<ViewTransitions />
 	</head>
-	<body class="bg-body-color">
-		<slot />
+	<body class="bg-body-color relative overflow-hidden">
+		<Container>
+			<Navigation client:load transition:name='navigation' transition:persist>
+				<SiteLogo slot="siteLogo"/>
+			</Navigation>
+			<slot />
+		</Container>
 	</body>
 </html>
