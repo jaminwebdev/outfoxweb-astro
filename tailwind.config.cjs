@@ -5,10 +5,10 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				primary: 'var(--color-primary)',
-				secondary: 'var(--color-secondary)',
-				tertiary: 'var(--color-tertiary)',
-				orange: 'var(--color-orange)',
+				primary: 'rgb(var(--color-primary) / <alpha-value>)',
+				secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
+				tertiary: 'rgb(var(--color-tertiary) / <alpha-value>)',
+				orange: 'rgb(var(--color-orange) / <alpha-value>)',
 				'body-color': 'var(--body-color)',
 				'body-secondary': 'var(--body-color-secondary)',
 				'body-tertiary': 'var(--body-color-tertiary)',
