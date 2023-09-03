@@ -11,10 +11,10 @@
 	const mouseLeft = () => (isHovering = false);
 
 	const bgColors = {
-		primary: 'hover:bg-primary/10',
-		secondary: 'hover:bg-secondary/10',
-		tertiary: 'hover:bg-tertiary/10',
-		orange: 'hover:bg-orange/10'
+		primary: 'dark:hover:bg-primary/10',
+		secondary: 'dark:hover:bg-secondary/10',
+		tertiary: 'dark:hover:bg-tertiary/10',
+		orange: 'dark:hover:bg-orange/10'
 	};
 </script>
 

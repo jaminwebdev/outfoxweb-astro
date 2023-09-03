@@ -3,12 +3,14 @@
 
 	export let bodyClasses = '';
 	export let isOpen = false;
+	let borderColor: string;
 	let panel: HTMLDivElement;
 
 	onMount(() => {
 		if (isOpen) {
 			panel.style.maxHeight = panel.scrollHeight + 'px';
 		}
+		borderColor = borderColors[Math.floor(Math.random() * 3)]
 	});
 
 	const toggle = () => {
@@ -19,13 +21,15 @@
 		}
 		panel.style.maxHeight = '0px';
 	};
+
+	const borderColors = ['border-primary', 'border-secondary', 'border-tertiary']
 </script>
 
 <div class="w-full max-w-[900px] mt-4">
 	<button
 		on:click={toggle}
 		aria-expanded={isOpen}
-		class="grid grid-cols-[1fr,_min-content] gap-2 items-center text-left w-full justify-between bg-body-secondary rounded-lg p-5">
+		class="grid grid-cols-[1fr,_min-content] gap-2 items-center text-left w-full justify-between border-2 dark:border-none {borderColor} dark:bg-body-secondary rounded-lg p-5">
 		<slot name="question" />
 		<svg
 			style="tran"

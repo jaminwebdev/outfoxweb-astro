@@ -13,6 +13,8 @@ module.exports = {
 				'body-secondary': 'var(--body-color-secondary)',
 				'body-tertiary': 'var(--body-color-tertiary)',
 				'body-text': 'var(--color-body-text)',
+				'body-text-dark': '#1D1D20',
+				'body-text-light': '#F4F4F5'
 			}
 		}
 	}
