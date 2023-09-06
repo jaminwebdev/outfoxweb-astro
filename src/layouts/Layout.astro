@@ -35,11 +35,9 @@ const { seo } = Astro.props as Props;
 					classes="absolute -top-[30vw] -right-[34%] md:-top-[420px] md:-right-[40%] w-[80%]" />
 			</div>
 			<Container>
-				<div transition:persist>
-					<Navigation client:load>
-						<SiteLogo slot="siteLogo"/>
-					</Navigation>
-				</div>
+				<Navigation client:load transition:persist="navigation">
+					<SiteLogo slot="siteLogo"/>
+				</Navigation>
 				<slot />
 				<Footer />
 			</Container>
