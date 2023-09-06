@@ -5,6 +5,7 @@ import MobileScore from '../../images/Mobile_Score.png'
 import Button from '../../components/buttons/Button.svelte'
 import TestimonialRow from '../../components/TestimonialRow.astro';
 import { testimonials } from '../../utils/testimonials';
+import StatCard from '../../components/cards/StatCard.svelte';
 
 const seo = {
 	title: 'Showcase',
@@ -48,6 +49,27 @@ const seo = {
 			</div>
 		</div>
 		<TestimonialRow testimonials={[testimonials['kyle'], testimonials['stacy']]} />
+		<section id="initialStats" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px] mt-[40px]">
+			<StatCard color="orange">
+				<span slot="stat">434%</span>
+				<span slot="subtitle">More indexed pages</span>
+				<span slot="body"
+					>Websites with proper SEO, copy writing, and content strategy get 434% more traffic.</span>
+			</StatCard>
+			<StatCard color="secondary">
+				<span slot="stat">3x</span>
+				<span slot="subtitle">As many leads</span>
+				<span slot="body"
+					>SEO generates over 3x as many leads as other marketing tactics and costs 62% less.</span>
+			</StatCard>
+			<StatCard color="tertiary">
+				<span slot="stat">5.7%</span>
+				<span slot="subtitle">Will rank in the top 10</span>
+				<span slot="body"
+					>Even with all the best SEO practices in mind, only 5.7% of pages will rank in the top 10 of
+					search.</span>
+			</StatCard>
+		</section>
 	</main>
 	<a href="/">Home page</a>
 
