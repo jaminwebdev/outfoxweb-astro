@@ -29,7 +29,7 @@
 	<button
 		on:click={toggle}
 		aria-expanded={isOpen}
-		class="grid grid-cols-[1fr,_min-content] gap-2 items-center text-left w-full justify-between border-2 dark:border-none {borderColor} dark:bg-body-secondary rounded-lg p-5">
+		class="grid grid-cols-[1fr,_min-content] gap-2 items-center text-left w-full justify-between border-2 dark:border-none {borderColor} dark:bg-body-color-secondary rounded-lg p-5">
 		<slot name="question" />
 		<svg
 			style="tran"

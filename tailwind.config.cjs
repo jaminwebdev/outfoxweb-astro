@@ -10,8 +10,8 @@ module.exports = {
 				tertiary: 'rgb(var(--color-tertiary) / <alpha-value>)',
 				orange: 'rgb(var(--color-orange) / <alpha-value>)',
 				'body-color': 'var(--body-color)',
-				'body-secondary': 'var(--body-color-secondary)',
-				'body-tertiary': 'var(--body-color-tertiary)',
+				'body-color-secondary': 'var(--body-color-secondary)',
+				'body-color-tertiary': 'var(--body-color-tertiary)',
 				'body-text': 'var(--color-body-text)',
 				'body-text-dark': '#1D1D20',
 				'body-text-light': '#F4F4F5'
