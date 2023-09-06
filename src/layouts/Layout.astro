@@ -5,6 +5,8 @@ import '../styles/tailwind.css';
 import Navigation from '../components/layout/navigation/Navigation.svelte';
 import SiteLogo from '../components/SiteLogo.astro'
 import Container from '../components/layout/Container.astro';
+import BgSpotlight from '../components/BgSpotlight.astro';
+import Footer from '../components/layout/Footer.astro'
 
 export interface Props {
     seo: {
@@ -27,12 +29,24 @@ const { seo } = Astro.props as Props;
 	</head>
 	<body class="bg-body-color relative overflow-x-hidden">
 		<div class="overflow-hidden">
+			<div
+			class="w-screen h-[500px] md:h-[1000px] overflow-hidden absolute top-0 pointer-events-none opacity-0 lg:opacity-100">
+				<BgSpotlight
+					classes="absolute -top-[30vw] -right-[34%] md:-top-[420px] md:-right-[40%] w-[80%]" />
+			</div>
 			<Container>
-				<Navigation client:load transition:name='navigation' transition:persist>
-					<SiteLogo slot="siteLogo"/>
-				</Navigation>
+				<div transition:persist>
+					<Navigation client:load>
+						<SiteLogo slot="siteLogo"/>
+					</Navigation>
+				</div>
 				<slot />
+				<!-- <Footer /> -->
 			</Container>
+			<div
+				class="w-screen h-[500px] md:h-[700px] overflow-hidden absolute bottom-0 pointer-events-none">
+				<BgSpotlight classes="absolute -bottom-[200px] -left-[375px] w-[800px] rotate-180" />
+			</div>
 		</div>
 	</body>
 </html>

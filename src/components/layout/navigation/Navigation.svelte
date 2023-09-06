@@ -5,10 +5,9 @@
 	let urlData = '';
 	onMount(() => {
 		const observer = new MutationObserver(function(mutations) {
-		if (location.href !== urlData) {
-			urlData = location.href;
-			console.log(`URL changed to ${location.href}`);
-		}
+			if (location.href !== urlData) {
+				urlData = location.href;
+			}
 		});
 		observer.observe(document, {subtree: true, childList: true});
 	})
