@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import MobileScore from '../../images/Mobile_Score.png'
-import SvelteButton from '../../components/buttons/SvelteButton.svelte'
+import Button from '../../components/buttons/Button.svelte'
 
 const seo = {
 	title: 'Showcase',
@@ -20,29 +20,29 @@ const seo = {
 		<div>
 			<h2 class="text-center pb-4">Svelte Glow Buttons</h2>
 			<div class="pb-10 flex justify-center flex-wrap gap-4">
-				<SvelteButton type="button" color="primary">
+				<Button type="button" color="primary">
 					Button Primary
-				</SvelteButton>
-				<SvelteButton type="link" color="secondary" link="/showcase" >
+				</Button>
+				<Button type="link" color="secondary" link="/showcase" >
 					Button Secondary (link)
-				</SvelteButton>
-				<SvelteButton type="button" color="tertiary">
+				</Button>
+				<Button type="button" color="tertiary">
 					Button Tertiary
-				</SvelteButton>
+				</Button>
 			</div>
 		</div>
 		<div>
 			<h2 class="text-center pb-4">Svelte Plain Buttons</h2>
 			<div class="pb-10 flex justify-center flex-wrap gap-4">
-				<SvelteButton type="button" flavor="plain" color="primary">
+				<Button type="button" flavor="plain" color="primary">
 					Button Primary
-				</SvelteButton>
-				<SvelteButton type="link" flavor="plain" color="secondary" link="/showcase" >
+				</Button>
+				<Button type="link" flavor="plain" color="secondary" link="/showcase" >
 					Button Secondary (link)
-				</SvelteButton>
-				<SvelteButton type="button" flavor="plain" color="tertiary">
+				</Button>
+				<Button type="button" flavor="plain" color="tertiary">
 					Button Tertiary
-				</SvelteButton>
+				</Button>
 			</div>
 		</div>
 
