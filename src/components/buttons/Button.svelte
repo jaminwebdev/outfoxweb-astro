@@ -52,8 +52,8 @@
             py-[16px] 
             px-[28px] 
             rounded-lg 
-            flex
             justify-center
+            inline-block
             relative 
             font-medium 
             cursor-pointer

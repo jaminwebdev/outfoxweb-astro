@@ -5,6 +5,7 @@ import HeaderImg from '../images/homepage_hero_img.png'
 import Button from '../components/buttons/Button.svelte';
 import BgSpotlight from '../components/BgSpotlight.astro';
 import BenefitCard from '../components/cards/BenefitCard.svelte';
+import PortfolioRow from '../components/PortfolioRow.svelte'
 
 const seo = {
 	title: 'Homepage Title',
@@ -54,6 +55,7 @@ const seo = {
         </span>
       </BenefitCard>
     </section>
+    <PortfolioRow client:load />
 	</main>
 </Layout>
 
