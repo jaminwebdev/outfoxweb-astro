@@ -1,7 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import MobileScore from '../images/Mobile_Score.png'
+import HeaderImg from '../images/homepage_hero_img.png'
+import Button from '../components/buttons/Button.svelte';
+import BgSpotlight from '../components/BgSpotlight.astro';
+import BenefitCard from '../components/cards/BenefitCard.svelte';
 
 const seo = {
 	title: 'Homepage Title',
@@ -11,15 +14,46 @@ const seo = {
 
 <Layout {seo}>
 	<main>
-		<h1>Hello there</h1>
-		<h2>Secondary Heading</h2>
-		<h3>Tertiary Heading</h3>
-		<p>Body text here</p>
+    <header class="grid grid-cols-1 md:grid-cols-2 items-center gap-32 md:gap-14 py-20 md:py-16">
+      <div class="grid gap-7">
+        <h1 class="lg:text-[65px] text-center md:text-left">Grow Better <br />& Engage More</h1>
+        <p class="text-center md:text-left">
+          Reach your audience, convert more customers, and rank higher with the best website for you.
+        </p>
+        <Button type="link" link="/showcase" classes="justify-self-center md:justify-self-start"
+          >Showcase</Button>
+      </div>
+      <div class="relative grid justify-center md:justify-normal">
+        <Image
+          src={HeaderImg}
+          width="541"
+          height="486"
+          alt="laptop and mobile phone mockup of modern website"
+          class="relative z-[1]" />
+        <BgSpotlight classes="absolute -z-0 -top-[90px] -right-[170px] w-[150%] h-[150%]" />
+      </div>
+    </header>
+    <section id="benefitsRow" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px]">
+      <BenefitCard lottiePath="/lottie/BarChart_primary.json" initialPlay client:load>
+        <span slot="heading">Multiply your conversions</span>
+        <span slot="body">
+          Using the best UX research and insights, we can turn your web dud in to a web stud.
+        </span>
+      </BenefitCard>
+      <BenefitCard lottiePath="/lottie/Globe_tertiary.json" delay={750} initialPlay client:load>
+        <span slot="heading">Reach users faster</span>
+        <span slot="body">
+          Our websites load faster than 99.9% of competitors. With our tech, your users don’t have to
+          wait long.
+        </span>
+      </BenefitCard>
+      <BenefitCard lottiePath="/lottie/Server_secondary.json" delay={1500} initialPlay client:load>
+        <span slot="heading">0% Downtime</span>
+        <span slot="body">
+          In the last 3 years, our websites have a 0% downtime - never miss out on opportunities.
+        </span>
+      </BenefitCard>
+    </section>
 	</main>
-	<a href="/showcase">Showcase</a>
-	<div class="min-h-[100px]">
-
-	</div>
-	<Image src={MobileScore} alt="Tablet of Figma design" width="476" height="395" quality="max" transition:name='mobile_score'/>
 </Layout>
 
