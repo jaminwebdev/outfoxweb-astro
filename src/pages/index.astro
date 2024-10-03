@@ -3,10 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import HeaderImg from '../images/homepage_hero_img.png'
 import Button from '../components/buttons/Button.svelte';
-import BgSpotlight from '../components/BgSpotlight.astro';
 import BenefitCard from '../components/cards/BenefitCard.svelte';
 import PortfolioRow from '../components/PortfolioRow.svelte'
 import ServicesTabs from '../components/ServicesTabs.svelte';
+import ImgBackground from '../components/ImgBackground.svelte';
 
 const seo = {
 	title: 'Homepage Title',
@@ -33,7 +33,7 @@ const seo = {
           alt="laptop and mobile phone mockup of modern website"
           class="relative z-[1]" 
           loading="eager" />
-        <BgSpotlight classes="absolute -z-0 -top-[90px] -right-[170px] w-[150%] h-[150%]" />
+        <ImgBackground classes="absolute -z-0 -top-[90px] -right-[170px] w-[150%] h-[150%]" />
       </div>
     </header>
     <section id="benefitsRow" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px]">

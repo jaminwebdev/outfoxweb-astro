@@ -1,14 +1,10 @@
----
-interface Props {
-    classes: string;
-}
-
-const { classes } = Astro.props
----
+<script lang="ts">
+	export let classes = '';
+</script>
 
 <svg
 	xmlns="http://www.w3.org/2000/svg"
-	class={`${classes} pointer-events-none`}
+	class="{classes} pointer-events-none"
 	viewBox="0 0 997 848"
 	fill="none">
 	<g filter="url(#filter0_f_137_4)">
