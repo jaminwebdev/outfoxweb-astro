@@ -1,13 +1,13 @@
 <script lang="ts">
-	import WebDevImg from '../images/Mobile_Score.png?format=webp&quality=100&w=475';
-	import DesignImg from '../images/Figma_Tablet.png?format=webp&quality=100&w=475';
-	import SEOImg from '../images/Laptop_Metrics_Right.png?format=webp&quality=100&w=475';
-	import AuditImg from '../images/Laptop_Audit.png?format=webp&quality=100&w=475';
+	import WebDevImg from '@images/Mobile_Score.png';
+	import DesignImg from '@images/Figma_Tablet.png';
+	import SEOImg from '@images/Laptop_Metrics_Right.png';
+	import AuditImg from '@images/Laptop_Audit.png';
 
-	import ImgBackground from '../components/ImgBackground.svelte';
-	import Button from './buttons/Button.svelte';
+	import ImgBackground from '@components/ImgBackground.svelte';
+	import Button from '@components/buttons/Button.svelte';
 	import { fade } from 'svelte/transition';
-	import Checkmark from './Checkmark.svelte';
+	import Checkmark from '@components/Checkmark.svelte';
 
 	const services = ['Development', 'Design', 'SEO', 'Web Audits'];
 	let activeService = 'Development';
@@ -51,7 +51,7 @@
 							class="relative z-[1]"
 							height="395"
 							width="475"
-							src={WebDevImg}
+							src={WebDevImg.src}
 							alt="Mobile website design with Lighthouse performance score"
 							loading="lazy" />
 						<ImgBackground classes="absolute -z-0 top-[0%] -right-[20%] w-[150%] h-[110%]" />
@@ -76,7 +76,7 @@
 					<div class="row-start-1 sm:row-start-auto relative justify-self-end">
 						<img
 							class="relative z-[1]"
-							src={DesignImg}
+							src={DesignImg.src}
 							alt="Website design in Figma"
 							height="320"
 							width="582" />
@@ -102,7 +102,7 @@
 					<div class="row-start-1 sm:row-start-auto relative justify-self-end">
 						<img
 							class="relative z-[1] max-w-[425px] w-full"
-							src={SEOImg}
+							src={SEOImg.src}
 							alt="Graphic showing improved SEO graphs overlaying website design"
 							height="512"
 							width="500" />
@@ -128,7 +128,7 @@
 					<div class="row-start-1 sm:row-start-auto relative justify-self-end">
 						<img
 							class="relative z-[1] max-w-[425px] w-full"
-							src={AuditImg}
+							src={AuditImg.src}
 							alt="Laptop with audit metric graphics overlayed"
 							height="372"
 							width="504" />

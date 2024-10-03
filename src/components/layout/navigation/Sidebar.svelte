@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Accordion from '../../Accordion.svelte';
+	import Accordion from '@components/Accordion.svelte';
 	import ServicesMenu from './menus/ServicesMenu.svelte';
 	import ResourcesMenu from './menus/ResourcesMenu.svelte';
 	import AboutMenu from './menus/AboutMenu.svelte';

@@ -1,5 +1,6 @@
 <script lang="ts">
-	import TestimonialCard from './cards/TestimonialCard.svelte';
+	import TestimonialCard from '@components/cards/TestimonialCard.svelte';
+  import { type Testimonial } from '@/utils/testimonials';
 
 	export let testimonials: [Testimonial, Testimonial];
 </script>

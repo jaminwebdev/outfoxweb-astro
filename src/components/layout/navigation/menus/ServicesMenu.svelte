@@ -1,5 +1,5 @@
 <script lang="ts">
-	import NavigationCard from '../../../cards/NavigationCard.svelte';
+	import NavigationCard from '@components/cards/NavigationCard.svelte';
 </script>
 
 <div class="grid grid-cols-1 lg:grid-cols-4 gap-2 lg:gap-0">

@@ -1,15 +1,11 @@
 <script lang="ts">
-	import Button from './buttons/Button.svelte';
 	import { fade } from 'svelte/transition';
-	import PillButton from './buttons/PillButton.svelte';
-	// @ts-ignore
-	import SaasImg from '../images/Saas_header.png?format=webp&quality=100&w=550';
-	// @ts-ignore
-	import CoworkImg from '../images/Cowork_Header.png?format=webp&quality=100&w=550';
-	// @ts-ignore
-	import NonprofitImg from '../images/Nonprofit_Header.png?format=webp&quality=100&w=550';
-	// @ts-ignore
-	import FinanceImg from '../images/Finance_Header.png?format=webp&quality=100&w=550';
+	import Button from '@components/buttons/Button.svelte';
+	import PillButton from '@components/buttons/PillButton.svelte';
+	import SaasImg from '@images/Saas_header.png';
+	import CoworkImg from '@images/Cowork_Header.png';
+	import NonprofitImg from '@images/Nonprofit_Header.png';
+	import FinanceImg from '@images/Finance_Header.png';
 
 	const categories = ['Saas', 'Finance', 'Workspace', 'Nonprofit'];
 	let activeCategory = 'Saas';
@@ -47,7 +43,7 @@
 	<div class="grid grid-cols-1 grid-rows-1">
 		{#if activeCategory === 'Saas'}
 			<img
-				src={SaasImg}
+				src={SaasImg.src}
 				alt="Saas website design"
 				class="max-h-[380px] lg:max-h-[470px] -mb-[80px] lg:ml-[80px] object-contain col-start-1 row-start-1 justify-self-center lg:justify-self-auto"
 				in:fade|global={{ duration: 150, delay: 200 }}
@@ -55,7 +51,7 @@
 		{/if}
 		{#if activeCategory === 'Finance'}
 			<img
-				src={FinanceImg}
+				src={FinanceImg.src}
 				alt="Financial advisor & fiduciary website design"
 				class="max-h-[380px] lg:max-h-[470px] -mb-[80px] lg:ml-[80px] object-contain col-start-1 row-start-1 justify-self-center lg:justify-self-auto"
 				in:fade|global={{ duration: 150, delay: 200 }}
@@ -63,7 +59,7 @@
 		{/if}
 		{#if activeCategory === 'Workspace'}
 			<img
-				src={CoworkImg}
+				src={CoworkImg.src}
 				alt="Cowork space website design"
 				class="max-h-[380px] lg:max-h-[470px] -mb-[80px] lg:ml-[80px] object-contain col-start-1 row-start-1 justify-self-center lg:justify-self-auto"
 				in:fade|global={{ duration: 150, delay: 200 }}
@@ -71,7 +67,7 @@
 		{/if}
 		{#if activeCategory === 'Nonprofit'}
 			<img
-				src={NonprofitImg}
+				src={NonprofitImg.src}
 				alt="Nonprofit website design"
 				class="max-h-[380px] lg:max-h-[470px] -mb-[80px] lg:ml-[80px] object-contain col-start-1 row-start-1 justify-self-center lg:justify-self-auto"
 				in:fade|global={{ duration: 150, delay: 200 }}

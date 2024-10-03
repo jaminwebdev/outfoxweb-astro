@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Testimonial } from '../../utils/testimonials';
+	import type { Testimonial } from '@/utils/testimonials';
 	export let testimonial: Testimonial;
 	export let classes: string = '';
 </script>
