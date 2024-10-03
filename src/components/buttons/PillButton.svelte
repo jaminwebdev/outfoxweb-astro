@@ -7,14 +7,13 @@
 
 	const pillColors = {
 		active: 'bg-secondary/20 text-secondary',
-		inactive:
-			'bg-body-color-tertiary'
+		inactive: 'bg-body-color-tertiary'
 	};
 </script>
 
 <button
 	on:click={handleClick}
 	class={` ${active ? pillColors['active'] : pillColors['inactive']}
-rounded-md bg-secondary/20 py-[5px] px-[14px]`}>
+rounded-md py-[5px] px-[14px]`}>
 	<slot />
 </button>

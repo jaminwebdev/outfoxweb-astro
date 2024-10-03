@@ -4,7 +4,7 @@
 	const dispatch = createEventDispatcher();
 
 	export let type: 'button' | 'link' = 'button';
-    export let flavor: 'plain' | 'glow' = 'glow';
+  export let flavor: 'plain' | 'glow' = 'glow';
 	export let color: 'primary' | 'secondary' | 'tertiary' = 'primary';
 	export let link: string = '/';
 	export let classes = '';
