@@ -30,7 +30,7 @@
 			{#each categories as category}
 				<PillButton
 					active={activeCategory === category}
-					on:pillClicked={() => setActiveCategory(category)}>{category}</PillButton>
+					btnCallback={() => setActiveCategory(category)}>{category}</PillButton>
 			{/each}
 		</div>
 		<Button

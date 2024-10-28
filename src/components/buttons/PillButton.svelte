@@ -1,9 +1,17 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
-	const dispatch = createEventDispatcher();
-	export let active = false;
+  import { type Snippet } from 'svelte';
 
-	const handleClick = () => dispatch('pillClicked');
+  interface Props {
+		active: boolean;
+    btnCallback?: () => void;
+    children: Snippet;
+	}
+
+	let { 
+    active = false,
+    btnCallback,
+    children
+   }: Props = $props();
 
 	const pillColors = {
 		active: 'bg-secondary/20 text-secondary',
@@ -12,8 +20,8 @@
 </script>
 
 <button
-	on:click={handleClick}
+	onclick={btnCallback}
 	class={` ${active ? pillColors['active'] : pillColors['inactive']}
 rounded-md py-[5px] px-[14px]`}>
-	<slot />
+	{@render children()}
 </button>
