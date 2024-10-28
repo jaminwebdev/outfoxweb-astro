@@ -3,9 +3,17 @@
 	import ServicesMenu from './menus/ServicesMenu.svelte';
 	import ResourcesMenu from './menus/ResourcesMenu.svelte';
 	import AboutMenu from './menus/AboutMenu.svelte';
-	export let open: boolean;
-	const handleMobileNav = () => (open = !open);
+
+  interface Props {
+		open: boolean;
+	}
+
+	let { open = $bindable()}: Props = $props();
+  
+	const handleMobileNav = () => open = !open;
 </script>
+
+
 
 <aside
 	class="fixed top-[100px] pt-10 pb-[200px] z-10 w-full h-screen bg-body-color text-body-text overflow-y-scroll"
@@ -13,22 +21,34 @@
 	<nav class="px-8 text-xl">
 		<div class="bg-body-color">
 			<Accordion bodyClasses="px-0">
-				<span slot="question">Services</span>
-				<div slot="answer">
-					<ServicesMenu on:click={handleMobileNav} />
-				</div>
+        {#snippet question()}
+          <span>Services</span>
+        {/snippet}
+        {#snippet answer()}
+          <div>
+            <ServicesMenu on:click={handleMobileNav} />
+          </div>
+        {/snippet}
 			</Accordion>
 			<Accordion bodyClasses="px-0">
-				<span slot="question">Resources</span>
-				<div slot="answer">
-					<ResourcesMenu on:click={handleMobileNav} />
-				</div>
+        {#snippet question()}
+          <span>Resources</span>
+        {/snippet}
+        {#snippet answer()}
+          <div>
+            <ResourcesMenu on:click={handleMobileNav} />
+          </div>
+        {/snippet}
 			</Accordion>
 			<Accordion bodyClasses="px-0">
-				<span slot="question">About</span>
-				<div slot="answer">
-					<AboutMenu on:click={handleMobileNav} />
-				</div>
+        {#snippet question()}
+          <span>About</span>
+        {/snippet}
+        {#snippet answer()}
+          <div>
+            <AboutMenu on:click={handleMobileNav} />
+          </div>
+        {/snippet}
 			</Accordion>
 		</div>
 	</nav>

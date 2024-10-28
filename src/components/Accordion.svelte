@@ -1,9 +1,16 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, type Snippet } from 'svelte';
 
-	export let bodyClasses = '';
-	export let isOpen = false;
-	let borderColor: string;
+  interface Props {
+		bodyClasses: string;
+    isOpen?: boolean;
+    question: Snippet;
+    answer: Snippet;
+	}
+
+	let { bodyClasses = '', isOpen = false, question, answer }: Props = $props();
+
+	let borderColor = $state() as string;
 	let panel: HTMLDivElement;
 
 	onMount(() => {
@@ -27,10 +34,10 @@
 
 <div class="w-full max-w-[900px] mt-4">
 	<button
-		on:click={toggle}
+		onclick={toggle}
 		aria-expanded={isOpen}
 		class="grid grid-cols-[1fr,_min-content] gap-2 items-center text-left w-full justify-between border-2 dark:border-none {borderColor} dark:bg-body-color-secondary rounded-lg p-5">
-		<slot name="question" />
+		{@render question()}
 		<svg
 			style="tran"
 			width="20"
@@ -48,6 +55,6 @@
 		class="text-left w-full max-w-[900px] max-h-0 overflow-hidden transition-all duration-200 ease-out px-5 {isOpen
 			? 'py-5'
 			: ''} {bodyClasses}">
-		<slot name="answer" />
+		{@render answer()}
 	</div>
 </div>
