@@ -1,13 +1,26 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
+	import { type Snippet } from 'svelte';
 
-	const dispatch = createEventDispatcher();
+  interface Props {
+		type?: 'button' | 'link';
+    flavor?: 'plain' | 'glow';
+    color?: 'primary' | 'secondary' | 'tertiary';
+    link?: string;
+    classes?: string;
+    btnCallback?: () => void;
+    children: Snippet;
+	}
 
-	export let type: 'button' | 'link' = 'button';
-  export let flavor: 'plain' | 'glow' = 'glow';
-	export let color: 'primary' | 'secondary' | 'tertiary' = 'primary';
-	export let link: string = '/';
-	export let classes = '';
+	let { 
+    type = 'button',
+    flavor = 'glow',
+    color = 'primary',
+    link = '/',
+    classes,
+    btnCallback,
+    children
+   }: Props = $props();
+
 
 	const glowColorVariants = {
 		primary:
@@ -28,7 +41,7 @@
 {#if type === 'button'}
 	<button
 		type="button"
-		on:click={() => dispatch('btnClicked')}
+		onclick={btnCallback}
 		class={`
             py-[16px] 
             px-[28px] 
@@ -43,7 +56,7 @@
             ${flavor === 'glow' ? 'glowBtn' : 'plain'}
             ${flavor === 'glow' ? glowColorVariants[color] : plainColorVariants[color]} 
             ${classes}`}>
-		<slot />
+		{@render children()}
 	</button>
 {:else if type === 'link'}
 	<a
@@ -62,7 +75,7 @@
             ${flavor === 'glow' ? 'glowBtn' : 'plain'}
             ${flavor === 'glow' ? glowColorVariants[color] : plainColorVariants[color]} 
             ${classes}`}>
-		<slot />
+		{@render children()}
 	</a>
 {/if}
 
