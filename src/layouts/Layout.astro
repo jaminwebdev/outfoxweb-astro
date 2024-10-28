@@ -2,11 +2,10 @@
 import { SEO } from 'astro-seo';
 import { ViewTransitions } from 'astro:transitions';
 import '../styles/tailwind.css';
-import Navigation from '../components/layout/navigation/Navigation.svelte';
-import SiteLogo from '../components/SiteLogo.svelte'
-import Container from '../components/layout/Container.astro';
-import BgSpotlight from '../components/BgSpotlight.svelte';
-import Footer from '../components/layout/Footer.astro'
+import Navigation from '@components/layout/navigation/Navigation.svelte';
+import Container from '@components/layout/Container.astro';
+import BgSpotlight from '@components/BgSpotlight.svelte';
+import Footer from '@components/layout/Footer.astro'
 
 export interface Props {
     seo: {
@@ -34,9 +33,7 @@ const { seo } = Astro.props as Props;
 				classes="absolute -top-[30vw] -right-[34%] md:-top-[420px] md:-right-[40%] w-[80%]" />
 		</div>
 		<Container>
-			<Navigation client:load transition:persist="navigation">
-				<SiteLogo slot="siteLogo"/>
-			</Navigation>
+			<Navigation client:load transition:persist="navigation"/>
 			<slot />
 			<Footer />
 		</Container>

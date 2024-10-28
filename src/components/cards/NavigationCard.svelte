@@ -1,12 +1,28 @@
 <script lang="ts">
 	import InteractiveLottie from '@components/InteractiveLottie.svelte';
+  import type { Snippet } from 'svelte';
 
-	export let link = '/';
-	export let lottiePath = '';
-	export let bgColor: 'primary' | 'secondary' | 'tertiary' | 'orange' = 'primary';
+  interface Props {
+    link: string;
+    lottiePath: string;
+    bgColor?: 'primary' | 'secondary' | 'tertiary' | 'orange';
+    heading: Snippet;
+    body: Snippet;
+    clickHandler: () => void;
+  }
 
-	let isHovering = false;
-	$: play = isHovering;
+  let {
+    link = '/',
+    lottiePath = '',
+    bgColor = 'primary',
+    heading,
+    body,
+    clickHandler,
+  }: Props = $props()
+
+
+	let isHovering = $state(false);
+
 	const mouseEntered = () => (isHovering = true);
 	const mouseLeft = () => (isHovering = false);
 
@@ -20,21 +36,21 @@
 
 <a
 	href={link}
-	on:click
-	on:mouseenter={mouseEntered}
-	on:mouseleave={mouseLeft}
+  onclick={clickHandler}
+	onmouseenter={mouseEntered}
+	onmouseleave={mouseLeft}
 	class="px-5 py-7 lg:p-[70px_40px] {bgColors[bgColor]} ">
 	<div class="grid gap-2">
 		<div class="flex lg:block items-center gap-2">
 			<div class="max-w-[60px] max-h-[60px] -ml-2 md:mb-2">
-				<InteractiveLottie path={lottiePath} bind:forceAnimate={play} />
+				<InteractiveLottie path={lottiePath} bind:forceAnimate={isHovering} />
 			</div>
 			<h3 class="text-xl">
-				<slot name="heading" />
+				{@render heading()}
 			</h3>
 		</div>
 		<p>
-			<slot name="body" />
+			{@render body()}
 		</p>
 	</div>
 </a>

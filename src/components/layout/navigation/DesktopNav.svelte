@@ -3,10 +3,14 @@
 	import ServicesMenu from './menus/ServicesMenu.svelte';
 	import ResourcesMenu from './menus/ResourcesMenu.svelte';
 	import AboutMenu from './menus/AboutMenu.svelte';
+  import type { Snippet } from 'svelte';
+  interface Props {
+    siteLogo: Snippet
+  }
 
-	export let urlData: string;
-	let prevUrl = '';
-	let selectedMenuItem = 'none';
+  let { siteLogo }: Props = $props()
+
+	let selectedMenuItem = $state('none');
 
 	const setSelectedMenuItem = (item: string) => {
 		if (selectedMenuItem === item) {
@@ -16,43 +20,39 @@
 		selectedMenuItem = item;
 	};
 
-	$: if (prevUrl !== urlData) {
-		selectedMenuItem = 'none';
-		prevUrl = urlData;
-	}
 </script>
 
 <div class="py-[28px] grid grid-cols-[minmax(200px,_250px)_1fr]">
-	<slot name="siteLogo" />
+	{@render siteLogo()}
 	<ul class="grid gap-12 grid-flow-col text-xl justify-self-end items-center">
 		<li>
 			<button
 				type="button"
 				class="p-5"
-				on:click={() => setSelectedMenuItem('services')}
+				onclick={() => setSelectedMenuItem('services')}
 				aria-expanded={selectedMenuItem === 'services'}>Services</button>
 			<Dropdown shown={selectedMenuItem === 'services'}>
-				<ServicesMenu on:click={() => setSelectedMenuItem('none')} />
+				<ServicesMenu clickHandler={() => setSelectedMenuItem('none')} />
 			</Dropdown>
 		</li>
 		<li>
 			<button
 				type="button"
 				class="p-5"
-				on:click={() => setSelectedMenuItem('resources')}
+				onclick={() => setSelectedMenuItem('resources')}
 				aria-expanded={selectedMenuItem === 'resources'}>Resources</button>
 			<Dropdown shown={selectedMenuItem === 'resources'}>
-				<ResourcesMenu on:click={() => setSelectedMenuItem('none')} />
+				<ResourcesMenu clickHandler={() => setSelectedMenuItem('none')} />
 			</Dropdown>
 		</li>
 		<li>
 			<button
 				type="button"
 				class="p-5"
-				on:click={() => setSelectedMenuItem('about')}
+				onclick={() => setSelectedMenuItem('about')}
 				aria-expanded={selectedMenuItem === 'about'}>About</button>
 			<Dropdown shown={selectedMenuItem === 'about'}>
-				<AboutMenu on:click={() => setSelectedMenuItem('none')} />
+				<AboutMenu clickHandler={() => setSelectedMenuItem('none')} />
 			</Dropdown>
 		</li>
 		<li>
