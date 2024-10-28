@@ -3,13 +3,25 @@
 	import type { AnimationEvent, AnimationItem } from 'lottie-svelte/iface';
 	import { onDestroy } from 'svelte';
 
-	export let timeLoop = 6000;
-	export let repeat = false;
-	export let speed = 1;
-	export let delay = 0;
-	export let initialPlay = false;
-	export let path = '/lottie/Successful.json';
-	export let forceAnimate = false;
+  interface Props {
+    timeLoop?: number;
+    repeat?: boolean;
+    speed?: number;
+    delay?: number;
+    initialPlay?: boolean;
+    path?: string;
+    forceAnimate?: boolean;
+  }
+
+  let {
+    timeLoop = $bindable(6000),
+    repeat = false,
+    speed = $bindable(1),
+    delay = $bindable(0),
+    initialPlay = $bindable(false),
+    path = '/lottie/Successful.json',
+    forceAnimate = $bindable(false),
+  }: Props = $props()
 
 	let animation: AnimationItem;
 	let animationInterval: ReturnType<typeof setInterval>;
@@ -24,9 +36,11 @@
 		}
 	};
 
-	$: if (forceAnimate) {
+  $effect(() => {
+    if (forceAnimate) {
 		animation.goToAndPlay(0);
-	}
+	  }
+  })
 
 	onDestroy(() => {
 		if (animationInterval) {

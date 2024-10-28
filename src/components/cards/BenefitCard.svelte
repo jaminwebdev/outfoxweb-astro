@@ -1,11 +1,24 @@
 <script lang="ts">
 	import InteractiveLottie from "@components/InteractiveLottie.svelte";
+  import { type Snippet } from "svelte";
+  
+  interface Props {
+		lottiePath: string;
+    delay?: number;
+    timeLoop?: number;
+    speed?: number;
+    initialPlay?: boolean;
+    children: Snippet;
+	}
 
-	export let lottiePath = '';
-	export let delay = 0;
-	export let timeLoop = 4000;
-	export let speed = 1;
-	export let initialPlay = false;
+	let { 
+    lottiePath = '',
+    delay = 0,
+    timeLoop = 4000,
+    speed = 1,
+    initialPlay = false,
+    children
+   }: Props = $props();
 </script>
 
 <div
@@ -19,10 +32,5 @@
 			bind:speed
 			bind:initialPlay />
 	</div>
-	<h3 class="text-xl">
-		<slot name="heading" />
-	</h3>
-	<p>
-		<slot name="body" />
-	</p>
+  {@render children()}
 </div>
