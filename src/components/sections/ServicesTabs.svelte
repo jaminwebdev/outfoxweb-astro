@@ -41,9 +41,15 @@
 					<div class="py-14 grid gap-4 justify-items-start">
 						<h3>Incredibly fast. <br />Incredibly engaging.</h3>
 						<p>With our battle-tested technology stack, your audience never has to wait.</p>
-						<Checkmark body="< 1 second load times" />
-						<Checkmark body="99.9% uptime in over 3 years" />
-						<Checkmark body="Feature rich and always interactive" />
+						<Checkmark>
+              Less than 1 second load times
+            </Checkmark>
+						<Checkmark>
+              99.9% uptime in over 3 years
+            </Checkmark>
+						<Checkmark>
+              Feature rich and always interactive
+            </Checkmark>  
 						<Button classes="mt-4" type="link" link="/">Learn More</Button>
 					</div>
 					<div class="row-start-1 sm:row-start-auto relative justify-self-end">
@@ -68,9 +74,15 @@
 					<div class="py-14 grid gap-4 justify-items-start">
 						<h3>Design</h3>
 						<p>With our battle-tested technology stack, your audience never has to wait.</p>
-						<Checkmark body="< 1 second load times" />
-						<Checkmark body="99.9% uptime in over 3 years" />
-						<Checkmark body="Feature rich and always interactive" />
+						<Checkmark>
+              Less than 1 second load times
+            </Checkmark>
+						<Checkmark>
+              99.9% uptime in over 3 years
+            </Checkmark>
+						<Checkmark>
+              Feature rich and always interactive
+            </Checkmark>  
 						<Button classes="mt-4" type="link" link="/">Learn More</Button>
 					</div>
 					<div class="row-start-1 sm:row-start-auto relative justify-self-end">
@@ -94,9 +106,15 @@
 					<div class="py-14 grid gap-4 justify-items-start">
 						<h3>SEO</h3>
 						<p>With our battle-tested technology stack, your audience never has to wait.</p>
-						<Checkmark body="< 1 second load times" />
-						<Checkmark body="99.9% uptime in over 3 years" />
-						<Checkmark body="Feature rich and always interactive" />
+						<Checkmark>
+              Less than 1 second load times
+            </Checkmark>
+						<Checkmark>
+              99.9% uptime in over 3 years
+            </Checkmark>
+						<Checkmark>
+              Feature rich and always interactive
+            </Checkmark>  
 						<Button classes="mt-4" type="link" link="/">Learn More</Button>
 					</div>
 					<div class="row-start-1 sm:row-start-auto relative justify-self-end">
@@ -120,9 +138,15 @@
 					<div class="py-14 grid gap-4 justify-items-start">
 						<h3>Audits</h3>
 						<p>With our battle-tested technology stack, your audience never has to wait.</p>
-						<Checkmark body="< 1 second load times" />
-						<Checkmark body="99.9% uptime in over 3 years" />
-						<Checkmark body="Feature rich and always interactive" />
+						<Checkmark>
+              Less than 1 second load times
+            </Checkmark>
+						<Checkmark>
+              99.9% uptime in over 3 years
+            </Checkmark>
+						<Checkmark>
+              Feature rich and always interactive
+            </Checkmark>  
 						<Button classes="mt-4" type="link" link="/">Learn More</Button>
 					</div>
 					<div class="row-start-1 sm:row-start-auto relative justify-self-end">

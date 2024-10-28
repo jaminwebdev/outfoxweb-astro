@@ -1,11 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import MobileScore from '../../images/Mobile_Score.png'
-import Button from '../../components/buttons/Button.svelte'
-import TestimonialRow from '../../components/sections/TestimonialRow.svelte';
+import MobileScore from '@images/Mobile_Score.png';
+import Button from '@components/buttons/Button.svelte';
+import TestimonialRow from '@components/sections/TestimonialRow.svelte';
 import { testimonials } from '../../utils/testimonials';
-import StatCard from '../../components/cards/StatCard.svelte';
+import StatCard from '@components/cards/StatCard.svelte';
+import Checkmark from '@components/Checkmark.svelte';
 
 const seo = {
 	title: 'Showcase',
@@ -20,6 +21,9 @@ const seo = {
 		<h2>Secondary Heading</h2>
 		<h3>Tertiary Heading</h3>
 		<p>Body text here</p>
+    <Checkmark>
+      Testing children
+    </Checkmark>
 		<div>
 			<h2 class="text-center pb-4">Svelte Glow Buttons</h2>
 			<div class="pb-10 flex justify-center flex-wrap gap-4">
