@@ -26,7 +26,7 @@
         {/snippet}
         {#snippet answer()}
           <div>
-            <ServicesMenu on:click={handleMobileNav} />
+            <ServicesMenu clickHandler={handleMobileNav} />
           </div>
         {/snippet}
 			</Accordion>
@@ -36,7 +36,7 @@
         {/snippet}
         {#snippet answer()}
           <div>
-            <ResourcesMenu on:click={handleMobileNav} />
+            <ResourcesMenu clickHandler={handleMobileNav} />
           </div>
         {/snippet}
 			</Accordion>
@@ -46,7 +46,7 @@
         {/snippet}
         {#snippet answer()}
           <div>
-            <AboutMenu on:click={handleMobileNav} />
+            <AboutMenu clickHandler={handleMobileNav} />
           </div>
         {/snippet}
 			</Accordion>
