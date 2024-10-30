@@ -1,9 +1,12 @@
 <script lang="ts">
-	export let classes = '';
+  interface Props {
+    classes: string;
+  }
+  let { classes }: Props = $props()
 </script>
 
 <div class={classes}>
-	<a href="/" class="max-h-[70px]">
+	<a href="/" class="max-h-[70px]" aria-label="site logo for footer">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="100%"
