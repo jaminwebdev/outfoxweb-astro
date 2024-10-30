@@ -8,12 +8,9 @@
 	import FinanceImg from '@images/Finance_Header.png';
 
   type Category = 'Saas' | 'Finance' | 'Workspace' | 'Nonprofit'
-  interface Props {
-    activeCategory: Category;
-  }
-
-	const categories: Category[] = ['Saas', 'Finance', 'Workspace', 'Nonprofit'];
-  let { activeCategory = 'Saas' }: Props = $props()
+  const categories: Category[] = ['Saas', 'Finance', 'Workspace', 'Nonprofit'];
+  
+  let activeCategory: Category = $state('Saas');
 
 	const setActiveCategory = (category: Category) => (activeCategory = category);
 </script>
