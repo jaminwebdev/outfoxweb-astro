@@ -26,6 +26,6 @@
 	<div class="w-[65%] max-w-[170px]">
 		{@render siteLogo()}
 	</div>
-	<Hamburger bind:open on:mobileMenuOpenToggle={toggleOpen} />
+	<Hamburger bind:open handleClick={toggleOpen} />
 	<Sidebar bind:open />
 </div>

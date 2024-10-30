@@ -19,7 +19,6 @@
 		}
 		selectedMenuItem = item;
 	};
-
 </script>
 
 <div class="py-[28px] grid grid-cols-[minmax(200px,_250px)_1fr]">
