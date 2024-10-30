@@ -3,7 +3,7 @@
 
   interface Props {
 		type?: 'button' | 'link';
-    flavor?: 'plain' | 'glow';
+    flavor?: 'normal' | 'outline' | 'ghost' | 'glow';
     color?: 'primary' | 'secondary' | 'tertiary';
     link?: string;
     classes?: string;
@@ -21,21 +21,32 @@
     children
    }: Props = $props();
 
-
 	const glowColorVariants = {
 		primary:
-			'bg-primary shadow-[0_0_0.5em_0] shadow-primary after:shadow-[0_0_2.25rem] after:shadow-primary text-body-text-light dark:text-body-text-dark',
+			'bg-primary shadow-[0_0_0.5em_0] shadow-primary after:shadow-[0_0_2.25rem] after:shadow-primary text-body-text-dark',
 		secondary:
 			'bg-secondary shadow-[0_0_.5em_0] shadow-secondary after:shadow-[0_0_2.25rem] after:shadow-secondary text-body-text-light',
 		tertiary:
 			'bg-tertiary shadow-[0_0_.5em_0] shadow-tertiary after:shadow-[0_0_2.25rem] after:shadow-tertiary text-body-text-dark dark:text-body-text-light'
 	};
 
-    const plainColorVariants = {
-        primary: 'bg-primary/40 hover:bg-primary text-primary hover:text-body-text-light hover:dark:text-body-text-dark',
-        secondary: 'bg-secondary/20 hover:bg-secondary text-secondary hover:text-body-text-light',
-        tertiary: 'bg-tertiary/20 hover:bg-tertiary text-tertiary hover:text-body-text-dark hover:dark:text-body-text-light'
-    }
+  const variants = {
+		normal: {
+			primary: 'bg-primary hover:scale-[1.05] text-body-text-light dark:text-body-text-dark',
+			secondary: 'bg-secondary text-body-text hover:scale-[1.05]',
+			tertiary: 'bg-tertiary text-body-text hover:scale-[1.05]'
+		},
+		outline: {
+			primary: 'border-2 border-primary text-primary hover:bg-primary hover:text-body-text',
+			secondary: 'border-2 border-secondary text-secondary hover:bg-secondary hover:text-body-text',
+			tertiary: 'border-2 border-tertiary text-tertiary hover:bg-tertiary hover:text-body-text'
+		},
+		ghost: {
+			primary: 'bg-primary/10 text-primary hover:bg-primary/30 hover:scale-[1.05]',
+			secondary: 'bg-secondary/10 text-secondary hover:bg-secondary/30 hover:scale-[1.05]',
+			tertiary: 'bg-tertiary/10 text-tertiary hover:bg-tertiary/30 hover:scale-[1.05]'
+		}
+	};
 </script>
 
 {#if type === 'button'}
@@ -54,7 +65,7 @@
             transition-all
             duration-300
             ${flavor === 'glow' ? 'glowBtn' : 'plain'}
-            ${flavor === 'glow' ? glowColorVariants[color] : plainColorVariants[color]} 
+            ${flavor === 'glow' ? glowColorVariants[color] : variants[flavor][color]} 
             ${classes}`}>
 		{@render children()}
 	</button>
@@ -72,8 +83,8 @@
             cursor-pointer
             transition-all
             duration-300
-            ${flavor === 'glow' ? 'glowBtn' : 'plain'}
-            ${flavor === 'glow' ? glowColorVariants[color] : plainColorVariants[color]} 
+            ${flavor === 'glow' ? 'glowBtn' : ''}
+            ${flavor === 'glow' ? glowColorVariants[color] : variants[flavor][color]} 
             ${classes}`}>
 		{@render children()}
 	</a>

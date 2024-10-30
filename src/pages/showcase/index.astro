@@ -25,7 +25,7 @@ const seo = {
       Testing children
     </Checkmark>
 		<div>
-			<h2 class="text-center pb-4">Svelte Glow Buttons</h2>
+			<h2 class="text-center pb-4">Glow Buttons</h2>
 			<div class="pb-10 flex justify-center flex-wrap gap-4">
 				<Button type="button" color="primary">
 					Button Primary
@@ -39,15 +39,43 @@ const seo = {
 			</div>
 		</div>
 		<div>
-			<h2 class="text-center pb-4">Svelte Plain Buttons</h2>
+			<h2 class="text-center pb-4">Normal Buttons</h2>
 			<div class="pb-10 flex justify-center flex-wrap gap-4">
-				<Button type="button" flavor="plain" color="primary">
+				<Button type="button" flavor="normal" color="primary">
 					Button Primary
 				</Button>
-				<Button type="link" flavor="plain" color="secondary" link="/showcase" >
+				<Button type="link" flavor="normal" color="secondary" link="/showcase" >
 					Button Secondary (link)
 				</Button>
-				<Button type="button" flavor="plain" color="tertiary">
+				<Button type="button" flavor="normal" color="tertiary">
+					Button Tertiary
+				</Button>
+			</div>
+		</div>
+    <div>
+			<h2 class="text-center pb-4">Ghost Buttons</h2>
+			<div class="pb-10 flex justify-center flex-wrap gap-4">
+				<Button type="button" flavor="ghost" color="primary">
+					Button Primary
+				</Button>
+				<Button type="link" flavor="ghost" color="secondary" link="/showcase" >
+					Button Secondary (link)
+				</Button>
+				<Button type="button" flavor="ghost" color="tertiary">
+					Button Tertiary
+				</Button>
+			</div>
+		</div>
+    <div>
+			<h2 class="text-center pb-4">Outline Buttons</h2>
+			<div class="pb-10 flex justify-center flex-wrap gap-4">
+				<Button type="button" flavor="outline" color="primary">
+					Button Primary
+				</Button>
+				<Button type="link" flavor="outline" color="secondary" link="/showcase" >
+					Button Secondary (link)
+				</Button>
+				<Button type="button" flavor="outline" color="tertiary">
 					Button Tertiary
 				</Button>
 			</div>
