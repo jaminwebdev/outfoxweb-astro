@@ -1,5 +1,11 @@
 <script lang="ts">
-	export let color: 'primary' | 'secondary' | 'tertiary' | 'orange';
+  interface Props {
+    color: 'primary' | 'secondary' | 'tertiary' | 'orange';
+    stat: string;
+    subtitle: string;
+    body: string;
+  }
+	let { color = 'primary', stat, subtitle, body }: Props = $props()
 
 	const bgGradients = {
 		primary: 'to-primary/10 text-primary',
@@ -14,12 +20,12 @@
 		color
 	]}">
 	<h3 class="text-[32px] md:text-[36px]">
-		<slot name="stat" />
+    {stat}
 	</h3>
 	<h4 class="text-[20px] mb-3">
-		<slot name="subtitle" />
+    {subtitle}
 	</h4>
 	<p class="text-body-text-dark dark:text-body-text-light">
-		<slot name="body" />
+		{body}
 	</p>
 </div>
