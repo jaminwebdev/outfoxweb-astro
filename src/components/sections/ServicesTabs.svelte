@@ -9,8 +9,11 @@
 	import { fade } from 'svelte/transition';
 	import Checkmark from '@components/Checkmark.svelte';
 
-	const services = ['Development', 'Design', 'SEO', 'Web Audits'];
-	let activeService = 'Development';
+  type Services = 'Development' | 'Design' | 'SEO' | 'Web Audits'
+
+	const services: Services[] = ['Development', 'Design', 'SEO', 'Web Audits'];
+
+	let activeService = $state('Development');
 </script>
 
 <section class="my-[125px] grid">
@@ -28,7 +31,7 @@
 				class="p-4 underline underline-offset-4 text-lg {activeService === service
 					? 'text-primary'
 					: ''}"
-				on:click={() => (activeService = service)}>{service}</button>
+				onclick={() => (activeService = service)}>{service}</button>
 		{/each}
 	</div>
 	<div class="grid grid-cols-1 grid-rows-1">
