@@ -7,10 +7,15 @@
 	import NonprofitImg from '@images/Nonprofit_Header.png';
 	import FinanceImg from '@images/Finance_Header.png';
 
-	const categories = ['Saas', 'Finance', 'Workspace', 'Nonprofit'];
-	let activeCategory = 'Saas';
+  type Category = 'Saas' | 'Finance' | 'Workspace' | 'Nonprofit'
+  interface Props {
+    activeCategory: Category;
+  }
 
-	const setActiveCategory = (category: string) => (activeCategory = category);
+	const categories: Category[] = ['Saas', 'Finance', 'Workspace', 'Nonprofit'];
+  let { activeCategory = 'Saas' }: Props = $props()
+
+	const setActiveCategory = (category: Category) => (activeCategory = category);
 </script>
 
 <section
