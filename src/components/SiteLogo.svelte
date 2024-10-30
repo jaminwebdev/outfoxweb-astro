@@ -1,8 +1,11 @@
 <script lang="ts">
-	export let classes = '';
+  interface Props {
+    classes: string;
+  }
+  let { classes }: Props = $props()
 </script>
 
-<a href="/" class="max-h-[70px] {classes}">
+<a href="/" class="max-h-[70px] {classes}" aria-label="Site logo">
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="100%"
