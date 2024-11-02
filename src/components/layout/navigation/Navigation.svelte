@@ -18,17 +18,9 @@
 
 <nav>
 	<div class="hidden lg:block">
-		<DesktopNav>
-      {#snippet siteLogo()}
-        <SiteLogo/>
-      {/snippet}
-		</DesktopNav>
+		<DesktopNav/>
 	</div>
 	<div class="block lg:hidden">
-		<MobileNav>
-			{#snippet siteLogo()}
-        <SiteLogo/>
-      {/snippet}
-		</MobileNav>
+		<MobileNav />
 	</div>
 </nav>

@@ -3,12 +3,7 @@
 	import ServicesMenu from './menus/ServicesMenu.svelte';
 	import ResourcesMenu from './menus/ResourcesMenu.svelte';
 	import AboutMenu from './menus/AboutMenu.svelte';
-  import type { Snippet } from 'svelte';
-  interface Props {
-    siteLogo: Snippet
-  }
-
-  let { siteLogo }: Props = $props()
+  import SiteLogo from '@/components/SiteLogo.svelte';
 
 	let selectedMenuItem = $state('none');
 
@@ -22,7 +17,7 @@
 </script>
 
 <div class="py-[28px] grid grid-cols-[minmax(200px,_250px)_1fr]">
-	{@render siteLogo()}
+	<SiteLogo />
 	<ul class="grid gap-12 grid-flow-col text-xl justify-self-end items-center">
 		<li>
 			<button
