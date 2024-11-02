@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import HeaderImg from '@images/homepage_hero_img.png'
+import HeadlessWPImg from '@images/Headless_WP_iMac.png'
 import Button from '@components/buttons/Button.svelte';
 import BenefitCard from '@/components/cards/BenefitCard.svelte';
 import PortfolioRow from '@components/sections/PortfolioRow.svelte'
@@ -60,6 +61,36 @@ const seo = {
     </section>
     <PortfolioRow client:load />
     <ServicesTabs client:load />
+    <section
+      class="rounded-2xl bg-body-color-secondary px-6 py-12 md:p-[60px_] grid grid-cols-1 lg:grid-cols-2 gap-4 items-center my-[125px]">
+      <div class="relative flex justify-center lg:justify-start">
+        <Image
+          src={HeadlessWPImg}
+          alt="iMac showing the WordPress dashboard"
+          class="max-w-[400px] w-full z-10 relative"
+          width="456"
+          height="389"
+          loading="lazy" />
+        <ImgBackground
+          classes="absolute -z-0 -top-[25%] -left-[25%] lg:-left-[40%] w-[160%] h-[160%]" />
+      </div>
+      <div class="mt-7 lg:mt-0">
+        <p
+          class="bg-tertiary/20 text-tertiary py-[5px] px-[14px] rounded-md inline-block text-base mb-2">
+          UPDATE
+        </p>
+        <h2 class="mb-4">What does going headless mean?</h2>
+        <p>
+          Do you have a preferred content management system like WordPress, but you hate slow load
+          times?
+        </p>
+        <p class="mt-4 mb-8">
+          Have no fear! We can easily combine WordPress and our faster frontend technologies for
+          ultimate convenience and optimal performance!
+        </p>
+        <Button type="link" link="/" classes="px-[24px] py-[12px]" color="secondary">See More</Button>
+      </div>
+    </section>
 	</main>
 </Layout>
 
