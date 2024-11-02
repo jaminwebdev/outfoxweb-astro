@@ -7,6 +7,7 @@ import TestimonialRow from '@components/sections/TestimonialRow.svelte';
 import { testimonials } from '../../utils/testimonials';
 import StatCard from '@components/cards/StatCard.svelte';
 import Checkmark from '@components/Checkmark.svelte';
+import MultiStepProjectForm from '@components/forms/MultiStepProjectForm.svelte'
 
 const seo = {
 	title: 'Showcase',
@@ -94,6 +95,9 @@ const seo = {
         stat="5.7%"
         subtitle="Will rank in the top 10"
         body="Even with all the best SEO practices in mind, only 5.7% of pages will rank in the top 10 of search." />
+		</section>
+    <section id="multiStepForm" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px] mt-[40px]">
+      <MultiStepProjectForm client:load />
 		</section>
 	</main>
 	<a href="/">Home page</a>
