@@ -2,13 +2,7 @@
 	import MobileNav from './MobileNav.svelte';
 	import DesktopNav from './DesktopNav.svelte';
   import SiteLogo from '@/components/SiteLogo.svelte';
-	import { onMount, type Snippet } from 'svelte';
-
-  interface Props {
-    children: Snippet;
-  }
-
-  let { children }: Props = $props()
+	import { onMount } from 'svelte';
 
 	let urlData = $state('');
 
