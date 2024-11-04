@@ -1,18 +1,152 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import DesignHero from '@images/Figma_Tablet.png';
+import MuseumImg from '@images/Museum_Header.png';
+import VRLaptop from '@images/VR_Laptop_Left.png';
+// @ts-ignore
+import Button from '@components/buttons/Button.svelte';
+// @ts-ignore
+import ImgBackground from '@components/ImgBackground.svelte';
+// @ts-ignore
+import BenefitCard from '@components/cards/BenefitCard.svelte';
+// @ts-ignore
+import Checkmark from '@components/Checkmark.svelte';
+// @ts-ignore
+import StatCard from '@components/cards/StatCard.svelte';
+// @ts-ignore
+import Accordion from '@components/Accordion.svelte';
+// @ts-ignore
+import TestimonialRow from '@components/sections/TestimonialRow.svelte';
+import { testimonials } from '@/utils/testimonials';
+// @ts-ignore
+import ProcessFAQs from '@components/sections/web-design/ProcessFAQs.svelte';
+// @ts-ignore
+import GeneralFAQs from '@components/sections/web-design/GeneralFAQs.svelte';
 
 const seo = {
-	title: 'Homepage Title',
-	description: 'Homepage description m8'
+  title: 'Homepage Title',
+  description: 'Homepage description m8'
 }
 ---
 
 <Layout {seo}>
-	<main>
-		<h1>Hello there</h1>
-		<h2>Secondary Heading</h2>
-		<h3>Tertiary Heading</h3>
-		<p>Body text here</p>
-	</main>
-	<a href="/showcase">Showcase</a>
+  <header class="grid grid-cols-1 md:grid-cols-2 items-center gap-32 md:gap-14 py-24 md:py-28">
+    <div class="grid gap-10 md:gap-7">
+      <h1 class="text-center md:text-left">Modern Designs for a Modern Web.</h1>
+      <div class="grid gap-4 justify-items-start px-6 md:px-0">
+        <Checkmark body="Research driven layouts" />
+        <Checkmark body="Completely custom designs" />
+        <Checkmark body="Latest design trends" />
+      </div>
+      <Button type="link" link="/showcase" classes="justify-self-center md:justify-self-start"
+        >Let's Chat</Button>
+    </div>
+    <div class="relative grid justify-center md:justify-normal">
+      <Image
+        src={DesignHero}
+        width="582"
+        height="320"
+        alt="laptop and mobile phone mockup of modern website"
+        class="relative z-[1]" />
+      <ImgBackground classes="absolute -z-0 -top-[90px] -right-[170px] w-[150%] h-[150%]" />
+    </div>
+  </header>
+  <section id="benefitsRow" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px]">
+    <BenefitCard lottiePath="/lottie/Lab_Bottle_primary.json"
+    heading="Research driven"
+    body="Using the best UX research and insights, we can turn your web dud in to a web stud." 
+    initialPlay
+    client:load />
+    <BenefitCard lottiePath="/lottie/Fingerprint_tertiary.json"
+    heading="Completely custom"
+    body="Cookie-cutter designs are for cookie-cutter businesses. We believe in custom designs."
+    delay={750} 
+    initialPlay
+    client:load />
+    <BenefitCard lottiePath="/lottie/Magnet_secondary.json"
+    heading="Stay ahead of the curve"
+    body="We never stop taking inventory of the trends going on around the web, ensuring you get modern work."
+    delay={1500} 
+    initialPlay 
+    client:load/>
+  </section>
+  <section
+    id="intro"
+    class="rounded-xl bg-body-color-secondary px-6 py-10 md:p-[60px] grid grid-cols-1 lg:grid-cols-2 gap-4 items-center overflow-hidden">
+    <!-- Left column -->
+    <div>
+      <p class="bg-orange/20 text-orange py-[5px] px-[14px] rounded-md inline-block text-base mb-2">
+        STALE DESIGN?
+      </p>
+      <h2 class="mb-6">No one likes a boring website.</h2>
+      <p class="mb-8 lg:mb-4">
+        Everyone knows your website is the face of your business, but did you know that 52% of people
+        won’t return to a website with a ‘poor aesthetic’?
+      </p>
+      <p class="mb-8 lg:mb-4">
+        Even worse than tha, 89% of consumers shop with a competitor after a poor user experience, and
+        design is a crucial part of that experience.
+      </p>
+    </div>
+    <!-- Right column -->
+    <Image
+      src={MuseumImg}
+      width="578"
+      height="460"
+      alt="Coworking business website design"
+      class="max-h-[380px] lg:max-h-[480px] -mb-[80px] lg:ml-[80px] object-contain justify-self-center lg:justify-self-auto" />
+  </section>
+  <section id="initialStats" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px] mt-[40px]">
+    <StatCard color="orange"
+      stat="57%"
+      subtitle="Wouldn’t recommend"
+      body="57% of users report they wouldn’t recommend a business with a poorly designed mobile site." />
+    <StatCard color="secondary"
+      stat="89%"
+      subtitle="Shop elsewhere"
+      body="89% of users are less likely to return to a website after a bad user experience." />
+    <StatCard color="tertiary"
+      stat="200+%"
+      subtitle="Increased conversions"
+      body="A few small changes to your design, navigation, and UX can bring massive increases in sales." />
+  </section>
+  <section
+    id="solution"
+    class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-32 items-center my-[125px]">
+    <div class="relative flex justify-center lg:justify-start">
+      <Image
+        class="relative z-[1] max-w-[425px] w-full"
+        src={VRLaptop}
+        alt="Laptop and mobile phone showing a design for a VR based company"
+        height="570"
+        width="479"
+        loading="lazy" />
+      <ImgBackground
+        classes="absolute -z-0 -top-[25%] -left-[25%] lg:-left-[40%] w-[160%] h-[160%]" />
+    </div>
+    <div class="mt-7 lg:mt-0">
+      <p class="bg-primary/20 text-primary py-[5px] px-[14px] rounded-md inline-block text-base mb-2">
+        LEVEL UP
+      </p>
+      <h2 class="mb-6">Enhance your website with a new design.</h2>
+      <p>
+        If the idea of a new design stresses you out, or you think “I don’t know what looks good.
+        Hopefully some designer knows what they’re doing” - don’t fret, you’re in the right hands.
+      </p>
+      <p class="mt-4 mb-8">
+        We don’t fly blindly and ‘hope for the best’ when it comes to web design. We stay up to date
+        with the latest in UX research, and even then, we believe in a truly collaborative process
+        with our clients.
+      </p>
+      <Button type="link" link="/" classes="px-[24px] py-[12px]" color="tertiary"
+        >Boost Your Website Today</Button>
+    </div>
+  </section>
+  <section id="portfolioGrid" class="grid grid-cols-1 md:grid-cols-3 gap-8 my-[125px]">
+    <h2 class="col-start-1 md:col-span-3 text-center mb-5">Our recent work</h2>
+  </section>
+  <ProcessFAQs />
+  <TestimonialRow testimonials={[testimonials['kyle'], testimonials['stacy']]} />
+  <GeneralFAQs />
 </Layout>
