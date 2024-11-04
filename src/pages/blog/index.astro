@@ -1,5 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { allBlogMeta } from '@/utils/blogs.ts';
+//@ts-ignore
+import BlogGrid from '@components/blog/BlogGrid.svelte';
+
+const blogMeta = [...allBlogMeta]
 
 const seo = {
 	title: 'Homepage Title',
@@ -8,11 +13,5 @@ const seo = {
 ---
 
 <Layout {seo}>
-	<main>
-		<h1>Hello there</h1>
-		<h2>Secondary Heading</h2>
-		<h3>Tertiary Heading</h3>
-		<p>Body text here</p>
-	</main>
-	<a href="/showcase">Showcase</a>
+  <BlogGrid blogs={blogMeta} client:load />
 </Layout>

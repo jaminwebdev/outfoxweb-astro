@@ -1,0 +1,68 @@
+---
+export const prerender = true
+
+import { getCollection } from 'astro:content';
+import { Image } from "astro:assets";
+import Layout from '@/layouts/Layout.astro';
+import Container from '@components/layout/Container.astro'
+import TableOfContents from '@components/layout/navigation/TableOfContents.astro';
+import JaminHeadshot from '@images/jamin_headshot.jpg'
+import {format} from 'date-fns';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { title, description, tags, coverImage, pubDate } = entry.data
+const { Content, headings } = await entry.render();
+
+const seo = {
+  title: `${title} | He Builds Websites`,
+  description
+}
+---
+
+<Layout {seo}>
+  <Container classes='py-12 max-w-[900px] px-[0px]'>
+    <section class="mb-5" id="portfolioMeta">
+        {tags.map((tag, index) => (
+          <span class="text-primary">
+            {tag.trimEnd()}{tags.length - 1 === index ? '' : ', '}
+          </span>
+        ))}
+        <h1 class="mb-4">{entry.data.title}</h1>
+        <div class="flex items-center gap-x-2">
+          <div class="flex items-center gap-x-2">
+            <Image src={JaminHeadshot} alt="Headshot of Jamin Roberts" class="w-[30px] rounded-full object-cover" />
+            <span>Jamin Roberts</span>
+          </div>
+          <span>- {format(pubDate, "MMM do yyyy")}</span>
+        </div>
+    </section> 
+    <Image src={coverImage} 
+      alt=`Cover image for ${title}` 
+      class="max-h-[500px] w-full rounded-xl object-cover object-center relative my-5" 
+      quality="max" 
+      loading="eager" />
+    <section id="portfolioContent" class="px-5">
+      <TableOfContents headings={headings}/>
+      <div class="
+        mt-8
+        [&_h2]:my-8
+        [&_h3]:my-4
+        [&_h4]:my-4
+        [&_p]:my-6
+        [&_li]:my-2 
+        [&_li]:list-disc
+        [&_li]:list-inside
+      ">
+        <Content />
+      </div>
+    </section>
+  </Container>
+</Layout>
