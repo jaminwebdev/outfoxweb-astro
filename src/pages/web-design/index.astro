@@ -144,7 +144,7 @@ const seo = {
   <section id="portfolioGrid" class="grid grid-cols-1 md:grid-cols-3 gap-8 my-[125px]">
     <h2 class="col-start-1 md:col-span-3 text-center mb-5">Our recent work</h2>
   </section>
-  <ProcessFAQs />
+  <ProcessFAQs client:visible />
   <TestimonialRow testimonials={[testimonials['kyle'], testimonials['stacy']]} />
-  <GeneralFAQs />
+  <GeneralFAQs client:visible />
 </Layout>
