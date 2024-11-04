@@ -2,7 +2,7 @@
 	import { onMount, type Snippet } from 'svelte';
 
   interface Props {
-		bodyClasses: string;
+		bodyClasses?: string;
     isOpen?: boolean;
     question: Snippet;
     answer: Snippet;
