@@ -37,10 +37,10 @@
 		--color-secondary: 25 140 232;
 		--color-tertiary: 56 203 159;
 		--color-orange: 247 117 76;
-		--color-body-text: #1D1D20;
-		--body-color: #F4F4F5;
-		--body-color-secondary: #E6EDF4;
-		--body-color-tertiary: #cad9e8;
+		--color-body-text: 29 29 32;
+		--body-color: 244 244 245;
+		--body-color-secondary: 230 237 244;
+		--body-color-tertiary: 202 217 232;
 	}
 
 	:root[class~="dark"] {
@@ -48,9 +48,9 @@
 		--color-secondary: 25 140 232;
 		--color-tertiary: 142 89 237;
 		--color-orange: 247 117 76;
-		--color-body-text: #F4F4F5;
-		--body-color: #1D1D20;
-		--body-color-secondary: #1F2326;
-		--body-color-tertiary: #4C4F51;
+		--color-body-text: 244 244 245;
+		--body-color: 29 29 32;
+		--body-color-secondary: 31 35 38;
+		--body-color-tertiary: 76 79 81;
 	}
 }
