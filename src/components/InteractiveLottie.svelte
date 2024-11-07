@@ -38,7 +38,7 @@
 
   $effect(() => {
     if (forceAnimate) {
-		animation.goToAndPlay(0);
+		  animation.goToAndPlay(0);
 	  }
   })
 
