@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type BlogMeta from '@/utils/blogs.ts'
+  import type { BlogMeta } from '@/utils/blogs.ts'
   import BlogCard from '@components/blog/BlogCard.svelte';
 
   interface Props {
-    blogs: BlogMeta
+    blogs: BlogMeta[]
   }
 
   let { blogs }: Props = $props()

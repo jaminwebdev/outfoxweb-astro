@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type BlogMeta from '@/utils/blog.ts'
+  import type { BlogMeta } from '@/utils/blogs.ts'
 
   interface Props {
     blog: BlogMeta
