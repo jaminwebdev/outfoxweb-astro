@@ -13,6 +13,11 @@ import PortfolioRow from '@components/sections/PortfolioRow.svelte'
 import ServicesTabs from '@components/sections/ServicesTabs.svelte';
 // @ts-ignore
 import ImgBackground from '@components/ImgBackground.svelte';
+// @ts-ignore
+import BlogCard from '@components/blog/BlogCard.svelte';
+import { allBlogMeta } from '@/utils/blogs.ts';
+
+const recentPosts = allBlogMeta.slice(0, 3);
 
 const seo = {
 	title: 'Homepage Title',
@@ -95,6 +100,14 @@ const seo = {
         </p>
         <Button type="link" link="/" classes="px-[24px] py-[12px]" color="secondary">See More</Button>
       </div>
+    </section>
+    <section id="recentPosts">
+      <h2 class="text-center">Recent Posts</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        {recentPosts.map(post => (
+          <BlogCard blog={post}/>
+        ))}
+        </div>
     </section>
 	</main>
 </Layout>
