@@ -20,15 +20,31 @@
     {/snippet}
 	</NavigationCard>
 	<NavigationCard
-		lottiePath="/lottie/Drawing_tertiary.json"
-		bgColor="tertiary"
-		link="/web-design"
-		clickHandler={clickHandler}>
+		lottiePath="/lottie/Lab_Bottle_primary.json"
+		bgColor="primary"
+		link="/"
+		clickHandler={clickHandler}
+    classes="pointer-events-none">
       {#snippet heading()}
-      <span>Web Design</span>
+      <span>Web Design Tools</span><br>
+      <span>(coming soon)</span>
       {/snippet}
       {#snippet body()}
-        <span>Turn your web dud in to a web stud with best UX research and insights</span>
+        <span>Use our free wireframe system to increase your design velocity.</span>
       {/snippet}
 	</NavigationCard>
+  <NavigationCard
+    lottiePath="/lottie/Magnet_secondary.json"
+    bgColor="secondary"
+    link="/"
+    clickHandler={clickHandler}
+    classes="pointer-events-none">
+      {#snippet heading()}
+      <span>SEO Tools</span><br>
+      <span>(coming soon)</span>
+      {/snippet}
+      {#snippet body()}
+        <span>Leverage our free tools to boost your website search performance</span>
+      {/snippet}
+  </NavigationCard>
 </div>

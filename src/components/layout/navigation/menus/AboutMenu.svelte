@@ -11,7 +11,7 @@
 </script>
 
 <div class="grid grid-cols-1 lg:grid-cols-4">
-	<NavigationCard lottiePath="/lottie/Conference_primary.json" link="/web-development" clickHandler={clickHandler}>
+	<NavigationCard lottiePath="/lottie/Conference_primary.json" link="/about" clickHandler={clickHandler}>
     {#snippet heading()}
       <span>About the Company</span>
     {/snippet}
@@ -22,7 +22,7 @@
 	<NavigationCard
 		lottiePath="/lottie/Consult_tertiary.json"
 		bgColor="tertiary"
-		link="/web-design"
+		link="/contact"
 		clickHandler={clickHandler}>
       {#snippet heading()}
         <span>Contact Us</span>
