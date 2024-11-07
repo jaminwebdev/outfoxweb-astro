@@ -1,5 +1,14 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+//@ts-ignore
+import ImgBackground from '@components/ImgBackground.svelte';
+//@ts-ignore
+import ContactForm from '@components/forms/contact/ContactForm.svelte'
+//@ts-ignore
+import SocialLogo from '@components/SocialLogo.svelte'
+//@ts-ignore
+import TestimonialRow from '@components/sections/TestimonialRow.svelte'
+import { testimonials } from '@/utils/testimonials';
 
 const seo = {
 	title: 'Contact Title',
@@ -8,11 +17,27 @@ const seo = {
 ---
 
 <Layout {seo}>
-	<main>
-		<h1>Hello there</h1>
-		<h2>Secondary Heading</h2>
-		<h3>Tertiary Heading</h3>
-		<p>Body text here</p>
-	</main>
-	<a href="/showcase">Showcase</a>
+  <header class="grid grid-cols-1 md:grid-cols-2 gap-32 md:gap-14 py-18 md:py-20">
+    <div class="pt-10">
+      <h1 class="text-center md:text-left">Contact Us</h1>
+      <p class="my-7">We’re available on lots of platforms - or fill out our form and we’ll get back to you ASAP.</p>
+      <div class="grid grid-cols-[25px,max-content] gap-3 mb-8 justify-center md:justify-start">
+        <SocialLogo logo="email" />
+        <a href="mailto:hello@outfoxweb.com">hello@outfoxweb.com</p></a>
+      </div>
+      <div class="grid grid-cols-[repeat(4,35px)] gap-8 justify-center md:justify-start">
+        <SocialLogo logo="instagram"/>
+        <SocialLogo logo="linkedin"/>
+        <SocialLogo logo="facebook"/>
+        <SocialLogo logo="x"/>
+      </div>
+    </div>
+    <div class="relative grid justify-center md:justify-normal">
+      <ContactForm client:load/>
+      <ImgBackground classes="absolute -z-0 -top-[90px] -right-[170px] w-[150%] h-[150%]" />
+    </div>
+  </header>
+  <section id="testimonials" class="mt-12">
+    <TestimonialRow testimonials={[testimonials['kyle'], testimonials['stacy']]} />
+  </section>
 </Layout>
