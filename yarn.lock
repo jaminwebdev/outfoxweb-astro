@@ -3830,6 +3830,11 @@ svelte-hmr@^0.16.0:
   resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.16.0.tgz#9f345b7d1c1662f1613747ed7e82507e376c1716"
   integrity sha512-Gyc7cOS3VJzLlfj7wKS0ZnzDVdv3Pn2IuVeJPk9m2skfhcu5bq3wtIZyQGggr7/Iim5rH5cncyQft/kRLupcnA==
 
+svelte-vertical-timeline@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/svelte-vertical-timeline/-/svelte-vertical-timeline-1.0.2.tgz#e500d61ef0b7f0da405016bdf879792d22cbfc92"
+  integrity sha512-PAB+qBrSrNp5/saLXwIJ9r9dljdbiDB8ymc7c6ieIdbbP+71j7N+qUdZP1In+KXUbyXMpsG2I13KCgLalf6kOA==
+
 svelte2tsx@^0.7.21:
   version "0.7.22"
   resolved "https://registry.yarnpkg.com/svelte2tsx/-/svelte2tsx-0.7.22.tgz#2051d61d8581c538b39ce7c029ca9a4680113a83"

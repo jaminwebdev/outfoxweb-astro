@@ -1,18 +1,88 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+//@ts-ignore
+import BenefitCard from '@components/cards/BenefitCard.svelte';
+//@ts-ignore
+import ImgBackground from '@components/ImgBackground.svelte';
+//@ts-ignore
+import MultiStepDialog from '@components/forms/project-form/MultiStepDialog.svelte';
+import MobileScores from '@images/Mobile_Score.png';
+import FinanceImg from '@images/Finance_Header.png';
+//@ts-ignore
+import Timeline from '@components/sections/about/Timeline.svelte';
+//@ts-ignore 
+import TestimonialRow from '@components/sections/TestimonialRow.svelte';
+import { testimonials } from '@/utils/testimonials';
 
 const seo = {
-	title: 'Homepage Title',
-	description: 'Homepage description m8'
+	title: 'About Title',
+	description: 'About description m8'
 }
 ---
 
 <Layout {seo}>
-	<main>
-		<h1>Hello there</h1>
-		<h2>Secondary Heading</h2>
-		<h3>Tertiary Heading</h3>
-		<p>Body text here</p>
-	</main>
-	<a href="/showcase">Showcase</a>
+  <header class="grid grid-cols-1 md:grid-cols-2 items-center gap-32 md:gap-14 py-24 md:py-28">
+    <div class="grid gap-10 md:gap-7">
+      <h1 class="text-center md:text-left">About us</h1>
+      <p>We love building simple, user-friendly, and blazingly fast websites - all of which fit your unique business needs. </p>
+      <MultiStepDialog flavor="glow" classes="justify-self-center md:justify-self-start" client:load>
+        Let's chat
+      </MultiStepDialog>
+    </div>
+    <div class="relative grid justify-center md:justify-normal">
+      <Image
+        src={MobileScores}
+        width="582"
+        height="320"
+        alt="laptop and mobile phone mockup of modern website"
+        class="relative z-[1]" />
+      <ImgBackground classes="absolute -z-0 -top-[90px] -right-[170px] w-[150%] h-[150%]" />
+    </div>
+  </header>
+  <section id="benefitsRow" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px]">
+    <BenefitCard lottiePath="/lottie/Lab_Bottle_primary.json"
+    heading="We're experienced"
+    body="We’ve helped hundreds of companies reach their digital potential and their customers." 
+    initialPlay
+    client:load />
+    <BenefitCard lottiePath="/lottie/Consult_tertiary.json"
+    heading="We listen"
+    body="We don’t build one-size-fits-all solutions. We customize everything to your needs."
+    delay={750} 
+    initialPlay
+    client:load />
+    <BenefitCard lottiePath="/lottie/Delivery_secondary.json"
+    heading="We deliver"
+    body="We’ve not missed a single deadline in the last decade. "
+    delay={1500} 
+    initialPlay 
+    client:load/>
+  </section>
+  <section
+    id="intro"
+    class="rounded-xl bg-body-color-secondary px-6 py-10 md:p-[60px] grid grid-cols-1 lg:grid-cols-2 gap-4 items-center overflow-hidden">
+    <!-- Left column -->
+    <div>
+      <p class="bg-orange/20 text-orange py-[5px] px-[14px] rounded-md inline-block text-base mb-2">
+        WHAT WE'RE ABOUT
+      </p>
+      <h2 class="mb-6">Our Mission</h2>
+      <p class="mb-8 lg:mb-4">
+        At Outfox Web, we are dedicated to empowering businesses by delivering digital marketing solutions that are personalized, straightforward, and grounded in integrity. We listen carefully to your unique needs, ensuring our strategies are aligned with your goals.
+      </p>
+      <p class="mb-8 lg:mb-4">
+        By keeping things simple, we make complex marketing challenges easy to navigate and execute. Above all, we are committed to doing the right thing — building trust through transparency, ethical practices, and results that matter.
+      </p>
+    </div>
+    <!-- Right column -->
+    <Image
+      src={FinanceImg}
+      width="602"
+      height="513"
+      alt="Coworking business website design"
+      class="max-h-[380px] lg:max-h-[470px] -mb-[80px] lg:ml-[80px] object-contain justify-self-center lg:justify-self-auto" />
+  </section>
+  <Timeline />
+  <TestimonialRow testimonials={[testimonials['kyle'], testimonials['stacy']]} />
 </Layout>
