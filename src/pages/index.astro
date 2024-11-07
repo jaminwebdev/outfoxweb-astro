@@ -6,6 +6,8 @@ import HeadlessWPImg from '@images/Headless_WP_iMac.png';
 // @ts-ignore
 import Button from '@components/buttons/Button.svelte';
 // @ts-ignore
+import MultiStepDialog from '@components/forms/project-form/MultiStepDialog.svelte';
+// @ts-ignore
 import BenefitCard from '@/components/cards/BenefitCard.svelte';
 // @ts-ignore
 import PortfolioRow from '@components/sections/PortfolioRow.svelte'
@@ -33,8 +35,9 @@ const seo = {
         <p class="text-center md:text-left">
           Reach your audience, convert more customers, and rank higher with the best website for you.
         </p>
-        <Button type="link" link="/showcase" classes="justify-self-center md:justify-self-start"
-          >Showcase</Button>
+        <MultiStepDialog flavor="glow" classes="justify-self-center md:justify-self-start" client:load>
+          Let's Connect
+        </MultiStepDialog>
       </div>
       <div class="relative grid justify-center md:justify-normal">
         <Image

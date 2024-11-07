@@ -10,12 +10,34 @@
 	let { projectType = $bindable([]), handleClick }: Props = $props();
 </script>
 
-<p>What kind of project do you need help with?</p>
-<div class="grid">
-	<label
-		><input type="checkbox" bind:group={projectType} value={'New website'} /> New website</label>
-	<label><input type="checkbox" bind:group={projectType} value={'SEO'} /> SEO</label>
-	<label><input type="checkbox" bind:group={projectType} value={'Design'} /> Design</label>
+<p>Hi there. What kind of project do you need help with?</p>
+<div class="grid w-full my-4">
+	<label class="cursor-pointer">
+		<input
+			type="checkbox"
+			class="w-4 h-4 accent-primary text-primary cursor-pointer rounded-xl focus:ring-primary dark:focus:ring-primary"
+			bind:group={projectType}
+			value={'New website'} />
+		New website
+	</label>
+	<label class="cursor-pointer">
+		<input
+			type="checkbox"
+			class="w-4 h-4 accent-primary text-primary cursor-pointer rounded-xl focus:ring-primary dark:focus:ring-primary"
+			bind:group={projectType}
+			value={'SEO'} /> SEO</label>
+	<label class="cursor-pointer">
+		<input
+			type="checkbox"
+			class="w-4 h-4 accent-primary text-primary cursor-pointer rounded-xl focus:ring-primary dark:focus:ring-primary"
+			bind:group={projectType}
+			value={'Design'} /> Design</label>
+	<label class="cursor-pointer">
+		<input
+			type="checkbox"
+			class="w-4 h-4 accent-primary text-primary cursor-pointer rounded-xl focus:ring-primary dark:focus:ring-primary"
+			bind:group={projectType}
+			value={'Other'} /> Other</label>
 </div>
 
 {#if projectType.length > 0}

@@ -4,6 +4,7 @@
 	import ResourcesMenu from './menus/ResourcesMenu.svelte';
 	import AboutMenu from './menus/AboutMenu.svelte';
   import SiteLogo from '@/components/SiteLogo.svelte';
+  import MultiStepDialog from '@components/forms/project-form/MultiStepDialog.svelte';
 
 	let selectedMenuItem = $state('none');
 
@@ -50,8 +51,7 @@
 			</Dropdown>
 		</li>
 		<li>
-			<button class="rounded-lg bg-secondary text-body-text-light py-[12px] px-[28px]"
-				>Let's Chat</button>
+			<MultiStepDialog client:load/>
 		</li>
 	</ul>
 </div>

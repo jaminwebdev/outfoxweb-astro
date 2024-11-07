@@ -21,7 +21,7 @@
 	let emailValid = $derived(emailSchema.safeParse(email));
 </script>
 
-<div class="grid gap-4">
+<div class="grid gap-4 w-full mb-6">
 	<label class="grid">
 		What's your name, friend?
 		<input

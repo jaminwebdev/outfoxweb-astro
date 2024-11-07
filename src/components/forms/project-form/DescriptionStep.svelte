@@ -16,14 +16,16 @@
 <p>Great! Give me a brief overview of what you have in mind.</p>
 
 <!-- svelte-ignore element_invalid_self_closing_tag -->
-<textarea
-	rows="6"
-	class="w-full rounded-lg text-body-text-dark p-3"
-	bind:value={description}
-	placeholder="Tell me more"
-	onfocus={() => (touched = true)}
-	onblur={() => (blurred = true)} />
-<p>Characters left: {750 - description.length}</p>
+<div class="my-6">
+	<textarea
+		rows="6"
+		class="w-full rounded-lg text-body-text-dark p-3 text-base"
+		bind:value={description}
+		placeholder="Tell me more"
+		onfocus={() => (touched = true)}
+		onblur={() => (blurred = true)} />
+	<p>Characters left: {750 - description.length}</p>
+</div>
 
 {#if description.length < 1 && touched && blurred}
 	<p transition:fade|global class="text-secondary">
