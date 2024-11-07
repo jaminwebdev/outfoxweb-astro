@@ -1,15 +1,19 @@
-<script lang="ts">
-	import { type Snippet } from 'svelte';
-
-  interface Props {
+<script module>
+  export type ButtonFlavors = 'normal' | 'outline' | 'ghost' | 'glow'
+  export interface ButtonProps {
 		type?: 'button' | 'link';
-    flavor?: 'normal' | 'outline' | 'ghost' | 'glow';
+    flavor?: ButtonFlavors;
     color?: 'primary' | 'secondary' | 'tertiary';
     link?: string;
     classes?: string;
+    disabled?: boolean;
     btnCallback?: () => void;
     children: Snippet;
 	}
+</script>
+
+<script lang="ts">
+	import { type Snippet } from 'svelte';
 
 	let { 
     type = 'button',
@@ -17,9 +21,10 @@
     color = 'primary',
     link = '/',
     classes,
+    disabled = false,
     btnCallback,
-    children
-   }: Props = $props();
+    children,
+   }: ButtonProps = $props();
 
 	const glowColorVariants = {
 		primary:
@@ -53,6 +58,7 @@
 	<button
 		type="button"
 		onclick={btnCallback}
+    {disabled}
 		class={`
             py-[16px] 
             px-[28px] 
