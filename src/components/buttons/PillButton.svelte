@@ -3,12 +3,14 @@
 
   interface Props {
 		active: boolean;
+    classes: string;
     btnCallback?: () => void;
     children: Snippet;
 	}
 
 	let { 
     active = false,
+    classes,
     btnCallback,
     children
    }: Props = $props();
@@ -22,6 +24,6 @@
 <button
 	onclick={btnCallback}
 	class={` ${active ? pillColors['active'] : pillColors['inactive']}
-rounded-md py-[5px] px-[14px]`}>
+rounded-md py-[5px] px-[14px] ${classes}`}>
 	{@render children()}
 </button>
