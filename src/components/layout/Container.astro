@@ -3,7 +3,7 @@ interface Props {
   classes?: string;
 }
 
-const { classes } = Astro.props;
+const { classes = '' } = Astro.props;
 ---
 
 <div class=`max-w-[1200px] mx-auto px-6 ${classes}`>
