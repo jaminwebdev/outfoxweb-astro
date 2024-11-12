@@ -15,7 +15,7 @@
 
   const pageLoad = (getPageLoadTime() || AVG_TIME) / 1000;
 
-  let ctx = document.getElementById('myChart');
+  let ctx: HTMLCanvasElement;
 
   $effect(() => {
     if (ctx) {
@@ -56,5 +56,5 @@
 </script>
 
 <div class="relative w-[80vw] md:w-[40vw] lg:w-[40vw]">
-  <canvas id="myChart" bind:this={ctx} in:slide out:slide></canvas>
+  <canvas id="myChart" bind:this={ctx}></canvas>
 </div>
