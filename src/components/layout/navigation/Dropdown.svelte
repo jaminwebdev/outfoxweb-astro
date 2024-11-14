@@ -3,14 +3,21 @@
 
   interface Props {
     shown: boolean;
+    items: number;
     children: Snippet;
   }
-  let { shown = false, children }: Props = $props()
+  let { shown = false, children, items }: Props = $props()
+
+  const widths = {
+    2: 'w-[50%]',
+    3: 'w-[75%]',
+    4: 'w-[calc(100vw-30px)]'
+  }
 </script>
 
 <div
 	class:shown
-	class="opacity-0 invisible absolute top-0 left-[50%] -translate-x-2/4 bg-body-color shadow-xl shadow-secondary/5 dark:shadow-none dark:bg-body-color-secondary w-[calc(100vw-30px)] z-50 rounded-[25px] overflow-hidden">
+	class="opacity-0 invisible absolute top-0 left-[50%] -translate-x-2/4 bg-body-color shadow-xl shadow-secondary/5 dark:shadow-none dark:bg-body-color-secondary z-50 rounded-[25px] overflow-hidden {widths[items]}">
 	{@render children()}
 </div>
 

@@ -26,7 +26,7 @@
 				class="p-5"
 				onclick={() => setSelectedMenuItem('services')}
 				aria-expanded={selectedMenuItem === 'services'}>Services</button>
-			<Dropdown shown={selectedMenuItem === 'services'}>
+			<Dropdown shown={selectedMenuItem === 'services'} items={4}>
 				<ServicesMenu clickHandler={() => setSelectedMenuItem('none')} />
 			</Dropdown>
 		</li>
@@ -36,7 +36,7 @@
 				class="p-5"
 				onclick={() => setSelectedMenuItem('resources')}
 				aria-expanded={selectedMenuItem === 'resources'}>Resources</button>
-			<Dropdown shown={selectedMenuItem === 'resources'}>
+			<Dropdown shown={selectedMenuItem === 'resources'} items={3}>
 				<ResourcesMenu clickHandler={() => setSelectedMenuItem('none')} />
 			</Dropdown>
 		</li>
@@ -46,12 +46,12 @@
 				class="p-5"
 				onclick={() => setSelectedMenuItem('about')}
 				aria-expanded={selectedMenuItem === 'about'}>About</button>
-			<Dropdown shown={selectedMenuItem === 'about'}>
+			<Dropdown shown={selectedMenuItem === 'about'} items={2}>
 				<AboutMenu clickHandler={() => setSelectedMenuItem('none')} />
 			</Dropdown>
 		</li>
 		<li>
-			<MultiStepDialog client:load/>
+			<MultiStepDialog/>
 		</li>
 	</ul>
 </div>
