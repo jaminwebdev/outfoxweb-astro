@@ -5,7 +5,7 @@ import DesignHero from '@images/Figma_Tablet.png';
 import MuseumImg from '@images/Museum_Header.png';
 import VRLaptop from '@images/VR_Laptop_Left.png';
 // @ts-ignore
-import Button from '@components/buttons/Button.svelte';
+import MultiStepDialog from '@components/forms/project-form/MultiStepDialog.svelte';
 // @ts-ignore
 import ImgBackground from '@components/ImgBackground.svelte';
 // @ts-ignore
@@ -37,8 +37,9 @@ const seo = {
         <Checkmark body="Completely custom designs" />
         <Checkmark body="Latest design trends" />
       </div>
-      <Button type="link" link="/showcase" classes="justify-self-center md:justify-self-start"
-        >Let's Chat</Button>
+      <MultiStepDialog flavor="glow" classes="justify-self-center md:justify-self-start" client:load>
+        Let's Connect
+      </MultiStepDialog>
     </div>
     <div class="relative grid justify-center md:justify-normal">
       <Image
@@ -137,8 +138,9 @@ const seo = {
         with the latest in UX research, and even then, we believe in a truly collaborative process
         with our clients.
       </p>
-      <Button type="link" link="/" classes="px-[24px] py-[12px]" color="tertiary"
-        >Boost Your Website Today</Button>
+      <MultiStepDialog flavor="glow" color="tertiary" classes="justify-self-center md:justify-self-start" client:load>
+        Boost your website today
+      </MultiStepDialog>
     </div>
   </section>
   <section id="portfolioGrid" class="grid grid-cols-1 md:grid-cols-3 gap-8 my-[125px]">

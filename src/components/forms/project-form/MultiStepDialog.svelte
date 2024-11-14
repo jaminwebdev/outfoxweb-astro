@@ -7,11 +7,12 @@
 
   interface Props {
     flavor?: ButtonFlavors;
+    color?: 'primary' | 'secondary' | 'tertiary';
     classes?: string;
     children?: Snippet;
   }
 
-  let { children, flavor = 'normal', classes }: Props = $props()
+  let { children, flavor = 'normal', classes, color }: Props = $props()
 
 	let dialog: HTMLDialogElement;
 
@@ -30,7 +31,7 @@
   const handleDialogDiv = (e: MouseEvent) => e.stopPropagation();
 </script>
 
-<Button btnCallback={openDialog} {flavor} classes="px-[20px] py-[12px] text-base {classes}">
+<Button btnCallback={openDialog} {flavor} {color} classes="px-[20px] py-[12px] text-base {classes}">
   {#if children}
     {@render children()}
   {:else}

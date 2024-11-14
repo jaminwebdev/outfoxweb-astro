@@ -7,7 +7,7 @@
 	// @ts-ignore
 	import SaasImg from '@images/Saas_header.png?format=webp&quality=100&w=550';
   // @ts-ignore
-	import Button from '@components/buttons/Button.svelte';
+  import MultiStepDialog from '@components/forms/project-form/MultiStepDialog.svelte';
   // @ts-ignore
 	import ImgBackground from '@components/ImgBackground.svelte';
   // @ts-ignore
@@ -43,9 +43,9 @@ const seo = {
         <Checkmark body="Enhance user experience" />
         <Checkmark body="Increase engagement" />
       </div>
-      <Button type="link" link="/showcase" classes="justify-self-center md:justify-self-start">
-        Let's Chat
-      </Button>
+      <MultiStepDialog flavor="glow" classes="justify-self-center md:justify-self-start" client:load>
+        Let's Connect
+      </MultiStepDialog>
     </div>
     <div class="relative grid justify-center md:justify-end">
       <Image
@@ -144,9 +144,9 @@ const seo = {
         website is successful. The longer you wait, the more customers and rankings you’re losing out
         on.
       </p>
-      <Button type="link" link="/" classes="px-[24px] py-[12px]" color="tertiary">
-        Boost Your Website Today
-      </Button>
+      <MultiStepDialog flavor="glow" color="tertiary" classes="justify-self-center md:justify-self-start" client:load>
+        Boost your website today
+      </MultiStepDialog>
     </div>
   </section>
   <ProcessFAQs client:visible />

@@ -4,8 +4,8 @@ import { Image } from 'astro:assets';
 import VRLaptop from '@images/VR_Laptop_Left.png';
 import SEOHeroImg from '@images/Laptop_Metrics_Right.png';
 import CoworkImg from '@images/Cowork_Header.png';
-//@ts-ignore
-import Button from '@components/buttons/Button.svelte';
+// @ts-ignore
+import MultiStepDialog from '@components/forms/project-form/MultiStepDialog.svelte';
 //@ts-ignore
 import ImgBackground from '@components/ImgBackground.svelte';
 //@ts-ignore
@@ -41,8 +41,9 @@ const seo = {
         <Checkmark body="Build trust and credibility" />
         <Checkmark body="Increase engagement" />
       </div>
-      <Button type="link" link="/showcase" classes="justify-self-center md:justify-self-start"
-        >Let's Chat</Button>
+      <MultiStepDialog flavor="glow" classes="justify-self-center md:justify-self-start" client:load>
+        Let's Connect
+      </MultiStepDialog>
     </div>
     <div class="relative grid justify-center md:justify-normal">
       <Image
@@ -145,8 +146,9 @@ const seo = {
         approach. With the right keywords, content strategy, and page optimizations, you can rest
         assured your monthly visits will skyrocket.
       </p>
-      <Button type="link" link="/" classes="px-[24px] py-[12px]" color="tertiary"
-        >Boost Your Website Today</Button>
+      <MultiStepDialog flavor="glow" color="tertiary" classes="justify-self-center md:justify-self-start" client:load>
+        Boost your website today
+      </MultiStepDialog>
     </div>
   </section>
   <ProcessFAQs client:visible />

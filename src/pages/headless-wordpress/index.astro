@@ -2,9 +2,9 @@
 import Layout from '../../layouts/Layout.astro';
 import WorkspaceImg from '@/images/Workspace.png';
 import WordPressDash from '@/images/WordPress_Dash.png';
-import HeadlessWPMac from '@/images/Headless_WP_iMac.png'
+import HeadlessWPMac from '@/images/Headless_WP_iMac.png';
 // @ts-ignore
-import Button from '@components/buttons/Button.svelte';
+import MultiStepDialog from '@components/forms/project-form/MultiStepDialog.svelte';
 // @ts-ignore
 import ImgBackground from '@components/ImgBackground.svelte';
 // @ts-ignore
@@ -38,8 +38,9 @@ const seo = {
         <Checkmark body="Increased security" />
         <Checkmark body="Greater flexibility" />
       </div>
-      <Button type="link" link="/showcase" classes="justify-self-center md:justify-self-start"
-        >Showcase</Button>
+      <MultiStepDialog flavor="glow" classes="justify-self-center md:justify-self-start" client:load>
+        Let's Connect
+      </MultiStepDialog>
     </div>
     <div class="relative grid justify-center md:justify-normal">
       <Image src={WorkspaceImg} alt="3d art of a work desk"/>
@@ -127,8 +128,9 @@ const seo = {
       <p class="mt-4 mb-8">
         Your users will thank you for having better load times, less bugs, and an overall more reliable product than the old vanilla WordPress product. 
       </p>
-      <Button type="link" link="/" classes="px-[24px] py-[12px]" color="tertiary"
-        >Boost Your Website Today</Button>
+      <MultiStepDialog flavor="glow" color="tertiary" classes="justify-self-center md:justify-self-start" client:load>
+        Boost your website today
+      </MultiStepDialog>
     </div>
   </section>
   <section id="secondaryStats" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px] mt-[40px]">
