@@ -22,27 +22,26 @@
 </script>
 
 <div class="grid gap-4 w-full mb-6">
-	<label class="grid">
+	<label>
 		What's your name, friend?
 		<input
 			type="text"
 			bind:value={name}
 			onfocus={() => (nameTouched = true)}
 			onblur={() => (nameBlurred = true)}
-			class="text-body-text-dark p-2 rounded-lg" />
+			class="text-body-text-dark p-2 rounded-lg w-full" />
 		{#if name.length < 1 && nameTouched && nameBlurred}
 			<p transition:fade|global class="text-secondary">We need to know what to call you 😀.</p>
 		{/if}
 	</label>
-
-	<label class="grid">
+	<label>
 		What's your email {name}?
 		<input
 			type="email"
 			bind:value={email}
 			onfocus={() => (emailTouched = true)}
 			onblur={() => (emailBlurred = true)}
-			class="text-body-text-dark p-2 rounded-lg" />
+			class="text-body-text-dark p-2 rounded-lg w-full" />
 		{#if !emailValid.success && emailTouched && emailBlurred}
 			<p transition:fade|global class="text-secondary">
 				It's hard to email you without an email 😎.

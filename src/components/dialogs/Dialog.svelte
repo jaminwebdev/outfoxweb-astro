@@ -34,14 +34,14 @@
 <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 <dialog bind:this={dialog} 
   onclick={closeDialog} 
-  class="rounded-xl bg-transparent w-[75%] lg:w-[600px] {classes}">
+  class="rounded-xl bg-transparent w-[85%] lg:w-[600px] {classes}">
   {#if isOpen}
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <div
       onclick={handleDialogDiv}
       transition:scale={{ duration: 200 }}
-      class="p-10 pt-16 rounded-xl bg-body-color-secondary relative w-full">
+      class="p-5 md:p-10 pt-16 rounded-xl bg-body-color-secondary relative w-full">
       <PillButton
         btnCallback={closeDialog}
         active={false}
