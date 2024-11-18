@@ -4,8 +4,19 @@ import Layout from '../../layouts/Layout.astro';
 import DesignHero from '@images/Figma_Tablet.png';
 import MuseumImg from '@images/Museum_Header.png';
 import VRLaptop from '@images/VR_Laptop_Left.png';
+import WorkSpaceCover from '@images/Workspace_Cover.jpg';
+import InteriorDesignCover from '@images/Interior_Design_Cover.jpg';
+import LGGTMCOVER from '@images/LGGTM_Cover.jpg';
+import AgencyCover from '@images/Agency_Cover.jpg';
+import MortgageCover from '@images/Mortgage_Cover.jpg';
+import DigitalAgencyCover from '@images/Digital_Agency_Cover.jpg';
+import FinanceCover from '@images/Financial_Cover.jpg';
+import Agency2Cover from '@images/Agency_2_Cover.jpg';
+import DentalCover from '@images/Dental_Cover.jpg';
 // @ts-ignore
-import MultiStepDialog from '@components/forms/project-form/MultiStepDialog.svelte';
+import PortfolioDialog from '@components/dialogs/PortfolioDialog.svelte';
+// @ts-ignore
+import MultiStepDialog from '@components/dialogs/MultiStepDialog.svelte';
 // @ts-ignore
 import ImgBackground from '@components/ImgBackground.svelte';
 // @ts-ignore
@@ -53,22 +64,22 @@ const seo = {
   </header>
   <section id="benefitsRow" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px]">
     <BenefitCard lottiePath="/lottie/Lab_Bottle_primary.json"
-    heading="Research driven"
-    body="Using the best UX research and insights, we can turn your web dud in to a web stud." 
-    initialPlay
-    client:load />
+      heading="Research driven"
+      body="Using the best UX research and insights, we can turn your web dud in to a web stud." 
+      initialPlay
+      client:load />
     <BenefitCard lottiePath="/lottie/Fingerprint_tertiary.json"
-    heading="Completely custom"
-    body="Cookie-cutter designs are for cookie-cutter businesses. We believe in custom designs."
-    delay={750} 
-    initialPlay
-    client:load />
+      heading="Completely custom"
+      body="Cookie-cutter designs are for cookie-cutter businesses. We believe in custom designs."
+      delay={750} 
+      initialPlay
+      client:load />
     <BenefitCard lottiePath="/lottie/Magnet_secondary.json"
-    heading="Stay ahead of the curve"
-    body="We never stop taking inventory of the trends going on around the web, ensuring you get modern work."
-    delay={1500} 
-    initialPlay 
-    client:load/>
+      heading="Stay ahead of the curve"
+      body="We never stop taking inventory of the trends going on around the web, ensuring you get modern work."
+      delay={1500} 
+      initialPlay 
+      client:load/>
   </section>
   <section
     id="intro"
@@ -143,8 +154,76 @@ const seo = {
       </MultiStepDialog>
     </div>
   </section>
-  <section id="portfolioGrid" class="grid grid-cols-1 md:grid-cols-3 gap-8 my-[125px]">
-    <h2 class="col-start-1 md:col-span-3 text-center mb-5">Our recent work</h2>
+  <section id="portfolioGrid" class="my-[125px] grid">
+    <p class="place-self-center bg-tertiary/20 text-tertiary py-[5px] px-[14px] rounded-md text-base mb-2">
+      CHECK US OUT
+    </p>
+    <h2 class="text-center mb-10">Our recent work</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <PortfolioDialog client:load design="workspace">
+        <Image
+          src={WorkSpaceCover}
+          alt="laptop and mobile phone mockup of modern website"
+          class="relative z-[1]"
+          class="rounded-xl" />
+      </PortfolioDialog>
+      <PortfolioDialog client:load design="interiorDesign"> 
+        <Image
+          src={InteriorDesignCover}
+          alt="laptop and mobile phone mockup of modern website"
+          class="relative z-[1]"
+          class="rounded-xl" />
+      </PortfolioDialog>
+      <PortfolioDialog client:load design="LGGTM"> 
+        <Image
+          src={LGGTMCOVER}
+          alt="laptop and mobile phone mockup of modern website"
+          class="relative z-[1]"
+          class="rounded-xl" />
+      </PortfolioDialog>
+      <PortfolioDialog client:load design="agency"> 
+        <Image
+          src={AgencyCover}
+          alt="laptop and mobile phone mockup of modern website"
+          class="relative z-[1]"
+          class="rounded-xl" />
+      </PortfolioDialog>
+      <PortfolioDialog client:load design="mortgage"> 
+        <Image
+          src={MortgageCover}
+          alt="laptop and mobile phone mockup of modern website"
+          class="relative z-[1]"
+          class="rounded-xl" />
+      </PortfolioDialog>
+      <PortfolioDialog client:load design="digitalAgency"> 
+        <Image
+          src={DigitalAgencyCover}
+          alt="laptop and mobile phone mockup of modern website"
+          class="relative z-[1]"
+          class="rounded-xl" />
+      </PortfolioDialog>  
+      <PortfolioDialog client:load design="finance"> 
+        <Image
+          src={FinanceCover}
+          alt="laptop and mobile phone mockup of modern website"
+          class="relative z-[1]"
+          class="rounded-xl" />
+      </PortfolioDialog>  
+      <PortfolioDialog client:load design="agency2"> 
+        <Image
+          src={Agency2Cover}
+          alt="laptop and mobile phone mockup of modern website"
+          class="relative z-[1]"
+          class="rounded-xl" />
+      </PortfolioDialog>
+      <PortfolioDialog client:load design="dental"> 
+        <Image
+          src={DentalCover}
+          alt="laptop and mobile phone mockup of modern website"
+          class="relative z-[1]"
+          class="rounded-xl" />
+      </PortfolioDialog>
+    </div>
   </section>
   <ProcessFAQs client:visible />
   <TestimonialRow testimonials={[testimonials['kyle'], testimonials['stacy']]} />

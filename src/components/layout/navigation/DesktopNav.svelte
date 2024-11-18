@@ -4,7 +4,7 @@
 	import ResourcesMenu from './menus/ResourcesMenu.svelte';
 	import AboutMenu from './menus/AboutMenu.svelte';
   import SiteLogo from '@/components/SiteLogo.svelte';
-  import MultiStepDialog from '@components/forms/project-form/MultiStepDialog.svelte';
+  import MultiStepDialog from '@components/dialogs/MultiStepDialog.svelte';
 
 	let selectedMenuItem = $state('none');
 
