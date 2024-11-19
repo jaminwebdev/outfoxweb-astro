@@ -13,8 +13,6 @@
 	const handleMobileNav = () => open = !open;
 </script>
 
-
-
 <aside
 	class="fixed top-[100px] pt-10 pb-[200px] z-10 w-full h-screen bg-body-color text-body-text overflow-y-scroll"
 	class:open>
