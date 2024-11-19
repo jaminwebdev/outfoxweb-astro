@@ -9,7 +9,7 @@
 </script>
 
 <div class="rounded-xl overflow-hidden bg-body-color-secondary flex flex-col hover:scale-105 hover:[&_h3]:text-tertiary transition-all duration-300">
-  <a href="blog/{blog.slug}" class="h-full">
+  <a href="blog/{blog.slug}" class="h-full no-underline text-body-text">
     <div class="h-[265px] overflow-hidden">
         <img src={blog.cover.src} alt="{blog.title} cover image" class="h-full w-full"/>
     </div>

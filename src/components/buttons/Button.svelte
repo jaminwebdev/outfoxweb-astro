@@ -89,6 +89,7 @@
             cursor-pointer
             transition-all
             duration-300
+            no-underline
             ${flavor === 'glow' ? 'glowBtn' : ''}
             ${flavor === 'glow' ? glowColorVariants[color] : variants[flavor][color]} 
             ${classes}`}>
