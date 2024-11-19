@@ -43,11 +43,11 @@
 					out:fade|global={{ duration: 150 }}>
 					<div class="py-14 grid gap-4 justify-items-start">
 						<h3>Incredibly fast. <br />Incredibly engaging.</h3>
-						<p>With our battle-tested technology stack, your audience never has to wait.</p>
+						<p>Fast websites that captivate and convert—no waiting, just results.</p>
 						<Checkmark body="Less than 1 second load times" />
 						<Checkmark body="99.9% uptime in over 3 years" />
 						<Checkmark body="Feature rich and always interactive" />
-						<Button classes="mt-4" type="link" link="/">Learn More</Button>
+						<Button classes="mt-4" type="link" link="/web-development">Learn More</Button>
 					</div>
 					<div class="row-start-1 sm:row-start-auto relative justify-self-end">
 						<img
@@ -69,12 +69,12 @@
 					in:fade|global={{ duration: 150, delay: 200 }}
 					out:fade|global={{ duration: 150 }}>
 					<div class="py-14 grid gap-4 justify-items-start">
-						<h3>Design</h3>
-						<p>With our battle-tested technology stack, your audience never has to wait.</p>
-						<Checkmark body="Less than 1 second load times" />
-						<Checkmark body="99.9% uptime in over 3 years" />
-						<Checkmark body="Feature rich and always interactive" />
-						<Button classes="mt-4" type="link" link="/">Learn More</Button>
+            <h3>Designed for impact. <br />Optimized for results.</h3>
+            <p>Engaging, user-friendly designs that great and boost your bottom line.</p>
+						<Checkmark body="2-3x your conversions" />
+						<Checkmark body="Improve your user experience" />
+						<Checkmark body="Outshine your competition" />
+						<Button classes="mt-4" type="link" link="/web-design">Learn More</Button>
 					</div>
 					<div class="row-start-1 sm:row-start-auto relative justify-self-end">
 						<img
@@ -95,12 +95,12 @@
 					in:fade|global={{ duration: 150, delay: 200 }}
 					out:fade|global={{ duration: 150 }}>
 					<div class="py-14 grid gap-4 justify-items-start">
-						<h3>SEO</h3>
-						<p>With our battle-tested technology stack, your audience never has to wait.</p>
-						<Checkmark body="Less than 1 second load times" />
-						<Checkmark body="99.9% uptime in over 3 years" />
-						<Checkmark body="Feature rich and always interactive" />
-						<Button classes="mt-4" type="link" link="/">Learn More</Button>
+            <h3>Higher visibility. <br />Higher engagement.</h3>
+            <p>Proven SEO techniques that rank your site higher and bring in the right audience.</p>
+						<Checkmark body="Reach more users" />
+						<Checkmark body="2x your traffic (on average)" />
+						<Checkmark body="Get quality users that convert" />
+						<Button classes="mt-4" type="link" link="/seo-services">Learn More</Button>
 					</div>
 					<div class="row-start-1 sm:row-start-auto relative justify-self-end">
 						<img
@@ -121,12 +121,12 @@
 					in:fade|global={{ duration: 150, delay: 200 }}
 					out:fade|global={{ duration: 150 }}>
 					<div class="py-14 grid gap-4 justify-items-start">
-						<h3>Audits</h3>
-						<p>With our battle-tested technology stack, your audience never has to wait.</p>
-						<Checkmark body="Less than 1 second load times" />
-						<Checkmark body="99.9% uptime in over 3 years" />
-						<Checkmark body="Feature rich and always interactive" />
-						<Button classes="mt-4" type="link" link="/">Learn More</Button>
+            <h3>Identify problems. <br />Unlock potential.</h3>
+            <p>Our audits find hidden issues and offer solutions that boost speed, enhance usability, and increase conversions.</p>
+						<Checkmark body="Fix broken links and images" />
+						<Checkmark body="Find performance bottlenecks" />
+						<Checkmark body="Discover conversion opportunities" />
+						<Button classes="mt-4" type="link" link="/website-audit">Learn More</Button>
 					</div>
 					<div class="row-start-1 sm:row-start-auto relative justify-self-end">
 						<img

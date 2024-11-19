@@ -25,8 +25,8 @@
 		</p>
 		<h2 class="mb-4">Our latest work</h2>
 		<p class="mb-8 lg:mb-4">
-			We don’t like to toot our own horn, but we’re fond of our designs and UX capabilities. Click
-			the categories below to peruse our latest endeavors.
+			Our proven designs elevate brands and turn visitors into loyal customers. Click
+			the categories below to see some of our latest work.
 		</p>
 		<div class="mt-3 flex flex-wrap gap-5">
 			{#each categories as category}
@@ -37,7 +37,7 @@
 		</div>
 		<Button
 			type="link"
-			link="/"
+			link="/web-design"
 			classes="px-[24px] py-[12px] mt-10 mb-14 lg:mb-0"
 			color="tertiary">See More</Button>
 	</div>
