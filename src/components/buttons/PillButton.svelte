@@ -3,7 +3,7 @@
 
   interface Props {
 		active: boolean;
-    classes: string;
+    classes?: string;
     btnCallback?: () => void;
     children: Snippet;
 	}
