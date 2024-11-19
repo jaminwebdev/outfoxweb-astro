@@ -32,6 +32,10 @@
 		@apply text-lg;
 	}
 
+  a {
+    @apply text-primary underline hover:font-medium transition-all duration-200
+  }
+
     :root {
 		--color-primary: 142 89 237;
 		--color-secondary: 25 140 232;

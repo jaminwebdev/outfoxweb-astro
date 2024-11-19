@@ -41,7 +41,7 @@
     <div
       onclick={handleDialogDiv}
       transition:scale={{ duration: 200 }}
-      class="p-5 md:p-10 pt-16 rounded-xl bg-body-color-secondary relative w-full">
+      class="p-5 md:p-10 pt-16 md:pt-24 rounded-xl bg-body-color-secondary relative w-full overflow-hidden">
       <PillButton
         btnCallback={closeDialog}
         active={false}
