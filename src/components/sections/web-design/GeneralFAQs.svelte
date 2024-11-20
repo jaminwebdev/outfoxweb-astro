@@ -5,7 +5,7 @@ import Accordion from '@components/Accordion.svelte'
 
 <section id="FAQs" class="flex flex-col items-center mt-[125px]">
   <h2 class="text-center mb-5">FAQs</h2>
-  <Accordion>
+  <Accordion isOpen>
     {#snippet question()}
       <span>How long does design take?</span>
     {/snippet}
