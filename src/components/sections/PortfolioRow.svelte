@@ -21,7 +21,7 @@
 	<div>
 		<p
 			class="bg-primary/20 text-primary py-[5px] px-[14px] rounded-md inline-block text-base mb-2">
-			CHECK IT OUT
+			CHECK OUT
 		</p>
 		<h2 class="mb-4">Our latest work</h2>
 		<p class="mb-8 lg:mb-4">

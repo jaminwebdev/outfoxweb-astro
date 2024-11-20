@@ -16,7 +16,7 @@ import StatCard from '@components/cards/StatCard.svelte';
 // @ts-ignore
 import TestimonialRow from '@components/sections/TestimonialRow.svelte';
 // @ts-ignore
-import HeadlessFAQs from '@components/sections/headless-wp/HeadlessFAQs.svelte'
+import WebDevFAQs from '@components/sections/web-development/WebDevFAQs.svelte'
 import { testimonials } from '@/utils/testimonials';
 import { Image } from 'astro:assets';
 
@@ -150,6 +150,6 @@ const seo = {
   <TestimonialRow testimonials={[testimonials['kyle'], testimonials['stacy']]} />
   <section id="FAQs" class="flex flex-col items-center mt-24">
     <h2 class="text-center mb-5">FAQs</h2>
-    <HeadlessFAQs client:visible />
+    <WebDevFAQs client:visible />
   </section>  
 </Layout>

@@ -15,6 +15,9 @@ import PortfolioRow from '@components/sections/PortfolioRow.svelte'
 import ServicesTabs from '@components/sections/ServicesTabs.svelte';
 // @ts-ignore
 import ImgBackground from '@components/ImgBackground.svelte';
+//@ts-ignore 
+import TestimonialRow from '@components/sections/TestimonialRow.svelte';
+import { testimonials } from '@/utils/testimonials';
 // @ts-ignore
 import BlogCard from '@components/blog/BlogCard.svelte';
 import { allBlogMeta } from '@/utils/blogs.ts';
@@ -101,7 +104,8 @@ const seo = {
         <Button type="link" link="/headless-wordpress" classes="px-[24px] py-[12px]" color="secondary">See More</Button>
       </div>
     </section>
-    <section id="recentPosts">
+    <TestimonialRow testimonials={[testimonials['kyle'], testimonials['stacy']]} />
+    <section id="recentPosts" class="mt-32">
       <h2 class="text-center">Recent Posts</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
         {recentPosts.map(post => (
