@@ -50,4 +50,6 @@
 </script>
 
 <!-- Lottie file is located at static/heart.json -->
-<Lottie bind:path loop={false} on:animation={handler} bind:speed />
+<Lottie bind:path loop={false} on:animation={handler} bind:speed>
+
+</Lottie>
