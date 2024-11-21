@@ -14,7 +14,6 @@ const bodySchema = z.object({
 });
 
 export const POST: APIRoute = async ({ request }) => {
-  console.log(request)
 	const body = await request.json();
 	const { name, email, message } = body;
 
