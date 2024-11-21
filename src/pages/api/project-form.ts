@@ -10,14 +10,15 @@ const RESEND_ERROR_MESSAGE = 'Something went wrong. Please try again.';
 const bodySchema = z.object({
 	name: z.string().min(1),
 	email: z.string().email(),
-	message: z.string().min(1)
+	description: z.string().min(1),
+  projectType: z.string().min(1)
 });
 
 export const POST: APIRoute = async ({ request }) => {
 	const body = await request.json();
-	const { name, email, message } = body;
+	const { projectType, description, name, email } = body;
 
-	const parsed = bodySchema.safeParse({ name, email, message });
+	const parsed = bodySchema.safeParse({ name, email, description, projectType });
 
 	if (parsed.error) {
 		return new Response(
@@ -32,12 +33,13 @@ export const POST: APIRoute = async ({ request }) => {
 	const { error } = await resend.emails.send({
 		from: 'Jamin Roberts <hello@outfoxweb.com>',
 		to: 'outfoxweb@gmail.com',
-		subject: `New contact from ${name}`,
-		html: `<p><strong>Message:</strong>
-        </p> ${message}</p>
-        <br>
-        <p><strong>Email:</strong> ${email}</p>`,
-		text: `Message: ${message} Email: ${email}`
+		subject: `New service request from ${name}`,
+		html: `
+        <p><strong>${name}</strong>: is intereseted in ${projectType} services.</p>
+        <p><strong>Description:</strong> ${description} </p>
+        <p><strong>Email:</strong> ${email}</p>
+    `,
+		text: `${name}is intereseted in ${projectType} services. Description: ${description} Email: ${email}`
 	});
 
 	if (error) {
