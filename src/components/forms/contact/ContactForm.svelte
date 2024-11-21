@@ -4,67 +4,63 @@
 	import { slide } from 'svelte/transition';
 	// import { Turnstile } from 'svelte-turnstile';
 
-  interface Props {
-    turnstile?: string;
-  }
+  // interface Props {
+  //   turnstile?: string;
+  // }
 
-  let { turnstile }: Props = $props()
-
-	let name = $state('');
-	let email = $state('');
-  let message = $state('');
-
-	let nameTouched = $state(false);
-	let emailTouched = $state(false);
-	let messageTouched = $state(false);
+  // let { turnstile }: Props = $props()
+  let formState = $state({
+		name: '',
+		nameTouched: false,
+		email: '',
+		emailTouched: false,
+		message: '',
+		messageTouched: false
+	});
 
 	const MAX_MESSAGE_LENGTH = 500;
 
-	let formInvalid = $state(true);
+	type FormStatus = 'initial' | 'submitting' | 'fail' | 'success';
+	let formStatus: FormStatus = $state('initial');
 
-	let isSubmitting = $state(false);
-	let submitFail = $state(false);
 	let submitFailMessage = $state('');
-	let success = $state(false);
 
-	let turnstile_success = $state(false);
-
-  $effect(() => {
-    nameValid(name) && emailValid(email) && messageValid(message)
-      ? (formInvalid = false)
-      : (formInvalid = true);
-  })
+	// let turnstile_success = $state(false);
 
 	const nameValid = (name: string) => name.length;
 	const emailValid = (email: string) => email.length && emailRegex.test(email);
 	const messageValid = (message: string) => message.length && message.length < MAX_MESSAGE_LENGTH;
 
-	const inputClasses = 'rounded-xl p-2 bg-body-color text-white';
+	let formValid = $derived(
+		nameValid(formState.name) &&
+			emailValid(formState.email) &&
+			messageValid(formState.message)
+	);
+
+	const inputClasses = 'rounded-xl p-3 bg-body-color text-white';
 
 	const submitForm = async () => {
 		try {
-			isSubmitting = true;
+			formStatus = 'submitting';
 
-      console.log({
-        name,
-        email,
-        message
-      })
-			// const response = await fetch('/api/contact-form', {
-			// 	method: 'POST',
-			// 	headers: { 'Content-Type': 'application/json' },
-			// 	body: JSON.stringify({ name, email, message })
-			// });
-			// const body = await response.json();
+			const response = await fetch('/api/contact-form', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					name: formState.name,
+					email: formState.email,
+					message: formState.message
+				})
+			});
+			const body = await response.json();
 
-			// if (body.status !== 200 && body.error) {
-			// 	throw new Error(body.message, { cause: body.error });
-			// }
+			if (body.status !== 200 && body.error) {
+				throw new Error(body.message, { cause: body.error });
+			}
 
-			success = true;
+			formStatus = 'success';
 		} catch (e) {
-			submitFail = true;
-			isSubmitting = false;
+			formStatus = 'fail';
 			if (e instanceof Error) {
 				console.error(e.cause);
 				submitFailMessage = e.message;
@@ -74,9 +70,9 @@
 </script>
 
 <div class="bg-body-color-secondary/50 p-14 rounded-xl relative z-10">
-  {#if success}
+  {#if formStatus === 'success'}
     <div class="w-full h-full grid place-content-center">
-      <h3 class="text-center">Thank you, {name}!</h3>
+      <h3 class="text-center">Thank you, {formState.name}!</h3>
       <p class="text-center">We'll be in touch</p>
     </div>
   {:else}
@@ -88,9 +84,9 @@
             class={inputClasses}
             type="text"
             placeholder="Name"
-            bind:value={name}
-            onblur={() => (nameTouched = true)} />
-          {#if nameTouched && !nameValid(name)}
+            bind:value={formState.name}
+            onblur={() => (formState.nameTouched = true)} />
+          {#if formState.nameTouched && !nameValid(formState.name)}
             <span class="ml-2 text-primary">Please enter your name</span>
           {/if}
         </label>
@@ -100,9 +96,9 @@
             class={inputClasses}
             type="email"
             placeholder="Email"
-            bind:value={email}
-            onblur={() => (emailTouched = true)} />
-          {#if emailTouched && !emailValid(email)}
+            bind:value={formState.email}
+            onblur={() => (formState.emailTouched = true)} />
+          {#if formState.emailTouched && !emailValid(formState.email)}
             <span class="ml-2 text-primary">Please enter a valid email</span>
           {/if}
         </label>
@@ -112,13 +108,13 @@
             class={inputClasses}
             rows="10"
             placeholder="Message"
-            bind:value={message}
-            onblur={() => (messageTouched = true)}>
+            bind:value={formState.message}
+            onblur={() => (formState.messageTouched = true)}>
           </textarea>
-          {message.length}/750 characters remaining
-          {#if messageTouched && !messageValid(message) && message.length <= MAX_MESSAGE_LENGTH}
+          {formState.message.length}/750 characters remaining
+          {#if formState.messageTouched && !messageValid(formState.message) && formState.message.length <= MAX_MESSAGE_LENGTH}
             <span class="ml-2 text-primary">Please enter your message</span>
-          {:else if messageTouched && !messageValid(message) && message.length > MAX_MESSAGE_LENGTH}
+          {:else if formState.messageTouched && !messageValid(formState.message) && formState.message.length > MAX_MESSAGE_LENGTH}
             <span class="ml-2 text-primary"
               >Your message is too long. Please keep it under {MAX_MESSAGE_LENGTH} characters in length.</span>
           {/if}
@@ -127,17 +123,17 @@
           siteKey={turnstile}
           theme="dark"
           on:turnstile-callback={() => (turnstile_success = true)} /> -->
-        {#if !formInvalid}
+        {#if formValid}
           <span transition:slide>
             <Button
-              disabled={formInvalid || isSubmitting}
+              disabled={!formValid || formStatus === 'submitting'}
               flavor="normal"
               btnCallback={submitForm}>
-              {isSubmitting ? 'Submitting...' : 'Submit'}
+              {formStatus === 'submitting'? 'Submitting...' : 'Submit'}
             </Button>
           </span>
         {/if}
-        {#if submitFail}
+        {#if formStatus == 'fail'}
           <p class="text-primary">{submitFailMessage}</p>
         {/if}
       </form>
