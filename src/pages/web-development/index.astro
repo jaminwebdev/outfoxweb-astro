@@ -19,7 +19,7 @@ import WebDevFAQs from '@components/sections/web-development/WebDevFAQs.svelte'
 import { testimonials } from '@/utils/testimonials';
 import { Image } from 'astro:assets';
 // @ts-ignore
-import BarChart from '@components/charts/BarChart.svelte'
+import PageLoadBarChart from '@components/charts/PageLoadBarChart.svelte'
 
 const seo = {
 	title: 'Web Development: Fast, Reliable, and Engaging | Outfox Web',
@@ -45,7 +45,7 @@ const seo = {
     </div>
     <div class="relative">
       <h4 class="text-center">Page Load Times</h4>
-      <BarChart client:only />
+      <PageLoadBarChart client:only />
     </div>
   </header>
   <section id="benefitsRow" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px]">

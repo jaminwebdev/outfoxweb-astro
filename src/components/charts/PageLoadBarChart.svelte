@@ -1,5 +1,6 @@
 <script lang="ts">
   import { scaleLinear } from 'd3-scale';
+  import Rect from './Rect.svelte';
 
   const AVG_TIME = 175.5;
   const getPageLoadTime = () => {
@@ -17,29 +18,40 @@
   const pageLoad = (getPageLoadTime() || AVG_TIME) / 1000;
   const COLORS = ['stroke-primary', 'stroke-secondary', 'stroke-tertiary']
 
-  const points = [
-    { title: 'This page', time: pageLoad },
-    { title: 'WordPress', time: 7.5 },
-    { title: 'Avg site', time: 9.3 },
-  ];
+  let points = $state([
+    { title: 'This page', time: 0 },
+    { title: 'WordPress', time: 0 },
+    { title: 'Avg site', time: 0 },
+  ]);
+
+  setTimeout(() => {
+    points = [
+      { title: 'This page', time: pageLoad },
+      { title: 'WordPress', time: 7.5 },
+      { title: 'Avg site', time: 9.3 },
+    ];
+  }, 200);
 
   // Dimensions, Margins & Scales
   const yTicks = [0, 2, 4, 6, 8, 10];
   const padding = { top: 20, right: 15, bottom: 40, left: 25 };
 
-  let width = '100%';
-  let height = 375;
+  let width = $state(500);
+  let height = $state(375);
 
-  $: xScale = scaleLinear()
-    .domain([0, points.length])
-    .range([padding.left, width - padding.right]);
+
+  let xScale = $derived(
+    scaleLinear()
+      .domain([0, points.length])
+      .range([padding.left, width - padding.right])
+  );
 
   let yScale = scaleLinear()
     .domain([0, Math.max.apply(null, yTicks)])
     .range([height - padding.bottom, padding.top]);
 
-  $: innerWidth = width - (padding.left + padding.right);
-  $: barWidth = innerWidth / points.length;
+    let innerWidth = $derived(width - (padding.left + padding.right));
+    let barWidth = $derived(innerWidth / points.length);
 </script>
 
 <div class="w-full" bind:clientWidth={width}>
@@ -54,12 +66,14 @@
      </defs>
     <g class="bars">
       {#each points as point, i}
-        <rect
+        {@const fill = "url('#line-pattern-{i}')"}
+        <Rect
+          {i}
+          {yScale}
+          value={point.time}
           x={xScale(i) + 2}
-          y={yScale(point.time)}
           width={barWidth * 0.9}
-          height={yScale(0) - yScale(point.time)} 
-          style="fill: url('#line-pattern-{i}'); stroke: white; stroke-width: 2;"/>
+          {fill} />
       {/each}
     </g>
     <!-- Design y axis -->
