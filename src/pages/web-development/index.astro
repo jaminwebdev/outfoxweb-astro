@@ -19,7 +19,7 @@ import WebDevFAQs from '@components/sections/web-development/WebDevFAQs.svelte'
 import { testimonials } from '@/utils/testimonials';
 import { Image } from 'astro:assets';
 // @ts-ignore
-import Chart from '@components/Chart.svelte'
+import BarChart from '@components/charts/BarChart.svelte'
 
 const seo = {
 	title: 'Web Development: Fast, Reliable, and Engaging | Outfox Web',
@@ -43,8 +43,8 @@ const seo = {
         Let's Connect
       </MultiStepDialog>
     </div>
-    <div class="relative grid justify-center md:justify-normal">
-      <Chart client:only />
+    <div class="relative">
+      <BarChart client:only />
     </div>
   </header>
   <section id="benefitsRow" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px]">
