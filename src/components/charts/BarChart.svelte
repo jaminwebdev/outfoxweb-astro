@@ -19,7 +19,7 @@
 
   const points = [
     { title: 'This page', time: pageLoad },
-    { title: 'Avg WordPress', time: 7.5 },
+    { title: 'WordPress', time: 7.5 },
     { title: 'Avg site', time: 9.3 },
   ];
 
@@ -78,7 +78,7 @@
     <g class="axis x-axis">
       {#each points as point, i}
         <g class="tick" transform="translate({xScale(i)}, {height})">
-          <text x={barWidth / 2} y="-15" class="text-lg font-semibold fill-white">
+          <text x={barWidth / 2} y="-15" class="text-base md:text-large md:font-semibold fill-white">
             {point.title}
           </text>
         </g>
