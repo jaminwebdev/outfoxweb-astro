@@ -1,5 +1,5 @@
 <!-- Rect.svelte -->
-<script>
+<script lang="ts">
   import { tweened } from 'svelte/motion';
   import { cubicOut } from 'svelte/easing';
   import { interpolate } from 'd3-interpolate';
