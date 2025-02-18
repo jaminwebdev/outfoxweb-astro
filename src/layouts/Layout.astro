@@ -1,7 +1,7 @@
 --- 
 import { SEO } from 'astro-seo';
-import { ViewTransitions } from 'astro:transitions';
-import '../styles/tailwind.css';
+import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';
 // @ts-ignore
 import Navigation from '@components/layout/navigation/Navigation.svelte';
 import Container from '@components/layout/Container.astro';
@@ -28,7 +28,7 @@ const { seo } = Astro.props as Props;
 		<meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<ViewTransitions />
+		<ClientRouter />
 	</head>
 	<body class="bg-body-color relative">
     <div class="overflow-x-hidden">

@@ -34,7 +34,7 @@
 <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 <dialog bind:this={dialog} 
   onclick={closeDialog} 
-  class="rounded-xl bg-transparent w-[85%] lg:w-[600px] {classes}">
+  class="rounded-xl bg-transparent w-[85%] lg:w-[600px] m-auto {classes}">
   {#if isOpen}
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <!-- svelte-ignore a11y_click_events_have_key_events -->

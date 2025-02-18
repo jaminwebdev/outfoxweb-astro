@@ -38,7 +38,8 @@
 
   let width = $state(500);
   let height = $state(375);
-
+  let innerWidth = $derived(width - (padding.left + padding.right));
+  let barWidth = $derived(innerWidth / points.length);
 
   let xScale = $derived(
     scaleLinear()
@@ -46,12 +47,10 @@
       .range([padding.left, width - padding.right])
   );
 
-  let yScale = scaleLinear()
+  let yScale = $derived(scaleLinear()
     .domain([0, Math.max.apply(null, yTicks)])
-    .range([height - padding.bottom, padding.top]);
-
-    let innerWidth = $derived(width - (padding.left + padding.right));
-    let barWidth = $derived(innerWidth / points.length);
+    .range([height - padding.bottom, padding.top])
+  );
 </script>
 
 <div class="w-full" bind:clientWidth={width}>

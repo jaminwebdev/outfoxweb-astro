@@ -18,7 +18,7 @@
 	class:open>
 	<nav class="px-8 text-xl">
 		<div class="bg-body-color">
-			<Accordion bodyClasses="px-0">
+			<Accordion bodyClasses="px-0!">
         {#snippet question()}
           <span>Services</span>
         {/snippet}
@@ -28,7 +28,7 @@
           </div>
         {/snippet}
 			</Accordion>
-			<Accordion bodyClasses="px-0">
+			<Accordion bodyClasses="px-0!">
         {#snippet question()}
           <span>Resources</span>
         {/snippet}
@@ -38,7 +38,7 @@
           </div>
         {/snippet}
 			</Accordion>
-			<Accordion bodyClasses="px-0">
+			<Accordion bodyClasses="px-0!">
         {#snippet question()}
           <span>About</span>
         {/snippet}

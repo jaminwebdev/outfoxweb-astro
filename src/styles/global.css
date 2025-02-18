@@ -1,1 +1,85 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --primary: rgb(142, 89, 237);
+  --secondary: 25 140 232;
+  --tertiary: 56 203 159;
+  --orange: 247 117 76;
+  --body-text: 29 29 32;
+  --body-color: 244 244 245;
+  --body-color-secondary: 230 237 244;
+  --body-color-tertiary: 202 217 232;
+}
+
+:root[class~="dark"] {
+  --primary: rgb(98, 233, 195);
+  --secondary: rgb(25, 140, 232);
+  --tertiary: rgb(142, 89, 237);
+  --orange: rgb(247, 117, 76);
+  --body-text: rgb(244, 244, 245);
+  --body-color: rgb(29, 29, 32);
+  --body-color-secondary: rgb(31, 35, 38);
+  --body-color-tertiary: rgb(76, 79, 81);
+}
+
+@theme {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+	--color-tertiary: var(--tertiary);
+	--color-orange: var(--orange);
+	--color-body-color: var(--body-color);
+	--color-body-color-secondary: var(--body-color-secondary);
+	--color-body-color-tertiary: var(--body-color-tertiary);
+	--color-body-text: var(--body-text);
+	--color-body-text-dark: #1D1D20;
+	--color-body-text-light: #F4F4F5;
+}
+
+
+
+@font-face {
+	font-family: 'Inter';
+	src: url('/src/fonts/Inter/Inter-VariableFont.ttf');
+}
+
+@layer base {
+	body {
+		font-family: Inter, system-ui, sans-serif;
+		overflow-x: hidden;
+    @apply text-body-text;
+	}
+	body h1 {
+		@apply text-4xl md:text-[55px] leading-tight font-black;
+	}
+
+	body h2 {
+		@apply text-3xl md:text-[40px] leading-[2.75rem] font-black;
+	}
+
+	body h3 {
+		@apply text-2xl md:text-3xl font-bold;
+	}
+
+	body h4 {
+		@apply text-lg md:text-xl font-semibold;
+	}
+	body p {
+		@apply text-lg;
+	}
+
+  a {
+    @apply text-primary underline hover:font-medium transition-all duration-200
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+  
+@media screen and (max-width: 767px) {
+	.timeline-container ul li > div:first-child {
+		display: none;
+	}
+}

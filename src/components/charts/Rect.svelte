@@ -4,7 +4,7 @@
   import { cubicOut } from 'svelte/easing';
   import { interpolate } from 'd3-interpolate';
 
-  let { x, value, yScale, width, height, i, fill } = $props()
+  let { x, value, yScale, width, i, fill } = $props()
 
   const tweenParams = {
     delay: 300 + i * 50,

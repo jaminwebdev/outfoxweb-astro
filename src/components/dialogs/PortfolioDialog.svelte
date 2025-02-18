@@ -40,7 +40,7 @@
   {@render children()}
 </button>
 
-<Dialog {isOpen} clickHandler={closeDialog} classes="max-h-[600px]">
+<Dialog {isOpen} clickHandler={closeDialog} classes="max-h-[600px]!">
   <img src={imgMap[design]} alt="Cover" />
 </Dialog>
 
