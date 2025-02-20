@@ -1,9 +1,10 @@
 import { z, defineCollection, reference } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 // https://docs.astro.build/en/guides/images/#images-in-content-collections
 
 const blog = defineCollection({
-	type: 'content',
+	loader: glob({ pattern: '**/*.(md|mdx)', base: './src/content/blog' }),
 	schema: ({ image }) =>
 		z.object({
 			title: z.string().max(75, { message: 'Title must be 75 characters or less' }),
@@ -17,7 +18,7 @@ const blog = defineCollection({
 });
 
 const portfolio = defineCollection({
-	type: 'content',
+	loader: glob({ pattern: '**/*.(md|mdx)', base: './src/content/portfolio' }),
 	schema: ({ image }) =>
 		z.object({
 			title: z.string(),

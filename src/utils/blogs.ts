@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 const allBlogs = await getCollection("blog");
 
 export const allBlogMeta = allBlogs.map(entry => ({
-  slug: entry.slug,
+  slug: entry.id,
   cover: entry.data.coverImage,
   title: entry.data.title,
   tags: entry.data.tags,
