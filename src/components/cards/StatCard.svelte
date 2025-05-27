@@ -25,7 +25,7 @@
 	<h4 class="text-[20px] mb-3">
     {subtitle}
 	</h4>
-	<p class="text-body-text-dark dark:text-body-text-light">
+	<p class=" dark:">
 		{body}
 	</p>
 </div>

@@ -28,23 +28,23 @@
 
 	const glowColorVariants = {
 		primary:
-			'bg-primary shadow-[0_0_0.5em_0] shadow-primary after:shadow-[0_0_2.25rem] after:shadow-primary text-body-text-dark',
+			'bg-primary shadow-[0_0_0.5em_0] shadow-primary after:shadow-[0_0_2.25rem] after:shadow-primary text-background',
 		secondary:
-			'bg-secondary shadow-[0_0_.5em_0] shadow-secondary after:shadow-[0_0_2.25rem] after:shadow-secondary text-body-text-light',
+			'bg-secondary shadow-[0_0_.5em_0] shadow-secondary after:shadow-[0_0_2.25rem] after:shadow-secondary text-background dark:text-body-text',
 		tertiary:
-			'bg-tertiary shadow-[0_0_.5em_0] shadow-tertiary after:shadow-[0_0_2.25rem] after:shadow-tertiary text-body-text-dark dark:text-body-text-light'
+			'bg-tertiary shadow-[0_0_.5em_0] shadow-tertiary after:shadow-[0_0_2.25rem] after:shadow-tertiary text-background dark:text-body-text'
 	};
 
   const variants = {
 		normal: {
-			primary: 'bg-primary hover:scale-[1.05] text-body-text-light dark:text-body-text-dark',
-			secondary: 'bg-secondary text-body-text hover:scale-[1.05]',
-			tertiary: 'bg-tertiary text-body-text hover:scale-[1.05]'
+			primary: 'bg-primary hover:scale-[1.05] text-background',
+			secondary: 'bg-secondary hover:scale-[1.05] text-background dark:text-body-text',
+			tertiary: 'bg-tertiary hover:scale-[1.05] text-background dark:text-body-text'
 		},
 		outline: {
-			primary: 'border-2 border-primary text-primary hover:bg-primary hover:text-body-text',
-			secondary: 'border-2 border-secondary text-secondary hover:bg-secondary hover:text-body-text',
-			tertiary: 'border-2 border-tertiary text-tertiary hover:bg-tertiary hover:text-body-text'
+			primary: 'border-2 border-primary text-primary hover:bg-primary dark:hover:text-background hover:text-foreground',
+			secondary: 'border-2 border-secondary text-secondary hover:bg-secondary hover:text-foreground',
+			tertiary: 'border-2 border-tertiary text-tertiary hover:bg-tertiary hover:text-foreground'
 		},
 		ghost: {
 			primary: 'bg-primary/10 text-primary hover:bg-primary/30 hover:scale-[1.05]',

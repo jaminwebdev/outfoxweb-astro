@@ -17,7 +17,7 @@
   <label for="search">
     <input
       name="search"
-      class="block rounded-lg p-4 w-full bg-color-body-secondary text-body-text-dark"
+      class="block rounded-lg p-4 w-full bg-color-body-secondary "
       type="text"
       placeholder="Search..."
       bind:value={searchTerm} />

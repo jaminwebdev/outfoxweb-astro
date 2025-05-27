@@ -19,7 +19,7 @@
 <div class="my-6">
 	<textarea
 		rows="6"
-		class="w-full rounded-lg text-body-text-dark p-3 text-base"
+		class="w-full rounded-lg p-3 bg-body-color"
 		bind:value={description}
 		placeholder="Tell me more"
 		onfocus={() => (touched = true)}

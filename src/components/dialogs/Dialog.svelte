@@ -34,7 +34,7 @@
 <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 <dialog bind:this={dialog} 
   onclick={closeDialog} 
-  class="rounded-xl bg-transparent w-[85%] lg:w-[600px] fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 {classes}">
+  class="rounded-xl bg-transparent w-[85%] lg:w-[600px] fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-foreground {classes}">
   {#if isOpen}
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <!-- svelte-ignore a11y_click_events_have_key_events -->
@@ -45,7 +45,7 @@
       <PillButton
         btnCallback={closeDialog}
         active={false}
-        classes="absolute top-4 right-6 text-body-text-dark dark:text-body-text-light text-base bg-primary/20">
+        classes="absolute top-4 right-6 text-base bg-primary/20">
         close x
       </PillButton>
       {@render children()}

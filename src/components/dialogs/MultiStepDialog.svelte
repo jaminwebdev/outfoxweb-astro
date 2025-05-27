@@ -19,7 +19,7 @@
   let closeDialog = () => isOpen = false
 </script>
 
-<Button btnCallback={openDialog} {flavor} {color} classes="px-[20px] py-[12px] text-base {classes}">
+<Button btnCallback={openDialog} {flavor} {color} classes="px-[20px] py-[12px] {classes}">
   {#if children}
     {@render children()}
   {:else}
@@ -28,6 +28,6 @@
 </Button>
 
 <Dialog {isOpen} clickHandler={closeDialog}>
-  <MultiStepProjectForm classes="text-body-text-light w-full" closeCallback={closeDialog} />
+  <MultiStepProjectForm classes=" w-full" closeCallback={closeDialog} />
 </Dialog>
 
