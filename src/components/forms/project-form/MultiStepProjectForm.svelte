@@ -3,13 +3,16 @@
 	import ProjectStep from './ProjectStep.svelte';
 	import DescriptionStep from './DescriptionStep.svelte';
 	import InfoStep from './InfoStep.svelte';
-	import { Lottie } from 'lottie-svelte';
+	import { onMount, onDestroy } from 'svelte';
+
+	let Lottie: any = $state(null);
+	let mounted = $state(false);
 
 	interface Props {
 		classes?: string;
 		closeCallback?: () => void;
 	}
-  type ProjectTypes = 'New website' | 'SEO' | 'Design' | 'Other';
+	type ProjectTypes = 'New website' | 'SEO' | 'Design' | 'Other';
 
 	let { classes, closeCallback }: Props = $props();
 
@@ -22,35 +25,35 @@
 	let email = $state('');
 
 	let formStatus: 'initial' | 'submitting' | 'success' | 'error' = $state('initial');
-  let errorMessage = $state<string>()
+	let errorMessage = $state<string>()
 	let selfClose = $state(12);
 	let closeInterval: ReturnType<typeof setInterval>;
 
 	const submitForm = async () => {
-    try {
-      formStatus = 'submitting';
+		try {
+			formStatus = 'submitting';
 
-      const formItems = {
-        projectType: projectType.join(', '),
-        description,
-        name,
-        email
-      };
-      const response = await fetch('/api/project-form', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formItems)
-        });
+			const formItems = {
+				projectType: projectType.join(', '),
+				description,
+				name,
+				email
+			};
+			const response = await fetch('/api/project-form', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify(formItems)
+				});
 
-      const body = await response.json();
+			const body = await response.json();
 
-      if (body.status !== 200 && body.error) {
-        throw new Error(body.message, { cause: body.error });
-      }
+			if (body.status !== 200 && body.error) {
+				throw new Error(body.message, { cause: body.error });
+			}
 
-      setTimeout(() => (formStatus = 'success'), 2000);
-      closeInterval = setInterval(() => selfClose--, 1000);
-    } catch (e) {
+			setTimeout(() => (formStatus = 'success'), 2000);
+			closeInterval = setInterval(() => selfClose--, 1000);
+		} catch (e) {
 			formStatus = 'error';
 			if (e instanceof Error) {
 				console.error(e.cause);
@@ -74,20 +77,34 @@
 			if (closeCallback) closeCallback();
 		}
 	});
+
+	onMount(async () => {
+		mounted = true;
+		const mod = await import('lottie-svelte');
+		Lottie = mod.Lottie;
+	});
+
+	onDestroy(() => {
+		if (closeInterval) {
+			clearInterval(closeInterval);
+		}
+	});
 </script>
 
 <div class={classes}>
 
-  {#if formStatus === 'error'}
-    <div transition:slide>
-      <p>{errorMessage}</p>
-    </div>
-  {/if}
+	{#if formStatus === 'error'}
+		<div transition:slide>
+			<p>{errorMessage}</p>
+		</div>
+	{/if}
 
 	{#if formStatus === 'submitting'}
 		<div in:slide={{ duration: 300 }}>
 			<div class="max-w-[350px] block mx-auto">
-				<Lottie path="/lottie/Loading_Droplet.json" loop={false} />
+				{#if mounted && Lottie}
+					<Lottie path="/lottie/Loading_Droplet.json" loop={false} />
+				{/if}
 			</div>
 			<p class="text-center">Submitting...</p>
 		</div>
@@ -98,14 +115,18 @@
 			{#if selfClose > 0}
 				<div>
 					<div class="max-w-[350px] block mx-auto">
-						<Lottie path="/lottie/Successful.json" loop={false} />
+						{#if mounted && Lottie}
+							<Lottie path="/lottie/Successful.json" loop={false} />
+						{/if}
 					</div>
 					<h3 class="text-center">Hooray we'll be in touch</h3>
 					<span class="text-center">This message will self destruct in {selfClose} seconds 💣</span>
 				</div>
 			{:else}
 				<div class="max-w-[350px]">
-					<Lottie path="/lottie/Bubbles.json" loop={false} height={200} />
+					{#if mounted && Lottie}
+						<Lottie path="/lottie/Bubbles.json" loop={false} height={200} />
+					{/if}
 				</div>
 			{/if}
 		</div>

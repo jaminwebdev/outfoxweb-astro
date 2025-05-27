@@ -2982,7 +2982,7 @@ longest-streak@^3.0.0:
   resolved "https://registry.yarnpkg.com/longest-streak/-/longest-streak-3.1.0.tgz#62fa67cd958742a1574af9f39866364102d90cd4"
   integrity sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==
 
-lottie-svelte@^1.3.6:
+lottie-svelte@^1.3.7:
   version "1.3.7"
   resolved "https://registry.yarnpkg.com/lottie-svelte/-/lottie-svelte-1.3.7.tgz#cc8498c3c103e83766da9a10ec8e9426d28c9de3"
   integrity sha512-L90Kf3wCgCaW4z94W2SlduV1mmnzBUv7f0trQBjDSNVVINzzgcgkwk0nNPuL/2J1yHgLHVlRxmN6mUeJj0Ac9Q==
