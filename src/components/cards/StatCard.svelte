@@ -16,7 +16,7 @@
 </script>
 
 <div
-	class="p-[25px] rounded-lg bg-gradient-to-br from-body-color-secondary {bgGradients[
+	class="p-[25px] rounded-lg bg-linear-to-br from-body-color-secondary {bgGradients[
 		color
 	]}">
 	<h3 class="text-[32px] md:text-[36px]">

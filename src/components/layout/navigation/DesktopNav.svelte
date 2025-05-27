@@ -17,7 +17,7 @@
 	};
 </script>
 
-<div class="py-[28px] grid grid-cols-[minmax(200px,_250px)_1fr]">
+<div class="py-[28px] grid grid-cols-[minmax(200px,250px)_1fr]">
 	<SiteLogo />
 	<ul class="grid gap-12 grid-flow-col text-xl justify-self-end items-center">
 		<li>

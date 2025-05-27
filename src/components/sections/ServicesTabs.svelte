@@ -51,13 +51,13 @@
 					</div>
 					<div class="row-start-1 sm:row-start-auto relative justify-self-end">
 						<img
-							class="relative z-[1]"
+							class="relative z-1"
 							height="395"
 							width="475"
 							src={WebDevImg.src}
 							alt="Mobile website design with Lighthouse performance score"
 							loading="lazy" />
-						<ImgBackground classes="absolute -z-0 top-[0%] -right-[20%] w-[150%] h-[110%]" />
+						<ImgBackground classes="absolute -z-0 -top-[0%] -right-[20%] w-[150%] h-[110%]" />
 					</div>
 				</div>
 			</div>
@@ -78,7 +78,7 @@
 					</div>
 					<div class="row-start-1 sm:row-start-auto relative justify-self-end">
 						<img
-							class="relative z-[1]"
+							class="relative z-1"
 							src={DesignImg.src}
 							alt="Website design in Figma"
 							height="320"
@@ -104,7 +104,7 @@
 					</div>
 					<div class="row-start-1 sm:row-start-auto relative justify-self-end">
 						<img
-							class="relative z-[1] max-w-[425px] w-full"
+							class="relative z-1 max-w-[425px] w-full"
 							src={SEOImg.src}
 							alt="Graphic showing improved SEO graphs overlaying website design"
 							height="512"
@@ -130,7 +130,7 @@
 					</div>
 					<div class="row-start-1 sm:row-start-auto relative justify-self-end">
 						<img
-							class="relative z-[1] max-w-[425px] w-full"
+							class="relative z-1 max-w-[425px] w-full"
 							src={AuditImg.src}
 							alt="Laptop with audit metric graphics overlayed"
 							height="372"

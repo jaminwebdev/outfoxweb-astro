@@ -3,14 +3,14 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-primary: rgb(var(--color-primary));
-  --color-secondary: rgb(var(--color-secondary));
-  --color-tertiary: rgb(var(--color-tertiary));
-  --color-orange: rgb(var(--color-orange));
-  --color-body-color: rgb(var(--body-color));
-  --color-body-color-secondary: rgb(var(--body-color-secondary));
-  --color-body-color-tertiary: rgb(var(--body-color-tertiary));
-  --color-body-text: rgb(var(--color-body-text));
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-tertiary: var(--color-tertiary);
+  --color-orange: var(--color-orange);
+  --color-body-color: var(--body-color);
+  --color-body-color-secondary: var(--body-color-secondary);
+  --color-body-color-tertiary: var(--body-color-tertiary);
+  --color-body-text: var(--color-body-text);
   --color-body-text-dark: #1d1d20;
   --color-body-text-light: #f4f4f5;
 }
@@ -69,26 +69,40 @@
     @apply text-primary underline hover:font-medium transition-all duration-200
   }
 
+  button:not(:disabled),
+	[role='button']:not(:disabled) {
+		cursor: pointer;
+	}
+
+	.blogContentWrapper {
+		ul ul {
+			list-style-type: revert;
+			list-style-position: unset;
+			margin-left: 1.5rem;
+		}
+		@apply [&_li]:my-2 [&_ul]:list-disc [&_ul]:list-inside;
+	}
+
   :root {
-		--color-primary: 142 89 237;
-		--color-secondary: 25 140 232;
-		--color-tertiary: 56 203 159;
-		--color-orange: 247 117 76;
-		--color-body-text: 29 29 32;
-		--body-color: 244 244 245;
-		--body-color-secondary: 230 237 244;
-		--body-color-tertiary: 202 217 232;
+		--color-primary: hsl(259, 81%, 64%);
+		--color-secondary: hsl(206, 81%, 50%);
+		--color-tertiary: hsl(162, 60%, 51%);
+		--color-orange: hsl(15, 92%, 63%);
+		--color-body-text: hsl(240, 6%, 12%);
+		--body-color: hsl(240, 7%, 96%);
+		--body-color-secondary: hsl(210, 38%, 93%);
+		--body-color-tertiary: hsl(210, 44%, 85%);
 	}
 
 	:root[class~="dark"] {
-		--color-primary: 98 233 195;
-		--color-secondary: 25 140 232;
-		--color-tertiary: 142 89 237;
-		--color-orange: 247 117 76;
-		--color-body-text: 244 244 245;
-		--body-color: 29 29 32;
-		--body-color-secondary: 31 35 38;
-		--body-color-tertiary: 76 79 81;
+		--color-primary: hsl(162, 72%, 65%);
+		--color-secondary: hsl(206, 81%, 50%);
+		--color-tertiary: hsl(259, 81%, 64%);
+		--color-orange: hsl(15, 92%, 63%);
+		--color-body-text: hsl(240, 7%, 96%);
+		--body-color: hsl(240, 6%, 12%);
+		--body-color-secondary: hsl(210, 9%, 14%);
+		--body-color-tertiary: hsl(210, 4%, 31%);
 	}
 }
 

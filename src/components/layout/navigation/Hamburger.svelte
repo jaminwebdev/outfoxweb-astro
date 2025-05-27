@@ -8,7 +8,7 @@
 </script>
 
 <button
-	class="text-body-text hover:text-primary cursor-pointer p-4 border-none focus:outline-none absolute top-4 -right-3"
+	class="text-body-text hover:text-primary cursor-pointer p-4 border-none focus:outline-hidden absolute top-4 -right-3"
 	class:open
 	onclick={handleClick}
   aria-label="mobile navigation trigger">

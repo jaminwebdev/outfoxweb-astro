@@ -50,7 +50,7 @@
 	</label>
 </div>
 
-<div class="grid grid-cols-[repeat(2,_max-content)] justify-between gap-3">
+<div class="grid grid-cols-[repeat(2,max-content)] justify-between gap-3">
 	<Button flavor="ghost" color="tertiary" btnCallback={() => handleClick('prev')}>Prev</Button>
 	{#if name.length > 0 && emailValid.success}
 		<span transition:fade|global>
