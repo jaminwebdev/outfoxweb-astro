@@ -1,7 +1,6 @@
 <script lang="ts">
 	import MobileNav from './MobileNav.svelte';
 	import DesktopNav from './DesktopNav.svelte';
-  import SiteLogo from '@/components/SiteLogo.svelte';
 	import { onMount } from 'svelte';
 
 	let urlData = $state('');
