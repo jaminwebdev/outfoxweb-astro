@@ -15,7 +15,7 @@
       <span>Web Development</span>
     {/snippet}
     {#snippet body()}
-      <span>Decrease load times and increase customer conversions with a new site</span>
+      <span>High-performance, custom websites tailored to your business needs</span>
     {/snippet}
 	</NavigationCard>
 	<NavigationCard
@@ -27,8 +27,8 @@
         <span>Web Design</span>
       {/snippet}
       {#snippet body()}
-        <span>Turn your web dud in to a web stud with best UX research and insights</span>
-      {/snippet}
+        <span>Stunning, user-friendly designs that enhance your online presence</span>
+    {/snippet}
 	</NavigationCard>
 	<NavigationCard
 		lottiePath="/lottie/BarChart_secondary.json"
@@ -39,8 +39,8 @@
         <span>SEO</span>
       {/snippet}
       {#snippet body()}
-        <span>Using the best UX research and insights, we can turn your web dud in to a web stud</span>
-      {/snippet}
+        <span>Improve search engine rankings and drive organic traffic</span>
+    {/snippet}
 	</NavigationCard>
 	<NavigationCard
 		lottiePath="/lottie/Document_orange.json"
@@ -51,8 +51,8 @@
         <span>Web Audit</span>
       {/snippet}
       {#snippet body()}
-        <span>Using the best UX research and insights, we can turn your web dud in to a web stud.</span>
-      {/snippet}
+        <span>A comprehensive analysis of your website's performance</span>
+    {/snippet}
 	</NavigationCard>
   <NavigationCard 
     lottiePath="/lottie/shootingStar_primary.json" 
@@ -65,7 +65,7 @@
       <span class="text-base">(Coming Soon)</span>
     {/snippet}
     {#snippet body()}
-      <span>Decrease load times and increase customer conversions with a new site</span>
+      <span>Launch a professional website quickly (48-72 hours)</span>
     {/snippet}
 	</NavigationCard>
 	<NavigationCard
@@ -80,7 +80,7 @@
         <span class="text-base">(Coming Soon)</span>
       {/snippet}
       {#snippet body()}
-        <span>Turn your web dud in to a web stud with best UX research and insights</span>
-      {/snippet}
+        <span>Streamline your business with custom automations</span>
+    {/snippet}
 	</NavigationCard>
 </div>
