@@ -10,7 +10,7 @@
   }: Props = $props()
 </script>
 
-<div class="grid grid-cols-1 lg:grid-cols-3">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-0">
 	<NavigationCard lottiePath="/lottie/Pencil_primary.json" link="/blog" clickHandler={clickHandler}>
     {#snippet heading()}
       <span>Blog</span>
@@ -26,8 +26,9 @@
 		clickHandler={clickHandler}
     classes="pointer-events-none">
       {#snippet heading()}
-      <span>Web Design Tools</span><br>
-      <span>(coming soon)</span>
+      <span>Web Design Tools</span>
+      <br>
+      <span class="text-base">(Coming Soon)</span>
       {/snippet}
       {#snippet body()}
         <span>Use our free wireframe system to increase your design velocity.</span>
@@ -40,8 +41,9 @@
     clickHandler={clickHandler}
     classes="pointer-events-none">
       {#snippet heading()}
-      <span>SEO Tools</span><br>
-      <span>(coming soon)</span>
+      <span>SEO Tools</span>
+      <br>
+      <span class="text-base">(Coming Soon)</span>
       {/snippet}
       {#snippet body()}
         <span>Leverage our free tools to boost your website search performance</span>

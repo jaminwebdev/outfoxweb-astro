@@ -10,7 +10,7 @@
   }: Props = $props()
 </script>
 
-<div class="grid grid-cols-1 lg:grid-cols-2">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-0">
 	<NavigationCard lottiePath="/lottie/Conference_primary.json" link="/about" clickHandler={clickHandler}>
     {#snippet heading()}
       <span>About the Company</span>

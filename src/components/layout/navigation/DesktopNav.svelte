@@ -26,7 +26,7 @@
 				class="p-5"
 				onclick={() => setSelectedMenuItem('services')}
 				aria-expanded={selectedMenuItem === 'services'}>Services</button>
-			<Dropdown shown={selectedMenuItem === 'services'} items={4}>
+			<Dropdown shown={selectedMenuItem === 'services'} items={3}>
 				<ServicesMenu clickHandler={() => setSelectedMenuItem('none')} />
 			</Dropdown>
 		</li>
