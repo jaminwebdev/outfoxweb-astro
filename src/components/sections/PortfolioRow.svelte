@@ -2,10 +2,10 @@
 	import { fade } from 'svelte/transition';
 	import Button from '@components/buttons/Button.svelte';
 	import PillButton from '@components/buttons/PillButton.svelte';
-	import SaasImg from '@images/Saas_header.png';
-	import CoworkImg from '@images/Cowork_Header.png';
-	import NonprofitImg from '@images/Nonprofit_Header.png';
-	import FinanceImg from '@images/Finance_Header.png';
+	import SaasImg from '@images/Saas_header.webp';
+	import CoworkImg from '@images/Cowork_Header.webp';
+	import NonprofitImg from '@images/Nonprofit_Header.webp';
+	import FinanceImg from '@images/Finance_Header.webp';
 
   type Category = 'Saas' | 'Finance' | 'Workspace' | 'Nonprofit'
   const categories: Category[] = ['Saas', 'Finance', 'Workspace', 'Nonprofit'];

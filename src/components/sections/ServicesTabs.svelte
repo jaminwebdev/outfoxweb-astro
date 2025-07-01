@@ -1,8 +1,8 @@
 <script lang="ts">
-	import WebDevImg from '@images/Mobile_Score.png';
-	import DesignImg from '@images/Figma_Tablet.png';
-	import SEOImg from '@images/Laptop_Metrics_Right.png';
-	import AuditImg from '@images/Laptop_Audit.png';
+	import WebDevImg from '@images/Mobile_Score.webp';
+	import DesignImg from '@images/Figma_Tablet.webp';
+	import SEOImg from '@images/Laptop_Metrics_Right.webp';
+	import AuditImg from '@images/Laptop_Audit.webp';
 
 	import ImgBackground from '@components/ImgBackground.svelte';
 	import Button from '@components/buttons/Button.svelte';

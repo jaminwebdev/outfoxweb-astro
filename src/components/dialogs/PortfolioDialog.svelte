@@ -1,15 +1,15 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
   import Dialog from '@components/dialogs/Dialog.svelte';
-  import WorkSpace from '@images/Workspace_Design.jpg';
-  import InteriorDesign from '@images/Interior_Design.jpg';
-  import LGGTM from '@images/LGGTM_Design.jpg';
-  import Agency from '@images/Agency_Design.jpg';
-  import Mortgage from '@images/Mortgage_Design.jpg';
-  import DigitalAgency from '@images/Digital_Agency_Design.jpg';
-  import Finance from '@images/Financial_Design.jpg';
-  import Agency2 from '@images/Agency_2_Design.jpg';
-  import Dental from '@images/Dental_Design.jpg';
+  import WorkSpace from '@images/Workspace_Design.webp';
+  import InteriorDesign from '@images/Interior_Design.webp';
+  import LGGTM from '@images/LGGTM_Design.webp';
+  import Agency from '@images/Agency_Design.webp';
+  import Mortgage from '@images/Mortgage_Design.webp';
+  import DigitalAgency from '@images/Digital_Agency_Design.webp';
+  import Finance from '@images/Financial_Design.webp';
+  import Agency2 from '@images/Agency_2_Design.webp';
+  import Dental from '@images/Dental_Design.webp';
 
   const imgMap = {
     "LGGTM": LGGTM.src,
