@@ -1,7 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import LaptopImg from '@/images/Laptop_Metrics_Left.webp';
-import FinanceImg from '@images/Finance_Header.webp';
+// @ts-ignore
+import Globe from '@components/Globe.svelte'
 // @ts-ignore
 import MultiStepDialog from '@components/dialogs/MultiStepDialog.svelte';
 // @ts-ignore
@@ -69,7 +70,7 @@ const seo = {
   </section>
   <section
     id="intro"
-    class="rounded-xl bg-body-color-secondary px-6 py-10 md:p-[60px] grid grid-cols-1 lg:grid-cols-2 gap-4 items-center overflow-hidden">
+    class="rounded-xl bg-body-color-secondary px-6 py-10 pb-48 lg:p-[60px] grid grid-cols-1 lg:grid-cols-2 gap-4 items-center overflow-hidden">
     <!-- Left column -->
     <div>
       <p class="bg-orange/20 text-orange py-[5px] px-[14px] rounded-md inline-block text-base mb-2">
@@ -87,12 +88,12 @@ const seo = {
       </p>
     </div>
     <!-- Right column -->
-    <Image
-      src={FinanceImg}
-      width="602"
-      height="513"
-      alt="Coworking business website design"
-      class="max-h-[380px] lg:max-h-[470px] -mb-[80px] lg:ml-[80px] object-contain justify-self-center lg:justify-self-auto" />
+     <div class="flex justify-end relative">
+      <div class="absolute lg:relative left-1/2 -translate-x-1/2">
+        <!-- <Globe client:visible size={400} /> -->
+      </div>
+      </div>
+     </div>
   </section>
   <section id="initialStats" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px] mt-[40px]">
     <StatCard color="orange"
