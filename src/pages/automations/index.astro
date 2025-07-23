@@ -1,7 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import LaptopImg from '@/images/Laptop_Metrics_Left.webp';
-import FinanceImg from '@images/Finance_Header.webp';
+import AutomationHero from '@images/automation_hero.png';
+import WorkflowDisconnect from '@images/workflow_disconnect.png';
+import AutomationCohesion from '@images/automation_cohesion.png';
 // @ts-ignore
 import MultiStepDialog from '@components/dialogs/MultiStepDialog.svelte';
 // @ts-ignore
@@ -25,9 +26,9 @@ const seo = {
 ---
 
 <Layout {seo}>
-  <header class="grid grid-cols-1 md:grid-cols-2 items-center gap-32 md:gap-14 py-24">
+  <header class="grid grid-cols-1 md:grid-cols-2 items-center gap-32 md:gap-24 py-20">
     <div class="grid gap-10 md:gap-7">
-      <h1 class="text-center md:text-left">
+      <h1 class="text-center md:text-left text-5xl">
         Automate Work. <br />
         Accelerate Growth.
       </h1>
@@ -39,7 +40,14 @@ const seo = {
       </MultiStepDialog>
     </div>
     <div class="relative">
-      Image will go here
+      <Image
+        src={AutomationHero}
+        width="582"
+        height="320"
+        alt="laptop and mobile phone mockup of modern website"
+        class="relative z-1"
+        loading="eager" />
+      <ImgBackground classes="absolute -z-0 -top-[90px] -right-[170px] w-[150%] h-[150%]" />
     </div>
   </header>
   <section id="benefitsRow" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px]">
@@ -63,7 +71,7 @@ const seo = {
   </section>
   <section
     id="intro"
-    class="rounded-xl bg-body-color-secondary px-6 py-10 md:p-[60px] grid grid-cols-1 lg:grid-cols-2 gap-4 items-center overflow-hidden">
+    class="rounded-xl bg-body-color-secondary px-6 py-10 md:p-[60px] grid grid-cols-1 lg:grid-cols-2 gap-24 items-center overflow-hidden">
     <!-- Left column -->
     <div>
       <p class="bg-orange/20 text-orange py-[5px] px-[14px] rounded-md inline-block text-base mb-2">
@@ -79,11 +87,9 @@ const seo = {
     </div>
     <!-- Right column -->
     <Image
-      src={FinanceImg}
-      width="602"
-      height="513"
+      src={WorkflowDisconnect}
       alt="Coworking business website design"
-      class="max-h-[380px] lg:max-h-[470px] -mb-[80px] lg:ml-[80px] object-contain justify-self-center lg:justify-self-auto" />
+      class="max-h-[380px] lg:max-h-[470px] object-contain justify-self-center lg:justify-self-auto" />
   </section>
   <section id="initialStats" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px] mt-[40px]">
     <StatCard color="orange"
@@ -105,7 +111,7 @@ const seo = {
     <div class="relative flex justify-center lg:justify-start">
       <Image
         class="relative z-1 max-w-[425px] w-full"
-        src={LaptopImg}
+        src={AutomationCohesion}
         alt="Graphic showing improved SEO graphs overlaying website design"
         height="513"
         width="518"
