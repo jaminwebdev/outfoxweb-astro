@@ -51,7 +51,7 @@
 			</Dropdown>
 		</li>
 		<li>
-			<MultiStepDialog classes="text-base"/>
+			<MultiStepDialog classes="text-base" flavor="outline" color="tertiary"/>
 		</li>
 	</ul>
 </div>

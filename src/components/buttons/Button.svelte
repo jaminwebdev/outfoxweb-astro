@@ -1,5 +1,5 @@
 <script module lang="ts">
-  export type ButtonFlavors = 'normal' | 'outline-solid' | 'ghost' | 'glow'
+  export type ButtonFlavors = 'normal' | 'outline' | 'ghost' | 'glow'
   export interface ButtonProps {
 		type?: 'button' | 'link';
     flavor?: ButtonFlavors;
