@@ -11,7 +11,7 @@
 </script>
 
 <p>Hi there. What kind of project do you need help with?</p>
-<div class="grid w-full my-4 gap-4">
+<div class="grid w-full my-8 gap-4">
 	<label class="cursor-pointer flex gap-3">
 		<input
 			type="checkbox"
@@ -32,6 +32,18 @@
 			class="w-6 h-6 accent-primary text-primary cursor-pointer rounded-xl focus:ring-primary dark:focus:ring-primary"
 			bind:group={projectType}
 			value={'Design'} /> Design</label>
+      <label class="cursor-pointer flex gap-3">
+        <input
+          type="checkbox"
+          class="w-6 h-6 accent-primary text-primary cursor-pointer rounded-xl focus:ring-primary dark:focus:ring-primary"
+          bind:group={projectType}
+          value={'Website in a weekend'} /> Website in a Weekend</label>
+      <label class="cursor-pointer flex gap-3">
+        <input
+          type="checkbox"
+          class="w-6 h-6 accent-primary text-primary cursor-pointer rounded-xl focus:ring-primary dark:focus:ring-primary"
+          bind:group={projectType}
+          value={'Automations'} /> Automations</label>
 	<label class="cursor-pointer flex gap-3">
 		<input
 			type="checkbox"

@@ -16,7 +16,7 @@
 <p>Great! Give me a brief overview of what you have in mind.</p>
 
 <!-- svelte-ignore element_invalid_self_closing_tag -->
-<div class="my-6">
+<div class="my-8">
 	<textarea
 		rows="6"
 		class="w-full rounded-lg p-3 bg-body-color"
