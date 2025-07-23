@@ -1,0 +1,163 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import LaptopImg from '@/images/Laptop_Metrics_Left.webp';
+import FinanceImg from '@images/Finance_Header.webp';
+// @ts-ignore
+import MultiStepDialog from '@components/dialogs/MultiStepDialog.svelte';
+// @ts-ignore
+import ImgBackground from '@components/ImgBackground.svelte';
+// @ts-ignore
+import BenefitCard from '@components/cards/BenefitCard.svelte';
+// @ts-ignore
+import StatCard from '@components/cards/StatCard.svelte';
+// @ts-ignore
+import TestimonialRow from '@components/sections/TestimonialRow.svelte';
+// @ts-ignore
+import WiawFAQs from '@components/sections/website-in-a-weekend/WiawFAQs.svelte'
+import { testimonials } from '@/utils/testimonials';
+import { Image } from 'astro:assets';
+
+const seo = {
+	title: 'Web Development: Fast, Reliable, and Engaging | Outfox Web',
+	description: 'Transform your online presence with our web development services. We build fast, reliable, and engaging websites that deliver exceptional performance, improve user experience, and drive results for your business.'
+}
+---
+
+<Layout {seo}>
+  <header class="grid grid-cols-1 md:grid-cols-2 items-center gap-32 md:gap-14 py-24">
+    <div class="grid gap-10 md:gap-7">
+      <h1 class="text-center md:text-left">
+        Launch in Days
+        <br>
+        Not Months.
+      </h1>
+      <p>Stop waiting for leads, sales, and growth while your website is stuck in development. Get a custom, conversion-focused site in just 2–3 days.</p>
+      <MultiStepDialog flavor="glow" classes="justify-self-center md:justify-self-start" client:load>
+        Schedule Your Launch →
+      </MultiStepDialog>
+    </div>
+    <div class="relative">
+      Image will go here
+    </div>
+  </header>
+  <section id="benefitsRow" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px]">
+    <BenefitCard lottiePath="/lottie/Clock_primary.json" 
+      initialPlay
+      heading="Fast, not basic"
+      body="A high-performing, mobile‑first website delivered in days—without sacrificing quality or customization."
+      client:load />
+    <BenefitCard lottiePath="/lottie/Battery_tertiary.json" 
+      delay={500} 
+      initialPlay
+      heading="Optimized from the Start"
+      body="SEO‑friendly, fast‑loading, and designed with conversions in mind. No bloated templates."
+      client:load />
+    <BenefitCard lottiePath="/lottie/Heart_secondary.json" 
+      delay={1800} 
+      initialPlay
+      heading="Stress‑Free Process"
+      body="We handle the planning, design, and build. You get a polished website ready to launch by Monday."
+      client:load />
+  </section>
+  <section
+    id="intro"
+    class="rounded-xl bg-body-color-secondary px-6 py-10 md:p-[60px] grid grid-cols-1 lg:grid-cols-2 gap-4 items-center overflow-hidden">
+    <!-- Left column -->
+    <div>
+      <p class="bg-orange/20 text-orange py-[5px] px-[14px] rounded-md inline-block text-base mb-2">
+        STUCK IN LIMBO?
+      </p>
+      <h2 class="mb-6">Still Waiting Months for Your Website to Launch?</h2>
+      <p class="mb-8 lg:mb-4">
+        Every week your website is stuck in development is another week of lost leads, sales, and opportunities. Traditional agencies can take months, leaving you frustrated and behind competitors. But launching fast doesn’t have to mean cutting corners.
+      </p>
+    </div>
+    <!-- Right column -->
+    <Image
+      src={FinanceImg}
+      width="602"
+      height="513"
+      alt="Coworking business website design"
+      class="max-h-[380px] lg:max-h-[470px] -mb-[80px] lg:ml-[80px] object-contain justify-self-center lg:justify-self-auto" />
+  </section>
+  <section id="initialStats" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px] mt-[40px]">
+    <StatCard color="orange"
+    stat="252k"
+    subtitle="Sites Launched Daily"
+    body="Every day, over 250,000 new websites go live. Delaying your launch means losing credibility and running behind." />
+  <StatCard color="secondary"
+    stat="4–7 months"
+    subtitle="Avg dev time"
+    body="Traditional website builds take 4–7 months—time in which sales, ranking, and opportunities slip away." />
+  <StatCard color="tertiary"
+    stat="$1.2 B"
+    subtitle="Cost per second"
+    body="Even giants feel it: Amazon estimated a 1s slowdown cost $1.2 billion in sales—imagine what delays do to you." />
+  </section>
+  <section
+    id="solution"
+    class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-32 items-center my-[125px]">
+    <div class="relative flex justify-center lg:justify-start">
+      <Image
+        class="relative z-1 max-w-[425px] w-full"
+        src={LaptopImg}
+        alt="Graphic showing improved SEO graphs overlaying website design"
+        height="513"
+        width="518"
+        loading="lazy" />
+      <ImgBackground
+        classes="absolute -z-0 -top-[25%] -left-[25%] lg:-left-[40%] w-[160%] h-[160%]" />
+    </div>
+    <div class="mt-7 lg:mt-0">
+      <p class="bg-primary/20 text-primary py-[5px] px-[14px] rounded-md inline-block text-base mb-2">
+        LEVEL UP
+      </p>
+      <h2 class="mb-6">A High-Impact Website. In a Single Weekend.</h2>
+      <p class="mb-8">
+        Our Weekend Website Sprint condenses months of planning and development into an efficient, 2–3 day process. We design, build, and optimize your site for speed, SEO, and user experience—so you can start converting visitors right away.
+      </p>
+      <MultiStepDialog flavor="glow" color="tertiary" classes="justify-self-center md:justify-self-start" client:load>
+        Schedule your launch
+      </MultiStepDialog>
+    </div>
+  </section>
+  <section id="secondaryStats" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px] mt-[40px]">
+    <StatCard color="primary"
+    stat="Launch"
+    subtitle="Gain the Advantage"
+    body="Join 250K+ sites launched daily. Go live faster and lead, not wait." />
+  <StatCard color="secondary"
+    stat="4‑5x"
+    subtitle="Return on Investment"
+    body="Quick launch sites see 4–5× returns in the first month due to early visibility." />
+  <StatCard color="tertiary"
+    stat="3x"
+    subtitle="Engagement"
+    body="Sites built fast (under 3 s load) see 3× more visitor interactions than slower ones." />
+  </section>
+  <TestimonialRow testimonials={[testimonials['kyle'], testimonials['stacy']]} />
+  <section id="processRow" class="grid grid-cols-1 md:grid-cols-3 gap-8 my-[125px]">
+    <h2 class="col-start-1 md:col-span-3 text-center mb-5">How do we do it?</h2>
+    <BenefitCard lottiePath="/lottie/Consult_primary.json" 
+    initialPlay
+    heading="Discovery"
+    body="We align on your goals, brand assets, and key pages—then create a design that reflects your business."
+    client:load />
+  <BenefitCard lottiePath="/lottie/Code_tertiary.json" 
+    delay={800} 
+    initialPlay
+    heading="Design & Build"
+    body="We develop a responsive, SEO-friendly, high-performing site with integrated tools and tracking."
+    client:load />
+  <BenefitCard lottiePath="/lottie/Confettie_secondary.json" 
+    delay={1500} 
+    initialPlay
+    heading="Launch & Support"
+    body="We ensure cross-device performance and go live so you start the week with a fresh, functional site."
+    client:load />
+  </section>
+  <section id="FAQs" class="flex flex-col items-center">
+    <h2 class="text-center mb-5">FAQs</h2>
+    <WiawFAQs client:visible />
+  </section>  
+</Layout>

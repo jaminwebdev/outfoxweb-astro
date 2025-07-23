@@ -9,21 +9,18 @@ import ImgBackground from '@components/ImgBackground.svelte';
 // @ts-ignore
 import BenefitCard from '@components/cards/BenefitCard.svelte';
 // @ts-ignore
-import Checkmark from '@components/Checkmark.svelte';
-// @ts-ignore
 import StatCard from '@components/cards/StatCard.svelte';
 // @ts-ignore
 import TestimonialRow from '@components/sections/TestimonialRow.svelte';
 // @ts-ignore
-import WebDevFAQs from '@components/sections/web-development/WebDevFAQs.svelte'
+import AutomationsFAQs from '@components/sections/automations/AutomationsFAQs.svelte'
 import { testimonials } from '@/utils/testimonials';
 import { Image } from 'astro:assets';
-// @ts-ignore
-import PageLoadBarChart from '@components/charts/PageLoadBarChart.svelte'
+
 
 const seo = {
-	title: 'Web Development: Fast, Reliable, and Engaging | Outfox Web',
-	description: 'Transform your online presence with our web development services. We build fast, reliable, and engaging websites that deliver exceptional performance, improve user experience, and drive results for your business.'
+	title: 'Business Process Automation & AI Workflow Solutions | Outfox Web',
+	description: 'Streamline your business with AI-powered and no‑code automations. Save time, reduce errors, and scale smarter with custom workflow solutions from Outfox Web.'
 }
 ---
 
@@ -31,40 +28,37 @@ const seo = {
   <header class="grid grid-cols-1 md:grid-cols-2 items-center gap-32 md:gap-14 py-24">
     <div class="grid gap-10 md:gap-7">
       <h1 class="text-center md:text-left">
-        Better websites. <br />
-        Better business.
+        Automate Work. <br />
+        Accelerate Growth.
       </h1>
       <div class="grid gap-4 justify-items-start px-6 md:px-0">
-        <Checkmark body="Improve engagement" />
-        <Checkmark body="Reduce bounce rates" />
-        <Checkmark body="Feature rich & interactive" />
+        <p>Manual workflows cost you time, money, and momentum. We build smart, scalable automation that eliminate busywork, accelerate processes, and create space for strategic growth.</p>
       </div>
       <MultiStepDialog flavor="glow" classes="justify-self-center md:justify-self-start" client:load>
-        Let's Connect
+        Start Automating →
       </MultiStepDialog>
     </div>
     <div class="relative">
-      <h4 class="text-center">Page Load Times</h4>
-      <PageLoadBarChart client:only />
+      Image will go here
     </div>
   </header>
   <section id="benefitsRow" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px]">
-    <BenefitCard lottiePath="/lottie/Tablet_primary.json" 
+    <BenefitCard lottiePath="/lottie/Clock_primary.json" 
       initialPlay
-      heading="Decrease load times"
-      body="Leverage the latest technology to reach your user-base faster and more reliably."
+      heading="Time savings"
+      body="Replace hours of manual labor with automated flows that run silently in the background—24/7"
       client:load />
-    <BenefitCard lottiePath="/lottie/Consult_tertiary.json" 
-      delay={500} 
+    <BenefitCard lottiePath="/lottie/Error_tertiary.json" 
+      delay={1000} 
       initialPlay
-      heading="Get more customers"
-      body="A faster site leads to improved user experience and higher organic rankings."
+      heading="Fewer Errors"
+      body="Automated workflows ensure every lead, file, and task gets handled exactly as intended—every time"
       client:load />
-    <BenefitCard lottiePath="/lottie/Coins_secondary.json" 
+    <BenefitCard lottiePath="/lottie/LoadBalancer_secondary.json" 
       delay={1500} 
       initialPlay
-      heading="Supercharge your business"
-      body="Gain a competitive advantage, increase brand awareness, and reach your goals."
+      heading="Scalable systems"
+      body="We design smart systems that grow with your business, not against it."
       client:load />
   </section>
   <section
@@ -73,17 +67,14 @@ const seo = {
     <!-- Left column -->
     <div>
       <p class="bg-orange/20 text-orange py-[5px] px-[14px] rounded-md inline-block text-base mb-2">
-        POOR PERFORMANCE?
+        WORKFLOW OVERLOAD?
       </p>
-      <h2 class="mb-6">Is your website performing?</h2>
+      <h2 class="mb-6">Still Drowning in Repetitive Tasks?</h2>
       <p class="mb-8 lg:mb-4">
-        What’s worse than a slow website? A slow website that doesn’t bring in customers, looks
-        outdated, and ultimately doesn’t fit your business needs.
+        You’ve tried spreadsheets, duct-taped integrations, and late-night workarounds. But the inefficiencies keep piling up. Without a system that scales, even small wins get lost in operational chaos.
       </p>
-      <p class="mb-8 lg:mb-4">
-        It’s no secret: research shows people are quick to abandon slow and poorly designed websites.
-        This is precisely why we’ve spent years crafting our tech stack and honing our website
-        building process.
+      <p>
+        Manual fixes only patch the symptoms. As your business grows, so do the cracks—creating more errors, delays, and frustration. Without automation, you’re stuck in a cycle of reacting instead of scaling.
       </p>
     </div>
     <!-- Right column -->
@@ -96,17 +87,17 @@ const seo = {
   </section>
   <section id="initialStats" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px] mt-[40px]">
     <StatCard color="orange"
-      stat="40%"
-      subtitle="Won't wait"
-      body="40% of customers won’t wait more than 2-3 seconds before abandoning a site." />
+      stat="10+ Hours"
+      subtitle="Wasted every week"
+      body="The average SMB loses over 10 hours each week to repetitive manual admin tasks." />
     <StatCard color="secondary"
-      stat="85%"
-      subtitle="Expect speed"
-      body="85% of mobile users expect pages to load as fast or faster than they do on a desktop." />
+      stat="88%"
+      subtitle="Are struggling"
+      body="Nearly 9/10 businesses say automation is key to staying competitive with larger enterprises." />
     <StatCard color="tertiary"
-      stat="64%"
-      subtitle="Will look elsewhere"
-      body="64% of consumers unhappy with their experience will buy elsewhere next time." />
+      stat="$11,000"
+      subtitle="Lost per employee"
+      body="Inefficient processes cost companies an average of $11,000 per employee every year." />
   </section>
   <section
     id="solution"
@@ -126,34 +117,31 @@ const seo = {
       <p class="bg-primary/20 text-primary py-[5px] px-[14px] rounded-md inline-block text-base mb-2">
         LEVEL UP
       </p>
-      <h2 class="mb-6">Boost your business with a new website.</h2>
+      <h2 class="mb-6">We Design Automations That Think for You</h2>
       <p>
-        Think about it: every time you navigate around a website, another 3-10 seconds goes by. A lot
-        of life happens between pages. Every business needs an engaging website that’s free of bugs,
-        and meets their audience’s needs at the speed of life.
+        Our automation strategy starts with deep discovery: What’s bottlenecking your operations? Where are tasks falling through the cracks? Then we custom-build intelligent workflows—from simple email triggers to complex AI-driven decision trees—that integrate seamlessly with your existing tools.
       </p>
       <p class="mt-4 mb-8">
-        This is why we’ve spent the last decade meticulously choosing our technologies, honing our
-        process, and connecting with our clients.
+        We leverage platforms like n8n, Make, Zapier, and OpenAI to create workflows that not only execute but adapt.
       </p>
       <MultiStepDialog flavor="glow" color="tertiary" classes="justify-self-center md:justify-self-start" client:load>
-        Boost your website today
+        Boost your business today
       </MultiStepDialog>
     </div>
   </section>
   <section id="secondaryStats" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px] mt-[40px]">
     <StatCard color="primary"
-      stat="0.3s"
-      subtitle="Average load time" 
-      body="Using the fastest frameworks and hosting solutions, our sites are incredibly fast."/>
+      stat="3x"
+      subtitle="Faster Onboarding" 
+      body="Speed up client onboarding with automated intake, routing, and instant notifications."/>
     <StatCard color="secondary"
-      stat="2x"
-      subtitle="Conversion rates" 
-      body="Our clients see double the conversions on average in 6-8 months after launch."/>
+      stat="85%"
+      subtitle="Less Admin Work" 
+      body="Cut repetitive admin tasks by 85% with smart automations for lead management and workflows."/>
     <StatCard color="tertiary"
-      stat="0%"
-      subtitle="Down time"
-      body="Thanks to our ultra-reliable hosting solutions and monitoring software, our sites are extremely reliable." />
+      stat="100%"
+      subtitle="Complete Visibility"
+      body="Gain full workflow transparency with centralized logs and robust error handling." />
   </section>
   <TestimonialRow testimonials={[testimonials['kyle'], testimonials['stacy']]} />
   <section id="processRow" class="grid grid-cols-1 md:grid-cols-3 gap-8 my-[125px]">
@@ -161,23 +149,23 @@ const seo = {
     <BenefitCard lottiePath="/lottie/Consult_primary.json" 
       initialPlay
       heading="Discovery"
-      body="We collaborate with you on market research, competitor analysis, keywords, wireframes, and design."
+      body="We map your manual workflows, identify high-leverage opportunities, and align on automation goals."
       client:load />
-    <BenefitCard lottiePath="/lottie/Computer_tertiary.json" 
-      delay={500} 
+    <BenefitCard lottiePath="/lottie/Code_tertiary.json" 
+      delay={800} 
       initialPlay
-      heading="Development"
-      body="Sit back while we do all the work to create and thoroughly test your beautiful new website."
+      heading="Design & Build"
+      body="From n8n to AI logic flows, we engineer custom automations that integrate with your systems and scale with your needs."
       client:load />
     <BenefitCard lottiePath="/lottie/Confettie_secondary.json" 
       delay={1500} 
       initialPlay
-      heading="Delivery"
-      body="After the launch of your amazing new site, we carry on providing training and ongoing maintenance."
+      heading="Launch & Support"
+      body="Once live, we monitor performance, iterate for improvements, and offer ongoing optimization support."
       client:load />
   </section>
   <section id="FAQs" class="flex flex-col items-center">
     <h2 class="text-center mb-5">FAQs</h2>
-    <WebDevFAQs client:visible />
+    <AutomationsFAQs client:visible />
   </section>  
 </Layout>

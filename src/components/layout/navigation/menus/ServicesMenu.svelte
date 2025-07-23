@@ -56,13 +56,10 @@
 	</NavigationCard>
   <NavigationCard 
     lottiePath="/lottie/shootingStar_primary.json" 
-    link="/web-development" 
-    clickHandler={clickHandler} 
-    classes="pointer-events-none">
+    link="/website-in-a-weekend" 
+    clickHandler={clickHandler}>
     {#snippet heading()}
       <span>Website in a Weekend</span>
-      <br>
-      <span class="text-base">(Coming Soon)</span>
     {/snippet}
     {#snippet body()}
       <span>Launch a professional website quickly (48-72 hours)</span>
@@ -71,13 +68,10 @@
 	<NavigationCard
 		lottiePath="/lottie/servers_tertiary.json"
 		bgColor="tertiary"
-		link="/web-design"
-		clickHandler={clickHandler}
-    classes="pointer-events-none">
+		link="/automations"
+		clickHandler={clickHandler}>
       {#snippet heading()}
         <span>Automations</span>
-        <br>
-        <span class="text-base">(Coming Soon)</span>
       {/snippet}
       {#snippet body()}
         <span>Streamline your business with custom automations</span>
