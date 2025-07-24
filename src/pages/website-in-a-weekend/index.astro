@@ -1,8 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import WiawHero from '@/images/website_weekend_tablet.png';
-import LaunchReady from '@images/launch_ready_laptop.png';
-import MobileTransform from '@images/mobile_transform.png';
+import WiawHero from '@/images/website_weekend_tablet.webp';
+import LaunchReady from '@images/launch_ready_laptop.webp';
+import MobileTransform from '@images/mobile_transform.webp';
 // @ts-ignore
 import MultiStepDialog from '@components/dialogs/MultiStepDialog.svelte';
 // @ts-ignore
@@ -40,10 +40,10 @@ const seo = {
     <div class="relative">
       <Image
       src={WiawHero}
+      quality={100}
       alt="laptop and mobile phone mockup of modern website"
       class="relative z-1"
       loading="eager" />
-
     </div>
   </header>
   <section id="benefitsRow" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px]">
@@ -81,6 +81,7 @@ const seo = {
     <!-- Right column -->
     <Image
       src={LaunchReady}
+      quality={100}
       alt="Coworking business website design"
       class="object-contain justify-self-center lg:justify-self-auto" />
   </section>
@@ -105,6 +106,7 @@ const seo = {
       <Image
         class="relative z-1 max-w-[425px] w-full"
         src={MobileTransform}
+        quality={100}
         alt="Graphic showing improved SEO graphs overlaying website design"
         loading="lazy" />
       <ImgBackground

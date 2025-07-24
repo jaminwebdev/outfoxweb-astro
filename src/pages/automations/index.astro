@@ -1,8 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import AutomationHero from '@images/automation_hero.png';
-import WorkflowDisconnect from '@images/workflow_disconnect.png';
-import AutomationCohesion from '@images/automation_cohesion.png';
+import AutomationHero from '@images/automation_hero.webp';
+import WorkflowDisconnect from '@images/workflow_disconnect.webp';
+import AutomationCohesion from '@images/automation_cohesion.webp';
 // @ts-ignore
 import MultiStepDialog from '@components/dialogs/MultiStepDialog.svelte';
 // @ts-ignore
@@ -46,7 +46,8 @@ const seo = {
         height="320"
         alt="laptop and mobile phone mockup of modern website"
         class="relative z-1"
-        loading="eager" />
+        loading="eager"
+        quality={100} />
       <ImgBackground classes="absolute -z-0 -top-[90px] -right-[170px] w-[150%] h-[150%]" />
     </div>
   </header>
@@ -88,6 +89,7 @@ const seo = {
     <!-- Right column -->
     <Image
       src={WorkflowDisconnect}
+      quality={100}
       alt="Coworking business website design"
       class="max-h-[380px] lg:max-h-[470px] object-contain justify-self-center lg:justify-self-auto" />
   </section>
@@ -115,7 +117,8 @@ const seo = {
         alt="Graphic showing improved SEO graphs overlaying website design"
         height="513"
         width="518"
-        loading="lazy" />
+        loading="lazy" 
+        quality={100} />
       <ImgBackground
         classes="absolute -z-0 -top-[25%] -left-[25%] lg:-left-[40%] w-[160%] h-[160%]" />
     </div>
