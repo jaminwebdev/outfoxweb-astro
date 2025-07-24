@@ -1,10 +1,8 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import type { AnimationEvent, AnimationItem } from 'lottie-svelte/iface';
 	import { onDestroy } from 'svelte';
 
 	let Lottie: any = $state(null);
-	let mounted = $state(false);
 
 	interface Props {
 		timeLoop?: number;
@@ -17,14 +15,14 @@
 	}
 
 	let {
-		timeLoop = $bindable(6000),
+		timeLoop = 6000,
 		repeat = false,
-		speed = $bindable(1),
-		delay = $bindable(0),
-		initialPlay = $bindable(false),
+		speed = 1,
+		delay = 0,
+		initialPlay = false,
 		path = '/lottie/Successful.json',
-		forceAnimate = $bindable(false),
-	}: Props = $props()
+		forceAnimate = false
+	}: Props = $props();
 
 	let animation: AnimationItem;
 	let animationInterval: ReturnType<typeof setInterval>;
@@ -43,12 +41,12 @@
 		if (forceAnimate && animation) {
 			animation.goToAndPlay(0);
 		}
-	})
+	});
 
-	onMount(async () => {
-		mounted = true;
-		const mod = await import('lottie-svelte');
-		Lottie = mod.Lottie;
+	$effect(() => {
+		import('lottie-svelte').then((mod) => {
+			Lottie = mod.Lottie;
+		});
 	});
 
 	onDestroy(() => {
@@ -58,6 +56,7 @@
 	});
 </script>
 
-{#if mounted && Lottie}
-	<Lottie bind:path loop={false} on:animation={handler} bind:speed />
+{#if Lottie}
+	<Lottie {path} loop={false} on:animation={handler} {speed} />
 {/if}
+
