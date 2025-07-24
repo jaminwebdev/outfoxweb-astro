@@ -1,8 +1,9 @@
 <script lang="ts">
+  import { cn } from '@/lib/utils';
   import { type Snippet } from 'svelte';
 
   interface Props {
-		active: boolean;
+		active?: boolean;
     classes?: string;
     btnCallback?: () => void;
     children: Snippet;
@@ -23,7 +24,7 @@
 
 <button
 	onclick={btnCallback}
-	class={` ${active ? pillColors['active'] : pillColors['inactive']}
-rounded-md py-[5px] px-[14px] ${classes}`}>
+	class={cn(classes, `${active ? pillColors['active'] : pillColors['inactive']}
+rounded-md py-[5px] px-[14px]`)}>
 	{@render children()}
 </button>

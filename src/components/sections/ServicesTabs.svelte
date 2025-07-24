@@ -1,5 +1,5 @@
 <script lang="ts">
-	import WebDevImg from '@images/Mobile_Score.webp';
+	import WebDevImg from '@images/mobile_metrics_2.webp';
 	import DesignImg from '@images/Figma_Tablet.webp';
 	import SEOImg from '@images/Laptop_Metrics_Right.webp';
 	import AuditImg from '@images/Laptop_Audit.webp';
@@ -8,6 +8,8 @@
 	import Button from '@components/buttons/Button.svelte';
 	import { fade } from 'svelte/transition';
 	import Checkmark from '@components/Checkmark.svelte';
+  import PillButton from '../buttons/PillButton.svelte';
+  import { active } from 'd3';
 
   type Services = 'Development' | 'Design' | 'SEO' | 'Web Audits'
 
@@ -25,13 +27,11 @@
 		Made just for you.
 	</h2>
 	<!-- tabs -->
-	<div class="grid grid-cols-2 gap-8 sm:gap-4 sm:grid-cols-4 max-w-4xl m-auto w-full mb-20 sm:mb-8">
+	<div class="grid grid-cols-2 gap-8 sm:gap-4 sm:grid-cols-4 max-w-3xl m-auto w-full mb-20 sm:mb-8">
 		{#each services as service}
-			<button
-				class="p-4 underline underline-offset-4 text-lg {activeService === service
-					? 'text-primary'
-					: ''}"
-				onclick={() => (activeService = service)}>{service}</button>
+			<PillButton
+        active={service === activeService}
+				btnCallback={() => (activeService = service)}>{service}</PillButton>
 		{/each}
 	</div>
 	<div class="grid grid-cols-1 grid-rows-1">
@@ -49,11 +49,9 @@
             <Checkmark body="Feature rich & interactive" />
 						<Button classes="mt-4" type="link" link="/web-development">Learn More</Button>
 					</div>
-					<div class="row-start-1 sm:row-start-auto relative justify-self-end">
+					<div class="row-start-1 sm:row-start-auto relative">
 						<img
 							class="relative z-1"
-							height="395"
-							width="475"
 							src={WebDevImg.src}
 							alt="Mobile website design with Lighthouse performance score"
 							loading="lazy" />
