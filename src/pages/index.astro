@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import HeaderImg from '@images/homepage_hero_img.webp';
+import HeaderImg from '@images/device_growth.webp';
 import HeadlessWPImg from '@images/Headless_WP_iMac.webp';
 // @ts-ignore
 import Button from '@components/buttons/Button.svelte';
@@ -32,22 +32,21 @@ const seo = {
 
 <Layout {seo}>
 	<main>
-    <header class="pt-20 md:pt-16 pb-24 grid grid-cols-1 md:grid-cols-2 items-center gap-20">
+    <header class="pt-20 pb-24 grid grid-cols-1 md:grid-cols-2 items-center gap-20">
       <div class="grid gap-7">
-        <h1 class="lg:text-[65px] text-center md:text-left">Our Websites Deliver Results</h1>
+        <h1 class="text-center md:text-left">Websites That Drive Growth</h1>
         <p class="text-center md:text-left">
           Reach your audience, convert more customers, and rank higher with the best website for you.
         </p>
         <MultiStepDialog flavor="glow" classes="justify-self-center md:justify-self-start" client:load>
-          Let's Connect
+          Let's Build It
         </MultiStepDialog>
       </div>
       <div class="relative grid justify-center md:justify-normal">
         <Image
           src={HeaderImg}
-          width="400"
           alt="laptop and mobile phone mockup of modern website"
-          class="relative z-1" 
+          class="relative z-1 lg:max-w-[500px]" 
           loading="eager" />
         <ImgBackground classes="absolute -z-0 -top-[90px] -right-[170px] w-[150%] h-[150%]" />
       </div>
@@ -56,20 +55,20 @@ const seo = {
       <BenefitCard 
         lottiePath="/lottie/BarChart_primary.json" 
         heading="Multiply your conversions"
-        body="Using the best UX research and insights, we can turn your web dud in to a web stud."
+        body="We use data‑driven UX research to turn underperforming sites into conversion powerhouses."
         initialPlay 
         client:load />
       <BenefitCard 
         lottiePath="/lottie/Globe_tertiary.json"
         heading="Reach users faster"
-        body="Our websites load faster than 99.9% of competitors. With our tech, your users don’t have to wait long."
+        body="Keep visitors engaged with lightning-fast websites that load faster than 99.9% of competitors."
         delay={750} 
         initialPlay 
         client:load />
       <BenefitCard 
         lottiePath="/lottie/Server_secondary.json"
-        heading="0% Downtime"
-        body="In the last 3 years, our websites have a 0% downtime - never miss out on opportunities."
+        heading="Uninterrupted Performance"
+        body="With 0% downtime over the past 3 years, our sites stay live when opportunities strike."
         delay={1500} 
         initialPlay 
         client:load />
@@ -94,14 +93,14 @@ const seo = {
           class="bg-tertiary/20 text-tertiary py-[5px] px-[14px] rounded-md inline-block text-base mb-2">
           UPDATE
         </p>
-        <h2 class="mb-4">What does going headless mean?</h2>
+        <h2 class="mb-4">Make WordPress Fast. Really Fast.</h2>
         <p>
-          Do you love using WordPress to manage your content but struggle with slow page load times? You're not alone!
+          Love WordPress but hate the slow load times? You’re not alone.
         </p> 
         <p class="mt-4 mb-8">
-          With a "headless" approach, we can keep WordPress as your content management system (CMS) while replacing the traditional website design with faster, modern technologies. This means you get the ease of WordPress without the slowdowns—delivering lightning-fast pages and a seamless user experience!
+          With a headless approach, we keep the WordPress editor you know while replacing its clunky front‑end with cutting‑edge technology. The result? Lightning‑fast load speeds, rock‑solid performance, and a seamless experience for your users.
         </p> 
-        <Button type="link" link="/headless-wordpress" classes="px-[24px] py-[12px]" color="secondary">See More</Button>
+        <Button type="link" link="/headless-wordpress" classes="px-[24px] py-[12px]" color="secondary">Explore Headless WordPress</Button>
       </div>
     </section>
     <TestimonialRow testimonials={[testimonials['kyle'], testimonials['stacy']]} />

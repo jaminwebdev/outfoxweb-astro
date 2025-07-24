@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { cn } from "@/lib/utils";
   interface Props {
     classes: string;
   }
@@ -12,7 +13,7 @@
 	height="100%"
 	viewBox="0 0 761 692"
 	fill="none"
-	class={classes}>
+	class={cn(classes, 'pointer-events-none')}>
 	<g opacity="0.8" filter="url(#filter0_f_175_5)">
 		<path
 			fill-rule="evenodd"
