@@ -38,7 +38,7 @@
 		@apply text-body-text
 	}
 	body h1 {
-		@apply text-4xl md:text-[60px] leading-tight font-black;
+		@apply text-4xl md:text-[55px] leading-tight font-black;
 	}
 
 	body h2 {
