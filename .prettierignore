@@ -1,0 +1,10 @@
+# Ignore artifacts:
+dist
+.astro
+.vercel
+
+# Ignore dependencies:
+node_modules
+
+# Ignore Lottie JSON files
+public/lottie/*.json
