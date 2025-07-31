@@ -35,20 +35,25 @@ import GeneralFAQs from '@components/sections/web-design/GeneralFAQs.svelte';
 
 const seo = {
   title: 'Web Design: Enhance UX & Boost Conversion Rates | Outfox Web',
-  description: 'Create visually stunning websites with our expert web design services. We focus on improving user experience (UX) and optimizing design to increase conversion rates, ensuring your website is both beautiful and effective.'
-}
+  description:
+    'Create visually stunning websites with our expert web design services. We focus on improving user experience (UX) and optimizing design to increase conversion rates, ensuring your website is both beautiful and effective.',
+};
 ---
 
 <Layout {seo}>
   <header class="grid grid-cols-1 md:grid-cols-2 items-center gap-32 md:gap-14 py-24 md:py-28">
     <div>
-      <h1 class="text-center md:text-left mb-6">Modern Design,<br> Max Engagement</h1>
+      <h1 class="text-center md:text-left mb-6">Modern Design,<br /> Max Engagement</h1>
       <div class="grid gap-4 justify-items-start pl-8 md:px-0 mb-10">
         <Checkmark body="Reach more users" />
         <Checkmark body="2x your traffic (on average)" />
         <Checkmark body="Increase customer retention" />
       </div>
-      <MultiStepDialog flavor="glow" classes="justify-self-center md:justify-self-start" client:load>
+      <MultiStepDialog
+        flavor="glow"
+        classes="justify-self-center md:justify-self-start"
+        client:load
+      >
         Let's Connect
       </MultiStepDialog>
     </div>
@@ -59,32 +64,40 @@ const seo = {
         height="320"
         alt="laptop and mobile phone mockup of modern website"
         class="relative z-1"
-        loading="eager" />
+        loading="eager"
+      />
       <ImgBackground classes="absolute -z-0 -top-[90px] -right-[170px] w-[150%] h-[150%]" />
     </div>
   </header>
   <section id="benefitsRow" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px]">
-    <BenefitCard lottiePath="/lottie/Lab_Bottle_primary.json"
+    <BenefitCard
+      lottiePath="/lottie/Lab_Bottle_primary.json"
       heading="Research driven"
-      body="Using the best UX research and insights, we can turn your web dud in to a web stud." 
+      body="Using the best UX research and insights, we can turn your web dud in to a web stud."
       initialPlay
-      client:load />
-    <BenefitCard lottiePath="/lottie/Fingerprint_tertiary.json"
+      client:load
+    />
+    <BenefitCard
+      lottiePath="/lottie/Fingerprint_tertiary.json"
       heading="Completely custom"
       body="Cookie-cutter designs are for cookie-cutter businesses. We believe in custom designs."
-      delay={750} 
+      delay={750}
       initialPlay
-      client:load />
-    <BenefitCard lottiePath="/lottie/Magnet_secondary.json"
+      client:load
+    />
+    <BenefitCard
+      lottiePath="/lottie/Magnet_secondary.json"
       heading="Stay ahead of the curve"
       body="We never stop taking inventory of the trends going on around the web, ensuring you get modern work."
-      delay={1500} 
-      initialPlay 
-      client:load/>
+      delay={1500}
+      initialPlay
+      client:load
+    />
   </section>
   <section
     id="intro"
-    class="rounded-xl bg-body-color-secondary px-6 py-10 md:p-[60px] grid grid-cols-1 lg:grid-cols-2 gap-4 items-center overflow-hidden">
+    class="rounded-xl bg-body-color-secondary px-6 py-10 md:p-[60px] grid grid-cols-1 lg:grid-cols-2 gap-4 items-center overflow-hidden"
+  >
     <!-- Left column -->
     <div>
       <p class="bg-orange/20 text-orange py-[5px] px-[14px] rounded-md inline-block text-base mb-2">
@@ -92,12 +105,12 @@ const seo = {
       </p>
       <h2 class="mb-6">No one likes a boring website.</h2>
       <p class="mb-8 lg:mb-4">
-        Everyone knows your website is the face of your business, but did you know that 52% of people
-        won’t return to a website with a ‘poor aesthetic’?
+        Everyone knows your website is the face of your business, but did you know that 52% of
+        people won’t return to a website with a ‘poor aesthetic’?
       </p>
       <p class="mb-8 lg:mb-4">
-        Even worse than tha, 89% of consumers shop with a competitor after a poor user experience, and
-        design is a crucial part of that experience.
+        Even worse than tha, 89% of consumers shop with a competitor after a poor user experience,
+        and design is a crucial part of that experience.
       </p>
     </div>
     <!-- Right column -->
@@ -106,25 +119,33 @@ const seo = {
       width="578"
       height="460"
       alt="Coworking business website design"
-      class="max-h-[380px] lg:max-h-[480px] -mb-[80px] lg:ml-[80px] object-contain justify-self-center lg:justify-self-auto" />
+      class="max-h-[380px] lg:max-h-[480px] -mb-[80px] lg:ml-[80px] object-contain justify-self-center lg:justify-self-auto"
+    />
   </section>
   <section id="initialStats" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px] mt-[40px]">
-    <StatCard color="orange"
+    <StatCard
+      color="orange"
       stat="57%"
       subtitle="Wouldn’t recommend"
-      body="57% of users report they wouldn’t recommend a business with a poorly designed mobile site." />
-    <StatCard color="secondary"
+      body="57% of users report they wouldn’t recommend a business with a poorly designed mobile site."
+    />
+    <StatCard
+      color="secondary"
       stat="89%"
       subtitle="Shop elsewhere"
-      body="89% of users are less likely to return to a website after a bad user experience." />
-    <StatCard color="tertiary"
+      body="89% of users are less likely to return to a website after a bad user experience."
+    />
+    <StatCard
+      color="tertiary"
       stat="200+%"
       subtitle="Increased conversions"
-      body="A few small changes to your design, navigation, and UX can bring massive increases in sales." />
+      body="A few small changes to your design, navigation, and UX can bring massive increases in sales."
+    />
   </section>
   <section
     id="solution"
-    class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-32 items-center my-[125px]">
+    class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-32 items-center my-[125px]"
+  >
     <div class="relative flex justify-center lg:justify-start">
       <Image
         class="relative z-1 max-w-[425px] w-full"
@@ -132,12 +153,16 @@ const seo = {
         alt="Laptop and mobile phone showing a design for a VR based company"
         height="570"
         width="479"
-        loading="lazy" />
+        loading="lazy"
+      />
       <ImgBackground
-        classes="absolute -z-0 -top-[25%] -left-[25%] lg:-left-[40%] w-[160%] h-[160%]" />
+        classes="absolute -z-0 -top-[25%] -left-[25%] lg:-left-[40%] w-[160%] h-[160%]"
+      />
     </div>
     <div class="mt-7 lg:mt-0">
-      <p class="bg-primary/20 text-primary py-[5px] px-[14px] rounded-md inline-block text-base mb-2">
+      <p
+        class="bg-primary/20 text-primary py-[5px] px-[14px] rounded-md inline-block text-base mb-2"
+      >
         LEVEL UP
       </p>
       <h2 class="mb-6">Enhance your website with a new design.</h2>
@@ -150,13 +175,20 @@ const seo = {
         with the latest in UX research, and even then, we believe in a truly collaborative process
         with our clients.
       </p>
-      <MultiStepDialog flavor="glow" color="tertiary" classes="justify-self-center md:justify-self-start" client:load>
+      <MultiStepDialog
+        flavor="glow"
+        color="tertiary"
+        classes="justify-self-center md:justify-self-start"
+        client:load
+      >
         Boost your website today
       </MultiStepDialog>
     </div>
   </section>
   <section id="portfolioGrid" class="my-[125px] grid">
-    <p class="place-self-center bg-tertiary/20 text-tertiary py-[5px] px-[14px] rounded-md text-base mb-2">
+    <p
+      class="place-self-center bg-tertiary/20 text-tertiary py-[5px] px-[14px] rounded-md text-base mb-2"
+    >
       CHECK US OUT
     </p>
     <h2 class="text-center mb-10">Our recent work</h2>
@@ -166,63 +198,72 @@ const seo = {
           src={WorkSpaceCover}
           alt="laptop and mobile phone mockup of modern website"
           class="relative z-1"
-          class="rounded-xl" />
+          class="rounded-xl"
+        />
       </PortfolioDialog>
-      <PortfolioDialog client:load design="interiorDesign"> 
+      <PortfolioDialog client:load design="interiorDesign">
         <Image
           src={InteriorDesignCover}
           alt="laptop and mobile phone mockup of modern website"
           class="relative z-1"
-          class="rounded-xl" />
+          class="rounded-xl"
+        />
       </PortfolioDialog>
-      <PortfolioDialog client:load design="LGGTM"> 
+      <PortfolioDialog client:load design="LGGTM">
         <Image
           src={LGGTMCOVER}
           alt="laptop and mobile phone mockup of modern website"
           class="relative z-1"
-          class="rounded-xl" />
+          class="rounded-xl"
+        />
       </PortfolioDialog>
-      <PortfolioDialog client:load design="agency"> 
+      <PortfolioDialog client:load design="agency">
         <Image
           src={AgencyCover}
           alt="laptop and mobile phone mockup of modern website"
           class="relative z-1"
-          class="rounded-xl" />
+          class="rounded-xl"
+        />
       </PortfolioDialog>
-      <PortfolioDialog client:load design="mortgage"> 
+      <PortfolioDialog client:load design="mortgage">
         <Image
           src={MortgageCover}
           alt="laptop and mobile phone mockup of modern website"
           class="relative z-1"
-          class="rounded-xl" />
+          class="rounded-xl"
+        />
       </PortfolioDialog>
-      <PortfolioDialog client:load design="digitalAgency"> 
+      <PortfolioDialog client:load design="digitalAgency">
         <Image
           src={DigitalAgencyCover}
           alt="laptop and mobile phone mockup of modern website"
           class="relative z-1"
-          class="rounded-xl" />
-      </PortfolioDialog>  
-      <PortfolioDialog client:load design="finance"> 
+          class="rounded-xl"
+        />
+      </PortfolioDialog>
+      <PortfolioDialog client:load design="finance">
         <Image
           src={FinanceCover}
           alt="laptop and mobile phone mockup of modern website"
           class="relative z-1"
-          class="rounded-xl" />
-      </PortfolioDialog>  
-      <PortfolioDialog client:load design="agency2"> 
+          class="rounded-xl"
+        />
+      </PortfolioDialog>
+      <PortfolioDialog client:load design="agency2">
         <Image
           src={Agency2Cover}
           alt="laptop and mobile phone mockup of modern website"
           class="relative z-1"
-          class="rounded-xl" />
+          class="rounded-xl"
+        />
       </PortfolioDialog>
-      <PortfolioDialog client:load design="dental"> 
+      <PortfolioDialog client:load design="dental">
         <Image
           src={DentalCover}
           alt="laptop and mobile phone mockup of modern website"
           class="relative z-1"
-          class="rounded-xl" />
+          class="rounded-xl"
+        />
       </PortfolioDialog>
     </div>
   </section>

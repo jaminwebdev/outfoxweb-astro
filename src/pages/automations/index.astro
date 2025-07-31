@@ -14,15 +14,15 @@ import StatCard from '@components/cards/StatCard.svelte';
 // @ts-ignore
 import TestimonialRow from '@components/sections/TestimonialRow.svelte';
 // @ts-ignore
-import AutomationsFAQs from '@components/sections/automations/AutomationsFAQs.svelte'
+import AutomationsFAQs from '@components/sections/automations/AutomationsFAQs.svelte';
 import { testimonials } from '@/utils/testimonials';
 import { Image } from 'astro:assets';
 
-
 const seo = {
-	title: 'Business Process Automation & AI Workflow Solutions | Outfox Web',
-	description: 'Streamline your business with AI-powered and no‑code automations. Save time, reduce errors, and scale smarter with custom workflow solutions from Outfox Web.'
-}
+  title: 'Business Process Automation & AI Workflow Solutions | Outfox Web',
+  description:
+    'Streamline your business with AI-powered and no‑code automations. Save time, reduce errors, and scale smarter with custom workflow solutions from Outfox Web.',
+};
 ---
 
 <Layout {seo}>
@@ -35,7 +35,11 @@ const seo = {
       <div class="text-center md:text-left mb-10">
         <p>We build smart, scalable automation that save you time and money.</p>
       </div>
-      <MultiStepDialog flavor="glow" classes="justify-self-center md:justify-self-start" client:load>
+      <MultiStepDialog
+        flavor="glow"
+        classes="justify-self-center md:justify-self-start"
+        client:load
+      >
         Start Automating →
       </MultiStepDialog>
     </div>
@@ -47,32 +51,40 @@ const seo = {
         alt="laptop and mobile phone mockup of modern website"
         class="relative z-1"
         loading="eager"
-        quality={100} />
+        quality={100}
+      />
       <ImgBackground classes="absolute -z-0 -top-[90px] -right-[170px] w-[150%] h-[150%]" />
     </div>
   </header>
   <section id="benefitsRow" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px]">
-    <BenefitCard lottiePath="/lottie/Clock_primary.json" 
+    <BenefitCard
+      lottiePath="/lottie/Clock_primary.json"
       initialPlay
       heading="Time savings"
       body="Replace hours of manual labor with automated flows that run silently in the background—24/7"
-      client:load />
-    <BenefitCard lottiePath="/lottie/Error_tertiary.json" 
-      delay={1000} 
+      client:load
+    />
+    <BenefitCard
+      lottiePath="/lottie/Error_tertiary.json"
+      delay={1000}
       initialPlay
       heading="Fewer Errors"
       body="Automated workflows ensure every lead, file, and task gets handled exactly as intended—every time"
-      client:load />
-    <BenefitCard lottiePath="/lottie/LoadBalancer_secondary.json" 
-      delay={1500} 
+      client:load
+    />
+    <BenefitCard
+      lottiePath="/lottie/LoadBalancer_secondary.json"
+      delay={1500}
       initialPlay
       heading="Scalable systems"
       body="We design smart systems that grow with your business, not against it."
-      client:load />
+      client:load
+    />
   </section>
   <section
     id="intro"
-    class="rounded-xl bg-body-color-secondary px-6 py-10 md:p-[60px] grid grid-cols-1 lg:grid-cols-2 gap-24 items-center overflow-hidden">
+    class="rounded-xl bg-body-color-secondary px-6 py-10 md:p-[60px] grid grid-cols-1 lg:grid-cols-2 gap-24 items-center overflow-hidden"
+  >
     <!-- Left column -->
     <div>
       <p class="bg-orange/20 text-orange py-[5px] px-[14px] rounded-md inline-block text-base mb-2">
@@ -80,10 +92,14 @@ const seo = {
       </p>
       <h2 class="mb-6">Still Drowning in Repetitive Tasks?</h2>
       <p class="mb-8 lg:mb-4">
-        You’ve tried spreadsheets, duct-taped integrations, and late-night workarounds. But the inefficiencies keep piling up. Without a system that scales, even small wins get lost in operational chaos.
+        You’ve tried spreadsheets, duct-taped integrations, and late-night workarounds. But the
+        inefficiencies keep piling up. Without a system that scales, even small wins get lost in
+        operational chaos.
       </p>
       <p>
-        Manual fixes only patch the symptoms. As your business grows, so do the cracks—creating more errors, delays, and frustration. Without automation, you’re stuck in a cycle of reacting instead of scaling.
+        Manual fixes only patch the symptoms. As your business grows, so do the cracks—creating more
+        errors, delays, and frustration. Without automation, you’re stuck in a cycle of reacting
+        instead of scaling.
       </p>
     </div>
     <!-- Right column -->
@@ -91,25 +107,33 @@ const seo = {
       src={WorkflowDisconnect}
       quality={100}
       alt="Coworking business website design"
-      class="max-h-[380px] lg:max-h-[470px] object-contain justify-self-center lg:justify-self-auto" />
+      class="max-h-[380px] lg:max-h-[470px] object-contain justify-self-center lg:justify-self-auto"
+    />
   </section>
   <section id="initialStats" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px] mt-[40px]">
-    <StatCard color="orange"
+    <StatCard
+      color="orange"
       stat="10+ Hours"
       subtitle="Wasted every week"
-      body="The average SMB loses over 10 hours each week to repetitive manual admin tasks." />
-    <StatCard color="secondary"
+      body="The average SMB loses over 10 hours each week to repetitive manual admin tasks."
+    />
+    <StatCard
+      color="secondary"
       stat="88%"
       subtitle="Are struggling"
-      body="Nearly 9/10 businesses say automation is key to staying competitive with larger enterprises." />
-    <StatCard color="tertiary"
+      body="Nearly 9/10 businesses say automation is key to staying competitive with larger enterprises."
+    />
+    <StatCard
+      color="tertiary"
       stat="$11,000"
       subtitle="Lost per employee"
-      body="Inefficient processes cost companies an average of $11,000 per employee every year." />
+      body="Inefficient processes cost companies an average of $11,000 per employee every year."
+    />
   </section>
   <section
     id="solution"
-    class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-32 items-center my-[125px]">
+    class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-32 items-center my-[125px]"
+  >
     <div class="relative flex justify-center lg:justify-start">
       <Image
         class="relative z-1 max-w-[425px] w-full"
@@ -117,64 +141,89 @@ const seo = {
         alt="Graphic showing improved SEO graphs overlaying website design"
         height="513"
         width="518"
-        loading="lazy" 
-        quality={100} />
+        loading="lazy"
+        quality={100}
+      />
       <ImgBackground
-        classes="absolute -z-0 -top-[25%] -left-[25%] lg:-left-[40%] w-[160%] h-[160%]" />
+        classes="absolute -z-0 -top-[25%] -left-[25%] lg:-left-[40%] w-[160%] h-[160%]"
+      />
     </div>
     <div class="mt-7 lg:mt-0">
-      <p class="bg-primary/20 text-primary py-[5px] px-[14px] rounded-md inline-block text-base mb-2">
+      <p
+        class="bg-primary/20 text-primary py-[5px] px-[14px] rounded-md inline-block text-base mb-2"
+      >
         LEVEL UP
       </p>
       <h2 class="mb-6">We Design Automations That Think for You</h2>
       <p>
-        Our automation strategy starts with deep discovery: What’s bottlenecking your operations? Where are tasks falling through the cracks? Then we custom-build intelligent workflows—from simple email triggers to complex AI-driven decision trees—that integrate seamlessly with your existing tools.
+        Our automation strategy starts with deep discovery: What’s bottlenecking your operations?
+        Where are tasks falling through the cracks? Then we custom-build intelligent workflows—from
+        simple email triggers to complex AI-driven decision trees—that integrate seamlessly with
+        your existing tools.
       </p>
       <p class="mt-4 mb-8">
-        We leverage platforms like n8n, Make, Zapier, and OpenAI to create workflows that not only execute but adapt.
+        We leverage platforms like n8n, Make, Zapier, and OpenAI to create workflows that not only
+        execute but adapt.
       </p>
-      <MultiStepDialog flavor="glow" color="tertiary" classes="justify-self-center md:justify-self-start" client:load>
+      <MultiStepDialog
+        flavor="glow"
+        color="tertiary"
+        classes="justify-self-center md:justify-self-start"
+        client:load
+      >
         Boost your business today
       </MultiStepDialog>
     </div>
   </section>
   <section id="secondaryStats" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px] mt-[40px]">
-    <StatCard color="primary"
+    <StatCard
+      color="primary"
       stat="3x"
-      subtitle="Faster Onboarding" 
-      body="Speed up client onboarding with automated intake, routing, and instant notifications."/>
-    <StatCard color="secondary"
+      subtitle="Faster Onboarding"
+      body="Speed up client onboarding with automated intake, routing, and instant notifications."
+    />
+    <StatCard
+      color="secondary"
       stat="85%"
-      subtitle="Less Admin Work" 
-      body="Cut repetitive admin tasks by 85% with smart automations for lead management and workflows."/>
-    <StatCard color="tertiary"
+      subtitle="Less Admin Work"
+      body="Cut repetitive admin tasks by 85% with smart automations for lead management and workflows."
+    />
+    <StatCard
+      color="tertiary"
       stat="100%"
       subtitle="Complete Visibility"
-      body="Gain full workflow transparency with centralized logs and robust error handling." />
+      body="Gain full workflow transparency with centralized logs and robust error handling."
+    />
   </section>
   <TestimonialRow testimonials={[testimonials['kyle'], testimonials['stacy']]} />
   <section id="processRow" class="grid grid-cols-1 md:grid-cols-3 gap-8 my-[125px]">
     <h2 class="col-start-1 md:col-span-3 text-center mb-5">How do we do it?</h2>
-    <BenefitCard lottiePath="/lottie/Consult_primary.json" 
+    <BenefitCard
+      lottiePath="/lottie/Consult_primary.json"
       initialPlay
       heading="Discovery"
       body="We map your manual workflows, identify high-leverage opportunities, and align on automation goals."
-      client:load />
-    <BenefitCard lottiePath="/lottie/Code_tertiary.json" 
-      delay={800} 
+      client:load
+    />
+    <BenefitCard
+      lottiePath="/lottie/Code_tertiary.json"
+      delay={800}
       initialPlay
       heading="Design & Build"
       body="From n8n to AI logic flows, we engineer custom automations that integrate with your systems and scale with your needs."
-      client:load />
-    <BenefitCard lottiePath="/lottie/Confettie_secondary.json" 
-      delay={1500} 
+      client:load
+    />
+    <BenefitCard
+      lottiePath="/lottie/Confettie_secondary.json"
+      delay={1500}
       initialPlay
       heading="Launch & Support"
       body="Once live, we monitor performance, iterate for improvements, and offer ongoing optimization support."
-      client:load />
+      client:load
+    />
   </section>
   <section id="FAQs" class="flex flex-col items-center">
     <h2 class="text-center mb-5">FAQs</h2>
     <AutomationsFAQs client:visible />
-  </section>  
+  </section>
 </Layout>

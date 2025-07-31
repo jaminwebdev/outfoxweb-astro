@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Button from '@components/buttons/Button.svelte';
-	import { emailRegex } from '@/utils/regex';
-	import { slide } from 'svelte/transition';
-	// import { Turnstile } from 'svelte-turnstile';
+  import Button from '@components/buttons/Button.svelte';
+  import { emailRegex } from '@/utils/regex';
+  import { slide } from 'svelte/transition';
+  // import { Turnstile } from 'svelte-turnstile';
 
   // interface Props {
   //   turnstile?: string;
@@ -10,63 +10,61 @@
 
   // let { turnstile }: Props = $props()
   let formState = $state({
-		name: '',
-		nameTouched: false,
-		email: '',
-		emailTouched: false,
-		message: '',
-		messageTouched: false
-	});
+    name: '',
+    nameTouched: false,
+    email: '',
+    emailTouched: false,
+    message: '',
+    messageTouched: false,
+  });
 
-	const MAX_MESSAGE_LENGTH = 500;
+  const MAX_MESSAGE_LENGTH = 500;
 
-	type FormStatus = 'initial' | 'submitting' | 'fail' | 'success';
-	let formStatus: FormStatus = $state('initial');
+  type FormStatus = 'initial' | 'submitting' | 'fail' | 'success';
+  let formStatus: FormStatus = $state('initial');
 
-	let submitFailMessage = $state('');
+  let submitFailMessage = $state('');
 
-	// let turnstile_success = $state(false);
+  // let turnstile_success = $state(false);
 
-	const nameValid = (name: string) => name.length;
-	const emailValid = (email: string) => email.length && emailRegex.test(email);
-	const messageValid = (message: string) => message.length && message.length < MAX_MESSAGE_LENGTH;
+  const nameValid = (name: string) => name.length;
+  const emailValid = (email: string) => email.length && emailRegex.test(email);
+  const messageValid = (message: string) => message.length && message.length < MAX_MESSAGE_LENGTH;
 
-	let formValid = $derived(
-		nameValid(formState.name) &&
-			emailValid(formState.email) &&
-			messageValid(formState.message)
-	);
+  let formValid = $derived(
+    nameValid(formState.name) && emailValid(formState.email) && messageValid(formState.message),
+  );
 
-	const inputClasses = 'rounded-xl p-3 bg-body-color text-white';
+  const inputClasses = 'rounded-xl p-3 bg-body-color text-white';
 
-	const submitForm = async () => {
-		try {
-			formStatus = 'submitting';
+  const submitForm = async () => {
+    try {
+      formStatus = 'submitting';
 
-			const response = await fetch('/api/contact-form', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({
-					name: formState.name,
-					email: formState.email,
-					message: formState.message
-				})
-			});
-			const body = await response.json();
+      const response = await fetch('/api/contact-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+        }),
+      });
+      const body = await response.json();
 
-			if (body.status !== 200 && body.error) {
-				throw new Error(body.message, { cause: body.error });
-			}
+      if (body.status !== 200 && body.error) {
+        throw new Error(body.message, { cause: body.error });
+      }
 
-			formStatus = 'success';
-		} catch (e) {
-			formStatus = 'fail';
-			if (e instanceof Error) {
-				console.error(e.cause);
-				submitFailMessage = e.message;
-			}
-		}
-	};
+      formStatus = 'success';
+    } catch (e) {
+      formStatus = 'fail';
+      if (e instanceof Error) {
+        console.error(e.cause);
+        submitFailMessage = e.message;
+      }
+    }
+  };
 </script>
 
 <div class="bg-body-color-secondary/50 p-14 rounded-xl relative z-10">
@@ -85,7 +83,8 @@
             type="text"
             placeholder="Name"
             bind:value={formState.name}
-            onblur={() => (formState.nameTouched = true)} />
+            onblur={() => (formState.nameTouched = true)}
+          />
           {#if formState.nameTouched && !nameValid(formState.name)}
             <span class="ml-2 text-primary">Please enter your name</span>
           {/if}
@@ -97,7 +96,8 @@
             type="email"
             placeholder="Email"
             bind:value={formState.email}
-            onblur={() => (formState.emailTouched = true)} />
+            onblur={() => (formState.emailTouched = true)}
+          />
           {#if formState.emailTouched && !emailValid(formState.email)}
             <span class="ml-2 text-primary">Please enter a valid email</span>
           {/if}
@@ -109,14 +109,16 @@
             rows="10"
             placeholder="Message"
             bind:value={formState.message}
-            onblur={() => (formState.messageTouched = true)}>
+            onblur={() => (formState.messageTouched = true)}
+          >
           </textarea>
           {formState.message.length}/750 characters remaining
           {#if formState.messageTouched && !messageValid(formState.message) && formState.message.length <= MAX_MESSAGE_LENGTH}
             <span class="ml-2 text-primary">Please enter your message</span>
           {:else if formState.messageTouched && !messageValid(formState.message) && formState.message.length > MAX_MESSAGE_LENGTH}
             <span class="ml-2 text-primary"
-              >Your message is too long. Please keep it under {MAX_MESSAGE_LENGTH} characters in length.</span>
+              >Your message is too long. Please keep it under {MAX_MESSAGE_LENGTH} characters in length.</span
+            >
           {/if}
         </label>
         <!-- <Turnstile
@@ -128,8 +130,9 @@
             <Button
               disabled={!formValid || formStatus === 'submitting'}
               flavor="normal"
-              btnCallback={submitForm}>
-              {formStatus === 'submitting'? 'Submitting...' : 'Submit'}
+              btnCallback={submitForm}
+            >
+              {formStatus === 'submitting' ? 'Submitting...' : 'Submit'}
             </Button>
           </span>
         {/if}

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Accordion from '@/components/Accordion.svelte'
+  import Accordion from '@/components/Accordion.svelte';
 </script>
 
 <Accordion isOpen>
@@ -8,7 +8,8 @@
   {/snippet}
   {#snippet answer()}
     <p>
-      Most projects include up to 5–7 core pages, basic automations (forms, scheduling, analytics), and SEO optimization.
+      Most projects include up to 5–7 core pages, basic automations (forms, scheduling, analytics),
+      and SEO optimization.
     </p>
   {/snippet}
 </Accordion>
@@ -18,7 +19,8 @@
   {/snippet}
   {#snippet answer()}
     <p>
-      Absolutely. We design with scalability in mind, so adding pages, features, or automations is simple.
+      Absolutely. We design with scalability in mind, so adding pages, features, or automations is
+      simple.
     </p>
   {/snippet}
 </Accordion>

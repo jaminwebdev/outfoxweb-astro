@@ -2,7 +2,7 @@
 import type { MarkdownHeading } from 'astro';
 
 interface Props {
-  headings: MarkdownHeading[]
+  headings: MarkdownHeading[];
 }
 
 const { headings } = Astro.props;
@@ -12,7 +12,7 @@ const filteredHeadings = headings.filter((heading) => heading.depth <= 2);
 
 <nav>
   <h3 class="mb-3">Table of Contents</h3>
-  <ul class='list-disc list-inside text-primary mb-10'>
+  <ul class="list-disc list-inside text-primary mb-10">
     {
       filteredHeadings.map((heading) => (
         <li class="text-lg hover:text-tertiary">

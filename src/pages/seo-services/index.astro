@@ -23,14 +23,16 @@ import ProcessFAQs from '@components/sections/seo-services/ProcessFAQs.svelte';
 import GeneralFAQs from '@components/sections/seo-services/GeneralFAQs.svelte';
 
 const seo = {
-	title: 'SEO Services: Boost Organic Traffic & Generate Quality Leads | Outfox Web',
-	description: 'Drive more organic traffic and attract quality leads with our expert SEO services. We optimize your website to improve search rankings, increase visibility, and deliver sustainable growth for your business.'
-}
+  title: 'SEO Services: Boost Organic Traffic & Generate Quality Leads | Outfox Web',
+  description:
+    'Drive more organic traffic and attract quality leads with our expert SEO services. We optimize your website to improve search rankings, increase visibility, and deliver sustainable growth for your business.',
+};
 ---
 
 <Layout {seo}>
   <header
-	class="grid grid-cols-1 md:grid-cols-[3fr_2fr] items-center gap-32 md:gap-14 py-24 md:py-20">
+    class="grid grid-cols-1 md:grid-cols-[3fr_2fr] items-center gap-32 md:gap-14 py-24 md:py-20"
+  >
     <div>
       <h1 class="text-center md:text-left mb-6">
         Grow your traffic.<br />
@@ -41,7 +43,11 @@ const seo = {
         <Checkmark body="Build trust and credibility" />
         <Checkmark body="Increase engagement" />
       </div>
-      <MultiStepDialog flavor="glow" classes="justify-self-center md:justify-self-start" client:load>
+      <MultiStepDialog
+        flavor="glow"
+        classes="justify-self-center md:justify-self-start"
+        client:load
+      >
         Let's Connect
       </MultiStepDialog>
     </div>
@@ -52,32 +58,40 @@ const seo = {
         height="512"
         alt="laptop and mobile phone mockup of modern website"
         class="relative z-1 max-h-[425px] object-cover"
-        loading="eager" />
+        loading="eager"
+      />
       <ImgBackground classes="absolute -z-0 -top-[90px] -right-[170px] w-[150%] h-[150%]" />
     </div>
   </header>
   <section id="benefitsRow" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px]">
-    <BenefitCard lottiePath="/lottie/BarChart_primary.json"
+    <BenefitCard
+      lottiePath="/lottie/BarChart_primary.json"
       heading="Multiply your traffic"
       body="Our clients see an average of 2-3x increase in organic traffic in their first 6-8 months."
       initialPlay
-      client:load />
-    <BenefitCard lottiePath="/lottie/Medal_tertiary.json"
+      client:load
+    />
+    <BenefitCard
+      lottiePath="/lottie/Medal_tertiary.json"
       heading="Build trust"
       body="Higher ranking pages are trusted more than non-ranked pages. More trust = more conversions."
-      delay={750} 
+      delay={750}
       initialPlay
-      client:load />
-    <BenefitCard lottiePath="/lottie/Magnet_secondary.json"
+      client:load
+    />
+    <BenefitCard
+      lottiePath="/lottie/Magnet_secondary.json"
       heading="Increase engagement"
       body="The more your content is geared towards what people are looking for, the more they engage."
-      delay={1500} 
+      delay={1500}
       initialPlay
-      client:load />
+      client:load
+    />
   </section>
   <section
     id="intro"
-    class="rounded-xl bg-body-color-secondary px-6 py-10 md:p-[60px] grid grid-cols-1 lg:grid-cols-2 gap-4 items-center overflow-hidden">
+    class="rounded-xl bg-body-color-secondary px-6 py-10 md:p-[60px] grid grid-cols-1 lg:grid-cols-2 gap-4 items-center overflow-hidden"
+  >
     <!-- Left column -->
     <div>
       <p class="bg-orange/20 text-orange py-[5px] px-[14px] rounded-md inline-block text-base mb-2">
@@ -88,8 +102,8 @@ const seo = {
         traffic you need?
       </h2>
       <p class="mb-8 lg:mb-4">
-        You work so hard, slaving over ideas you think your user-base is interested in. So why aren’t
-        more people getting eyes on your website?
+        You work so hard, slaving over ideas you think your user-base is interested in. So why
+        aren’t more people getting eyes on your website?
       </p>
       <p class="mb-8 lg:mb-4">
         It’s no secret: 68% percent of online experiences start with a search engine. If you’re not
@@ -102,25 +116,33 @@ const seo = {
       width="585"
       height="440"
       alt="Coworking business website design"
-      class="max-h-[380px] lg:max-h-[480px] -mb-[80px] lg:ml-[80px] object-contain justify-self-center lg:justify-self-auto" />
+      class="max-h-[380px] lg:max-h-[480px] -mb-[80px] lg:ml-[80px] object-contain justify-self-center lg:justify-self-auto"
+    />
   </section>
   <section id="initialStats" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px] mt-[40px]">
-    <StatCard color="orange"
+    <StatCard
+      color="orange"
       stat="434%"
       subtitle="More indexed pages"
-      body="Websites with proper SEO, copy writing, and content strategy get 434% more traffic." />
-    <StatCard color="secondary"
+      body="Websites with proper SEO, copy writing, and content strategy get 434% more traffic."
+    />
+    <StatCard
+      color="secondary"
       stat="3x"
       subtitle="As many leads"
-      body="SEO generates over 3x as many leads as other marketing tactics and costs 62% less." />
-    <StatCard color="tertiary"
+      body="SEO generates over 3x as many leads as other marketing tactics and costs 62% less."
+    />
+    <StatCard
+      color="tertiary"
       stat="5.7%"
       subtitle="Will rank in the top 10"
-      body="Even with all the best SEO practices in mind, only 5.7% of pages will rank in the top 10 of search." />
+      body="Even with all the best SEO practices in mind, only 5.7% of pages will rank in the top 10 of search."
+    />
   </section>
   <section
     id="solution"
-    class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-32 items-center my-[125px]">
+    class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-32 items-center my-[125px]"
+  >
     <div class="relative flex justify-center lg:justify-start">
       <Image
         class="relative z-1 max-w-[425px] w-full"
@@ -128,12 +150,16 @@ const seo = {
         alt="Laptop and mobile phone showing a design for a VR based company"
         height="570"
         width="479"
-        loading="lazy" />
+        loading="lazy"
+      />
       <ImgBackground
-        classes="absolute -z-0 -top-[25%] -left-[25%] lg:-left-[40%] w-[160%] h-[160%]" />
+        classes="absolute -z-0 -top-[25%] -left-[25%] lg:-left-[40%] w-[160%] h-[160%]"
+      />
     </div>
     <div class="mt-7 lg:mt-0">
-      <p class="bg-primary/20 text-primary py-[5px] px-[14px] rounded-md inline-block text-base mb-2">
+      <p
+        class="bg-primary/20 text-primary py-[5px] px-[14px] rounded-md inline-block text-base mb-2"
+      >
         LEVEL UP
       </p>
       <h2 class="mb-6">Take out the guess work with top-tier SEO.</h2>
@@ -147,7 +173,12 @@ const seo = {
         approach. With the right keywords, content strategy, and page optimizations, you can rest
         assured your monthly visits will skyrocket.
       </p>
-      <MultiStepDialog flavor="glow" color="tertiary" classes="justify-self-center md:justify-self-start" client:load>
+      <MultiStepDialog
+        flavor="glow"
+        color="tertiary"
+        classes="justify-self-center md:justify-self-start"
+        client:load
+      >
         Boost your website today
       </MultiStepDialog>
     </div>

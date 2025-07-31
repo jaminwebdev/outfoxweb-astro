@@ -13,96 +13,91 @@ import StatCard from '@components/cards/StatCard.svelte';
 //@ts-ignore
 import Checkmark from '@components/Checkmark.svelte';
 //@ts-ignore
-import MultiStepProjectForm from '@components/forms/project-form/MultiStepProjectForm.svelte'
+import MultiStepProjectForm from '@components/forms/project-form/MultiStepProjectForm.svelte';
 
 const seo = {
-	title: 'Showcase',
-	description: 'Homepage description m8'
-}
+  title: 'Showcase',
+  description: 'Homepage description m8',
+};
 ---
 
 <Layout {seo}>
-	<Image src={MobileScore} alt="Tablet of Figma design" width="200" height="175" quality="max" transition:name='mobile_score'/>
-	<main>
-		<h1>Hello there</h1>
-		<h2>Secondary Heading</h2>
-		<h3>Tertiary Heading</h3>
-		<p>Body text here</p>
+  <Image
+    src={MobileScore}
+    alt="Tablet of Figma design"
+    width="200"
+    height="175"
+    quality="max"
+    transition:name="mobile_score"
+  />
+  <main>
+    <h1>Hello there</h1>
+    <h2>Secondary Heading</h2>
+    <h3>Tertiary Heading</h3>
+    <p>Body text here</p>
     <Checkmark body="Testing body" />
-		<div>
-			<h2 class="text-center pb-4">Glow Buttons</h2>
-			<div class="pb-10 flex justify-center flex-wrap gap-4">
-				<Button type="button" color="primary">
-					Button Primary
-				</Button>
-				<Button type="link" color="secondary" link="/showcase" >
-					Button Secondary (link)
-				</Button>
-				<Button type="button" color="tertiary">
-					Button Tertiary
-				</Button>
-			</div>
-		</div>
-		<div>
-			<h2 class="text-center pb-4">Normal Buttons</h2>
-			<div class="pb-10 flex justify-center flex-wrap gap-4">
-				<Button type="button" flavor="normal" color="primary">
-					Button Primary
-				</Button>
-				<Button type="link" flavor="normal" color="secondary" link="/showcase" >
-					Button Secondary (link)
-				</Button>
-				<Button type="button" flavor="normal" color="tertiary">
-					Button Tertiary
-				</Button>
-			</div>
-		</div>
     <div>
-			<h2 class="text-center pb-4">Ghost Buttons</h2>
-			<div class="pb-10 flex justify-center flex-wrap gap-4">
-				<Button type="button" flavor="ghost" color="primary">
-					Button Primary
-				</Button>
-				<Button type="link" flavor="ghost" color="secondary" link="/showcase" >
-					Button Secondary (link)
-				</Button>
-				<Button type="button" flavor="ghost" color="tertiary">
-					Button Tertiary
-				</Button>
-			</div>
-		</div>
+      <h2 class="text-center pb-4">Glow Buttons</h2>
+      <div class="pb-10 flex justify-center flex-wrap gap-4">
+        <Button type="button" color="primary"> Button Primary </Button>
+        <Button type="link" color="secondary" link="/showcase"> Button Secondary (link) </Button>
+        <Button type="button" color="tertiary"> Button Tertiary </Button>
+      </div>
+    </div>
     <div>
-			<h2 class="text-center pb-4">Outline Buttons</h2>
-			<div class="pb-10 flex justify-center flex-wrap gap-4">
-				<Button type="button" flavor="outline" color="primary">
-					Button Primary
-				</Button>
-				<Button type="link" flavor="outline" color="secondary" link="/showcase" >
-					Button Secondary (link)
-				</Button>
-				<Button type="button" flavor="outline" color="tertiary">
-					Button Tertiary
-				</Button>
-			</div>
-		</div>
-		<TestimonialRow testimonials={[testimonials['kyle'], testimonials['stacy']]} />
-		<section id="initialStats" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px] mt-[40px]">
-			<StatCard color="orange"
+      <h2 class="text-center pb-4">Normal Buttons</h2>
+      <div class="pb-10 flex justify-center flex-wrap gap-4">
+        <Button type="button" flavor="normal" color="primary"> Button Primary </Button>
+        <Button type="link" flavor="normal" color="secondary" link="/showcase">
+          Button Secondary (link)
+        </Button>
+        <Button type="button" flavor="normal" color="tertiary"> Button Tertiary </Button>
+      </div>
+    </div>
+    <div>
+      <h2 class="text-center pb-4">Ghost Buttons</h2>
+      <div class="pb-10 flex justify-center flex-wrap gap-4">
+        <Button type="button" flavor="ghost" color="primary"> Button Primary </Button>
+        <Button type="link" flavor="ghost" color="secondary" link="/showcase">
+          Button Secondary (link)
+        </Button>
+        <Button type="button" flavor="ghost" color="tertiary"> Button Tertiary </Button>
+      </div>
+    </div>
+    <div>
+      <h2 class="text-center pb-4">Outline Buttons</h2>
+      <div class="pb-10 flex justify-center flex-wrap gap-4">
+        <Button type="button" flavor="outline" color="primary"> Button Primary </Button>
+        <Button type="link" flavor="outline" color="secondary" link="/showcase">
+          Button Secondary (link)
+        </Button>
+        <Button type="button" flavor="outline" color="tertiary"> Button Tertiary </Button>
+      </div>
+    </div>
+    <TestimonialRow testimonials={[testimonials['kyle'], testimonials['stacy']]} />
+    <section id="initialStats" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px] mt-[40px]">
+      <StatCard
+        color="orange"
         stat="404%"
         subtitle="More indexed pages"
-        body="Websites with proper SEO, copy writing, and content strategy get 434% more traffic." />
-			<StatCard color="secondary"
+        body="Websites with proper SEO, copy writing, and content strategy get 434% more traffic."
+      />
+      <StatCard
+        color="secondary"
         stat="3x"
         subtitle="As many leads"
-        body="SEO generates over 3x as many leads as other marketing tactics and costs 62% less." />
-			<StatCard color="tertiary"
+        body="SEO generates over 3x as many leads as other marketing tactics and costs 62% less."
+      />
+      <StatCard
+        color="tertiary"
         stat="5.7%"
         subtitle="Will rank in the top 10"
-        body="Even with all the best SEO practices in mind, only 5.7% of pages will rank in the top 10 of search." />
-		</section>
+        body="Even with all the best SEO practices in mind, only 5.7% of pages will rank in the top 10 of search."
+      />
+    </section>
     <section id="multiStepForm" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px] mt-[40px]">
       <MultiStepProjectForm client:load />
-		</section>
-	</main>
-	<a href="/">Home page</a>
+    </section>
+  </main>
+  <a href="/">Home page</a>
 </Layout>

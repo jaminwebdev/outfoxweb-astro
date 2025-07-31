@@ -1,54 +1,57 @@
---- 
+---
 import { SEO } from 'astro-seo';
 import { ClientRouter } from 'astro:transitions';
 import '@/styles/tailwind.css';
 // @ts-ignore
-import Analytics from '@components/Analytics.svelte'
+import Analytics from '@components/Analytics.svelte';
 // @ts-ignore
 import Navigation from '@components/layout/navigation/Navigation.svelte';
 import Container from '@components/layout/Container.astro';
 // @ts-ignore
 import BgSpotlight from '@components/BgSpotlight.svelte';
-import Footer from '@components/layout/Footer.astro'
+import Footer from '@components/layout/Footer.astro';
 
 export interface Props {
-    seo: {
-        title: string;
-        description: string;
-    };
+  seo: {
+    title: string;
+    description: string;
+  };
 }
 
 const { seo } = Astro.props as Props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="dark">
-	<head>
-		<SEO title={seo.title} description={seo.description} />
+  <head>
+    <SEO title={seo.title} description={seo.description} />
     <!-- TODO: remove no-index -->
     <meta name="robots" content="noindex" />
-		<meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<ClientRouter />
-	</head>
-	<body class="bg-body-color relative">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <ClientRouter />
+  </head>
+  <body class="bg-body-color relative">
     <Analytics client:only />
     <div class="overflow-x-hidden">
       <div
-      class="w-screen h-[500px] md:h-[1000px] overflow-hidden absolute top-0 pointer-events-none opacity-0 lg:opacity-100">
+        class="w-screen h-[500px] md:h-[1000px] overflow-hidden absolute top-0 pointer-events-none opacity-0 lg:opacity-100"
+      >
         <BgSpotlight
-          classes="absolute -top-[30vw] -right-[34%] md:-top-[420px] md:-right-[40%] w-[80%]" />
+          classes="absolute -top-[30vw] -right-[34%] md:-top-[420px] md:-right-[40%] w-[80%]"
+        />
       </div>
       <Container>
-        <Navigation client:load transition:persist="navigation"/>
+        <Navigation client:load transition:persist="navigation" />
         <slot />
         <Footer />
       </Container>
       <div
-        class="w-screen h-[500px] md:h-[700px] overflow-hidden absolute bottom-0 pointer-events-none">
+        class="w-screen h-[500px] md:h-[700px] overflow-hidden absolute bottom-0 pointer-events-none"
+      >
         <BgSpotlight classes="absolute -bottom-[200px] -left-[375px] w-[800px] rotate-180" />
       </div>
     </div>
-	</body>
+  </body>
 </html>

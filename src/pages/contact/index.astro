@@ -3,41 +3,44 @@ import Layout from '../../layouts/Layout.astro';
 //@ts-ignore
 import ImgBackground from '@components/ImgBackground.svelte';
 //@ts-ignore
-import ContactForm from '@components/forms/contact/ContactForm.svelte'
+import ContactForm from '@components/forms/contact/ContactForm.svelte';
 //@ts-ignore
-import SocialLogo from '@components/SocialLogo.svelte'
+import SocialLogo from '@components/SocialLogo.svelte';
 //@ts-ignore
-import TestimonialRow from '@components/sections/TestimonialRow.svelte'
+import TestimonialRow from '@components/sections/TestimonialRow.svelte';
 import { testimonials } from '@/utils/testimonials';
 
 const seo = {
-	title: 'Contact Us | Outfox Web',
-	description: "Have questions or ready to get started? Contact us today to discuss your web development, design, SEO, or digital marketing needs. We're here to help you achieve your online goals with personalized solutions."
-}
+  title: 'Contact Us | Outfox Web',
+  description:
+    "Have questions or ready to get started? Contact us today to discuss your web development, design, SEO, or digital marketing needs. We're here to help you achieve your online goals with personalized solutions.",
+};
 ---
 
 <Layout {seo}>
   <header class="grid grid-cols-1 md:grid-cols-2 gap-32 md:gap-14 py-18 md:py-20">
     <div class="pt-10">
       <h1 class="text-center md:text-left">Contact Us</h1>
-      <p class="my-7">We’re available on lots of platforms - or fill out our form and we’ll get back to you ASAP.</p>
+      <p class="my-7">
+        We’re available on lots of platforms - or fill out our form and we’ll get back to you ASAP.
+      </p>
       <div class="grid grid-cols-[25px_max-content] gap-3 mb-8 justify-center md:justify-start">
         <SocialLogo logo="email" />
-        <a href="mailto:hello@outfoxweb.com">hello@outfoxweb.com</p></a>
-      </div>
-      <div class="grid grid-cols-[repeat(4,35px)] gap-8 justify-center md:justify-start">
-        <SocialLogo logo="instagram"/>
-        <SocialLogo logo="linkedin"/>
-        <SocialLogo logo="facebook"/>
-        <SocialLogo logo="x"/>
+        <a href="mailto:hello@outfoxweb.com">hello@outfoxweb.com</a>
       </div>
     </div>
-    <div class="relative grid justify-center md:justify-normal">
-      <ContactForm client:load/>
-      <ImgBackground classes="absolute -z-0 -top-[90px] -right-[170px] w-[150%] h-[150%]" />
+    <div class="grid grid-cols-[repeat(4,35px)] gap-8 justify-center md:justify-start">
+      <SocialLogo logo="instagram" />
+      <SocialLogo logo="linkedin" />
+      <SocialLogo logo="facebook" />
+      <SocialLogo logo="x" />
     </div>
   </header>
-  <section id="testimonials" class="mt-12">
-    <TestimonialRow testimonials={[testimonials['kyle'], testimonials['stacy']]} />
-  </section>
+  <div class="relative grid justify-center md:justify-normal">
+    <ContactForm client:load />
+    <ImgBackground classes="absolute -z-0 -top-[90px] -right-[170px] w-[150%] h-[150%]" />
+  </div>
 </Layout>
+<section id="testimonials" class="mt-12">
+  <TestimonialRow testimonials={[testimonials['kyle'], testimonials['stacy']]} />
+</section>

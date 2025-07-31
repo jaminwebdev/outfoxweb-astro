@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Accordion from '@components/Accordion.svelte'
+  import Accordion from '@components/Accordion.svelte';
 </script>
 
 <section id="FAQs" class="flex flex-col items-center mb-[125px]">
@@ -10,8 +10,9 @@
     {/snippet}
     {#snippet answer()}
       <p>
-        In order to find out where you're going, we need to figure out where you've been. 
-        That's why our discovery starts with assessing your current rankings, keywords, UX, and design shortcomings.
+        In order to find out where you're going, we need to figure out where you've been. That's why
+        our discovery starts with assessing your current rankings, keywords, UX, and design
+        shortcomings.
       </p>
     {/snippet}
   </Accordion>
@@ -21,8 +22,9 @@
     {/snippet}
     {#snippet answer()}
       <p>
-        After exploring your website, we also assess your competition - whether local or online. 
-        What are they targeting? What is and isn't working for them? What's the market cap on your industry?
+        After exploring your website, we also assess your competition - whether local or online.
+        What are they targeting? What is and isn't working for them? What's the market cap on your
+        industry?
       </p>
     {/snippet}
   </Accordion>
@@ -32,11 +34,15 @@
     {/snippet}
     {#snippet answer()}
       <p>
-        Identifying and analyzing the words and phrases that people enter into search engines (like Google) when looking for information, products, or services related to your business or website.
+        Identifying and analyzing the words and phrases that people enter into search engines (like
+        Google) when looking for information, products, or services related to your business or
+        website.
       </p>
       <p class="mt-4">
-        The goal of keyword research is to understand the search intent behind these queries and select keywords that can help drive relevant traffic to your website, improve visibility in search engine results, and optimize content for better ranking.
-        It can also inform us on how to restructure your site's content if necessary.
+        The goal of keyword research is to understand the search intent behind these queries and
+        select keywords that can help drive relevant traffic to your website, improve visibility in
+        search engine results, and optimize content for better ranking. It can also inform us on how
+        to restructure your site's content if necessary.
       </p>
     {/snippet}
   </Accordion>
@@ -46,10 +52,12 @@
     {/snippet}
     {#snippet answer()}
       <p>
-        With the previous steps in mind, we move on to optimizing the text, images, videos, and other media—designed to achieve specific business goals. 
+        With the previous steps in mind, we move on to optimizing the text, images, videos, and
+        other media—designed to achieve specific business goals.
       </p>
       <p class="mt-4">
-        In doing so, we're creating valuable, relevant, and consistent content that resonates with a target audience, builds brand awareness, drives engagement, and increases conversions.
+        In doing so, we're creating valuable, relevant, and consistent content that resonates with a
+        target audience, builds brand awareness, drives engagement, and increases conversions.
       </p>
     {/snippet}
   </Accordion>
@@ -59,8 +67,9 @@
     {/snippet}
     {#snippet answer()}
       <p>
-        It's not only the content you see on the screen, but also what search engines see that matters.
-        That's why we turn our focus on your title tags, meta descriptions, url structure, heading tags, schema markup, and linking opportunities.
+        It's not only the content you see on the screen, but also what search engines see that
+        matters. That's why we turn our focus on your title tags, meta descriptions, url structure,
+        heading tags, schema markup, and linking opportunities.
       </p>
     {/snippet}
   </Accordion>
@@ -70,7 +79,8 @@
     {/snippet}
     {#snippet answer()}
       <p>
-        The final package can come in two ways - a report with all our findings and recommendations for your team to act on, or we can do the work ourselves. Your choice.
+        The final package can come in two ways - a report with all our findings and recommendations
+        for your team to act on, or we can do the work ourselves. Your choice.
       </p>
     {/snippet}
   </Accordion>

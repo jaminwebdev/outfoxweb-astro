@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Button, { type ButtonFlavors } from '@components/buttons/Button.svelte';
-	import type { Snippet } from 'svelte';
-	import MultiStepProjectForm from '@components/forms/project-form/MultiStepProjectForm.svelte'
+  import Button, { type ButtonFlavors } from '@components/buttons/Button.svelte';
+  import type { Snippet } from 'svelte';
+  import MultiStepProjectForm from '@components/forms/project-form/MultiStepProjectForm.svelte';
   import Dialog from '@components/dialogs/Dialog.svelte';
 
   interface Props {
@@ -11,12 +11,12 @@
     children?: Snippet;
   }
 
-  let { children, flavor = 'normal', classes, color }: Props = $props()
+  let { children, flavor = 'normal', classes, color }: Props = $props();
 
   let isOpen = $state(false);
 
-  let openDialog = () => isOpen = true
-  let closeDialog = () => isOpen = false
+  let openDialog = () => (isOpen = true);
+  let closeDialog = () => (isOpen = false);
 </script>
 
 <Button btnCallback={openDialog} {flavor} {color} classes="px-[20px] py-[12px] {classes}">
@@ -30,4 +30,3 @@
 <Dialog {isOpen} clickHandler={closeDialog}>
   <MultiStepProjectForm classes=" w-full" closeCallback={closeDialog} />
 </Dialog>
-

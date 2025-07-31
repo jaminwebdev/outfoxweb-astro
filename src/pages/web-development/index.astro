@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import LaptopImg from '@/images/Laptop_Metrics_Left.webp';
 // @ts-ignore
-import Globe from '@components/Globe.svelte'
+import Globe from '@components/Globe.svelte';
 // @ts-ignore
 import MultiStepDialog from '@components/dialogs/MultiStepDialog.svelte';
 // @ts-ignore
@@ -16,16 +16,17 @@ import StatCard from '@components/cards/StatCard.svelte';
 // @ts-ignore
 import TestimonialRow from '@components/sections/TestimonialRow.svelte';
 // @ts-ignore
-import WebDevFAQs from '@components/sections/web-development/WebDevFAQs.svelte'
+import WebDevFAQs from '@components/sections/web-development/WebDevFAQs.svelte';
 import { testimonials } from '@/utils/testimonials';
 import { Image } from 'astro:assets';
 // @ts-ignore
-import PageLoadBarChart from '@components/charts/PageLoadBarChart.svelte'
+import PageLoadBarChart from '@components/charts/PageLoadBarChart.svelte';
 
 const seo = {
-	title: 'Web Development: Fast, Reliable, and Engaging | Outfox Web',
-	description: 'Transform your online presence with our web development services. We build fast, reliable, and engaging websites that deliver exceptional performance, improve user experience, and drive results for your business.'
-}
+  title: 'Web Development: Fast, Reliable, and Engaging | Outfox Web',
+  description:
+    'Transform your online presence with our web development services. We build fast, reliable, and engaging websites that deliver exceptional performance, improve user experience, and drive results for your business.',
+};
 ---
 
 <Layout {seo}>
@@ -40,7 +41,11 @@ const seo = {
         <Checkmark body="Reduce bounce rates" />
         <Checkmark body="Feature rich & interactive" />
       </div>
-      <MultiStepDialog flavor="glow" classes="justify-self-center md:justify-self-start" client:load>
+      <MultiStepDialog
+        flavor="glow"
+        classes="justify-self-center md:justify-self-start"
+        client:load
+      >
         Let's Connect
       </MultiStepDialog>
     </div>
@@ -50,27 +55,34 @@ const seo = {
     </div>
   </header>
   <section id="benefitsRow" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px]">
-    <BenefitCard lottiePath="/lottie/Tablet_primary.json" 
+    <BenefitCard
+      lottiePath="/lottie/Tablet_primary.json"
       initialPlay
       heading="Decrease load times"
       body="Leverage the latest technology to reach your user-base faster and more reliably."
-      client:load />
-    <BenefitCard lottiePath="/lottie/Consult_tertiary.json" 
-      delay={500} 
+      client:load
+    />
+    <BenefitCard
+      lottiePath="/lottie/Consult_tertiary.json"
+      delay={500}
       initialPlay
       heading="Get more customers"
       body="A faster site leads to improved user experience and higher organic rankings."
-      client:load />
-    <BenefitCard lottiePath="/lottie/Coins_secondary.json" 
-      delay={1500} 
+      client:load
+    />
+    <BenefitCard
+      lottiePath="/lottie/Coins_secondary.json"
+      delay={1500}
       initialPlay
       heading="Supercharge your business"
       body="Gain a competitive advantage, increase brand awareness, and reach your goals."
-      client:load />
+      client:load
+    />
   </section>
   <section
     id="intro"
-    class="rounded-xl bg-body-color-secondary px-6 py-10 pb-48 lg:p-[60px] grid grid-cols-1 lg:grid-cols-2 gap-4 items-center overflow-hidden">
+    class="rounded-xl bg-body-color-secondary px-6 py-10 pb-48 lg:p-[60px] grid grid-cols-1 lg:grid-cols-2 gap-4 items-center overflow-hidden"
+  >
     <!-- Left column -->
     <div>
       <p class="bg-orange/20 text-orange py-[5px] px-[14px] rounded-md inline-block text-base mb-2">
@@ -82,103 +94,128 @@ const seo = {
         outdated, and ultimately doesn’t fit your business needs.
       </p>
       <p class="mb-8 lg:mb-4">
-        It’s no secret: research shows people are quick to abandon slow and poorly designed websites.
-        This is precisely why we’ve spent years crafting our tech stack and honing our website
-        building process.
+        It’s no secret: research shows people are quick to abandon slow and poorly designed
+        websites. This is precisely why we’ve spent years crafting our tech stack and honing our
+        website building process.
       </p>
     </div>
     <!-- Right column -->
-     <div class="flex justify-end relative">
+    <div class="flex justify-end relative">
       <div class="absolute lg:relative left-1/2 -translate-x-1/2">
         <Globe client:visible size={400} />
       </div>
-      </div>
-     </div>
-  </section>
-  <section id="initialStats" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px] mt-[40px]">
-    <StatCard color="orange"
-      stat="40%"
-      subtitle="Won't wait"
-      body="40% of customers won’t wait more than 2-3 seconds before abandoning a site." />
-    <StatCard color="secondary"
-      stat="85%"
-      subtitle="Expect speed"
-      body="85% of mobile users expect pages to load as fast or faster than they do on a desktop." />
-    <StatCard color="tertiary"
-      stat="64%"
-      subtitle="Will look elsewhere"
-      body="64% of consumers unhappy with their experience will buy elsewhere next time." />
-  </section>
-  <section
-    id="solution"
-    class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-32 items-center my-[125px]">
-    <div class="relative flex justify-center lg:justify-start">
-      <Image
-        class="relative z-1 max-w-[425px] w-full"
-        src={LaptopImg}
-        alt="Graphic showing improved SEO graphs overlaying website design"
-        height="513"
-        width="518"
-        loading="lazy" />
-      <ImgBackground
-        classes="absolute -z-0 -top-[25%] -left-[25%] lg:-left-[40%] w-[160%] h-[160%]" />
-    </div>
-    <div class="mt-7 lg:mt-0">
-      <p class="bg-primary/20 text-primary py-[5px] px-[14px] rounded-md inline-block text-base mb-2">
-        LEVEL UP
-      </p>
-      <h2 class="mb-6">Boost your business with a new website.</h2>
-      <p>
-        Think about it: every time you navigate around a website, another 3-10 seconds goes by. A lot
-        of life happens between pages. Every business needs an engaging website that’s free of bugs,
-        and meets their audience’s needs at the speed of life.
-      </p>
-      <p class="mt-4 mb-8">
-        This is why we’ve spent the last decade meticulously choosing our technologies, honing our
-        process, and connecting with our clients.
-      </p>
-      <MultiStepDialog flavor="glow" color="tertiary" classes="justify-self-center md:justify-self-start" client:load>
-        Boost your website today
-      </MultiStepDialog>
     </div>
   </section>
-  <section id="secondaryStats" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px] mt-[40px]">
-    <StatCard color="primary"
-      stat="0.3s"
-      subtitle="Average load time" 
-      body="Using the fastest frameworks and hosting solutions, our sites are incredibly fast."/>
-    <StatCard color="secondary"
-      stat="2x"
-      subtitle="Conversion rates" 
-      body="Our clients see double the conversions on average in 6-8 months after launch."/>
-    <StatCard color="tertiary"
-      stat="0%"
-      subtitle="Down time"
-      body="Thanks to our ultra-reliable hosting solutions and monitoring software, our sites are extremely reliable." />
-  </section>
-  <TestimonialRow testimonials={[testimonials['kyle'], testimonials['stacy']]} />
-  <section id="processRow" class="grid grid-cols-1 md:grid-cols-3 gap-8 my-[125px]">
-    <h2 class="col-start-1 md:col-span-3 text-center mb-5">How do we do it?</h2>
-    <BenefitCard lottiePath="/lottie/Consult_primary.json" 
-      initialPlay
-      heading="Discovery"
-      body="We collaborate with you on market research, competitor analysis, keywords, wireframes, and design."
-      client:load />
-    <BenefitCard lottiePath="/lottie/Computer_tertiary.json" 
-      delay={500} 
-      initialPlay
-      heading="Development"
-      body="Sit back while we do all the work to create and thoroughly test your beautiful new website."
-      client:load />
-    <BenefitCard lottiePath="/lottie/Confettie_secondary.json" 
-      delay={1500} 
-      initialPlay
-      heading="Delivery"
-      body="After the launch of your amazing new site, we carry on providing training and ongoing maintenance."
-      client:load />
-  </section>
-  <section id="FAQs" class="flex flex-col items-center">
-    <h2 class="text-center mb-5">FAQs</h2>
-    <WebDevFAQs client:visible />
-  </section>  
 </Layout>
+<section id="initialStats" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px] mt-[40px]">
+  <StatCard
+    color="orange"
+    stat="40%"
+    subtitle="Won't wait"
+    body="40% of customers won’t wait more than 2-3 seconds before abandoning a site."
+  />
+  <StatCard
+    color="secondary"
+    stat="85%"
+    subtitle="Expect speed"
+    body="85% of mobile users expect pages to load as fast or faster than they do on a desktop."
+  />
+  <StatCard
+    color="tertiary"
+    stat="64%"
+    subtitle="Will look elsewhere"
+    body="64% of consumers unhappy with their experience will buy elsewhere next time."
+  />
+</section>
+<section
+  id="solution"
+  class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-32 items-center my-[125px]"
+>
+  <div class="relative flex justify-center lg:justify-start">
+    <Image
+      class="relative z-1 max-w-[425px] w-full"
+      src={LaptopImg}
+      alt="Graphic showing improved SEO graphs overlaying website design"
+      height="513"
+      width="518"
+      loading="lazy"
+    />
+    <ImgBackground
+      classes="absolute -z-0 -top-[25%] -left-[25%] lg:-left-[40%] w-[160%] h-[160%]"
+    />
+  </div>
+  <div class="mt-7 lg:mt-0">
+    <p class="bg-primary/20 text-primary py-[5px] px-[14px] rounded-md inline-block text-base mb-2">
+      LEVEL UP
+    </p>
+    <h2 class="mb-6">Boost your business with a new website.</h2>
+    <p>
+      Think about it: every time you navigate around a website, another 3-10 seconds goes by. A lot
+      of life happens between pages. Every business needs an engaging website that’s free of bugs,
+      and meets their audience’s needs at the speed of life.
+    </p>
+    <p class="mt-4 mb-8">
+      This is why we’ve spent the last decade meticulously choosing our technologies, honing our
+      process, and connecting with our clients.
+    </p>
+    <MultiStepDialog
+      flavor="glow"
+      color="tertiary"
+      classes="justify-self-center md:justify-self-start"
+      client:load
+    >
+      Boost your website today
+    </MultiStepDialog>
+  </div>
+</section>
+<section id="secondaryStats" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px] mt-[40px]">
+  <StatCard
+    color="primary"
+    stat="0.3s"
+    subtitle="Average load time"
+    body="Using the fastest frameworks and hosting solutions, our sites are incredibly fast."
+  />
+  <StatCard
+    color="secondary"
+    stat="2x"
+    subtitle="Conversion rates"
+    body="Our clients see double the conversions on average in 6-8 months after launch."
+  />
+  <StatCard
+    color="tertiary"
+    stat="0%"
+    subtitle="Down time"
+    body="Thanks to our ultra-reliable hosting solutions and monitoring software, our sites are extremely reliable."
+  />
+</section>
+<TestimonialRow testimonials={[testimonials['kyle'], testimonials['stacy']]} />
+<section id="processRow" class="grid grid-cols-1 md:grid-cols-3 gap-8 my-[125px]">
+  <h2 class="col-start-1 md:col-span-3 text-center mb-5">How do we do it?</h2>
+  <BenefitCard
+    lottiePath="/lottie/Consult_primary.json"
+    initialPlay
+    heading="Discovery"
+    body="We collaborate with you on market research, competitor analysis, keywords, wireframes, and design."
+    client:load
+  />
+  <BenefitCard
+    lottiePath="/lottie/Computer_tertiary.json"
+    delay={500}
+    initialPlay
+    heading="Development"
+    body="Sit back while we do all the work to create and thoroughly test your beautiful new website."
+    client:load
+  />
+  <BenefitCard
+    lottiePath="/lottie/Confettie_secondary.json"
+    delay={1500}
+    initialPlay
+    heading="Delivery"
+    body="After the launch of your amazing new site, we carry on providing training and ongoing maintenance."
+    client:load
+  />
+</section>
+<section id="FAQs" class="flex flex-col items-center">
+  <h2 class="text-center mb-5">FAQs</h2>
+  <WebDevFAQs client:visible />
+</section>

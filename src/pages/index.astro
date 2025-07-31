@@ -1,48 +1,44 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
-import HeaderImg from "@images/homepage_hero_img.webp";
-import HeadlessWPImg from "@images/Headless_WP_iMac.webp";
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import HeaderImg from '@images/homepage_hero_img.webp';
+import HeadlessWPImg from '@images/Headless_WP_iMac.webp';
 // @ts-ignore
-import Button from "@components/buttons/Button.svelte";
+import Button from '@components/buttons/Button.svelte';
 // @ts-ignore
-import MultiStepDialog from "@components/dialogs/MultiStepDialog.svelte";
+import MultiStepDialog from '@components/dialogs/MultiStepDialog.svelte';
 // @ts-ignore
-import BenefitCard from "@/components/cards/BenefitCard.svelte";
+import BenefitCard from '@/components/cards/BenefitCard.svelte';
 // @ts-ignore
-import PortfolioRow from "@components/sections/PortfolioRow.svelte";
+import PortfolioRow from '@components/sections/PortfolioRow.svelte';
 // @ts-ignore
-import ServicesTabs from "@components/sections/ServicesTabs.svelte";
+import ServicesTabs from '@components/sections/ServicesTabs.svelte';
 // @ts-ignore
-import ImgBackground from "@components/ImgBackground.svelte";
+import ImgBackground from '@components/ImgBackground.svelte';
 //@ts-ignore
-import TestimonialRow from "@components/sections/TestimonialRow.svelte";
-import { testimonials } from "@/utils/testimonials";
+import TestimonialRow from '@components/sections/TestimonialRow.svelte';
+import { testimonials } from '@/utils/testimonials';
 // @ts-ignore
-import BlogCard from "@components/blog/BlogCard.svelte";
-import { allBlogMeta } from "@/utils/blogs.ts";
+import BlogCard from '@components/blog/BlogCard.svelte';
+import { allBlogMeta } from '@/utils/blogs.ts';
 
 const recentPosts = allBlogMeta.slice(0, 3);
 
 const seo = {
-  title: "Outfox Web | Web Development Design and SEO Experts",
+  title: 'Outfox Web | Web Development Design and SEO Experts',
   description:
-    "Boost your online presence with our expert web development, design, and SEO services. We create high-performance, user-friendly websites that drive traffic, increase conversions, and help your business succeed in the digital world.",
+    'Boost your online presence with our expert web development, design, and SEO services. We create high-performance, user-friendly websites that drive traffic, increase conversions, and help your business succeed in the digital world.',
 };
 ---
 
 <Layout {seo}>
   <main>
-    <header
-      class="py-20 md:py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-20"
-    >
+    <header class="py-20 md:py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-20">
       <div>
-        <h1 class="text-center md:text-left mb-2">
-          Websites That Drive Growth
-        </h1>
+        <h1 class="text-center md:text-left mb-2">Websites That Drive Growth</h1>
         <p class="text-center md:text-left mb-10">
-          Reach your audience, convert more customers, and rank higher with the
-          best website for you.
+          Reach your audience, convert more customers, and rank higher with the best website for
+          you.
         </p>
         <MultiStepDialog
           flavor="glow"
@@ -59,15 +55,10 @@ const seo = {
           class="relative z-1 lg:max-w-[500px]"
           loading="eager"
         />
-        <ImgBackground
-          classes="absolute -z-0 -top-[90px] -right-[170px] w-[150%] h-[150%]"
-        />
+        <ImgBackground classes="absolute -z-0 -top-[90px] -right-[170px] w-[150%] h-[150%]" />
       </div>
     </header>
-    <section
-      id="benefitsRow"
-      class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px]"
-    >
+    <section id="benefitsRow" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-[125px]">
       <BenefitCard
         lottiePath="/lottie/BarChart_primary.json"
         heading="Multiply your conversions"
@@ -119,10 +110,9 @@ const seo = {
         <h2 class="mb-4">Make WordPress Fast. Really Fast.</h2>
         <p>Love WordPress but hate the slow load times? You’re not alone.</p>
         <p class="mt-4 mb-8">
-          With a headless approach, we keep the WordPress editor you know while
-          replacing its clunky front‑end with cutting‑edge technology. The
-          result? Lightning‑fast load speeds, rock‑solid performance, and a
-          seamless experience for your users.
+          With a headless approach, we keep the WordPress editor you know while replacing its clunky
+          front‑end with cutting‑edge technology. The result? Lightning‑fast load speeds, rock‑solid
+          performance, and a seamless experience for your users.
         </p>
         <Button
           type="link"
@@ -132,9 +122,7 @@ const seo = {
         >
       </div>
     </section>
-    <TestimonialRow
-      testimonials={[testimonials["kyle"], testimonials["stacy"]]}
-    />
+    <TestimonialRow testimonials={[testimonials['kyle'], testimonials['stacy']]} />
     <section id="recentPosts" class="mt-32">
       <h2 class="text-center">Recent Posts</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">

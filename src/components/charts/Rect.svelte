@@ -4,13 +4,13 @@
   import { cubicOut } from 'svelte/easing';
   import { interpolate } from 'd3-interpolate';
 
-  let { x, value, yScale, width, height, i, fill } = $props()
+  let { x, value, yScale, width, height, i, fill } = $props();
 
   const tweenParams = {
     delay: 300 + i * 50,
     duration: 300,
     interpolate,
-    easing: cubicOut
+    easing: cubicOut,
   };
 
   const tY = tweened(undefined, tweenParams);
@@ -18,11 +18,11 @@
 
   $effect(() => {
     tY.set(value);
-  })
+  });
 
   $effect(() => {
     tFill.set(fill);
-  })
+  });
 </script>
 
 <rect
@@ -30,4 +30,5 @@
   {width}
   y={yScale($tY)}
   height={yScale(0) - yScale($tY)}
-  style="fill: url('#line-pattern-{i}'); stroke: white; stroke-width: 2;"/>
+  style="fill: url('#line-pattern-{i}'); stroke: white; stroke-width: 2;"
+/>

@@ -1,34 +1,33 @@
 <script lang="ts">
-	import NavigationCard from '@components/cards/NavigationCard.svelte';
+  import NavigationCard from '@components/cards/NavigationCard.svelte';
 
   interface Props {
-    clickHandler: () => void
+    clickHandler: () => void;
   }
 
-  let {
-    clickHandler
-  }: Props = $props()
+  let { clickHandler }: Props = $props();
 </script>
 
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-0">
-	<NavigationCard lottiePath="/lottie/Conference_primary.json" link="/about" clickHandler={clickHandler}>
+  <NavigationCard lottiePath="/lottie/Conference_primary.json" link="/about" {clickHandler}>
     {#snippet heading()}
       <span>About the Company</span>
     {/snippet}
     {#snippet body()}
-		  <span> Who we are, where we've been, and where we're going </span>
+      <span> Who we are, where we've been, and where we're going </span>
     {/snippet}
-	</NavigationCard>
-	<NavigationCard
-		lottiePath="/lottie/Consult_tertiary.json"
-		bgColor="tertiary"
-		link="/contact"
-		clickHandler={clickHandler}>
-      {#snippet heading()}
-        <span>Contact Us</span>
-      {/snippet}
-      {#snippet body()}
-        <span> We'd love to chat about anything you have in mind </span>
-      {/snippet}
-	</NavigationCard>
+  </NavigationCard>
+  <NavigationCard
+    lottiePath="/lottie/Consult_tertiary.json"
+    bgColor="tertiary"
+    link="/contact"
+    {clickHandler}
+  >
+    {#snippet heading()}
+      <span>Contact Us</span>
+    {/snippet}
+    {#snippet body()}
+      <span> We'd love to chat about anything you have in mind </span>
+    {/snippet}
+  </NavigationCard>
 </div>
