@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { cn } from '@/lib/utils';
+
   interface Props {
     classes: string;
   }
@@ -8,7 +10,7 @@
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  class="{classes} pointer-events-none"
+  class={cn('pointer-events-none', classes)}
   viewBox="0 0 997 848"
   fill="none"
 >

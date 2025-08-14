@@ -2,6 +2,7 @@
   import type { Snippet } from 'svelte';
   import { scale } from 'svelte/transition';
   import PillButton from '@components/buttons/PillButton.svelte';
+  import { cn } from '@/lib/utils';
 
   interface Props {
     children: Snippet;
@@ -36,7 +37,10 @@
 <dialog
   bind:this={dialog}
   onclick={closeDialog}
-  class="rounded-xl bg-transparent w-[85%] lg:w-[600px] fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-foreground {classes}"
+  class={cn(
+    'rounded-xl bg-transparent w-[85%] lg:w-[600px] fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-foreground',
+    classes,
+  )}
 >
   {#if isOpen}
     <!-- svelte-ignore a11y_no_static_element_interactions -->

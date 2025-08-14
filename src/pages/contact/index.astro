@@ -40,7 +40,8 @@ const seo = {
     <ContactForm client:load />
     <ImgBackground classes="absolute -z-0 -top-[90px] -right-[170px] w-[150%] h-[150%]" />
   </div>
+  <section id="testimonials" class="mt-28">
+    <TestimonialRow testimonials={[testimonials['kyle'], testimonials['stacy']]} />
+  </section>
 </Layout>
-<section id="testimonials" class="mt-12">
-  <TestimonialRow testimonials={[testimonials['kyle'], testimonials['stacy']]} />
-</section>
+
