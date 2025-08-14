@@ -3,6 +3,8 @@ import { SEO } from 'astro-seo';
 import { ClientRouter } from 'astro:transitions';
 import '@/styles/tailwind.css';
 // @ts-ignore
+import ConvexWrapper from '@components/ConvexWrapper.svelte';
+// @ts-ignore
 import Analytics from '@components/Analytics.svelte';
 // @ts-ignore
 import Navigation from '@components/layout/navigation/Navigation.svelte';
@@ -33,6 +35,7 @@ const { seo } = Astro.props as Props;
     <ClientRouter />
   </head>
   <body class="bg-body-color relative">
+    <ConvexWrapper client:only transition:persist />
     <Analytics client:only />
     <div class="overflow-x-hidden">
       <div
