@@ -3,7 +3,7 @@ import svelte from '@astrojs/svelte';
 
 import mdx from '@astrojs/mdx';
 
-import vercel from '@astrojs/vercel/serverless';
+import vercel from '@astrojs/vercel';
 
 import tailwindcss from '@tailwindcss/vite';
 
