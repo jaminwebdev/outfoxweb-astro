@@ -64,107 +64,132 @@
 }
 
 :root {
-  /* normal shadcn */
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
-
-  /* custom */
-  --body-color: hsl(240, 7%, 96%);
-  --body-color-secondary: hsl(210, 38%, 93%);
-  --body-color-tertiary: hsl(210, 44%, 85%);
-  --body-text: hsl(240, 6%, 12%);
-  --primary: hsl(259, 81%, 64%);
+  /* Bright Side palette. Brand colors stay consistent in both modes. */
+  --primary: hsl(162, 72%, 65%);
+  --primary-hover: hsl(162, 72%, 76%);
+  /* Use the stronger green for readable green text on light surfaces. */
+  --primary-strong: hsl(162, 50%, 25%);
+  --mint: hsl(162, 35%, 93%);
+  --mint-soft: hsl(162, 40%, 86%);
+  --green: hsl(162, 45%, 45%);
+  --dark-green: hsl(162, 28%, 16%);
   --secondary: hsl(206, 81%, 50%);
-  --tertiary: hsl(162, 60%, 51%);
+  --secondary-light: hsl(210, 38%, 93%);
+  --secondary-soft: hsl(210, 44%, 85%);
+  --tertiary: hsl(259, 81%, 64%);
   --orange: hsl(15, 92%, 63%);
+  --paper: hsl(240, 7%, 96%);
+  --ink: hsl(240, 6%, 12%);
+  --ink-muted: hsl(240, 6%, 30%);
+  --muted-on-light: hsl(162, 20%, 28%);
+  --muted-on-dark: hsl(162, 12%, 74%);
+
+  /* Semantic surfaces, text, and controls. */
+  --radius: 0.625rem;
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary-foreground: var(--ink);
+  --secondary-foreground: var(--ink);
+  /* Dedicated surface names avoid the lab's existing text overrides of --muted/--accent. */
+  --surface-muted: var(--mint);
+  --muted: var(--surface-muted);
+  --muted-foreground: var(--ink-muted);
+  --surface-accent: var(--mint-soft);
+  --accent: var(--surface-accent);
+  --accent-foreground: var(--primary-strong);
+  --destructive: hsl(0, 70%, 40%);
+  --destructive-foreground: var(--paper);
+  --border: hsl(240, 7%, 82%);
+  /* Form boundaries need more contrast than decorative section dividers. */
+  --input: hsl(240, 6%, 55%);
+  --ring: var(--primary-strong);
+
+  /* Chart and sidebar roles use the same brand palette. */
+  --chart-1: var(--primary);
+  --chart-2: var(--secondary);
+  --chart-3: var(--tertiary);
+  --chart-4: var(--green);
+  --chart-5: var(--orange);
+  --sidebar: var(--secondary-light);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--surface-accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+
+  /* Compatibility with existing pages using body-* utilities. */
+  --body-color: var(--background);
+  --body-color-secondary: var(--secondary-light);
+  --body-color-tertiary: var(--secondary-soft);
+  --body-text: var(--foreground);
 }
 
 .dark {
-  /* normal shadcn */
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
-
-  /* custom */
-  --body-color: hsl(240, 6%, 12%);
-  --body-color-secondary: hsl(210, 9%, 14%);
-  --body-color-tertiary: hsl(210, 4%, 31%);
-  --body-text: hsl(240, 7%, 96%);
-  --primary: hsl(162, 72%, 65%);
-  --secondary: hsl(206, 81%, 50%);
-  --tertiary: hsl(259, 81%, 64%);
-  --orange: hsl(15, 92%, 63%);
+  /* Only semantic roles change; primary/secondary/tertiary keep their identities. */
+  --background: var(--ink);
+  --foreground: var(--paper);
+  --card: var(--dark-green);
+  --card-foreground: var(--paper);
+  --popover: var(--dark-green);
+  --popover-foreground: var(--paper);
+  --surface-muted: hsl(162, 20%, 22%);
+  --muted: var(--surface-muted);
+  --muted-foreground: var(--muted-on-dark);
+  --surface-accent: hsl(162, 28%, 23%);
+  --accent: var(--surface-accent);
+  --accent-foreground: var(--primary);
+  --destructive: hsl(0, 80%, 70%);
+  --destructive-foreground: var(--ink);
+  --border: hsl(162, 18%, 34%);
+  --input: hsl(162, 12%, 55%);
+  --ring: var(--primary);
+  --sidebar: var(--dark-green);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--surface-accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+  --body-color: var(--background);
+  --body-color-secondary: var(--dark-green);
+  --body-color-tertiary: var(--surface-muted);
+  --body-text: var(--foreground);
 }
 
 @theme inline {
-  /* custom styles */
+  /* Brand utilities: bg-primary, text-primary-strong, bg-mint, bg-dark-green, etc. */
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-strong: var(--primary-strong);
+  --color-mint: var(--mint);
+  --color-mint-soft: var(--mint-soft);
+  --color-green: var(--green);
+  --color-dark-green: var(--dark-green);
+  --color-secondary: var(--secondary);
+  --color-secondary-light: var(--secondary-light);
+  --color-secondary-soft: var(--secondary-soft);
+  --color-tertiary: var(--tertiary);
+  --color-orange: var(--orange);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-muted-on-light: var(--muted-on-light);
+  --color-muted-on-dark: var(--muted-on-dark);
+
+  /* Existing body-* utilities remain available during the page migration. */
   --color-body-color: var(--body-color);
   --color-body-color-secondary: var(--body-color-secondary);
   --color-body-color-tertiary: var(--body-color-tertiary);
   --color-body-text: var(--body-text);
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-tertiary: var(--tertiary);
-  --color-orange: var(--orange);
 
+  /* Semantic utilities and compatible shadcn roles. */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -177,11 +202,12 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
+  --color-muted: var(--surface-muted);
   --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
+  --color-accent: var(--surface-accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
