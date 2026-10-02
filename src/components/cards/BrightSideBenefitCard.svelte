@@ -23,7 +23,7 @@
 </script>
 
 <article class="grid content-start gap-1 px-[12px] py-[20px] text-left">
-  <div class="flex items-center gap-[12px] min-[1100px]:min-h-[60px]">
+  <div class="flex items-center gap-[10px] min-[1100px]:min-h-[60px]">
     <div class="h-[40px] w-[40px] shrink-0" aria-hidden="true">
       <InteractiveLottie path={lottiePath} repeat {delay} {timeLoop} {speed} {initialPlay} />
     </div>
