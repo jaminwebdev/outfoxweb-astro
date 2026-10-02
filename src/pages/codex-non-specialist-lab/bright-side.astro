@@ -59,7 +59,7 @@ const questions = [
     aria-label="Design study"
   >
     <div
-      class="items-center flex gap-[12px] justify-between mx-auto min-h-[36px] [width:min(100%_-_25px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)]"
+      class="items-center flex gap-[12px] justify-between mx-auto min-h-[36px] min-[640px]:[width:min(100%_-_80px,_1180px)]"
     >
       <a
         class="items-center text-inherit inline-flex gap-[10px] min-h-[36px] no-underline [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px]"
@@ -69,7 +69,7 @@ const questions = [
     </div>
   </nav>
   <header
-    class="items-center flex flex-wrap [gap:14px_20px] justify-between mx-auto py-[26px] [width:min(100%_-_25px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[800px]:flex-nowrap min-[900px]:py-[30px]"
+    class="items-center flex flex-wrap [gap:14px_20px] justify-between mx-auto py-[26px] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[800px]:flex-nowrap min-[900px]:py-[30px]"
   >
     <Brand href="/codex-non-specialist-lab/bright-side" />
     <nav
@@ -92,13 +92,13 @@ const questions = [
       href={email}>Talk through your website <span aria-hidden="true">↗</span></a
     >
   </header>
-  <main class="focus:outline-none" id="main" tabindex="-1">
+  <main class="focus:outline-none px-6" id="main" tabindex="-1">
     <section
-      class="mx-auto pt-[24px] [width:min(100%_-_25px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:pt-[65px]"
+      class="mx-auto pt-[24px] min-[640px]:[width:min(100%_-_80px,_1180px)]"
       aria-labelledby="hero-heading"
     >
       <div
-        class="[--accent:var(--accent-on-light)] [--ink:var(--on-light)] [--muted:var(--muted-on-light)] [--paper:var(--green-pale)] bg-[var(--paper)] rounded-[16px] text-[color:var(--ink)] [color-scheme:light] grid gap-[30px] isolate [padding:30px_20px_24px] relative min-[640px]:[padding:42px_32px_28px] min-[900px]:items-center min-[900px]:grid-cols-[minmax(0,_1.12fr)_minmax(0,_1fr)] min-[900px]:[padding:48px_42px]"
+        class="[--accent:var(--accent-on-light)] [--ink:var(--on-light)] [--muted:var(--muted-on-light)] [--paper:var(--green-pale)] bg-[var(--paper)] rounded-[16px] text-[color:var(--ink)] [color-scheme:light] grid gap-[30px] isolate [padding:40px_20px_40px] relative min-[640px]:[padding:42px_32px_28px] min-[900px]:items-center min-[900px]:grid-cols-[minmax(0,_1.12fr)_minmax(0,_1fr)] min-[900px]:[padding:68px_50px]"
       >
         <div
           class="rounded-[inherit] [inset:0] pointer-events-none absolute z-[-1] min-[900px]:left-[55%]"
@@ -143,9 +143,6 @@ const questions = [
               href="#work">See the design examples <span aria-hidden="true">↓</span></a
             >
           </div>
-          <p class="text-[color:var(--muted)] text-[11px] m-0 mt-[23px] max-w-[400px]">
-            Independent expertise. Based in Carlsbad, California.
-          </p>
         </div>
         <figure
           class="m-0 min-w-0 relative [width:min(100%,_541px)] z-[2] min-[640px]:max-w-[480px] min-[900px]:max-w-[541px] min-[900px]:[width:calc(100%_+_20px)]"
@@ -171,7 +168,7 @@ const questions = [
     <section
       id="benefits"
       aria-label="Website benefits"
-      class="mx-auto mt-[40px] grid gap-[24px] [width:min(100%_-_25px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[1100px]:grid-cols-3 min-[900px]:mt-[48px] min-[900px]:gap-[32px]"
+      class="mx-auto mt-[40px] grid gap-[24px] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[1100px]:grid-cols-3 min-[900px]:mt-[48px] min-[900px]:gap-16"
     >
       <BrightSideBenefitCard
         lottiePath="/lottie/BarChart_primary.json"
@@ -199,7 +196,7 @@ const questions = [
     </section>
     <section
       id="work"
-      class="mx-auto py-[72px] [width:min(100%_-_25px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:items-start min-[900px]:grid min-[900px]:[gap:0_45px] min-[900px]:grid-cols-[minmax(0,_0.8fr)_minmax(0,_1.7fr)] min-[900px]:py-[95px]"
+      class="mx-auto py-[72px] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:items-start min-[900px]:grid min-[900px]:[gap:0_45px] min-[900px]:grid-cols-[minmax(0,_0.8fr)_minmax(0,_1.7fr)] min-[900px]:py-[95px]"
       aria-labelledby="work-heading"
     >
       <div class="mb-[35px] max-w-[660px]">
@@ -291,7 +288,7 @@ const questions = [
     </section>
     <section id="testimonials" class="py-[45px]" aria-labelledby="testimonials-heading">
       <div
-        class="[--ink:var(--on-dark)] [--muted:var(--muted-on-dark)] [--paper:var(--green-deep)] items-center text-[color:var(--ink)] grid gap-[28px] isolate m-0 mx-auto px-[24px] py-[40px] relative [width:min(100%_-_25px,_1180px)] before:bg-[var(--green-deep)] before:rounded-[16px] before:content-[''] before:[inset:0] before:absolute before:z-[-2] min-[640px]:px-[40px] min-[640px]:py-[48px] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:gap-[56px] min-[900px]:grid-cols-[300px_minmax(0,_1fr)] min-[900px]:px-[60px] min-[900px]:py-[60px]"
+        class="[--ink:var(--on-dark)] [--muted:var(--muted-on-dark)] [--paper:var(--green-deep)] items-center text-[color:var(--ink)] grid gap-[28px] isolate m-0 mx-auto px-[24px] py-[40px] relative before:bg-[var(--green-deep)] before:rounded-[16px] before:content-[''] before:[inset:0] before:absolute before:z-[-2] min-[640px]:px-[40px] min-[640px]:py-[48px] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:gap-[56px] min-[900px]:grid-cols-[300px_minmax(0,_1fr)] min-[900px]:px-[60px] min-[900px]:py-[60px]"
       >
         <div
           class="aspect-square grid isolate place-items-center relative w-full max-w-[260px] mx-auto min-[640px]:max-w-[300px]"
@@ -355,7 +352,7 @@ const questions = [
     <BrightSideServicesTabs client:load />
     <section id="process" class="bg-[var(--brand-panel)]" aria-labelledby="process-heading">
       <div
-        class="mx-auto py-[72px] [width:min(100%_-_25px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:py-[95px]"
+        class="mx-auto py-[72px] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:py-[95px]"
       >
         <div class="">
           <p
@@ -401,7 +398,7 @@ const questions = [
     </section>
     <section
       id="questions"
-      class="grid gap-[35px] mx-auto py-[72px] [width:min(100%_-_25px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:gap-[65px] min-[900px]:grid-cols-[minmax(0,_1fr)_minmax(0,_1.5fr)] min-[900px]:py-[95px]"
+      class="grid gap-[35px] mx-auto py-[72px] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:gap-[65px] min-[900px]:grid-cols-[minmax(0,_1fr)_minmax(0,_1.5fr)] min-[900px]:py-[95px]"
       aria-labelledby="questions-heading"
     >
       <div class="">
@@ -439,7 +436,7 @@ const questions = [
     </section>
     <section
       id="contact"
-      class="[--accent:var(--accent-on-light)] [--ink:var(--on-light)] [--muted:var(--muted-on-light)] [--paper:var(--green-pale)] bg-[var(--paper)] rounded-[16px] text-[color:var(--ink)] [color-scheme:light] isolate mb-[36px] mx-auto [padding:45px_24px] relative [width:min(100%_-_25px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:[padding:65px_45px] overflow-hidden"
+      class="[--accent:var(--accent-on-light)] [--ink:var(--on-light)] [--muted:var(--muted-on-light)] [--paper:var(--green-pale)] bg-[var(--paper)] rounded-[16px] text-[color:var(--ink)] [color-scheme:light] isolate mb-[36px] mx-auto [padding:45px_24px] relative min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:[padding:65px_45px] overflow-hidden"
       aria-labelledby="contact-heading"
     >
       <div
@@ -484,7 +481,7 @@ const questions = [
     </section>
   </main>
   <footer
-    class="items-center flex flex-wrap [gap:28px_45px] mx-auto py-[34px] [width:min(100%_-_25px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)]"
+    class="items-center flex flex-wrap [gap:28px_45px] mx-auto py-[34px] min-[640px]:[width:min(100%_-_80px,_1180px)]"
   >
     <Brand href="/codex-non-specialist-lab/bright-side" /><p
       class="text-[color:var(--muted)] text-[11px] m-0"
