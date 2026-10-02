@@ -1,12 +1,39 @@
 ---
 interface Props {
   class?: string;
+  reveal?: boolean;
 }
-const { class: className = '' } = Astro.props;
+const { class: className = '', reveal = false } = Astro.props;
+
+type Mark =
+  | { kind: 'pill'; d: string; color: string }
+  | { kind: 'dot'; cx: number; cy: number; color: string };
+
+// Separate segments let each pill enter independently, in a sweep through the rows.
+const marks: Mark[] = [
+  { kind: 'pill', d: 'M102 83h126', color: '--green-mid' },
+  { kind: 'dot', cx: 257, cy: 83, color: '--brand-primary' },
+  { kind: 'pill', d: 'M273 83h78', color: '--green-mid' },
+  { kind: 'pill', d: 'M63 129h235', color: '--brand-primary' },
+  { kind: 'dot', cx: 322, cy: 129, color: '--brand-tertiary' },
+  { kind: 'pill', d: 'M340 129h70', color: '--brand-primary' },
+  { kind: 'pill', d: 'M124 175h167', color: '--brand-tertiary' },
+  { kind: 'pill', d: 'M325 175h88', color: '--green-mid' },
+  { kind: 'pill', d: 'M44 221h97', color: '--brand-primary' },
+  { kind: 'dot', cx: 163, cy: 221, color: '--brand-secondary' },
+  { kind: 'pill', d: 'M183 221h209', color: '--brand-primary' },
+  { kind: 'pill', d: 'M84 267h166', color: '--green-mid' },
+  { kind: 'pill', d: 'M287 267h111', color: '--brand-secondary' },
+  { kind: 'pill', d: 'M136 313h90', color: '--brand-primary' },
+  { kind: 'dot', cx: 247, cy: 313, color: '--green-mid' },
+  { kind: 'pill', d: 'M265 313h90', color: '--brand-primary' },
+  { kind: 'pill', d: 'M171 359h153', color: '--green-mid' },
+];
 ---
 
 <svg
-  class={className}
+  class:list={[className, { group: reveal }]}
+  data-pill-reveal={reveal || undefined}
   viewBox="0 0 520 420"
   fill="none"
   width="520"
@@ -14,19 +41,68 @@ const { class: className = '' } = Astro.props;
   aria-hidden="true"
   focusable="false"
 >
-  <g transform="rotate(-39 260 210)" stroke-linecap="round" stroke-width="25">
-    <path d="M102 83h126m45 0h78" stroke="var(--green-mid)"></path>
-    <path d="M63 129h235m42 0h70" stroke="var(--brand-primary)"></path>
-    <path d="M124 175h167" stroke="var(--brand-tertiary)"></path>
-    <path d="M325 175h88" stroke="var(--green-mid)"></path>
-    <path d="M44 221h97m42 0h209" stroke="var(--brand-primary)"></path>
-    <path d="M84 267h166" stroke="var(--green-mid)"></path>
-    <path d="M287 267h111" stroke="var(--brand-secondary)"></path>
-    <path d="M136 313h90m39 0h90" stroke="var(--brand-primary)"></path>
-    <path d="M171 359h153" stroke="var(--green-mid)"></path>
-    <circle cx="257" cy="83" r="10" fill="var(--brand-primary)" stroke="none"></circle>
-    <circle cx="322" cy="129" r="10" fill="var(--brand-tertiary)" stroke="none"></circle>
-    <circle cx="163" cy="221" r="10" fill="var(--brand-secondary)" stroke="none"></circle>
-    <circle cx="247" cy="313" r="10" fill="var(--green-mid)" stroke="none"></circle>
+  <g stroke-linecap="round" stroke-width="25">
+    {
+      marks.map((mark, index) => (
+        <g
+          class:list={[
+            reveal &&
+              'motion-safe:group-data-[reveal-state=pending]:opacity-0 motion-safe:group-data-[reveal-state=visible]:animate-pill-enter',
+          ]}
+          style={reveal ? `--pill-delay: ${index * 60}ms` : undefined}
+        >
+          <g transform="rotate(-39 260 210)">
+            {mark.kind === 'pill' ? (
+              <path d={mark.d} stroke={`var(${mark.color})`} />
+            ) : (
+              <circle cx={mark.cx} cy={mark.cy} r="10" fill={`var(${mark.color})`} stroke="none" />
+            )}
+          </g>
+        </g>
+      ))
+    }
   </g>
 </svg>
+
+<script>
+  let pillObserver: IntersectionObserver | undefined;
+
+  function revealPills() {
+    const patterns = document.querySelectorAll<SVGSVGElement>(
+      '[data-pill-reveal]:not([data-reveal-state])',
+    );
+    if (!patterns.length) return;
+
+    // Keep the artwork visible without JavaScript, with reduced motion, or without an observer.
+    if (
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      !('IntersectionObserver' in window)
+    ) {
+      patterns.forEach((pattern) => (pattern.dataset.revealState = 'visible'));
+      return;
+    }
+
+    pillObserver ??= new IntersectionObserver(
+      (entries, observer) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          (entry.target as SVGSVGElement).dataset.revealState = 'visible';
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 },
+    );
+
+    patterns.forEach((pattern) => {
+      pattern.dataset.revealState = 'pending';
+      pillObserver!.observe(pattern);
+    });
+  }
+
+  revealPills();
+  document.addEventListener('astro:page-load', revealPills);
+  document.addEventListener('astro:before-swap', () => {
+    pillObserver?.disconnect();
+    pillObserver = undefined;
+  });
+</script>

@@ -23,7 +23,7 @@
 </script>
 
 <div class="bg-body-color-secondary p-[25px] rounded-lg grid gap-2">
-  <div class="max-w-[60px]">
+  <div class="max-w-[60px]" aria-hidden="true">
     <InteractiveLottie
       path={lottiePath}
       repeat

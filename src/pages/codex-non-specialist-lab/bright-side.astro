@@ -4,27 +4,13 @@ import Layout from '@/layouts/NonSpecialistLabLayout.astro';
 import Brand from '@/components/non-specialist-lab/Brand.astro';
 import CapsulePattern from '@/components/non-specialist-lab/CapsulePattern.astro';
 import PlayMark from '@/components/non-specialist-lab/PlayMark.astro';
+import BrightSideBenefitCard from '@/components/cards/BrightSideBenefitCard.svelte';
+import BrightSideServicesTabs from '@/components/sections/BrightSideServicesTabs.svelte';
 import Devices from '@/images/homepage_hero_img.webp';
 import Interior from '@/images/Interior_Design_Cover.webp';
 import Financial from '@/images/Financial_Cover.webp';
-import Jamin from '@/images/jamin_headshot.webp';
 
 const email = 'mailto:hello@outfoxweb.com?subject=Let%27s%20talk%20through%20my%20website';
-const industries = ['Real estate', 'Financial services', 'Med spas', 'Home services', 'Legal'];
-const engagement = [
-  {
-    title: 'Get the direction right.',
-    body: 'Understand your audience, your offer, and what the website needs to accomplish before choosing a tool or a layout.',
-  },
-  {
-    title: 'Make the message clear.',
-    body: 'Shape the content and design together so visitors can understand the business and find their next step.',
-  },
-  {
-    title: 'Build with care.',
-    body: 'Develop the website, review the code, and check the important paths on real screen sizes. Plan the handoff with you.',
-  },
-];
 const process = [
   {
     title: 'Understand.',
@@ -73,7 +59,7 @@ const questions = [
     aria-label="Design study"
   >
     <div
-      class="items-center flex gap-[12px] justify-between mx-auto min-h-[36px] [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)]"
+      class="items-center flex gap-[12px] justify-between mx-auto min-h-[36px] [width:min(100%_-_25px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)]"
     >
       <a
         class="items-center text-inherit inline-flex gap-[10px] min-h-[36px] no-underline [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px]"
@@ -83,7 +69,7 @@ const questions = [
     </div>
   </nav>
   <header
-    class="items-center flex flex-wrap [gap:14px_20px] justify-between mx-auto py-[26px] [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[800px]:flex-nowrap min-[900px]:py-[30px]"
+    class="items-center flex flex-wrap [gap:14px_20px] justify-between mx-auto py-[26px] [width:min(100%_-_25px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[800px]:flex-nowrap min-[900px]:py-[30px]"
   >
     <Brand href="/codex-non-specialist-lab/bright-side" />
     <nav
@@ -95,7 +81,7 @@ const questions = [
         href="#work">Work</a
       ><a
         class="items-center text-inherit inline-flex text-[13px] min-h-[44px] no-underline [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:text-[color:var(--accent)] hover:underline"
-        href="#approach">Approach</a
+        href="#testimonials">Kind words</a
       ><a
         class="items-center text-inherit inline-flex text-[13px] min-h-[44px] no-underline [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:text-[color:var(--accent)] hover:underline"
         href="#questions">Questions</a
@@ -108,7 +94,7 @@ const questions = [
   </header>
   <main class="focus:outline-none" id="main" tabindex="-1">
     <section
-      class="mx-auto pt-[24px] [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:pt-[65px]"
+      class="mx-auto pt-[24px] [width:min(100%_-_25px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:pt-[65px]"
       aria-labelledby="hero-heading"
     >
       <div
@@ -119,6 +105,7 @@ const questions = [
           aria-hidden="true"
         >
           <CapsulePattern
+            reveal
             class="block h-auto max-w-[620px] pointer-events-none absolute right-[-10%] w-full min-[640px]:max-w-[530px] min-[640px]:right-[0] min-[900px]:max-w-none min-[900px]:right-[-20%] min-[900px]:w-[138%] bottom-0"
           />
         </div>
@@ -180,68 +167,46 @@ const questions = [
           </div>
         </figure>
       </div>
-      <aside
-        class="grid gap-[23px] [padding-block:62px_30px] min-[900px]:items-center min-[900px]:gap-[45px] min-[900px]:grid-cols-[minmax(0,_0.85fr)_minmax(0,_1.7fr)] min-[900px]:[padding-block:58px_32px]"
-        aria-labelledby="note-heading"
-      >
-        <div>
-          <p
-            class="text-[color:var(--accent)] [font-family:var(--sans)] text-[12px] font-semibold tracking-[0.045em] leading-[1.5] m-0 uppercase"
-          >
-            Clarity, before code.
-          </p><h2
-            class="[font-family:var(--sans)] text-[23px] font-semibold tracking-[-0.03em] leading-[1.13] m-0 mt-[12px] text-balance"
-            id="note-heading"
-          >
-            Every decision has a job to do.
-          </h2>
-        </div>
-        <ol
-          class="grid gap-[17px] list-none m-0 p-0 min-[640px]:gap-[25px] min-[640px]:grid-cols-[repeat(3,_minmax(0,_1fr))]"
-        >
-          <li
-            class="items-baseline flex text-[13px] gap-[13px] min-[640px]:flex-col min-[640px]:gap-[8px]"
-          >
-            <span class="text-[color:var(--accent)] text-[11px]" aria-hidden="true">01</span> Make your
-            offer clear.
-          </li>
-          <li
-            class="items-baseline flex text-[13px] gap-[13px] min-[640px]:flex-col min-[640px]:gap-[8px]"
-          >
-            <span class="text-[color:var(--accent)] text-[11px]" aria-hidden="true">02</span> Give people
-            a reason to trust you.
-          </li>
-          <li
-            class="items-baseline flex text-[13px] gap-[13px] min-[640px]:flex-col min-[640px]:gap-[8px]"
-          >
-            <span class="text-[color:var(--accent)] text-[11px]" aria-hidden="true">03</span> Make the
-            next step easy.
-          </li>
-        </ol>
-      </aside>
     </section>
     <section
-      class="[border-block:1px_solid_var(--rule)] grid gap-[15px] mx-auto py-[23px] [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:items-center min-[900px]:gap-[30px] min-[900px]:grid-cols-[205px_minmax(0,_1fr)]"
-      aria-label="Industry focus"
+      id="benefits"
+      aria-label="Website benefits"
+      class="mx-auto mt-[40px] grid gap-[24px] [width:min(100%_-_25px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[1100px]:grid-cols-3 min-[900px]:mt-[48px] min-[900px]:gap-[32px]"
     >
-      <p class="text-[color:var(--ink)] text-[13px] font-semibold m-0">
-        Built around your business.
-      </p><ul
-        class="text-[color:var(--muted)] flex flex-wrap text-[12px] [gap:12px_24px] list-none m-0 p-0 min-[900px]:justify-between"
-      >
-        {industries.map((industry) => <li>{industry}</li>)}
-      </ul>
+      <BrightSideBenefitCard
+        lottiePath="/lottie/BarChart_primary.json"
+        heading="Multiply your conversions"
+        body="We use data‑driven UX research to turn underperforming sites into conversion powerhouses."
+        initialPlay
+        client:load
+      />
+      <BrightSideBenefitCard
+        lottiePath="/lottie/Globe_primary.json"
+        heading="Reach users faster"
+        body="Keep visitors engaged with lightning-fast websites that load faster than 99.9% of competitors."
+        delay={750}
+        initialPlay
+        client:load
+      />
+      <BrightSideBenefitCard
+        lottiePath="/lottie/server_primary.json"
+        heading="Uninterrupted Performance"
+        body="With 0% downtime over the past 3 years, our sites stay live when opportunities strike."
+        delay={1500}
+        initialPlay
+        client:load
+      />
     </section>
     <section
       id="work"
-      class="mx-auto py-[72px] [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:items-start min-[900px]:grid min-[900px]:[gap:0_45px] min-[900px]:grid-cols-[minmax(0,_0.8fr)_minmax(0,_1.7fr)] min-[900px]:py-[95px]"
+      class="mx-auto py-[72px] [width:min(100%_-_25px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:items-start min-[900px]:grid min-[900px]:[gap:0_45px] min-[900px]:grid-cols-[minmax(0,_0.8fr)_minmax(0,_1.7fr)] min-[900px]:py-[95px]"
       aria-labelledby="work-heading"
     >
       <div class="mb-[35px] max-w-[660px]">
         <p
           class="text-[color:var(--accent)] [font-family:var(--sans)] text-[12px] font-semibold tracking-[0.045em] leading-[1.5] m-0 uppercase last:text-[15px] last:mt-[22px] last:max-w-[465px]"
         >
-          01 / A closer look
+          A closer look
         </p><h2
           class="[font-family:var(--sans)] [font-size:clamp(30px,_3.3vw,_43px)] font-black tracking-[-0.055em] leading-[1.13] m-0 mt-[20px] text-balance"
           id="work-heading"
@@ -258,7 +223,7 @@ const questions = [
       >
         <figure class="m-0">
           <div
-            class="isolate [padding:30px_15px] relative before:bg-[var(--green-soft)] before:[border-radius:40%_35%_8%_10%_/_45%_40%_15%_12%] before:content-[''] before:[inset:0] before:absolute before:z-[-1] min-[640px]:[padding:40px_22px] min-[900px]:[padding:26px_15px]"
+            class="isolate [padding:30px_15px] relative before:bg-[var(--green-soft)] before:[border-radius:40%_35%_8%_10%_/_45%_40%_15%_12%] before:content-[''] before:[inset:0] before:absolute before:z-[-1] motion-safe:before:animate-work-blob min-[640px]:[padding:40px_22px] min-[900px]:[padding:26px_15px]"
           >
             <Image
               class="[border:1px_solid_var(--on-light)] rounded-[5px] block h-auto w-full"
@@ -289,7 +254,7 @@ const questions = [
         </figure>
         <figure class="m-0">
           <div
-            class="isolate [padding:30px_15px] relative before:bg-[var(--brand-primary)] before:[border-radius:10%_12%_38%_30%_/_15%_15%_42%_40%] before:content-[''] before:[inset:0] before:absolute before:z-[-1] min-[640px]:[padding:40px_22px] min-[900px]:[padding:26px_15px]"
+            class="isolate [padding:30px_15px] relative before:bg-[var(--brand-primary)] before:[border-radius:10%_12%_38%_30%_/_15%_15%_42%_40%] before:content-[''] before:[inset:0] before:absolute before:z-[-1] motion-safe:before:animate-work-blob-offset min-[640px]:[padding:40px_22px] min-[900px]:[padding:26px_15px]"
           >
             <Image
               class="[border:1px_solid_var(--on-light)] rounded-[5px] block h-auto w-full"
@@ -321,133 +286,82 @@ const questions = [
       <p
         class="[border-top:1px_solid_var(--rule)] text-[color:var(--muted)] text-[11px] m-0 mt-[35px] pt-[20px] min-[900px]:[grid-column:1_/_-1]"
       >
-        Design examples from the existing library. Client attribution and results are not
-        established.
+        Design examples from the existing library
       </p>
     </section>
-    <section id="approach" class="py-[45px]" aria-labelledby="approach-heading">
+    <section id="testimonials" class="py-[45px]" aria-labelledby="testimonials-heading">
       <div
-        class="[--ink:var(--on-dark)] [--muted:var(--muted-on-dark)] [--paper:var(--green-deep)] items-center text-[color:var(--ink)] grid gap-[38px] isolate mx-auto py-[38px] relative [width:min(100%_-_44px,_1180px)] before:bg-[var(--green-deep)] before:rounded-[16px] before:content-[''] before:[inset:0] before:absolute before:z-[-2] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:gap-[60px] min-[900px]:grid-cols-[minmax(0,_1fr)_minmax(0,_1.6fr)] min-[900px]:before:[inset:30px_0_30px_35px]"
+        class="[--ink:var(--on-dark)] [--muted:var(--muted-on-dark)] [--paper:var(--green-deep)] items-center text-[color:var(--ink)] grid gap-[28px] isolate m-0 mx-auto px-[24px] py-[40px] relative [width:min(100%_-_25px,_1180px)] before:bg-[var(--green-deep)] before:rounded-[16px] before:content-[''] before:[inset:0] before:absolute before:z-[-2] min-[640px]:px-[40px] min-[640px]:py-[48px] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:gap-[56px] min-[900px]:grid-cols-[300px_minmax(0,_1fr)] min-[900px]:px-[60px] min-[900px]:py-[60px]"
       >
         <div
-          class="px-[20px] min-[900px]:col-start-2 min-[900px]:row-start-1 min-[900px]:[padding-inline:0_42px]"
+          class="aspect-square grid isolate place-items-center relative w-full max-w-[260px] mx-auto min-[640px]:max-w-[300px]"
         >
+          <CapsulePattern
+            class="block h-auto [inset:-8%_-12%_auto] pointer-events-none absolute w-[124%] z-[-1]"
+          />
+          <div
+            class="aspect-square bg-[var(--green-soft)] [border-radius:42%_58%_35%_65%_/_58%_42%_58%_42%] overflow-hidden w-[84%] [border:6px_solid_var(--brand-primary)]"
+          >
+            <img
+              class="block h-full w-full object-cover"
+              src="/images/Placeholder_Headshot.webp"
+              alt="Placeholder portrait for the testimonial design"
+              width="89"
+              height="89"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div class="min-w-0">
           <p
-            class="text-[color:var(--accent)] [font-family:var(--sans)] text-[12px] font-semibold tracking-[0.045em] leading-[1.5] m-0 uppercase"
+            class="text-[color:var(--accent)] text-[12px] font-semibold tracking-[0.045em] leading-[1.5] m-0 uppercase"
           >
-            02 / The person behind the work
-          </p><h2
-            class="[font-family:var(--sans)] [font-size:clamp(30px,_3.3vw,_43px)] font-black tracking-[-0.055em] leading-[1.13] m-0 mt-[20px] text-balance"
-            id="approach-heading"
+            Kind words
+          </p>
+          <h2
+            class="[font-family:var(--sans)] [font-size:clamp(30px,_3.3vw,_43px)] font-black tracking-[-0.055em] leading-[1.13] m-0 mt-[18px] text-balance"
+            id="testimonials-heading"
           >
-            Useful tools.<br /><em
+            A clearer website.<br /><em
               class="text-[color:var(--accent)] not-italic [font-weight:inherit]"
-              >Accountable decisions.</em
+              >A better experience.</em
             >
           </h2>
-          <p class="text-[color:var(--ink)] text-[17px] m-0 mt-[26px]">
-            AI can help move a project forward. It still takes experience to decide what belongs on
-            your website, what needs checking, and what to leave out.
-          </p>
-          <p
-            class="text-[color:var(--muted)] text-[14px] leading-[1.8] m-0 mt-[20px] max-w-[575px]"
-          >
-            I'm Jamin, the engineer behind Outfox Web. I use AI to explore ideas and speed up parts
-            of the work. I review every line of code and vet the decisions before anything ships.
-            You work directly with the person responsible for the result.
-          </p>
-          <p
-            class="[border-top:1px_solid_var(--rule)] text-[color:var(--muted)] text-[13px] leading-[1.8] m-0 mt-[20px] max-w-[575px] pt-[22px]"
-          >
-            Clear explanations are part of the work. You should understand what we're building and
-            why.
-          </p>
+          <figure class="m-0">
+            <blockquote class="m-0 mt-[26px] max-w-[650px]">
+              <p
+                class="text-[color:var(--ink)] text-[21px] min-[640px]:text-[25px] font-medium leading-[1.5] tracking-[-0.025em] m-0 text-balance"
+              >
+                “We finally have a website that feels like us. The process was clear, and every
+                decision made sense.”
+              </p>
+            </blockquote>
+            <figcaption class="mt-[24px] flex flex-wrap items-center gap-x-[18px] gap-y-[12px]">
+              <div>
+                <p class="text-[color:var(--ink)] text-[14px] font-semibold m-0">Client name</p>
+                <p class="text-[color:var(--muted)] text-[12px] m-0 mt-[3px]">
+                  Business owner · Company name
+                </p>
+              </div>
+              <span
+                class="text-[color:var(--muted)] text-[11px] [border-left:1px_solid_var(--muted)] pl-[18px]"
+                >Sample quote & placeholder portrait</span
+              >
+            </figcaption>
+          </figure>
         </div>
-        <figure
-          class="m-0 mx-auto [width:min(100%,_350px)] min-[900px]:col-start-1 min-[900px]:row-start-1 min-[900px]:w-full"
-        >
-          <div class="aspect-square grid isolate place-items-center relative">
-            <CapsulePattern
-              class="block h-auto [inset:-4%_0_auto] pointer-events-none absolute w-full z-[-1]"
-            />
-            <div
-              class="aspect-square [border:8px_solid_var(--brand-primary)] [border-radius:42%_58%_35%_65%_/_58%_42%_58%_42%] overflow-hidden w-[78%]"
-            >
-              <Image
-                class="block h-full object-cover w-full"
-                src={Jamin}
-                alt="Jamin, founder of Outfox Web"
-                width={460}
-                height={460}
-                loading="lazy"
-              />
-            </div>
-          </div>
-          <figcaption
-            class="items-center text-[color:var(--muted)] flex flex-col text-[11px] gap-[5px] pt-[15px]"
-          >
-            <span class="text-[color:var(--ink)] text-[26px] [font-weight:650] leading-[1.2]"
-              >Jamin</span
-            ><span>Founder & software engineer</span>
-          </figcaption>
-        </figure>
       </div>
     </section>
-    <section
-      id="engagement"
-      class="mx-auto py-[72px] [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:py-[95px]"
-      aria-labelledby="engagement-heading"
-    >
-      <div class="">
-        <p
-          class="text-[color:var(--accent)] [font-family:var(--sans)] text-[12px] font-semibold tracking-[0.045em] leading-[1.5] m-0 uppercase"
-        >
-          03 / What we work on
-        </p><h2
-          class="[font-family:var(--sans)] [font-size:clamp(30px,_3.3vw,_43px)] font-black tracking-[-0.055em] leading-[1.13] m-0 mt-[20px] max-w-[735px] text-balance"
-          id="engagement-heading"
-        >
-          One website. A considered approach from the start.
-        </h2>
-      </div>
-      <div
-        class="grid gap-[30px] mt-[38px] min-[900px]:gap-[35px] min-[900px]:grid-cols-[repeat(3,_minmax(0,_1fr))]"
-      >
-        {
-          engagement.map((item, index) => (
-            <article class="[border-top:1px_solid_var(--rule)] grid gap-[17px] grid-cols-[38px_minmax(0,_1fr)] pt-[22px]">
-              <>
-                <span
-                  class="bg-[var(--brand-primary)] rounded-full text-[color:var(--on-light)] grid text-[12px] h-[38px] place-items-center w-[38px]"
-                  aria-hidden="true"
-                >
-                  0{index + 1}
-                </span>
-                <div>
-                  <>
-                    <h3 class="text-[21px] [font-weight:650] tracking-[-0.035em] leading-[1.35] m-0 text-balance">
-                      {item.title}
-                    </h3>
-                    <p class="text-[color:var(--muted)] text-[14px] leading-[1.8] m-0 mt-[14px]">
-                      {item.body}
-                    </p>
-                  </>
-                </div>
-              </>
-            </article>
-          ))
-        }
-      </div>
-    </section>
+    <BrightSideServicesTabs client:load />
     <section id="process" class="bg-[var(--brand-panel)]" aria-labelledby="process-heading">
       <div
-        class="mx-auto py-[72px] [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:py-[95px]"
+        class="mx-auto py-[72px] [width:min(100%_-_25px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:py-[95px]"
       >
         <div class="">
           <p
             class="text-[color:var(--muted)] [font-family:var(--sans)] text-[12px] font-semibold tracking-[0.045em] leading-[1.5] m-0 uppercase"
           >
-            04 / Working together
+            Working together
           </p><h2
             class="[font-family:var(--sans)] [font-size:clamp(30px,_3.3vw,_43px)] font-black tracking-[-0.055em] leading-[1.13] m-0 mt-[20px] max-w-[690px] text-balance"
             id="process-heading"
@@ -487,7 +401,7 @@ const questions = [
     </section>
     <section
       id="questions"
-      class="grid gap-[35px] mx-auto py-[72px] [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:gap-[65px] min-[900px]:grid-cols-[minmax(0,_1fr)_minmax(0,_1.5fr)] min-[900px]:py-[95px]"
+      class="grid gap-[35px] mx-auto py-[72px] [width:min(100%_-_25px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:gap-[65px] min-[900px]:grid-cols-[minmax(0,_1fr)_minmax(0,_1.5fr)] min-[900px]:py-[95px]"
       aria-labelledby="questions-heading"
     >
       <div class="">
@@ -525,7 +439,7 @@ const questions = [
     </section>
     <section
       id="contact"
-      class="[--accent:var(--accent-on-light)] [--ink:var(--on-light)] [--muted:var(--muted-on-light)] [--paper:var(--green-pale)] bg-[var(--paper)] rounded-[16px] text-[color:var(--ink)] [color-scheme:light] isolate mb-[36px] mx-auto [padding:45px_24px] relative [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:[padding:65px_45px] overflow-hidden"
+      class="[--accent:var(--accent-on-light)] [--ink:var(--on-light)] [--muted:var(--muted-on-light)] [--paper:var(--green-pale)] bg-[var(--paper)] rounded-[16px] text-[color:var(--ink)] [color-scheme:light] isolate mb-[36px] mx-auto [padding:45px_24px] relative [width:min(100%_-_25px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:[padding:65px_45px] overflow-hidden"
       aria-labelledby="contact-heading"
     >
       <div
@@ -533,6 +447,7 @@ const questions = [
         aria-hidden="true"
       >
         <CapsulePattern
+          reveal
           class="bottom-[-40px] block h-auto pointer-events-none absolute right-[-150px] w-[230px] min-[640px]:bottom-[-50px] min-[640px]:right-[-95px] min-[640px]:w-[280px] min-[900px]:bottom-[-55px] min-[900px]:right-[-90px] min-[900px]:w-[270px]"
         />
       </div>
@@ -569,7 +484,7 @@ const questions = [
     </section>
   </main>
   <footer
-    class="items-center flex flex-wrap [gap:28px_45px] mx-auto py-[34px] [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)]"
+    class="items-center flex flex-wrap [gap:28px_45px] mx-auto py-[34px] [width:min(100%_-_25px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)]"
   >
     <Brand href="/codex-non-specialist-lab/bright-side" /><p
       class="text-[color:var(--muted)] text-[11px] m-0"
