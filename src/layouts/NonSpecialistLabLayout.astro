@@ -1,0 +1,65 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  page?: 'index' | 'bright-side';
+}
+const { title, description, page = 'index' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="hsl(240, 7%, 96%)" />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/codex-non-specialist-lab/fox.svg" />
+  </head>
+  <body
+    class:list={[
+      page,
+      "[--accent:var(--brand-primary)] [--accent-hover:hsl(162,_72%,_76%)] [--accent-on-light:hsl(162,_50%,_25%)] [--brand-body:hsl(240,_7%,_96%)] [--brand-light:hsl(240,_7%,_96%)] [--brand-panel:hsl(210,_38%,_93%)] [--brand-primary:hsl(162,_72%,_65%)] [--brand-rule:hsl(240,_7%,_82%)] [--brand-secondary:hsl(206,_81%,_50%)] [--brand-tertiary:hsl(259,_81%,_64%)] [--brand-text:hsl(240,_6%,_12%)] [--dark-surface:hsl(240,_6%,_12%)] [--green-deep:hsl(162,_28%,_16%)] [--green-mid:hsl(162,_45%,_45%)] [--green-pale:hsl(162,_35%,_93%)] [--green-soft:hsl(162,_40%,_86%)] [--ink:var(--brand-text)] [--muted:hsl(240,_6%,_30%)] [--muted-on-dark:hsl(162,_12%,_74%)] [--muted-on-light:hsl(162,_20%,_28%)] [--on-dark:hsl(240,_7%,_96%)] [--on-light:hsl(240,_6%,_12%)] [--paper:var(--brand-body)] [--rule:var(--brand-rule)] [--serif:'Lab_Newsreader',_Georgia,_serif] [--stone:var(--brand-panel)] antialiased bg-[var(--paper)] text-[color:var(--ink)] [color-scheme:light] [font-family:var(--sans)] text-[16px] leading-[1.65] m-0 [&_*]:box-border [&_*::before]:box-border [&_*::after]:box-border selection:bg-[var(--brand-primary)] selection:text-[color:var(--on-light)]",
+      page === 'bright-side'
+        ? "[--sans:'Lab_Bright_Manrope',_Arial,_sans-serif]"
+        : "[--sans:'Lab_Inter',_Arial,_sans-serif]",
+    ]}
+  >
+    <a
+      class="bg-[var(--ink)] text-[color:var(--paper)] left-[12px] [padding:12px_20px] absolute [text-decoration-thickness:1px] [text-underline-offset:5px] top-[8px] [transform:translateY(-200%)] z-[20] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] focus:[transform:translateY(0)] hover:underline"
+      href="#main">Skip to content</a
+    >
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  /* Omit Preflight to preserve this design's existing element defaults. */
+  @import 'tailwindcss/theme.css' layer(theme);
+  @import 'tailwindcss/utilities.css' layer(utilities);
+
+  /* Font assets need native declarations; the design uses utilities above. */
+  @font-face {
+    font-family: 'Lab Inter';
+    src: url('../fonts/Inter/Inter-VariableFont.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Lab Newsreader';
+    src: url('../fonts/Newsreader/Newsreader-VariableFont.ttf') format('truetype');
+    font-weight: 200 800;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Lab Bright Manrope';
+    src: url('../fonts/Manrope/Manrope-VariableFont.ttf') format('truetype');
+    font-weight: 200 800;
+    font-style: normal;
+    font-display: swap;
+  }
+</style>

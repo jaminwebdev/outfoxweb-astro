@@ -1,0 +1,589 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '@/layouts/NonSpecialistLabLayout.astro';
+import Brand from '@/components/non-specialist-lab/Brand.astro';
+import CapsulePattern from '@/components/non-specialist-lab/CapsulePattern.astro';
+import PlayMark from '@/components/non-specialist-lab/PlayMark.astro';
+import Devices from '@/images/homepage_hero_img.webp';
+import Interior from '@/images/Interior_Design_Cover.webp';
+import Financial from '@/images/Financial_Cover.webp';
+import Jamin from '@/images/jamin_headshot.webp';
+
+const email = 'mailto:hello@outfoxweb.com?subject=Let%27s%20talk%20through%20my%20website';
+const industries = ['Real estate', 'Financial services', 'Med spas', 'Home services', 'Legal'];
+const engagement = [
+  {
+    title: 'Get the direction right.',
+    body: 'Understand your audience, your offer, and what the website needs to accomplish before choosing a tool or a layout.',
+  },
+  {
+    title: 'Make the message clear.',
+    body: 'Shape the content and design together so visitors can understand the business and find their next step.',
+  },
+  {
+    title: 'Build with care.',
+    body: 'Develop the website, review the code, and check the important paths on real screen sizes. Plan the handoff with you.',
+  },
+];
+const process = [
+  {
+    title: 'Understand.',
+    body: 'We talk about your business, your current website, and where people get stuck. Start with the problem you want to solve.',
+  },
+  {
+    title: 'Shape.',
+    body: 'We agree on priorities, content, and a design direction. You see the thinking and have room to give feedback.',
+  },
+  {
+    title: 'Build & review.',
+    body: 'I build and check the site. We review it together, work through the details, and agree on what launch and handoff need.',
+  },
+];
+const questions = [
+  {
+    question: 'Do I need a completely new website?',
+    answer:
+      "Not necessarily. We'll look at what you have and what is getting in the way. The useful next step could be a focused improvement or a more substantial rebuild.",
+  },
+  {
+    question: 'How do you use AI in your work?',
+    answer:
+      'I use it for ideas and to speed up parts of design and development. I review the code and decisions myself. The responsibility for the finished work stays with me.',
+  },
+  {
+    question: 'What will my project cost?',
+    answer:
+      'That depends on the work your website needs. We discuss the scope and agree on a proposal before the project begins.',
+  },
+  {
+    question: 'What happens after the website is built?',
+    answer:
+      'We agree on the handoff, access, and any support needs as part of the project scope, so you understand how the website will be managed.',
+  },
+];
+---
+
+<Layout
+  title="Bright Side — Outfox Web homepage study"
+  description="A playful mint-led homepage with inset panels, foreground device cutouts, diagonal capsules, and organic image windows."
+  page="bright-side"
+>
+  <nav
+    class="bg-[var(--stone)] [border-bottom:1px_solid_var(--rule)] text-[11px] tracking-[0.025em]"
+    aria-label="Design study"
+  >
+    <div
+      class="items-center flex gap-[12px] justify-between mx-auto min-h-[36px] [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)]"
+    >
+      <a
+        class="items-center text-inherit inline-flex gap-[10px] min-h-[36px] no-underline [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px]"
+        href="/codex-non-specialist-lab"><span aria-hidden="true">←</span> Design lab</a
+      >
+      <span>07 / Bright Side <span class="hidden min-[640px]:inline">— homepage study</span></span>
+    </div>
+  </nav>
+  <header
+    class="items-center flex flex-wrap [gap:14px_20px] justify-between mx-auto py-[26px] [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[800px]:flex-nowrap min-[900px]:py-[30px]"
+  >
+    <Brand href="/codex-non-specialist-lab/bright-side" />
+    <nav
+      class="[border-bottom:1px_solid_var(--rule)] flex gap-[24px] justify-between [order:3] w-full min-[800px]:[border:0] min-[800px]:gap-[28px] min-[800px]:ml-auto min-[800px]:mr-[20px] min-[800px]:order-none min-[800px]:w-auto min-[1100px]:gap-[36px] min-[1100px]:mr-[48px]"
+      aria-label="Main navigation"
+    >
+      <a
+        class="items-center text-inherit inline-flex text-[13px] min-h-[44px] no-underline [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:text-[color:var(--accent)] hover:underline"
+        href="#work">Work</a
+      ><a
+        class="items-center text-inherit inline-flex text-[13px] min-h-[44px] no-underline [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:text-[color:var(--accent)] hover:underline"
+        href="#approach">Approach</a
+      ><a
+        class="items-center text-inherit inline-flex text-[13px] min-h-[44px] no-underline [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:text-[color:var(--accent)] hover:underline"
+        href="#questions">Questions</a
+      >
+    </nav>
+    <a
+      class="items-center text-inherit inline-flex text-[11px] font-medium gap-[10px] min-h-[44px] underline [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:underline min-[640px]:text-[13px]"
+      href={email}>Talk through your website <span aria-hidden="true">↗</span></a
+    >
+  </header>
+  <main class="focus:outline-none" id="main" tabindex="-1">
+    <section
+      class="mx-auto pt-[24px] [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:pt-[65px]"
+      aria-labelledby="hero-heading"
+    >
+      <div
+        class="[--accent:var(--accent-on-light)] [--ink:var(--on-light)] [--muted:var(--muted-on-light)] [--paper:var(--green-pale)] bg-[var(--paper)] rounded-[16px] text-[color:var(--ink)] [color-scheme:light] grid gap-[30px] isolate [padding:30px_20px_24px] relative min-[640px]:[padding:42px_32px_28px] min-[900px]:items-center min-[900px]:grid-cols-[minmax(0,_1.12fr)_minmax(0,_1fr)] min-[900px]:[padding:48px_42px]"
+      >
+        <div
+          class="rounded-[inherit] [inset:0] pointer-events-none absolute z-[-1] min-[900px]:left-[55%]"
+          aria-hidden="true"
+        >
+          <CapsulePattern
+            class="block h-auto max-w-[620px] pointer-events-none absolute right-[-10%] w-full min-[640px]:max-w-[530px] min-[640px]:right-[0] min-[900px]:max-w-none min-[900px]:right-[-20%] min-[900px]:w-[138%] bottom-0"
+          />
+        </div>
+        <div class="min-w-0 relative z-[1]">
+          <p
+            class="text-[color:var(--accent)] [font-family:var(--sans)] text-[12px] font-semibold tracking-[0.045em] leading-[1.5] m-0 uppercase"
+          >
+            Website strategy, design & development
+          </p>
+          <h1
+            class="[font-family:var(--sans)] [font-size:clamp(38px,_4.8vw,_62px)] font-black tracking-[-0.055em] leading-[1.13] m-0 mt-[22px] max-w-[590px] text-balance min-[900px]:[font-size:clamp(42px,_4.8vw,_62px)]"
+            id="hero-heading"
+          >
+            A better website starts with <em
+              class="text-[color:var(--accent)] block not-italic [font-weight:inherit]"
+              >better judgment.</em
+            >
+          </h1>
+          <p
+            class="text-[color:var(--muted)] text-[15px] leading-[1.8] m-0 mt-[23px] max-w-[435px] min-[900px]:text-[16px]"
+          >
+            Your business needs a website people can understand, trust, and act on. I help you
+            decide what matters, then design and build it with care.
+          </p>
+          <div class="items-center flex flex-wrap [gap:12px_20px] mt-[26px]">
+            <a
+              class="items-center bg-[var(--brand-primary)] [border:1px_solid_var(--brand-primary)] rounded-[7px] text-[color:var(--on-light)] inline-flex text-[13px] font-medium gap-[22px] justify-between leading-[1.4] min-h-[54px] [padding:15px_19px] no-underline [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:bg-[var(--accent-hover)] hover:[border-color:var(--accent-hover)] hover:no-underline"
+              href={email}
+              >Talk through your website <span class="text-[20px] font-normal" aria-hidden="true"
+                >↗</span
+              ></a
+            >
+            <a
+              class="items-center text-inherit inline-flex text-[13px] font-medium gap-[20px] min-h-[44px] underline [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:underline"
+              href="#work">See the design examples <span aria-hidden="true">↓</span></a
+            >
+          </div>
+          <p class="text-[color:var(--muted)] text-[11px] m-0 mt-[23px] max-w-[400px]">
+            Independent expertise. Based in Carlsbad, California.
+          </p>
+        </div>
+        <figure
+          class="m-0 min-w-0 relative [width:min(100%,_541px)] z-[2] min-[640px]:max-w-[480px] min-[900px]:max-w-[541px] min-[900px]:[width:calc(100%_+_20px)]"
+        >
+          <div class="relative">
+            <PlayMark
+              kind="arrow"
+              class="hidden min-[900px]:text-[color:var(--accent-on-light)] min-[900px]:block min-[900px]:h-[54px] min-[900px]:left-[-32px] min-[900px]:absolute min-[900px]:top-[10%] min-[900px]:w-[54px]"
+            />
+            <Image
+              class="block h-auto relative w-full"
+              src={Devices}
+              alt="Design example presented across a laptop and phones, with transparent space around the devices"
+              widths={[360, 541]}
+              sizes="(min-width: 1200px) 541px, (min-width: 900px) 44vw, (min-width: 640px) 480px, calc(100vw - 76px)"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </div>
+        </figure>
+      </div>
+      <aside
+        class="grid gap-[23px] [padding-block:62px_30px] min-[900px]:items-center min-[900px]:gap-[45px] min-[900px]:grid-cols-[minmax(0,_0.85fr)_minmax(0,_1.7fr)] min-[900px]:[padding-block:58px_32px]"
+        aria-labelledby="note-heading"
+      >
+        <div>
+          <p
+            class="text-[color:var(--accent)] [font-family:var(--sans)] text-[12px] font-semibold tracking-[0.045em] leading-[1.5] m-0 uppercase"
+          >
+            Clarity, before code.
+          </p><h2
+            class="[font-family:var(--sans)] text-[23px] font-semibold tracking-[-0.03em] leading-[1.13] m-0 mt-[12px] text-balance"
+            id="note-heading"
+          >
+            Every decision has a job to do.
+          </h2>
+        </div>
+        <ol
+          class="grid gap-[17px] list-none m-0 p-0 min-[640px]:gap-[25px] min-[640px]:grid-cols-[repeat(3,_minmax(0,_1fr))]"
+        >
+          <li
+            class="items-baseline flex text-[13px] gap-[13px] min-[640px]:flex-col min-[640px]:gap-[8px]"
+          >
+            <span class="text-[color:var(--accent)] text-[11px]" aria-hidden="true">01</span> Make your
+            offer clear.
+          </li>
+          <li
+            class="items-baseline flex text-[13px] gap-[13px] min-[640px]:flex-col min-[640px]:gap-[8px]"
+          >
+            <span class="text-[color:var(--accent)] text-[11px]" aria-hidden="true">02</span> Give people
+            a reason to trust you.
+          </li>
+          <li
+            class="items-baseline flex text-[13px] gap-[13px] min-[640px]:flex-col min-[640px]:gap-[8px]"
+          >
+            <span class="text-[color:var(--accent)] text-[11px]" aria-hidden="true">03</span> Make the
+            next step easy.
+          </li>
+        </ol>
+      </aside>
+    </section>
+    <section
+      class="[border-block:1px_solid_var(--rule)] grid gap-[15px] mx-auto py-[23px] [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:items-center min-[900px]:gap-[30px] min-[900px]:grid-cols-[205px_minmax(0,_1fr)]"
+      aria-label="Industry focus"
+    >
+      <p class="text-[color:var(--ink)] text-[13px] font-semibold m-0">
+        Built around your business.
+      </p><ul
+        class="text-[color:var(--muted)] flex flex-wrap text-[12px] [gap:12px_24px] list-none m-0 p-0 min-[900px]:justify-between"
+      >
+        {industries.map((industry) => <li>{industry}</li>)}
+      </ul>
+    </section>
+    <section
+      id="work"
+      class="mx-auto py-[72px] [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:items-start min-[900px]:grid min-[900px]:[gap:0_45px] min-[900px]:grid-cols-[minmax(0,_0.8fr)_minmax(0,_1.7fr)] min-[900px]:py-[95px]"
+      aria-labelledby="work-heading"
+    >
+      <div class="mb-[35px] max-w-[660px]">
+        <p
+          class="text-[color:var(--accent)] [font-family:var(--sans)] text-[12px] font-semibold tracking-[0.045em] leading-[1.5] m-0 uppercase last:text-[15px] last:mt-[22px] last:max-w-[465px]"
+        >
+          01 / A closer look
+        </p><h2
+          class="[font-family:var(--sans)] [font-size:clamp(30px,_3.3vw,_43px)] font-black tracking-[-0.055em] leading-[1.13] m-0 mt-[20px] text-balance"
+          id="work-heading"
+        >
+          Good design makes<br />the next step feel obvious.
+        </h2>
+        <p class="text-[color:var(--muted)] m-0 last:text-[15px] last:mt-[22px] last:max-w-[465px]">
+          A website should help people find their bearings. These examples show the kind of clarity
+          we can build toward.
+        </p>
+      </div>
+      <div
+        class="grid gap-[40px] min-[900px]:gap-[26px] min-[900px]:grid-cols-[repeat(2,_minmax(0,_1fr))]"
+      >
+        <figure class="m-0">
+          <div
+            class="isolate [padding:30px_15px] relative before:bg-[var(--green-soft)] before:[border-radius:40%_35%_8%_10%_/_45%_40%_15%_12%] before:content-[''] before:[inset:0] before:absolute before:z-[-1] min-[640px]:[padding:40px_22px] min-[900px]:[padding:26px_15px]"
+          >
+            <Image
+              class="[border:1px_solid_var(--on-light)] rounded-[5px] block h-auto w-full"
+              src={Interior}
+              alt="Interior services design example with a clear headline, spacious layout, and prominent contact action"
+              widths={[480, 700]}
+              sizes="(min-width: 1260px) 323px, (min-width: 900px) calc(34vw - 104px), (min-width: 640px) calc(100vw - 124px), calc(100vw - 74px)"
+              loading="lazy"
+            />
+          </div>
+          <figcaption>
+            <p
+              class="text-[color:var(--muted)] [font-family:var(--sans)] text-[11px] font-semibold tracking-[0.045em] leading-[1.5] m-0 mt-[23px] uppercase last:text-[14px] last:mt-[12px] last:max-w-[440px]"
+            >
+              Design example / Interior services
+            </p><h3
+              class="text-[23px] [font-weight:650] tracking-[-0.035em] leading-[1.35] m-0 mt-[12px] text-balance"
+            >
+              Space to understand the offer.
+            </h3>
+            <p
+              class="text-[color:var(--muted)] m-0 last:text-[14px] last:mt-[12px] last:max-w-[440px]"
+            >
+              A calm hierarchy gives the service, supporting detail, and contact action room to be
+              understood.
+            </p>
+          </figcaption>
+        </figure>
+        <figure class="m-0">
+          <div
+            class="isolate [padding:30px_15px] relative before:bg-[var(--brand-primary)] before:[border-radius:10%_12%_38%_30%_/_15%_15%_42%_40%] before:content-[''] before:[inset:0] before:absolute before:z-[-1] min-[640px]:[padding:40px_22px] min-[900px]:[padding:26px_15px]"
+          >
+            <Image
+              class="[border:1px_solid_var(--on-light)] rounded-[5px] block h-auto w-full"
+              src={Financial}
+              alt="Financial services design example with a service introduction and visible get-started action"
+              widths={[480, 700]}
+              sizes="(min-width: 1260px) 323px, (min-width: 900px) calc(34vw - 104px), (min-width: 640px) calc(100vw - 124px), calc(100vw - 74px)"
+              loading="lazy"
+            />
+          </div>
+          <figcaption>
+            <p
+              class="text-[color:var(--muted)] [font-family:var(--sans)] text-[11px] font-semibold tracking-[0.045em] leading-[1.5] m-0 mt-[23px] uppercase last:text-[14px] last:mt-[12px] last:max-w-[440px]"
+            >
+              Design example / Financial services
+            </p><h3
+              class="text-[23px] [font-weight:650] tracking-[-0.035em] leading-[1.35] m-0 mt-[12px] text-balance"
+            >
+              A clear route to a conversation.
+            </h3>
+            <p
+              class="text-[color:var(--muted)] m-0 last:text-[14px] last:mt-[12px] last:max-w-[440px]"
+            >
+              For a service business, useful information and a visible next step belong together.
+            </p>
+          </figcaption>
+        </figure>
+      </div>
+      <p
+        class="[border-top:1px_solid_var(--rule)] text-[color:var(--muted)] text-[11px] m-0 mt-[35px] pt-[20px] min-[900px]:[grid-column:1_/_-1]"
+      >
+        Design examples from the existing library. Client attribution and results are not
+        established.
+      </p>
+    </section>
+    <section id="approach" class="py-[45px]" aria-labelledby="approach-heading">
+      <div
+        class="[--ink:var(--on-dark)] [--muted:var(--muted-on-dark)] [--paper:var(--green-deep)] items-center text-[color:var(--ink)] grid gap-[38px] isolate mx-auto py-[38px] relative [width:min(100%_-_44px,_1180px)] before:bg-[var(--green-deep)] before:rounded-[16px] before:content-[''] before:[inset:0] before:absolute before:z-[-2] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:gap-[60px] min-[900px]:grid-cols-[minmax(0,_1fr)_minmax(0,_1.6fr)] min-[900px]:before:[inset:30px_0_30px_35px]"
+      >
+        <div
+          class="px-[20px] min-[900px]:col-start-2 min-[900px]:row-start-1 min-[900px]:[padding-inline:0_42px]"
+        >
+          <p
+            class="text-[color:var(--accent)] [font-family:var(--sans)] text-[12px] font-semibold tracking-[0.045em] leading-[1.5] m-0 uppercase"
+          >
+            02 / The person behind the work
+          </p><h2
+            class="[font-family:var(--sans)] [font-size:clamp(30px,_3.3vw,_43px)] font-black tracking-[-0.055em] leading-[1.13] m-0 mt-[20px] text-balance"
+            id="approach-heading"
+          >
+            Useful tools.<br /><em
+              class="text-[color:var(--accent)] not-italic [font-weight:inherit]"
+              >Accountable decisions.</em
+            >
+          </h2>
+          <p class="text-[color:var(--ink)] text-[17px] m-0 mt-[26px]">
+            AI can help move a project forward. It still takes experience to decide what belongs on
+            your website, what needs checking, and what to leave out.
+          </p>
+          <p
+            class="text-[color:var(--muted)] text-[14px] leading-[1.8] m-0 mt-[20px] max-w-[575px]"
+          >
+            I'm Jamin, the engineer behind Outfox Web. I use AI to explore ideas and speed up parts
+            of the work. I review every line of code and vet the decisions before anything ships.
+            You work directly with the person responsible for the result.
+          </p>
+          <p
+            class="[border-top:1px_solid_var(--rule)] text-[color:var(--muted)] text-[13px] leading-[1.8] m-0 mt-[20px] max-w-[575px] pt-[22px]"
+          >
+            Clear explanations are part of the work. You should understand what we're building and
+            why.
+          </p>
+        </div>
+        <figure
+          class="m-0 mx-auto [width:min(100%,_350px)] min-[900px]:col-start-1 min-[900px]:row-start-1 min-[900px]:w-full"
+        >
+          <div class="aspect-square grid isolate place-items-center relative">
+            <CapsulePattern
+              class="block h-auto [inset:-4%_0_auto] pointer-events-none absolute w-full z-[-1]"
+            />
+            <div
+              class="aspect-square [border:8px_solid_var(--brand-primary)] [border-radius:42%_58%_35%_65%_/_58%_42%_58%_42%] overflow-hidden w-[78%]"
+            >
+              <Image
+                class="block h-full object-cover w-full"
+                src={Jamin}
+                alt="Jamin, founder of Outfox Web"
+                width={460}
+                height={460}
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <figcaption
+            class="items-center text-[color:var(--muted)] flex flex-col text-[11px] gap-[5px] pt-[15px]"
+          >
+            <span class="text-[color:var(--ink)] text-[26px] [font-weight:650] leading-[1.2]"
+              >Jamin</span
+            ><span>Founder & software engineer</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <section
+      id="engagement"
+      class="mx-auto py-[72px] [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:py-[95px]"
+      aria-labelledby="engagement-heading"
+    >
+      <div class="">
+        <p
+          class="text-[color:var(--accent)] [font-family:var(--sans)] text-[12px] font-semibold tracking-[0.045em] leading-[1.5] m-0 uppercase"
+        >
+          03 / What we work on
+        </p><h2
+          class="[font-family:var(--sans)] [font-size:clamp(30px,_3.3vw,_43px)] font-black tracking-[-0.055em] leading-[1.13] m-0 mt-[20px] max-w-[735px] text-balance"
+          id="engagement-heading"
+        >
+          One website. A considered approach from the start.
+        </h2>
+      </div>
+      <div
+        class="grid gap-[30px] mt-[38px] min-[900px]:gap-[35px] min-[900px]:grid-cols-[repeat(3,_minmax(0,_1fr))]"
+      >
+        {
+          engagement.map((item, index) => (
+            <article class="[border-top:1px_solid_var(--rule)] grid gap-[17px] grid-cols-[38px_minmax(0,_1fr)] pt-[22px]">
+              <>
+                <span
+                  class="bg-[var(--brand-primary)] rounded-full text-[color:var(--on-light)] grid text-[12px] h-[38px] place-items-center w-[38px]"
+                  aria-hidden="true"
+                >
+                  0{index + 1}
+                </span>
+                <div>
+                  <>
+                    <h3 class="text-[21px] [font-weight:650] tracking-[-0.035em] leading-[1.35] m-0 text-balance">
+                      {item.title}
+                    </h3>
+                    <p class="text-[color:var(--muted)] text-[14px] leading-[1.8] m-0 mt-[14px]">
+                      {item.body}
+                    </p>
+                  </>
+                </div>
+              </>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+    <section id="process" class="bg-[var(--brand-panel)]" aria-labelledby="process-heading">
+      <div
+        class="mx-auto py-[72px] [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:py-[95px]"
+      >
+        <div class="">
+          <p
+            class="text-[color:var(--muted)] [font-family:var(--sans)] text-[12px] font-semibold tracking-[0.045em] leading-[1.5] m-0 uppercase"
+          >
+            04 / Working together
+          </p><h2
+            class="[font-family:var(--sans)] [font-size:clamp(30px,_3.3vw,_43px)] font-black tracking-[-0.055em] leading-[1.13] m-0 mt-[20px] max-w-[690px] text-balance"
+            id="process-heading"
+          >
+            You'll know what happens next.
+          </h2>
+        </div>
+        <ol
+          class="grid gap-[30px] list-none m-0 mt-[38px] p-0 min-[900px]:gap-[35px] min-[900px]:grid-cols-[repeat(3,_minmax(0,_1fr))]"
+        >
+          {
+            process.map((step, index) => (
+              <li class="[border-top:1px_solid_var(--rule)] pt-[24px]">
+                <>
+                  <span
+                    class="text-[color:var(--accent)] inline-block text-[27px] [font-weight:650] leading-[1] mb-[22px]"
+                    aria-hidden="true"
+                  >
+                    0{index + 1}
+                  </span>
+                  <div>
+                    <>
+                      <h3 class="text-[21px] [font-weight:650] tracking-[-0.035em] leading-[1.35] m-0 text-balance">
+                        {step.title}
+                      </h3>
+                      <p class="text-[color:var(--muted)] text-[14px] leading-[1.8] m-0 mt-[14px]">
+                        {step.body}
+                      </p>
+                    </>
+                  </div>
+                </>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </section>
+    <section
+      id="questions"
+      class="grid gap-[35px] mx-auto py-[72px] [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:gap-[65px] min-[900px]:grid-cols-[minmax(0,_1fr)_minmax(0,_1.5fr)] min-[900px]:py-[95px]"
+      aria-labelledby="questions-heading"
+    >
+      <div class="">
+        <p
+          class="text-[color:var(--accent)] [font-family:var(--sans)] text-[12px] font-semibold tracking-[0.045em] leading-[1.5] m-0 uppercase"
+        >
+          Before we begin
+        </p><h2
+          class="[font-family:var(--sans)] [font-size:clamp(30px,_3.3vw,_43px)] font-black tracking-[-0.055em] leading-[1.13] m-0 mt-[20px] max-w-[435px] text-balance"
+          id="questions-heading"
+        >
+          A few things you may be wondering.
+        </h2>
+      </div>
+      <div class="">
+        {
+          questions.map((item) => (
+            <details class="[border-top:1px_solid_var(--rule)] last:[border-bottom:1px_solid_var(--rule)]">
+              <>
+                <summary class="items-center cursor-pointer flex text-[14px] font-medium gap-[20px] justify-between leading-[1.5] list-none min-h-[66px] py-[24px] [&::-webkit-details-marker]:hidden focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:text-[color:var(--accent)]">
+                  {item.question}
+                  <span
+                    class="inline-block [flex:0_0_12px] h-[12px] relative w-[12px] [details[open]_&]:after:hidden after:bg-current after:content-[''] after:h-[12px] after:left-[5px] after:absolute after:w-[1px] before:bg-current before:content-[''] before:h-[1px] before:absolute before:top-[5px] before:w-[12px]"
+                    aria-hidden="true"
+                  />
+                </summary>
+                <p class="text-[color:var(--muted)] text-[14px] leading-[1.8] m-0 max-w-[560px] [padding:0_28px_24px_0]">
+                  {item.answer}
+                </p>
+              </>
+            </details>
+          ))
+        }
+      </div>
+    </section>
+    <section
+      id="contact"
+      class="[--accent:var(--accent-on-light)] [--ink:var(--on-light)] [--muted:var(--muted-on-light)] [--paper:var(--green-pale)] bg-[var(--paper)] rounded-[16px] text-[color:var(--ink)] [color-scheme:light] isolate mb-[36px] mx-auto [padding:45px_24px] relative [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:[padding:65px_45px] overflow-hidden"
+      aria-labelledby="contact-heading"
+    >
+      <div
+        class="rounded-[inherit] [inset:0] pointer-events-none absolute z-[-1]"
+        aria-hidden="true"
+      >
+        <CapsulePattern
+          class="bottom-[-40px] block h-auto pointer-events-none absolute right-[-150px] w-[230px] min-[640px]:bottom-[-50px] min-[640px]:right-[-95px] min-[640px]:w-[280px] min-[900px]:bottom-[-55px] min-[900px]:right-[-90px] min-[900px]:w-[270px]"
+        />
+      </div>
+      <div class="mx-auto max-w-[740px] relative text-center">
+        <p
+          class="text-[color:var(--accent)] [font-family:var(--sans)] text-[12px] font-semibold tracking-[0.045em] leading-[1.5] m-0 uppercase"
+        >
+          Let's start with your business
+        </p><h2
+          class="[font-family:var(--sans)] [font-size:clamp(34px,_4.5vw,_55px)] font-black tracking-[-0.055em] leading-[1.13] m-0 mt-[20px] text-balance"
+          id="contact-heading"
+        >
+          Tell me what your<br /><em
+            class="text-[color:var(--accent)] not-italic [font-weight:inherit]"
+            >website needs to do.</em
+          >
+        </h2>
+        <p class="text-[color:var(--muted)] text-[15px] [margin:24px_auto_0] max-w-[465px]">
+          Send your current website, if you have one, and a little about what you'd like to improve.
+          We'll start there.
+        </p>
+        <div
+          class="items-center flex flex-col gap-[15px] mt-[28px] min-[900px]:flex-row min-[900px]:gap-[25px] min-[900px]:justify-center"
+        >
+          <a
+            class="items-center bg-[var(--brand-primary)] [border:1px_solid_var(--brand-primary)] rounded-[7px] text-[color:var(--on-light)] inline-flex text-[13px] font-medium gap-[22px] justify-between leading-[1.4] min-h-[54px] [padding:15px_19px] no-underline [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:bg-[var(--accent-hover)] hover:[border-color:var(--accent-hover)] hover:no-underline"
+            href={email}
+            >Talk through your website <span class="text-[20px] font-normal" aria-hidden="true"
+              >↗</span
+            ></a
+          >
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer
+    class="items-center flex flex-wrap [gap:28px_45px] mx-auto py-[34px] [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)]"
+  >
+    <Brand href="/codex-non-specialist-lab/bright-side" /><p
+      class="text-[color:var(--muted)] text-[11px] m-0"
+    >
+      Thoughtful websites. Independent expertise.<br />Carlsbad, California.
+    </p>
+    <nav class="flex flex-wrap [gap:12px_26px]" aria-label="Footer navigation">
+      <a
+        class="items-center text-inherit flex text-[11px] min-h-[44px] [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:underline"
+        href="/codex-non-specialist-lab">Design lab</a
+      ><a
+        class="items-center text-inherit flex text-[11px] min-h-[44px] [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:underline"
+        href="#main">Back to top <span aria-hidden="true">↑</span></a
+      >
+    </nav>
+  </footer>
+</Layout>

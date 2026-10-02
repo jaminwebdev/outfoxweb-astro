@@ -1,0 +1,107 @@
+---
+import Layout from '@/layouts/NonSpecialistLabLayout.astro';
+import Brand from '@/components/non-specialist-lab/Brand.astro';
+const palette = [
+  'hsl(240, 7%, 96%)',
+  'hsl(162, 72%, 65%)',
+  'hsl(162, 40%, 86%)',
+  'hsl(206, 81%, 50%)',
+  'hsl(259, 81%, 64%)',
+];
+---
+
+<Layout
+  title="Bright Side | Outfox Web design lab"
+  description="The selected Bright Side homepage direction for Outfox Web: inset mint panels, cutout devices, and playful diagonal capsules."
+>
+  <header
+    class="items-center [border-bottom:1px_solid_var(--rule)] flex gap-[20px] justify-between mx-auto py-[28px] [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)]"
+  >
+    <Brand /><span
+      class="text-[color:var(--muted)] [font-family:var(--sans)] text-[10px] font-semibold tracking-[0.11em] leading-[1.5] max-w-[140px] text-right uppercase"
+      >An independent design study</span
+    >
+  </header>
+  <main
+    id="main"
+    class="mx-auto [padding-block:60px_70px] [width:min(100%_-_44px,_1180px)] focus:outline-none min-[640px]:[width:min(100%_-_80px,_1180px)]"
+    tabindex="-1"
+  >
+    <p
+      class="text-[color:var(--accent)] [font-family:var(--sans)] text-[11px] font-semibold tracking-[0.11em] leading-[1.5] m-0 uppercase min-[640px]:text-[12px]"
+    >
+      Outfox Web / Design lab
+    </p>
+    <h1
+      class="[font-family:var(--serif)] [font-size:clamp(48px,_6.3vw,_86px)] font-normal tracking-[-0.035em] leading-[1.08] m-0 mt-[22px] text-balance"
+    >
+      Thoughtful work.<br /><em class="text-[color:var(--accent)] font-normal"
+        >A brighter direction.</em
+      >
+    </h1>
+    <p class="text-[color:var(--muted)] text-[17px] m-0 mt-[26px] max-w-[640px]">
+      Bright Side brings a playful visual voice to expert judgment, considered websites, and the
+      person responsible for the work.
+    </p>
+    <section aria-label="Selected design direction">
+      <article
+        class="[border-top:1px_solid_var(--rule)] grid gap-[20px] mt-[44px] py-[30px] min-[640px]:gap-[25px] min-[640px]:grid-cols-[50px_1fr] min-[800px]:gap-[30px] min-[800px]:grid-cols-[50px_1fr_230px]"
+      >
+        <span
+          class="text-[color:var(--accent)] [font-family:var(--serif)] text-[35px] leading-[1]"
+          aria-hidden="true">07</span
+        >
+        <div class="">
+          <p
+            class="text-[color:var(--muted)] [font-family:var(--sans)] text-[11px] font-semibold tracking-[0.11em] leading-[1.5] m-0 uppercase last:text-[14px] last:mt-[14px] last:max-w-[580px] min-[640px]:text-[12px]"
+          >
+            The friendly expert, with a playful streak
+          </p><h2
+            class="[font-family:var(--serif)] text-[40px] font-normal tracking-[-0.035em] leading-[1.08] m-0 mt-[10px] text-balance"
+          >
+            Bright Side
+          </h2>
+          <p
+            class="text-[color:var(--muted)] m-0 last:text-[14px] last:mt-[14px] last:max-w-[580px]"
+          >
+            Inset mint panels, device cutouts crossing their edges, diagonal capsules, and organic
+            image windows. The chosen direction, with the light background and original green
+            accents.
+          </p>
+        </div>
+        <div class="min-[640px]:col-start-2 min-[800px]:col-start-3">
+          <div
+            class="flex gap-[6px]"
+            role="img"
+            aria-label="Light paper, primary mint, soft green, small blue and purple accents"
+          >
+            {
+              palette.map((color) => (
+                <span
+                  class="bg-[var(--swatch)] [border:1px_solid_var(--rule)] h-[30px] w-[30px]"
+                  style={`--swatch: ${color}`}
+                />
+              ))
+            }
+          </div>
+          <p class="text-[color:var(--muted)] text-[12px] m-0 mt-[10px]">
+            Manrope + diagonal capsules
+          </p>
+          <a
+            class="items-center bg-[var(--brand-primary)] [border:1px_solid_var(--brand-primary)] text-[color:var(--on-light)] inline-flex text-[13px] font-medium gap-[28px] justify-between leading-[1.4] mt-[20px] min-h-[52px] [padding:14px_20px] no-underline [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:bg-[var(--accent-hover)] hover:[border-color:var(--accent-hover)] hover:no-underline"
+            href="/codex-non-specialist-lab/bright-side"
+            >View Bright Side <span class="text-[20px] font-normal" aria-hidden="true">↗</span></a
+          >
+          <p class="text-[color:var(--muted)] text-[12px] m-0 mt-[10px]">
+            Selected direction · restored
+          </p>
+        </div>
+      </article>
+    </section>
+  </main>
+  <footer
+    class="[border-top:1px_solid_var(--rule)] flex flex-wrap text-[11px] gap-[12px] justify-between mx-auto [padding-block:20px_30px] [width:min(100%_-_44px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)]"
+  >
+    <span>Outfox Web / Design exploration</span><span>Bright Side</span>
+  </footer>
+</Layout>

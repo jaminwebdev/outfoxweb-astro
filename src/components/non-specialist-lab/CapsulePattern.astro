@@ -1,0 +1,32 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+
+<svg
+  class={className}
+  viewBox="0 0 520 420"
+  fill="none"
+  width="520"
+  height="420"
+  aria-hidden="true"
+  focusable="false"
+>
+  <g transform="rotate(-39 260 210)" stroke-linecap="round" stroke-width="25">
+    <path d="M102 83h126m45 0h78" stroke="var(--green-mid)"></path>
+    <path d="M63 129h235m42 0h70" stroke="var(--brand-primary)"></path>
+    <path d="M124 175h167" stroke="var(--brand-tertiary)"></path>
+    <path d="M325 175h88" stroke="var(--green-mid)"></path>
+    <path d="M44 221h97m42 0h209" stroke="var(--brand-primary)"></path>
+    <path d="M84 267h166" stroke="var(--green-mid)"></path>
+    <path d="M287 267h111" stroke="var(--brand-secondary)"></path>
+    <path d="M136 313h90m39 0h90" stroke="var(--brand-primary)"></path>
+    <path d="M171 359h153" stroke="var(--green-mid)"></path>
+    <circle cx="257" cy="83" r="10" fill="var(--brand-primary)" stroke="none"></circle>
+    <circle cx="322" cy="129" r="10" fill="var(--brand-tertiary)" stroke="none"></circle>
+    <circle cx="163" cy="221" r="10" fill="var(--brand-secondary)" stroke="none"></circle>
+    <circle cx="247" cy="313" r="10" fill="var(--green-mid)" stroke="none"></circle>
+  </g>
+</svg>
