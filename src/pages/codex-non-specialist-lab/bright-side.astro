@@ -6,6 +6,8 @@ import CapsulePattern from '@/components/non-specialist-lab/CapsulePattern.astro
 import PlayMark from '@/components/non-specialist-lab/PlayMark.astro';
 import BrightSideBenefitCard from '@/components/cards/BrightSideBenefitCard.svelte';
 import BrightSideServicesTabs from '@/components/sections/BrightSideServicesTabs.svelte';
+import BrightSideWebsiteScan from '@/components/sections/BrightSideWebsiteScan.svelte';
+import BrightSideBlogBento from '@/components/sections/BrightSideBlogBento.astro';
 import Devices from '@/images/homepage_hero_img.webp';
 import Interior from '@/images/Interior_Design_Cover.webp';
 import Financial from '@/images/Financial_Cover.webp';
@@ -301,7 +303,7 @@ const questions = [
           >
             <img
               class="block h-full w-full object-cover"
-              src="/images/Placeholder_Headshot.webp"
+              src="/images/headshot_placeholder.png"
               alt="Placeholder portrait for the testimonial design"
               width="89"
               height="89"
@@ -396,6 +398,7 @@ const questions = [
         </ol>
       </div>
     </section>
+    <BrightSideWebsiteScan client:load />
     <section
       id="questions"
       class="grid gap-[35px] mx-auto py-[72px] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:gap-[65px] min-[900px]:grid-cols-[minmax(0,_1fr)_minmax(0,_1.5fr)] min-[900px]:py-[95px]"
@@ -434,6 +437,7 @@ const questions = [
         }
       </div>
     </section>
+    <BrightSideBlogBento />
     <section
       id="contact"
       class="[--accent:var(--accent-on-light)] [--ink:var(--on-light)] [--muted:var(--muted-on-light)] [--paper:var(--green-pale)] bg-[var(--paper)] rounded-[16px] text-[color:var(--ink)] [color-scheme:light] isolate mb-[36px] mx-auto [padding:45px_24px] relative min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:[padding:65px_45px] overflow-hidden"
