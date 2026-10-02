@@ -10,7 +10,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "images:webp": "sharp --input \"./src/images/**/*.{png,jpg,jpeg}\" --output \"{dir}/{name}.webp\" --format webp --quality 80"
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.8",
