@@ -57,109 +57,98 @@ const questions = [
   page="bright-side"
 >
   <nav
-    class="bg-[var(--stone)] [border-bottom:1px_solid_var(--rule)] text-[11px] tracking-[0.025em]"
+    class="border-b border-border bg-secondary-light text-caption tracking-wide"
     aria-label="Design study"
   >
-    <div
-      class="items-center flex gap-[12px] justify-between mx-auto min-h-[36px] min-[640px]:[width:min(100%_-_80px,_1180px)]"
-    >
+    <div class="mx-auto flex min-h-9 max-w-315 items-center justify-between gap-3 px-6 sm:px-10">
       <a
-        class="items-center text-inherit inline-flex gap-[10px] min-h-[36px] no-underline [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px]"
+        class="inline-flex min-h-9 items-center gap-2.5 text-inherit no-underline focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink"
         href="/codex-non-specialist-lab"><span aria-hidden="true">←</span> Design lab</a
       >
-      <span>07 / Bright Side <span class="hidden min-[640px]:inline">— homepage study</span></span>
+      <span>07 / Bright Side <span class="hidden sm:inline">— homepage study</span></span>
     </div>
   </nav>
   <header
-    class="items-center flex flex-wrap [gap:14px_20px] justify-between mx-auto py-[26px] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[800px]:flex-nowrap min-[900px]:py-[30px]"
+    class="mx-auto flex max-w-315 flex-wrap items-center justify-between gap-x-5 gap-y-3.5 px-6 py-6.5 sm:px-10 md:flex-nowrap lg:py-7.5"
   >
     <Brand href="/codex-non-specialist-lab/bright-side" />
     <nav
-      class="[border-bottom:1px_solid_var(--rule)] flex gap-[24px] justify-between [order:3] w-full min-[800px]:[border:0] min-[800px]:gap-[28px] min-[800px]:ml-auto min-[800px]:mr-[20px] min-[800px]:order-none min-[800px]:w-auto min-[1100px]:gap-[36px] min-[1100px]:mr-[48px]"
+      class="order-3 flex w-full justify-between gap-6 border-b border-border md:order-none md:mr-5 md:ml-auto md:w-auto md:gap-7 md:border-0 xl:mr-12 xl:gap-9"
       aria-label="Main navigation"
     >
       <a
-        class="items-center text-inherit inline-flex text-[13px] min-h-[44px] no-underline [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:text-[color:var(--accent)] hover:underline"
+        class="inline-flex min-h-11 items-center text-label text-inherit no-underline hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink"
         href="#work">Work</a
       ><a
-        class="items-center text-inherit inline-flex text-[13px] min-h-[44px] no-underline [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:text-[color:var(--accent)] hover:underline"
+        class="inline-flex min-h-11 items-center text-label text-inherit no-underline hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink"
         href="#testimonials">Kind words</a
       ><a
-        class="items-center text-inherit inline-flex text-[13px] min-h-[44px] no-underline [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:text-[color:var(--accent)] hover:underline"
+        class="inline-flex min-h-11 items-center text-label text-inherit no-underline hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink"
         href="#questions">Questions</a
       >
     </nav>
     <a
-      class="items-center text-inherit inline-flex text-[11px] font-medium gap-[10px] min-h-[44px] underline [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:underline min-[640px]:text-[13px]"
+      class="inline-flex min-h-11 items-center gap-2.5 text-caption font-medium text-inherit underline decoration-1 underline-offset-5 focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink sm:text-label"
       href={email}>Talk through your website <span aria-hidden="true">↗</span></a
     >
   </header>
-  <main class="focus:outline-none px-6" id="main" tabindex="-1">
-    <section
-      class="mx-auto pt-[24px] min-[640px]:[width:min(100%_-_80px,_1180px)]"
-      aria-labelledby="hero-heading"
-    >
+  <main class="px-6 focus:outline-none sm:px-16" id="main" tabindex="-1">
+    <section class="mx-auto max-w-295 pt-6" aria-labelledby="hero-heading">
       <div
-        class="[--accent:var(--accent-on-light)] [--ink:var(--on-light)] [--muted:var(--muted-on-light)] [--paper:var(--green-pale)] bg-[var(--paper)] rounded-[16px] text-[color:var(--ink)] [color-scheme:light] grid gap-[30px] isolate [padding:40px_20px_40px] relative min-[640px]:[padding:42px_32px_28px] min-[900px]:items-center min-[900px]:grid-cols-[minmax(0,_1.12fr)_minmax(0,_1fr)] min-[900px]:[padding:68px_50px]"
+        class="relative isolate grid gap-7.5 rounded-2xl bg-mint px-5 py-10 text-ink sm:px-8 sm:pt-10.5 sm:pb-7 lg:grid-cols-[minmax(0,_1.12fr)_minmax(0,_1fr)] lg:items-center lg:px-12.5 lg:py-17"
       >
         <div
-          class="rounded-[inherit] [inset:0] pointer-events-none absolute z-[-1] min-[900px]:left-[55%]"
+          class="pointer-events-none absolute inset-0 -z-1 rounded-2xl lg:left-[55%]"
           aria-hidden="true"
         >
           <CapsulePattern
             reveal
-            class="block h-auto max-w-[620px] pointer-events-none absolute right-[-10%] w-full min-[640px]:max-w-[530px] min-[640px]:right-[0] min-[900px]:max-w-none min-[900px]:right-[-20%] min-[900px]:w-[138%] bottom-0"
+            class="pointer-events-none absolute -right-[10%] bottom-0 block h-auto w-full max-w-155 sm:right-0 sm:max-w-132.5 lg:-right-[20%] lg:w-[138%] lg:max-w-none"
           />
         </div>
-        <div class="min-w-0 relative z-[1]">
+        <div class="relative z-1 min-w-0">
           <p
-            class="text-[color:var(--accent)] [font-family:var(--sans)] text-[12px] font-semibold tracking-[0.045em] leading-[1.5] m-0 uppercase"
+            class="text-xs leading-normal font-semibold tracking-eyebrow text-primary-strong uppercase"
           >
             Website strategy, design & development
           </p>
-          <h1
-            class="[font-family:var(--sans)] [font-size:clamp(38px,_4.8vw,_62px)] font-black tracking-[-0.055em] leading-[1.13] m-0 mt-[22px] max-w-[590px] text-balance min-[900px]:[font-size:clamp(42px,_4.8vw,_62px)]"
-            id="hero-heading"
-          >
-            A better website starts with <em
-              class="text-[color:var(--accent)] block not-italic [font-weight:inherit]"
+          <h1 class="mt-5.5 max-w-147.5 text-display font-black text-balance" id="hero-heading">
+            A better website starts with <em class="block text-primary-strong not-italic"
               >better judgment.</em
             >
           </h1>
-          <p
-            class="text-[color:var(--muted)] text-[15px] leading-[1.8] m-0 mt-[23px] max-w-[435px] min-[900px]:text-[16px]"
-          >
+          <p class="mt-6 max-w-109 text-body leading-copy text-muted-on-light lg:text-base">
             Your business needs a website people can understand, trust, and act on. I help you
             decide what matters, then design and build it with care.
           </p>
-          <div class="items-center flex flex-wrap [gap:12px_20px] mt-[26px]">
+          <div class="mt-6.5 flex flex-wrap items-center gap-x-5 gap-y-3">
             <a
-              class="items-center bg-[var(--brand-primary)] [border:1px_solid_var(--brand-primary)] rounded-[7px] text-[color:var(--on-light)] inline-flex text-[13px] font-medium gap-[22px] justify-between leading-[1.4] min-h-[54px] [padding:15px_19px] no-underline [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:bg-[var(--accent-hover)] hover:[border-color:var(--accent-hover)] hover:no-underline"
+              class="inline-flex min-h-13.5 items-center justify-between gap-5.5 rounded-md border border-primary bg-primary px-5 py-4 text-label leading-label font-medium text-ink no-underline hover:border-primary-hover hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink"
               href={email}
-              >Talk through your website <span class="text-[20px] font-normal" aria-hidden="true"
+              >Talk through your website <span class="text-xl font-normal" aria-hidden="true"
                 >↗</span
               ></a
             >
             <a
-              class="items-center text-inherit inline-flex text-[13px] font-medium gap-[20px] min-h-[44px] underline [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:underline"
+              class="inline-flex min-h-11 items-center gap-5 text-label font-medium text-inherit underline decoration-1 underline-offset-5 focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink"
               href="#work">See the design examples <span aria-hidden="true">↓</span></a
             >
           </div>
         </div>
         <figure
-          class="m-0 min-w-0 relative [width:min(100%,_541px)] z-[2] min-[640px]:max-w-[480px] min-[900px]:max-w-[541px] min-[900px]:[width:calc(100%_+_20px)]"
+          class="relative z-2 w-full max-w-135.5 min-w-0 sm:max-w-120 lg:w-[calc(100%+1.25rem)] lg:max-w-135.5"
         >
           <div class="relative">
             <PlayMark
               kind="arrow"
-              class="hidden min-[900px]:text-[color:var(--accent-on-light)] min-[900px]:block min-[900px]:h-[54px] min-[900px]:left-[-32px] min-[900px]:absolute min-[900px]:top-[10%] min-[900px]:w-[54px]"
+              class="hidden lg:absolute lg:top-[10%] lg:-left-8 lg:block lg:size-13.5 lg:text-primary-strong"
             />
             <Image
-              class="block h-auto relative w-full"
+              class="relative block h-auto w-full"
               src={Devices}
               alt="Design example presented across a laptop and phones, with transparent space around the devices"
               widths={[360, 541]}
-              sizes="(min-width: 1200px) 541px, (min-width: 900px) 44vw, (min-width: 640px) 480px, calc(100vw - 76px)"
+              sizes="(min-width: 1308px) 516px, (min-width: 1024px) calc(47.2vw - 102px), (min-width: 672px) 480px, (min-width: 640px) calc(100vw - 192px), calc(100vw - 88px)"
               loading="eager"
               fetchpriority="high"
             />
@@ -170,7 +159,7 @@ const questions = [
     <section
       id="benefits"
       aria-label="Website benefits"
-      class="mx-auto mt-[40px] grid gap-[24px] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[1100px]:grid-cols-3 min-[900px]:mt-[48px] min-[900px]:gap-16"
+      class="mx-auto mt-10 grid max-w-295 gap-6 lg:mt-12 lg:gap-16 xl:grid-cols-3"
     >
       <BrightSideBenefitCard
         lottiePath="/lottie/BarChart_primary.json"
@@ -198,108 +187,91 @@ const questions = [
     </section>
     <section
       id="work"
-      class="mx-auto py-[72px] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:items-start min-[900px]:grid min-[900px]:[gap:0_45px] min-[900px]:grid-cols-[minmax(0,_0.8fr)_minmax(0,_1.7fr)] min-[900px]:py-[95px]"
+      class="mx-auto max-w-295 py-18 lg:grid lg:grid-cols-[minmax(0,_0.8fr)_minmax(0,_1.7fr)] lg:items-start lg:gap-x-11.5 lg:py-24"
       aria-labelledby="work-heading"
     >
-      <div class="mb-[35px] max-w-[660px]">
-        <p
-          class="text-[color:var(--accent)] [font-family:var(--sans)] text-[12px] font-semibold tracking-[0.045em] leading-[1.5] m-0 uppercase last:text-[15px] last:mt-[22px] last:max-w-[465px]"
-        >
+      <div class="mb-9 max-w-165">
+        <p class="text-xs leading-normal font-semibold tracking-eyebrow text-primary uppercase">
           A closer look
-        </p><h2
-          class="[font-family:var(--sans)] [font-size:clamp(30px,_3.3vw,_43px)] font-black tracking-[-0.055em] leading-[1.13] m-0 mt-[20px] text-balance"
-          id="work-heading"
-        >
+        </p><h2 class="mt-5 text-section font-black text-balance" id="work-heading">
           Good design makes<br />the next step feel obvious.
         </h2>
-        <p class="text-[color:var(--muted)] m-0 last:text-[15px] last:mt-[22px] last:max-w-[465px]">
+        <p class="mt-5.5 max-w-116.5 text-body text-ink-muted">
           A website should help people find their bearings. These examples show the kind of clarity
           we can build toward.
         </p>
       </div>
-      <div
-        class="grid gap-[40px] min-[900px]:gap-[26px] min-[900px]:grid-cols-[repeat(2,_minmax(0,_1fr))]"
-      >
-        <figure class="m-0">
+      <div class="grid gap-10 lg:grid-cols-2 lg:gap-6.5">
+        <figure>
           <div
-            class="isolate [padding:30px_15px] relative before:bg-[var(--green-soft)] before:[border-radius:40%_35%_8%_10%_/_45%_40%_15%_12%] before:content-[''] before:[inset:0] before:absolute before:z-[-1] motion-safe:before:animate-work-blob min-[640px]:[padding:40px_22px] min-[900px]:[padding:26px_15px]"
+            class="relative isolate px-4 py-7.5 before:absolute before:inset-0 before:-z-1 before:[border-radius:40%_35%_8%_10%_/_45%_40%_15%_12%] before:bg-mint-soft motion-safe:before:animate-work-blob sm:px-5.5 sm:py-10 lg:px-4 lg:py-6.5"
           >
             <Image
-              class="[border:1px_solid_var(--on-light)] rounded-[5px] block h-auto w-full"
+              class="block h-auto w-full rounded-sm border border-ink"
               src={Interior}
               alt="Interior services design example with a clear headline, spacious layout, and prominent contact action"
               widths={[480, 700]}
-              sizes="(min-width: 1260px) 323px, (min-width: 900px) calc(34vw - 104px), (min-width: 640px) calc(100vw - 124px), calc(100vw - 74px)"
+              sizes="(min-width: 1308px) 343px, (min-width: 1024px) calc(34vw - 102px), (min-width: 640px) calc(100vw - 172px), calc(100vw - 78px)"
               loading="lazy"
             />
           </div>
           <figcaption>
             <p
-              class="text-[color:var(--muted)] [font-family:var(--sans)] text-[11px] font-semibold tracking-[0.045em] leading-[1.5] m-0 mt-[23px] uppercase last:text-[14px] last:mt-[12px] last:max-w-[440px]"
+              class="mt-6 text-caption leading-normal font-semibold tracking-eyebrow text-ink-muted uppercase"
             >
               Design example / Interior services
-            </p><h3
-              class="text-[23px] [font-weight:650] tracking-[-0.035em] leading-[1.35] m-0 mt-[12px] text-balance"
-            >
+            </p><h3 class="mt-3 text-card-title-lg font-demi text-balance">
               Space to understand the offer.
             </h3>
-            <p
-              class="text-[color:var(--muted)] m-0 last:text-[14px] last:mt-[12px] last:max-w-[440px]"
-            >
+            <p class="mt-3 max-w-110 text-sm text-ink-muted">
               A calm hierarchy gives the service, supporting detail, and contact action room to be
               understood.
             </p>
           </figcaption>
         </figure>
-        <figure class="m-0">
+        <figure>
           <div
-            class="isolate [padding:30px_15px] relative before:bg-[var(--brand-primary)] before:[border-radius:10%_12%_38%_30%_/_15%_15%_42%_40%] before:content-[''] before:[inset:0] before:absolute before:z-[-1] motion-safe:before:animate-work-blob-offset min-[640px]:[padding:40px_22px] min-[900px]:[padding:26px_15px]"
+            class="relative isolate px-4 py-7.5 before:absolute before:inset-0 before:-z-1 before:[border-radius:10%_12%_38%_30%_/_15%_15%_42%_40%] before:bg-primary motion-safe:before:animate-work-blob-offset sm:px-5.5 sm:py-10 lg:px-4 lg:py-6.5"
           >
             <Image
-              class="[border:1px_solid_var(--on-light)] rounded-[5px] block h-auto w-full"
+              class="block h-auto w-full rounded-sm border border-ink"
               src={Financial}
               alt="Financial services design example with a service introduction and visible get-started action"
               widths={[480, 700]}
-              sizes="(min-width: 1260px) 323px, (min-width: 900px) calc(34vw - 104px), (min-width: 640px) calc(100vw - 124px), calc(100vw - 74px)"
+              sizes="(min-width: 1308px) 343px, (min-width: 1024px) calc(34vw - 102px), (min-width: 640px) calc(100vw - 172px), calc(100vw - 78px)"
               loading="lazy"
             />
           </div>
           <figcaption>
             <p
-              class="text-[color:var(--muted)] [font-family:var(--sans)] text-[11px] font-semibold tracking-[0.045em] leading-[1.5] m-0 mt-[23px] uppercase last:text-[14px] last:mt-[12px] last:max-w-[440px]"
+              class="mt-6 text-caption leading-normal font-semibold tracking-eyebrow text-ink-muted uppercase"
             >
               Design example / Financial services
-            </p><h3
-              class="text-[23px] [font-weight:650] tracking-[-0.035em] leading-[1.35] m-0 mt-[12px] text-balance"
-            >
+            </p><h3 class="mt-3 text-card-title-lg font-demi text-balance">
               A clear route to a conversation.
             </h3>
-            <p
-              class="text-[color:var(--muted)] m-0 last:text-[14px] last:mt-[12px] last:max-w-[440px]"
-            >
+            <p class="mt-3 max-w-110 text-sm text-ink-muted">
               For a service business, useful information and a visible next step belong together.
             </p>
           </figcaption>
         </figure>
       </div>
-      <p
-        class="[border-top:1px_solid_var(--rule)] text-[color:var(--muted)] text-[11px] m-0 mt-[35px] pt-[20px] min-[900px]:[grid-column:1_/_-1]"
-      >
+      <p class="mt-9 border-t border-border pt-5 text-caption text-ink-muted lg:col-span-full">
         Design examples from the existing library
       </p>
     </section>
-    <section id="testimonials" class="py-[45px]" aria-labelledby="testimonials-heading">
+    <section id="testimonials" class="py-11.5" aria-labelledby="testimonials-heading">
       <div
-        class="[--ink:var(--on-dark)] [--muted:var(--muted-on-dark)] [--paper:var(--green-deep)] items-center text-[color:var(--ink)] grid gap-[28px] isolate m-0 mx-auto px-[24px] py-[40px] relative before:bg-[var(--green-deep)] before:rounded-[16px] before:content-[''] before:[inset:0] before:absolute before:z-[-2] min-[640px]:px-[40px] min-[640px]:py-[48px] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:gap-[56px] min-[900px]:grid-cols-[300px_minmax(0,_1fr)] min-[900px]:px-[60px] min-[900px]:py-[60px]"
+        class="mx-auto grid max-w-295 items-center gap-7 rounded-2xl bg-dark-green px-6 py-10 text-paper sm:px-10 sm:py-12 lg:grid-cols-[18.75rem_minmax(0,_1fr)] lg:gap-14 lg:px-15 lg:py-15"
       >
         <div
-          class="aspect-square grid isolate place-items-center relative w-full max-w-[260px] mx-auto min-[640px]:max-w-[300px]"
+          class="relative isolate mx-auto grid aspect-square w-full max-w-65 place-items-center sm:max-w-75"
         >
           <CapsulePattern
-            class="block h-auto [inset:-8%_-12%_auto] pointer-events-none absolute w-[124%] z-[-1]"
+            class="pointer-events-none absolute [inset:-8%_-12%_auto] -z-1 block h-auto w-[124%]"
           />
           <div
-            class="aspect-square bg-[var(--green-soft)] [border-radius:42%_58%_35%_65%_/_58%_42%_58%_42%] overflow-hidden w-[84%] [border:6px_solid_var(--brand-primary)]"
+            class="aspect-square w-[84%] overflow-hidden [border-radius:42%_58%_35%_65%_/_58%_42%_58%_42%] border-6 border-primary bg-mint-soft"
           >
             <img
               class="block h-full w-full object-cover"
@@ -312,38 +284,27 @@ const questions = [
           </div>
         </div>
         <div class="min-w-0">
-          <p
-            class="text-[color:var(--accent)] text-[12px] font-semibold tracking-[0.045em] leading-[1.5] m-0 uppercase"
-          >
+          <p class="text-xs leading-normal font-semibold tracking-eyebrow text-primary uppercase">
             Kind words
           </p>
-          <h2
-            class="[font-family:var(--sans)] [font-size:clamp(30px,_3.3vw,_43px)] font-black tracking-[-0.055em] leading-[1.13] m-0 mt-[18px] text-balance"
-            id="testimonials-heading"
-          >
-            A clearer website.<br /><em
-              class="text-[color:var(--accent)] not-italic [font-weight:inherit]"
-              >A better experience.</em
-            >
+          <h2 class="mt-4.5 text-section font-black text-balance" id="testimonials-heading">
+            A clearer website.<br /><em class="text-primary not-italic">A better experience.</em>
           </h2>
-          <figure class="m-0">
-            <blockquote class="m-0 mt-[26px] max-w-[650px]">
+          <figure>
+            <blockquote class="mt-6.5 max-w-162.5">
               <p
-                class="text-[color:var(--ink)] text-[21px] min-[640px]:text-[25px] font-medium leading-[1.5] tracking-[-0.025em] m-0 text-balance"
+                class="text-card-title leading-normal font-medium tracking-tight text-balance sm:text-quote"
               >
                 “We finally have a website that feels like us. The process was clear, and every
                 decision made sense.”
               </p>
             </blockquote>
-            <figcaption class="mt-[24px] flex flex-wrap items-center gap-x-[18px] gap-y-[12px]">
+            <figcaption class="mt-6 flex flex-wrap items-center gap-x-4.5 gap-y-3">
               <div>
-                <p class="text-[color:var(--ink)] text-[14px] font-semibold m-0">Client name</p>
-                <p class="text-[color:var(--muted)] text-[12px] m-0 mt-[3px]">
-                  Business owner · Company name
-                </p>
+                <p class="text-sm font-semibold">Client name</p>
+                <p class="mt-1 text-xs text-muted-on-dark">Business owner · Company name</p>
               </div>
-              <span
-                class="text-[color:var(--muted)] text-[11px] [border-left:1px_solid_var(--muted)] pl-[18px]"
+              <span class="border-l border-muted-on-dark pl-4.5 text-caption text-muted-on-dark"
                 >Sample quote & placeholder portrait</span
               >
             </figcaption>
@@ -352,43 +313,37 @@ const questions = [
       </div>
     </section>
     <BrightSideServicesTabs client:load />
-    <section id="process" class="bg-[var(--brand-panel)]" aria-labelledby="process-heading">
-      <div
-        class="mx-auto py-[72px] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:py-[95px]"
-      >
-        <div class="">
-          <p
-            class="text-[color:var(--muted)] [font-family:var(--sans)] text-[12px] font-semibold tracking-[0.045em] leading-[1.5] m-0 uppercase"
-          >
+    <section
+      id="process"
+      class="bg-secondary-light sm:-mx-10 sm:px-10"
+      aria-labelledby="process-heading"
+    >
+      <div class="mx-auto max-w-295 py-18 lg:py-24">
+        <div>
+          <p class="text-xs leading-normal font-semibold tracking-eyebrow text-ink-muted uppercase">
             Working together
           </p><h2
-            class="[font-family:var(--sans)] [font-size:clamp(30px,_3.3vw,_43px)] font-black tracking-[-0.055em] leading-[1.13] m-0 mt-[20px] max-w-[690px] text-balance"
+            class="mt-5 max-w-172.5 text-section font-black text-balance"
             id="process-heading"
           >
             You'll know what happens next.
           </h2>
         </div>
-        <ol
-          class="grid gap-[30px] list-none m-0 mt-[38px] p-0 min-[900px]:gap-[35px] min-[900px]:grid-cols-[repeat(3,_minmax(0,_1fr))]"
-        >
+        <ol class="mt-9.5 grid gap-7.5 lg:grid-cols-3 lg:gap-9">
           {
             process.map((step, index) => (
-              <li class="[border-top:1px_solid_var(--rule)] pt-[24px]">
+              <li class="border-t border-border pt-6">
                 <>
                   <span
-                    class="text-[color:var(--accent)] inline-block text-[27px] [font-weight:650] leading-[1] mb-[22px]"
+                    class="mb-5.5 inline-block text-step leading-none font-demi text-primary"
                     aria-hidden="true"
                   >
                     0{index + 1}
                   </span>
                   <div>
                     <>
-                      <h3 class="text-[21px] [font-weight:650] tracking-[-0.035em] leading-[1.35] m-0 text-balance">
-                        {step.title}
-                      </h3>
-                      <p class="text-[color:var(--muted)] text-[14px] leading-[1.8] m-0 mt-[14px]">
-                        {step.body}
-                      </p>
+                      <h3 class="text-card-title font-demi text-balance">{step.title}</h3>
+                      <p class="mt-3.5 text-sm leading-copy text-ink-muted">{step.body}</p>
                     </>
                   </div>
                 </>
@@ -401,36 +356,35 @@ const questions = [
     <BrightSideWebsiteScan client:load />
     <section
       id="questions"
-      class="grid gap-[35px] mx-auto py-[72px] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:gap-[65px] min-[900px]:grid-cols-[minmax(0,_1fr)_minmax(0,_1.5fr)] min-[900px]:py-[95px]"
+      class="mx-auto grid max-w-295 gap-9 py-18 lg:grid-cols-[minmax(0,_1fr)_minmax(0,_1.5fr)] lg:gap-16.5 lg:py-24"
       aria-labelledby="questions-heading"
     >
-      <div class="">
-        <p
-          class="text-[color:var(--accent)] [font-family:var(--sans)] text-[12px] font-semibold tracking-[0.045em] leading-[1.5] m-0 uppercase"
-        >
+      <div>
+        <p class="text-xs leading-normal font-semibold tracking-eyebrow text-primary uppercase">
           Before we begin
-        </p><h2
-          class="[font-family:var(--sans)] [font-size:clamp(30px,_3.3vw,_43px)] font-black tracking-[-0.055em] leading-[1.13] m-0 mt-[20px] max-w-[435px] text-balance"
-          id="questions-heading"
-        >
+        </p><h2 class="mt-5 max-w-109 text-section font-black text-balance" id="questions-heading">
           A few things you may be wondering.
         </h2>
       </div>
-      <div class="">
+      <div>
         {
           questions.map((item) => (
-            <details class="[border-top:1px_solid_var(--rule)] last:[border-bottom:1px_solid_var(--rule)]">
+            <details class="group border-t border-border last:border-b">
               <>
-                <summary class="items-center cursor-pointer flex text-[14px] font-medium gap-[20px] justify-between leading-[1.5] list-none min-h-[66px] py-[24px] [&::-webkit-details-marker]:hidden focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:text-[color:var(--accent)]">
+                <summary class="flex min-h-16.5 cursor-pointer list-none items-center justify-between gap-5 py-6 text-sm leading-normal font-medium hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink [&::-webkit-details-marker]:hidden">
                   {item.question}
-                  <span
-                    class="inline-block [flex:0_0_12px] h-[12px] relative w-[12px] [details[open]_&]:after:hidden after:bg-current after:content-[''] after:h-[12px] after:left-[5px] after:absolute after:w-[1px] before:bg-current before:content-[''] before:h-[1px] before:absolute before:top-[5px] before:w-[12px]"
+                  <svg
+                    class="size-3 shrink-0"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    stroke="currentColor"
                     aria-hidden="true"
-                  />
+                  >
+                    <path d="M0 6h12" />
+                    <path class="group-open:hidden" d="M6 0v12" />
+                  </svg>
                 </summary>
-                <p class="text-[color:var(--muted)] text-[14px] leading-[1.8] m-0 max-w-[560px] [padding:0_28px_24px_0]">
-                  {item.answer}
-                </p>
+                <p class="max-w-140 pr-7 pb-6 text-sm leading-copy text-ink-muted">{item.answer}</p>
               </>
             </details>
           ))
@@ -440,44 +394,33 @@ const questions = [
     <BrightSideBlogBento />
     <section
       id="contact"
-      class="[--accent:var(--accent-on-light)] [--ink:var(--on-light)] [--muted:var(--muted-on-light)] [--paper:var(--green-pale)] bg-[var(--paper)] rounded-[16px] text-[color:var(--ink)] [color-scheme:light] isolate mb-[36px] mx-auto [padding:45px_24px] relative min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:[padding:65px_45px] overflow-hidden"
+      class="relative isolate mx-auto mb-9 max-w-295 overflow-hidden rounded-2xl bg-mint px-6 py-11.5 text-ink lg:px-11.5 lg:py-16.5"
       aria-labelledby="contact-heading"
     >
-      <div
-        class="rounded-[inherit] [inset:0] pointer-events-none absolute z-[-1]"
-        aria-hidden="true"
-      >
+      <div class="pointer-events-none absolute inset-0 -z-1 rounded-2xl" aria-hidden="true">
         <CapsulePattern
           reveal
-          class="bottom-[-40px] block h-auto pointer-events-none absolute right-[-150px] w-[230px] min-[640px]:bottom-[-50px] min-[640px]:right-[-95px] min-[640px]:w-[280px] min-[900px]:bottom-[-55px] min-[900px]:right-[-90px] min-[900px]:w-[270px]"
+          class="pointer-events-none absolute -right-37.5 -bottom-10 block h-auto w-57.5 sm:-right-24 sm:-bottom-12.5 sm:w-70 lg:-right-22.5 lg:-bottom-14 lg:w-67.5"
         />
       </div>
-      <div class="mx-auto max-w-[740px] relative text-center">
+      <div class="relative mx-auto max-w-185 text-center">
         <p
-          class="text-[color:var(--accent)] [font-family:var(--sans)] text-[12px] font-semibold tracking-[0.045em] leading-[1.5] m-0 uppercase"
+          class="text-xs leading-normal font-semibold tracking-eyebrow text-primary-strong uppercase"
         >
           Let's start with your business
-        </p><h2
-          class="[font-family:var(--sans)] [font-size:clamp(34px,_4.5vw,_55px)] font-black tracking-[-0.055em] leading-[1.13] m-0 mt-[20px] text-balance"
-          id="contact-heading"
-        >
-          Tell me what your<br /><em
-            class="text-[color:var(--accent)] not-italic [font-weight:inherit]"
-            >website needs to do.</em
+        </p><h2 class="mt-5 text-contact font-black text-balance" id="contact-heading">
+          Tell me what your<br /><em class="text-primary-strong not-italic">website needs to do.</em
           >
         </h2>
-        <p class="text-[color:var(--muted)] text-[15px] [margin:24px_auto_0] max-w-[465px]">
+        <p class="mx-auto mt-6 max-w-116.5 text-body text-muted-on-light">
           Send your current website, if you have one, and a little about what you'd like to improve.
           We'll start there.
         </p>
-        <div
-          class="items-center flex flex-col gap-[15px] mt-[28px] min-[900px]:flex-row min-[900px]:gap-[25px] min-[900px]:justify-center"
-        >
+        <div class="mt-7 flex justify-center">
           <a
-            class="items-center bg-[var(--brand-primary)] [border:1px_solid_var(--brand-primary)] rounded-[7px] text-[color:var(--on-light)] inline-flex text-[13px] font-medium gap-[22px] justify-between leading-[1.4] min-h-[54px] [padding:15px_19px] no-underline [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:bg-[var(--accent-hover)] hover:[border-color:var(--accent-hover)] hover:no-underline"
+            class="inline-flex min-h-13.5 items-center justify-between gap-5.5 rounded-md border border-primary bg-primary px-5 py-4 text-label leading-label font-medium text-ink no-underline hover:border-primary-hover hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink"
             href={email}
-            >Talk through your website <span class="text-[20px] font-normal" aria-hidden="true"
-              >↗</span
+            >Talk through your website <span class="text-xl font-normal" aria-hidden="true">↗</span
             ></a
           >
         </div>
@@ -485,19 +428,17 @@ const questions = [
     </section>
   </main>
   <footer
-    class="items-center flex flex-wrap [gap:28px_45px] mx-auto py-[34px] min-[640px]:[width:min(100%_-_80px,_1180px)]"
+    class="mx-auto flex max-w-315 flex-wrap items-center gap-x-11.5 gap-y-7 px-6 py-8.5 sm:px-10"
   >
-    <Brand href="/codex-non-specialist-lab/bright-side" /><p
-      class="text-[color:var(--muted)] text-[11px] m-0"
-    >
+    <Brand href="/codex-non-specialist-lab/bright-side" /><p class="text-caption text-ink-muted">
       Thoughtful websites. Independent expertise.<br />Carlsbad, California.
     </p>
-    <nav class="flex flex-wrap [gap:12px_26px]" aria-label="Footer navigation">
+    <nav class="flex flex-wrap gap-x-6.5 gap-y-3" aria-label="Footer navigation">
       <a
-        class="items-center text-inherit flex text-[11px] min-h-[44px] [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:underline"
+        class="flex min-h-11 items-center text-caption text-inherit decoration-1 underline-offset-5 hover:underline focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink"
         href="/codex-non-specialist-lab">Design lab</a
       ><a
-        class="items-center text-inherit flex text-[11px] min-h-[44px] [text-decoration-thickness:1px] [text-underline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] hover:underline"
+        class="flex min-h-11 items-center text-caption text-inherit decoration-1 underline-offset-5 hover:underline focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink"
         href="#main">Back to top <span aria-hidden="true">↑</span></a
       >
     </nav>

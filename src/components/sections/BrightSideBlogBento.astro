@@ -1,156 +1,125 @@
-<section
-  id="journal"
-  aria-labelledby="journal-heading"
-  class="mx-auto py-[72px] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:py-[95px]"
->
-  <header
-    class="mb-[32px] flex flex-wrap items-end justify-between gap-[24px] min-[900px]:mb-[40px]"
-  >
-    <div class="max-w-[620px]">
+<section id="journal" aria-labelledby="journal-heading" class="mx-auto max-w-295 py-18 lg:py-24">
+  <header class="mb-8 flex flex-wrap items-end justify-between gap-6 lg:mb-10">
+    <div class="max-w-155">
       <p
-        class="m-0 text-[12px] font-semibold uppercase tracking-[0.045em] leading-[1.5] text-[color:var(--accent-on-light)]"
+        class="text-xs leading-normal font-semibold tracking-eyebrow text-primary-strong uppercase"
       >
         From the notebook
       </p>
-      <h2
-        id="journal-heading"
-        class="m-0 mt-[18px] [font-family:var(--sans)] [font-size:clamp(30px,_3.3vw,_43px)] font-black tracking-[-0.055em] leading-[1.13] text-balance text-[color:var(--ink)]"
-      >
+      <h2 id="journal-heading" class="mt-4.5 text-section font-black text-balance text-ink">
         Useful ideas.<br />Less guesswork.
       </h2>
-      <p class="m-0 mt-[20px] max-w-[520px] text-[15px] leading-[1.8] text-[color:var(--muted)]">
+      <p class="mt-5 max-w-130 text-body leading-copy text-ink-muted">
         Notes on clearer websites, thoughtful design, and choosing what’s worth your time.
       </p>
     </div>
-    <span
-      class="rounded-full [border:1px_solid_var(--rule)] px-[15px] py-[8px] text-[11px] text-[color:var(--muted)]"
-    >
+    <span class="rounded-full border border-border px-4 py-2 text-caption text-ink-muted">
       Sample topics · Articles coming soon
     </span>
   </header>
 
-  <div
-    class="grid gap-[18px] min-[640px]:grid-cols-2 min-[900px]:grid-cols-12 min-[900px]:gap-[20px]"
-  >
+  <div class="grid gap-4.5 sm:grid-cols-2 lg:grid-cols-12 lg:gap-5">
     <article
-      class="flex min-w-0 flex-col justify-between gap-[24px] overflow-hidden rounded-[22px] bg-[var(--brand-primary)] px-[26px] pt-[28px] min-[640px]:col-span-2 min-[900px]:col-span-6 min-[900px]:row-span-2 min-[900px]:px-[34px] min-[900px]:pt-[34px]"
+      class="flex min-w-0 flex-col justify-between gap-6 overflow-hidden rounded-3xl bg-primary px-6.5 pt-7 sm:col-span-2 lg:col-span-6 lg:row-span-2 lg:px-8.5 lg:pt-8.5"
     >
       <div>
-        <p
-          class="m-0 text-[11px] font-semibold uppercase tracking-[0.045em] text-[color:var(--accent-on-light)]"
-        >
+        <p class="text-caption font-semibold tracking-eyebrow text-primary-strong uppercase">
           Website strategy / Featured topic
         </p>
         <h3
-          class="m-0 mt-[18px] max-w-[420px] text-[30px] min-[900px]:text-[35px] font-extrabold tracking-[-0.045em] leading-[1.15] text-balance text-[color:var(--on-light)]"
+          class="mt-4.5 max-w-105 text-3xl leading-title font-extrabold tracking-title text-balance text-ink lg:text-service"
         >
           Before you rebuild,<br />ask better questions.
         </h3>
-        <p
-          class="m-0 mt-[16px] max-w-[350px] text-[14px] leading-[1.8] text-[color:var(--muted-on-light)]"
-        >
+        <p class="mt-4 max-w-87.5 text-sm leading-copy text-muted-on-light">
           Five questions to help decide what your website actually needs.
         </p>
       </div>
       <svg
-        class="mx-auto block h-auto w-full max-w-[420px]"
+        class="mx-auto block h-auto w-full max-w-105"
         viewBox="0 0 420 300"
         fill="none"
         aria-hidden="true"
       >
         <path
           d="M48 118c12-61 65-96 129-96 88 0 199 65 189 160-7 70-103 109-189 102S29 211 48 118Z"
-          fill="var(--green-soft)"></path>
+          fill="var(--mint-soft)"></path>
         <g transform="rotate(-5 210 150)">
-          <rect x="58" y="44" width="300" height="205" rx="14" fill="var(--green-mid)"></rect>
+          <rect x="58" y="44" width="300" height="205" rx="14" fill="var(--green)"></rect>
           <rect
             x="50"
             y="36"
             width="300"
             height="205"
             rx="14"
-            fill="var(--brand-body)"
-            stroke="var(--on-light)"
+            fill="var(--paper)"
+            stroke="var(--ink)"
             stroke-width="1.5"></rect>
-          <path d="M50 72h300" stroke="var(--on-light)" stroke-width="1.5"></path>
-          <circle cx="68" cy="54" r="3" fill="var(--green-mid)"></circle><circle
+          <path d="M50 72h300" stroke="var(--ink)" stroke-width="1.5"></path>
+          <circle cx="68" cy="54" r="3" fill="var(--green)"></circle><circle
             cx="80"
             cy="54"
             r="3"
-            fill="var(--green-mid)"></circle><circle cx="92" cy="54" r="3" fill="var(--green-mid)"
-          ></circle>
-          <rect x="77" y="99" width="123" height="10" rx="5" fill="var(--on-light)"></rect>
-          <rect x="77" y="120" width="102" height="10" rx="5" fill="var(--on-light)"></rect>
+            fill="var(--green)"></circle><circle cx="92" cy="54" r="3" fill="var(--green)"></circle>
+          <rect x="77" y="99" width="123" height="10" rx="5" fill="var(--ink)"></rect>
+          <rect x="77" y="120" width="102" height="10" rx="5" fill="var(--ink)"></rect>
           <path
             d="M77 150h132m-132 12h111"
-            stroke="var(--muted)"
+            stroke="var(--ink-muted)"
             stroke-width="4"
             stroke-linecap="round"></path>
-          <rect x="77" y="183" width="95" height="27" rx="13.5" fill="var(--brand-primary)"></rect>
-          <rect x="238" y="96" width="82" height="117" rx="30" fill="var(--green-soft)"></rect>
+          <rect x="77" y="183" width="95" height="27" rx="13.5" fill="var(--primary)"></rect>
+          <rect x="238" y="96" width="82" height="117" rx="30" fill="var(--mint-soft)"></rect>
           <path
             d="m249 177 20-27 16 10 23-36"
-            stroke="var(--green-mid)"
+            stroke="var(--green)"
             stroke-width="9"
             stroke-linecap="round"
             stroke-linejoin="round"></path>
         </g>
         <g transform="rotate(9 338 213)">
-          <rect x="295" y="151" width="80" height="126" rx="18" fill="var(--on-light)"></rect>
-          <rect x="301" y="160" width="68" height="108" rx="12" fill="var(--green-pale)"></rect>
-          <rect x="320" y="157" width="29" height="7" rx="3.5" fill="var(--on-light)"></rect>
+          <rect x="295" y="151" width="80" height="126" rx="18" fill="var(--ink)"></rect>
+          <rect x="301" y="160" width="68" height="108" rx="12" fill="var(--mint)"></rect>
+          <rect x="320" y="157" width="29" height="7" rx="3.5" fill="var(--ink)"></rect>
           <path
             d="M314 184h41m-41 12h30"
-            stroke="var(--green-mid)"
+            stroke="var(--green)"
             stroke-width="5"
             stroke-linecap="round"></path>
-          <rect x="312" y="214" width="45" height="30" rx="9" fill="var(--brand-primary)"></rect>
+          <rect x="312" y="214" width="45" height="30" rx="9" fill="var(--primary)"></rect>
         </g>
-        <circle cx="373" cy="89" r="13" fill="var(--brand-tertiary)"></circle><circle
+        <circle cx="373" cy="89" r="13" fill="var(--tertiary)"></circle><circle
           cx="35"
           cy="227"
           r="9"
-          fill="var(--brand-secondary)"></circle>
+          fill="var(--secondary)"></circle>
       </svg>
     </article>
 
     <article
-      class="flex min-w-0 flex-col justify-between gap-[24px] rounded-[22px] [border:1px_solid_var(--rule)] bg-[var(--paper)] p-[24px] min-[900px]:col-span-3"
+      class="flex min-w-0 flex-col justify-between gap-6 rounded-3xl border border-border bg-paper p-6 lg:col-span-3"
     >
       <div>
-        <p
-          class="m-0 text-[11px] font-semibold uppercase tracking-[0.045em] text-[color:var(--accent-on-light)]"
-        >
+        <p class="text-caption font-semibold tracking-eyebrow text-primary-strong uppercase">
           Design
         </p>
-        <h3
-          class="m-0 mt-[14px] text-[23px] [font-weight:650] tracking-[-0.035em] leading-[1.25] text-balance text-[color:var(--ink)]"
-        >
+        <h3 class="mt-3.5 text-card-title-lg leading-tight font-demi text-balance text-ink">
           Your homepage has one job. Make it obvious.
         </h3>
-        <p class="m-0 mt-[14px] text-[13px] leading-[1.75] text-[color:var(--muted)]">
+        <p class="mt-3.5 text-label leading-copy text-ink-muted">
           A clearer message and a next step people can actually find.
         </p>
       </div>
-      <svg class="block h-[56px] w-[110px]" viewBox="0 0 110 56" fill="none" aria-hidden="true">
-        <rect
-          x="1"
-          y="5"
-          width="77"
-          height="45"
-          rx="9"
-          fill="var(--green-pale)"
-          stroke="var(--green-mid)"></rect>
-        <path
-          d="M13 17h45m-45 9h31"
-          stroke="var(--green-mid)"
-          stroke-width="3"
-          stroke-linecap="round"></path>
-        <rect x="13" y="35" width="25" height="7" rx="3.5" fill="var(--brand-primary)"></rect>
-        <circle cx="87" cy="36" r="19" fill="var(--brand-primary)"></circle>
+      <svg class="block h-14 w-27.5" viewBox="0 0 110 56" fill="none" aria-hidden="true">
+        <rect x="1" y="5" width="77" height="45" rx="9" fill="var(--mint)" stroke="var(--green)"
+        ></rect>
+        <path d="M13 17h45m-45 9h31" stroke="var(--green)" stroke-width="3" stroke-linecap="round"
+        ></path>
+        <rect x="13" y="35" width="25" height="7" rx="3.5" fill="var(--primary)"></rect>
+        <circle cx="87" cy="36" r="19" fill="var(--primary)"></circle>
         <path
           d="m80 36 4 4 9-9"
-          stroke="var(--on-light)"
+          stroke="var(--ink)"
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"></path>
@@ -158,24 +127,20 @@
     </article>
 
     <article
-      class="flex min-w-0 flex-col justify-between gap-[24px] rounded-[22px] bg-[var(--green-pale)] p-[24px] min-[900px]:col-span-3"
+      class="flex min-w-0 flex-col justify-between gap-6 rounded-3xl bg-mint p-6 lg:col-span-3"
     >
       <div>
-        <p
-          class="m-0 text-[11px] font-semibold uppercase tracking-[0.045em] text-[color:var(--accent-on-light)]"
-        >
+        <p class="text-caption font-semibold tracking-eyebrow text-primary-strong uppercase">
           AI & judgment
         </p>
-        <h3
-          class="m-0 mt-[14px] text-[23px] [font-weight:650] tracking-[-0.035em] leading-[1.25] text-balance text-[color:var(--ink)]"
-        >
+        <h3 class="mt-3.5 text-card-title-lg leading-tight font-demi text-balance text-ink">
           Where AI helps. Where judgment matters.
         </h3>
-        <p class="m-0 mt-[14px] text-[13px] leading-[1.75] text-[color:var(--muted)]">
+        <p class="mt-3.5 text-label leading-copy text-ink-muted">
           Knowing what to keep, what to question, and what to leave out.
         </p>
       </div>
-      <svg class="block h-[56px] w-[100px]" viewBox="0 0 100 56" fill="none" aria-hidden="true">
+      <svg class="block h-14 w-25" viewBox="0 0 100 56" fill="none" aria-hidden="true">
         <rect
           x="3"
           y="23"
@@ -183,7 +148,7 @@
           height="13"
           rx="6.5"
           transform="rotate(-25 3 23)"
-          fill="var(--brand-primary)"></rect>
+          fill="var(--primary)"></rect>
         <rect
           x="29"
           y="42"
@@ -191,40 +156,37 @@
           height="13"
           rx="6.5"
           transform="rotate(-25 29 42)"
-          fill="var(--green-mid)"></rect>
-        <path d="m76 6 4 12 12 4-12 4-4 12-4-12-12-4 12-4 4-12Z" fill="var(--brand-tertiary)"
-        ></path>
-        <circle cx="19" cy="45" r="6" fill="var(--brand-secondary)"></circle>
+          fill="var(--green)"></rect>
+        <path d="m76 6 4 12 12 4-12 4-4 12-4-12-12-4 12-4 4-12Z" fill="var(--tertiary)"></path>
+        <circle cx="19" cy="45" r="6" fill="var(--secondary)"></circle>
       </svg>
     </article>
 
     <article
-      class="grid min-w-0 items-center gap-[24px] overflow-hidden rounded-[22px] bg-[var(--brand-panel)] p-[26px] min-[640px]:col-span-2 min-[640px]:grid-cols-[minmax(0,_1fr)_110px] min-[900px]:col-span-6 min-[900px]:grid-cols-[minmax(0,_1fr)_130px]"
+      class="grid min-w-0 items-center gap-6 overflow-hidden rounded-3xl bg-secondary-light p-6.5 sm:col-span-2 sm:grid-cols-[minmax(0,_1fr)_110px] lg:col-span-6 lg:grid-cols-[minmax(0,_1fr)_130px]"
     >
       <div>
-        <p
-          class="m-0 text-[11px] font-semibold uppercase tracking-[0.045em] text-[color:var(--accent-on-light)]"
-        >
+        <p class="text-caption font-semibold tracking-eyebrow text-primary-strong uppercase">
           Website basics
         </p>
         <h3
-          class="m-0 mt-[14px] max-w-[380px] text-[25px] [font-weight:650] tracking-[-0.035em] leading-[1.2] text-balance text-[color:var(--ink)]"
+          class="mt-3.5 max-w-95 text-quote leading-tight font-demi tracking-card text-balance text-ink"
         >
           A few small fixes can make a big difference.
         </h3>
-        <p class="m-0 mt-[14px] max-w-[380px] text-[13px] leading-[1.75] text-[color:var(--muted)]">
+        <p class="mt-3.5 max-w-95 text-label leading-copy text-ink-muted">
           Start with the details that make your website easier to use on a small screen.
         </p>
       </div>
       <svg
-        class="block h-auto w-[110px] min-[900px]:w-[130px]"
+        class="block h-auto w-27.5 lg:w-32.5"
         viewBox="0 0 130 150"
         fill="none"
         aria-hidden="true"
       >
         <path
           d="M8 46C18 5 76-8 108 27c25 28 23 102-15 115C48 158-4 111 8 46Z"
-          fill="var(--green-soft)"></path>
+          fill="var(--mint-soft)"></path>
         <g transform="rotate(8 67 78)">
           <rect
             x="32"
@@ -233,16 +195,16 @@
             height="130"
             rx="17"
             fill="var(--paper)"
-            stroke="var(--on-light)"
+            stroke="var(--ink)"
             stroke-width="1.5"></rect>
-          <rect x="48" y="15" width="36" height="7" rx="3.5" fill="var(--on-light)"></rect>
-          <rect x="43" y="35" width="46" height="32" rx="8" fill="var(--brand-primary)"></rect>
+          <rect x="48" y="15" width="36" height="7" rx="3.5" fill="var(--ink)"></rect>
+          <rect x="43" y="35" width="46" height="32" rx="8" fill="var(--primary)"></rect>
           <path
             d="M44 82h43m-43 10h31"
-            stroke="var(--green-mid)"
+            stroke="var(--green)"
             stroke-width="4"
             stroke-linecap="round"></path>
-          <rect x="43" y="109" width="33" height="12" rx="6" fill="var(--brand-primary)"></rect>
+          <rect x="43" y="109" width="33" height="12" rx="6" fill="var(--primary)"></rect>
         </g>
       </svg>
     </article>

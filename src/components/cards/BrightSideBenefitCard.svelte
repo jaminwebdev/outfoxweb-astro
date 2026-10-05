@@ -22,18 +22,16 @@
   }: Props = $props();
 </script>
 
-<article class="grid content-start gap-1 px-[12px] py-[20px] text-left">
-  <div class="flex items-center gap-[10px] min-[1100px]:min-h-[60px]">
-    <div class="h-[40px] w-[40px] shrink-0" aria-hidden="true">
+<article class="grid content-start gap-1 px-3 py-5 text-left">
+  <div class="flex items-center gap-2.5 xl:min-h-15">
+    <div class="size-10 shrink-0" aria-hidden="true">
       <InteractiveLottie path={lottiePath} repeat {delay} {timeLoop} {speed} {initialPlay} />
     </div>
-    <h3
-      class="m-0 min-w-0 text-[22px] [font-weight:650] leading-[1.35] tracking-[-0.035em] text-balance text-[color:var(--ink)]"
-    >
+    <h3 class="min-w-0 text-benefit font-demi text-balance text-ink">
       {heading}
     </h3>
   </div>
-  <p class="m-0 text-[14px] leading-[1.8] text-[color:var(--muted)]">
+  <p class="text-sm leading-copy text-ink-muted">
     {body}
   </p>
 </article>

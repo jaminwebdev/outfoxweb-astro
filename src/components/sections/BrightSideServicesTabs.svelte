@@ -44,8 +44,7 @@
       alt: 'Website development illustration with phone mockups and performance graphics',
       href: '/web-development',
       linkLabel: 'Explore web development',
-      artwork:
-        'before:bg-[var(--green-soft)] before:[border-radius:42%_35%_12%_18%_/_38%_48%_22%_26%]',
+      artwork: 'before:bg-mint-soft before:[border-radius:42%_35%_12%_18%_/_38%_48%_22%_26%]',
     },
     {
       id: 'design',
@@ -63,8 +62,7 @@
       alt: 'Tablet mockup showing a website design in Figma',
       href: '/web-design',
       linkLabel: 'Explore website design',
-      artwork:
-        'before:bg-[var(--brand-primary)] before:[border-radius:18%_24%_42%_35%_/_28%_18%_48%_42%]',
+      artwork: 'before:bg-primary before:[border-radius:18%_24%_42%_35%_/_28%_18%_48%_42%]',
     },
     {
       id: 'review',
@@ -82,8 +80,7 @@
       alt: 'Laptop mockup surrounded by website review and audit graphics',
       href: '/website-audit',
       linkLabel: 'Explore website reviews',
-      artwork:
-        'before:bg-[var(--green-soft)] before:[border-radius:35%_45%_22%_12%_/_45%_32%_18%_28%]',
+      artwork: 'before:bg-mint-soft before:[border-radius:35%_45%_22%_12%_/_45%_32%_18%_28%]',
     },
   ];
 
@@ -140,41 +137,37 @@
 
 {#snippet serviceContent(service: Service)}
   <div
-    class="grid items-center gap-[28px] p-[22px] min-[640px]:p-[32px] min-[800px]:gap-[38px] min-[800px]:grid-cols-[minmax(0,_1.1fr)_minmax(0,_1fr)] min-[900px]:p-[42px]"
+    class="grid items-center gap-7 p-5.5 sm:p-8 md:grid-cols-[minmax(0,_1.1fr)_minmax(0,_1fr)] md:gap-9.5 lg:p-10.5"
   >
     <div class="min-w-0">
       <p
-        class="m-0 text-[11px] font-semibold uppercase tracking-[0.045em] leading-[1.5] text-[color:var(--accent-on-light)]"
+        class="text-caption leading-normal font-semibold tracking-eyebrow text-primary-strong uppercase"
       >
         {service.fit}
       </p>
       <h3
-        class="m-0 mt-[16px] text-[28px] min-[900px]:text-[35px] font-extrabold tracking-[-0.045em] leading-[1.15] text-balance text-[color:var(--ink)]"
+        class="mt-4 text-title leading-title font-extrabold tracking-title text-balance text-ink lg:text-service"
       >
-        {service.headline[0]}<br /><span class="text-[color:var(--accent-on-light)]"
-          >{service.headline[1]}</span
-        >
+        {service.headline[0]}<br /><span class="text-primary-strong">{service.headline[1]}</span>
       </h3>
-      <p class="m-0 mt-[20px] max-w-[520px] text-[15px] leading-[1.8] text-[color:var(--muted)]">
+      <p class="mt-5 max-w-130 text-body leading-copy text-ink-muted">
         {service.description}
       </p>
-      <ul class="m-0 mt-[24px] grid gap-[14px] p-0 list-none">
+      <ul class="mt-6 grid gap-3.5">
         {#each service.benefits as benefit}
-          <li
-            class="flex items-start gap-[12px] text-[14px] leading-[1.65] text-[color:var(--ink)]"
-          >
+          <li class="flex items-start gap-3 text-sm leading-relaxed text-ink">
             <svg
-              class="mt-[2px] shrink-0"
+              class="mt-0.5 shrink-0"
               width="22"
               height="22"
               viewBox="0 0 24 24"
               fill="none"
               aria-hidden="true"
             >
-              <circle cx="12" cy="12" r="12" fill="var(--brand-primary)" />
+              <circle cx="12" cy="12" r="12" fill="var(--primary)" />
               <path
                 d="m6.5 12 3.5 3.5 7.5-7.5"
-                stroke="var(--on-light)"
+                stroke="var(--ink)"
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -185,17 +178,17 @@
         {/each}
       </ul>
       <a
-        class="mt-[28px] inline-flex min-h-[54px] items-center justify-between gap-[22px] rounded-[7px] [border:1px_solid_var(--brand-primary)] bg-[var(--brand-primary)] px-[19px] py-[15px] text-[13px] font-medium leading-[1.4] text-[color:var(--on-light)] no-underline hover:bg-[var(--accent-hover)] hover:[border-color:var(--accent-hover)] hover:no-underline focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:5px] focus-visible:[box-shadow:0_0_0_3px_var(--paper)]"
+        class="mt-7 inline-flex min-h-13.5 items-center justify-between gap-5.5 rounded-md border border-primary bg-primary px-5 py-4 text-label leading-label font-medium text-ink no-underline hover:border-primary-hover hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink"
         href={service.href}
       >
-        {service.linkLabel}<span class="text-[20px] font-normal" aria-hidden="true">↗</span>
+        {service.linkLabel}<span class="text-xl font-normal" aria-hidden="true">↗</span>
       </a>
     </div>
     <div
-      class={`relative isolate grid aspect-square min-w-0 place-items-center p-[14px] before:absolute before:[inset:8%_0_6%] before:z-[-1] before:content-[''] ${service.artwork}`}
+      class={`relative isolate grid aspect-square min-w-0 place-items-center p-3.5 before:absolute before:[inset:8%_0_6%] before:-z-1 ${service.artwork}`}
     >
       <img
-        class="block h-auto w-full max-w-[500px]"
+        class="block h-auto w-full max-w-125"
         src={service.image.src}
         width={service.image.width}
         height={service.image.height}
@@ -207,24 +200,15 @@
   </div>
 {/snippet}
 
-<section
-  {id}
-  aria-labelledby={`${id}-heading`}
-  class="mx-auto py-[72px] [width:min(100%_-_25px,_1180px)] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:py-[95px]"
->
-  <header class="mx-auto max-w-[680px] text-center">
-    <p
-      class="m-0 text-[12px] font-semibold uppercase tracking-[0.045em] leading-[1.5] text-[color:var(--accent-on-light)]"
-    >
+<section {id} aria-labelledby={`${id}-heading`} class="mx-auto max-w-295 py-18 lg:py-24">
+  <header class="mx-auto max-w-170 text-center">
+    <p class="text-xs leading-normal font-semibold tracking-eyebrow text-primary-strong uppercase">
       What we do
     </p>
-    <h2
-      id={`${id}-heading`}
-      class="m-0 mt-[18px] [font-family:var(--sans)] [font-size:clamp(30px,_3.3vw,_43px)] font-black tracking-[-0.055em] leading-[1.13] text-balance text-[color:var(--ink)]"
-    >
+    <h2 id={`${id}-heading`} class="mt-4.5 text-section font-black text-balance text-ink">
       The right help<br />for your website.
     </h2>
-    <p class="m-0 mt-[20px] text-[15px] leading-[1.8] text-[color:var(--muted)]">
+    <p class="mt-5 text-body leading-copy text-ink-muted">
       Design, development, and an expert review when you need a clearer starting point.
     </p>
   </header>
@@ -232,7 +216,7 @@
   <div
     role="tablist"
     aria-label="Website services"
-    class="mt-[32px] hidden justify-center gap-[12px] min-[800px]:flex"
+    class="mt-8 hidden justify-center gap-3 md:flex"
   >
     {#each services as service, index}
       <button
@@ -243,10 +227,10 @@
         aria-selected={activeService === service.id}
         aria-controls={`${id}-panel-${service.id}`}
         tabindex={activeService === service.id ? 0 : -1}
-        class={`min-h-[48px] cursor-pointer rounded-full px-[25px] py-[12px] [font-family:var(--sans)] text-[14px] leading-[1.4] focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:4px] ${
+        class={`min-h-12 cursor-pointer rounded-full px-6.5 py-3  text-sm leading-label focus-visible:outline-2 focus-visible:outline-ink focus-visible:outline-offset-4 ${
           activeService === service.id
-            ? '[border:1px_solid_var(--brand-primary)] bg-[var(--brand-primary)] [font-weight:650] text-[color:var(--on-light)]'
-            : '[border:1px_solid_var(--rule)] bg-[var(--paper)] font-medium text-[color:var(--muted)] hover:bg-[var(--green-pale)]'
+            ? 'border border-primary bg-primary font-demi text-ink'
+            : 'border border-border bg-paper font-medium text-ink-muted hover:bg-mint'
         }`}
         onclick={() => selectService(service.id)}
         onkeydown={(event) => navigateTabs(event, index)}
@@ -256,14 +240,14 @@
     {/each}
   </div>
 
-  <div class="mt-[28px] hidden min-[800px]:block">
+  <div class="mt-7 hidden md:block">
     {#each services as service}
       <div
         id={`${id}-panel-${service.id}`}
         role="tabpanel"
         aria-labelledby={`${id}-tab-${service.id}`}
         hidden={activeService !== service.id}
-        class="rounded-[16px] bg-[var(--green-pale)]"
+        class="rounded-2xl bg-mint"
       >
         {#if activeService === service.id}
           <div in:fade={{ duration: motionAllowed ? 160 : 0 }}>
@@ -274,15 +258,15 @@
     {/each}
   </div>
 
-  <div class="mt-[30px] grid gap-[12px] min-[800px]:hidden">
+  <div class="mt-7.5 grid gap-3 md:hidden">
     {#each services as service}
       <details
-        class="group rounded-[16px] bg-[var(--green-pale)]"
+        class="group rounded-2xl bg-mint"
         open={openMobileService === service.id}
         ontoggle={(event) => toggleMobileService(event, service.id)}
       >
         <summary
-          class="flex min-h-[64px] cursor-pointer list-none items-center justify-between gap-[20px] rounded-[16px] px-[22px] py-[18px] text-[16px] [font-weight:650] text-[color:var(--ink)] group-open:rounded-b-none group-open:bg-[var(--brand-primary)] [&::-webkit-details-marker]:hidden focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:4px]"
+          class="flex min-h-16 cursor-pointer list-none items-center justify-between gap-5 rounded-2xl px-5.5 py-4.5 text-base font-demi text-ink group-open:rounded-b-none group-open:bg-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink [&::-webkit-details-marker]:hidden"
         >
           {service.label}
           <svg

@@ -22,25 +22,21 @@
   });
 </script>
 
-<section
-  {id}
-  aria-labelledby={`${id}-heading`}
-  class="mx-auto py-[72px] min-[640px]:[width:min(100%_-_80px,_1180px)] min-[900px]:py-[95px]"
->
+<section {id} aria-labelledby={`${id}-heading`} class="mx-auto max-w-295 py-18 lg:py-24">
   <div
-    class="grid items-center gap-[36px] rounded-[24px] bg-[var(--green-pale)] px-[24px] py-[36px] min-[640px]:px-[36px] min-[800px]:grid-cols-[minmax(0,_1.1fr)_minmax(0,_1fr)] min-[800px]:gap-[48px] min-[1100px]:p-[52px]"
+    class="grid items-center gap-9 rounded-3xl bg-mint px-6 py-9 sm:px-9 md:grid-cols-[minmax(0,_1.1fr)_minmax(0,_1fr)] md:gap-12 xl:p-13"
   >
     <div class="min-w-0">
-      <div class="flex items-center gap-[12px]">
+      <div class="flex items-center gap-3">
         <span
-          class="grid h-[44px] w-[44px] shrink-0 place-items-center rounded-[14px] bg-[var(--brand-primary)]"
+          class="grid size-11 shrink-0 place-items-center rounded-2xl bg-primary"
           aria-hidden="true"
         >
           <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-            <circle cx="11" cy="11" r="7" stroke="var(--on-light)" stroke-width="1.8" />
+            <circle cx="11" cy="11" r="7" stroke="var(--ink)" stroke-width="1.8" />
             <path
               d="m16 16 6 6M8 11l2 2 4-4"
-              stroke="var(--on-light)"
+              stroke="var(--ink)"
               stroke-width="1.8"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -48,43 +44,36 @@
           </svg>
         </span>
         <p
-          class="m-0 text-[12px] font-semibold uppercase tracking-[0.045em] leading-[1.5] text-[color:var(--accent-on-light)]"
+          class="text-xs leading-normal font-semibold tracking-eyebrow text-primary-strong uppercase"
         >
           A free first look
         </p>
       </div>
-      <h2
-        id={`${id}-heading`}
-        class="m-0 mt-[22px] [font-family:var(--sans)] [font-size:clamp(30px,_3.3vw,_43px)] font-black tracking-[-0.055em] leading-[1.13] text-balance text-[color:var(--ink)]"
-      >
-        Not sure where<br /><span class="text-[color:var(--accent-on-light)]">to start?</span>
+      <h2 id={`${id}-heading`} class="mt-5.5 text-section font-black text-balance text-ink">
+        Not sure where<br /><span class="text-primary-strong">to start?</span>
       </h2>
-      <p class="m-0 mt-[20px] max-w-[470px] text-[15px] leading-[1.8] text-[color:var(--muted)]">
+      <p class="mt-5 max-w-117.5 text-body leading-copy text-ink-muted">
         A simple website scan could help you spot the basics worth checking before you commit to a
         bigger project.
       </p>
-      <p
-        class="m-0 mt-[24px] text-[11px] font-semibold uppercase tracking-[0.06em] text-[color:var(--accent-on-light)]"
-      >
+      <p class="mt-6 text-caption font-semibold tracking-label text-primary-strong uppercase">
         What the scan will cover
       </p>
-      <ul
-        class="m-0 mt-[12px] grid gap-[12px] p-0 list-none text-[14px] leading-[1.6] text-[color:var(--ink)]"
-      >
+      <ul class="mt-3 grid gap-3 text-sm leading-relaxed text-ink">
         {#each ['Page speed and basic technical checks', 'Mobile usability and accessibility signals', 'A short list of useful next steps'] as check}
-          <li class="flex items-start gap-[12px]">
+          <li class="flex items-start gap-3">
             <svg
-              class="mt-[3px] shrink-0"
+              class="mt-1 shrink-0"
               width="18"
               height="18"
               viewBox="0 0 18 18"
               fill="none"
               aria-hidden="true"
             >
-              <circle cx="9" cy="9" r="9" fill="var(--brand-primary)" />
+              <circle cx="9" cy="9" r="9" fill="var(--primary)" />
               <path
                 d="m5 9 2.5 2.5L13 6"
-                stroke="var(--on-light)"
+                stroke="var(--ink)"
                 stroke-width="1.6"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -96,36 +85,25 @@
       </ul>
     </div>
 
-    <div
-      class="min-w-0 rounded-[18px] [border:1px_solid_var(--rule)] bg-[var(--paper)] p-[24px] min-[1100px]:p-[30px]"
-    >
-      <div class="flex flex-wrap items-center justify-between gap-[12px]">
-        <h3
-          class="m-0 text-[21px] [font-weight:650] tracking-[-0.035em] leading-[1.35] text-[color:var(--ink)]"
-        >
-          Get your free website scan
-        </h3>
+    <div class="min-w-0 rounded-2xl border border-border bg-paper p-6 xl:p-7.5">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <h3 class="text-card-title font-demi text-ink">Get your free website scan</h3>
         <span
-          class="rounded-full bg-[var(--green-pale)] px-[10px] py-[5px] text-[10px] font-semibold uppercase tracking-[0.04em] text-[color:var(--accent-on-light)]"
+          class="rounded-full bg-mint px-2.5 py-1.5 text-2xs font-semibold tracking-eyebrow text-primary-strong uppercase"
         >
           Coming soon
         </span>
       </div>
-      <p
-        id={`${id}-preview-note`}
-        class="m-0 mt-[12px] text-[12px] leading-[1.65] text-[color:var(--muted)]"
-      >
+      <p id={`${id}-preview-note`} class="mt-3 text-xs leading-relaxed text-ink-muted">
         Preview only. This form does not send or save your details.
       </p>
       <form
-        class="mt-[24px] grid gap-[18px]"
+        class="mt-6 grid gap-4.5"
         onsubmit={previewScan}
         aria-describedby={`${id}-preview-note`}
       >
-        <div class="grid gap-[7px]">
-          <label for={`${id}-website`} class="text-[13px] font-semibold text-[color:var(--ink)]"
-            >Website URL</label
-          >
+        <div class="grid gap-2">
+          <label for={`${id}-website`} class="text-label font-semibold text-ink">Website URL</label>
           <input
             id={`${id}-website`}
             type="url"
@@ -134,16 +112,14 @@
             placeholder="https://yourbusiness.com"
             required
             aria-describedby={`${id}-website-help`}
-            class="box-border min-h-[52px] w-full min-w-0 rounded-[8px] [border:1px_solid_hsl(240,_6%,_55%)] bg-[var(--paper)] px-[14px] py-[12px] [font-family:var(--sans)] text-[14px] leading-[1.5] text-[color:var(--ink)] placeholder:text-[color:var(--muted)] focus-visible:[outline:2px_solid_var(--accent-on-light)] focus-visible:[outline-offset:2px]"
+            class="min-h-13 w-full min-w-0 rounded-md border border-input bg-paper px-3.5 py-3 text-sm leading-normal text-ink placeholder:text-ink-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-strong"
           />
-          <p id={`${id}-website-help`} class="m-0 text-[11px] text-[color:var(--muted)]">
+          <p id={`${id}-website-help`} class="text-caption text-ink-muted">
             Include https:// at the beginning.
           </p>
         </div>
-        <div class="grid gap-[7px]">
-          <label for={`${id}-email`} class="text-[13px] font-semibold text-[color:var(--ink)]"
-            >Email address</label
-          >
+        <div class="grid gap-2">
+          <label for={`${id}-email`} class="text-label font-semibold text-ink">Email address</label>
           <input
             id={`${id}-email`}
             type="email"
@@ -151,22 +127,22 @@
             autocomplete="email"
             placeholder="you@yourbusiness.com"
             required
-            class="box-border min-h-[52px] w-full min-w-0 rounded-[8px] [border:1px_solid_hsl(240,_6%,_55%)] bg-[var(--paper)] px-[14px] py-[12px] [font-family:var(--sans)] text-[14px] leading-[1.5] text-[color:var(--ink)] placeholder:text-[color:var(--muted)] focus-visible:[outline:2px_solid_var(--accent-on-light)] focus-visible:[outline-offset:2px]"
+            class="min-h-13 w-full min-w-0 rounded-md border border-input bg-paper px-3.5 py-3 text-sm leading-normal text-ink placeholder:text-ink-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-strong"
           />
         </div>
         <button
           type="submit"
           disabled={!ready}
-          class="mt-[2px] flex min-h-[54px] w-full cursor-pointer items-center justify-between gap-[16px] rounded-[8px] [border:1px_solid_var(--brand-primary)] bg-[var(--brand-primary)] px-[18px] py-[14px] [font-family:var(--sans)] text-[13px] font-semibold leading-[1.4] text-[color:var(--on-light)] hover:bg-[var(--accent-hover)] disabled:cursor-default focus-visible:[outline:2px_solid_var(--ink)] focus-visible:[outline-offset:4px]"
+          class="mt-0.5 flex min-h-13.5 w-full cursor-pointer items-center justify-between gap-4 rounded-md border border-primary bg-primary px-4.5 py-3.5 text-label leading-label font-semibold text-ink hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink disabled:cursor-default"
         >
-          Get my free analysis <span class="text-[20px] font-normal" aria-hidden="true">↗</span>
+          Get my free analysis <span class="text-xl font-normal" aria-hidden="true">↗</span>
         </button>
       </form>
       <p
         role="status"
         aria-live="polite"
-        class="m-0 text-[13px] leading-[1.65] text-[color:var(--accent-on-light)]"
-        class:mt-[16px]={previewShown}
+        class="text-label leading-relaxed text-primary-strong"
+        class:mt-4={previewShown}
       >
         {#if previewShown}
           The free scan is coming soon. This preview hasn’t sent your website or email address.
