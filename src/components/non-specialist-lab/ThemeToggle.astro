@@ -1,0 +1,74 @@
+<button
+  type="button"
+  data-lab-theme-toggle
+  aria-pressed="false"
+  hidden
+  class="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full border border-border bg-card px-3.5 text-xs leading-label font-medium text-card-foreground hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ring aria-pressed:bg-accent aria-pressed:text-accent-foreground"
+>
+  <svg
+    class="size-4 dark:hidden"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"></path>
+  </svg>
+  <svg
+    class="hidden size-4 dark:block"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    aria-hidden="true"
+  >
+    <circle cx="12" cy="12" r="4"></circle>
+    <path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"></path>
+  </svg>
+  Dark mode
+</button>
+
+<script>
+  const storageKey = 'outfox-non-specialist-lab-theme';
+
+  function syncThemeControls() {
+    const root = document.documentElement;
+    const dark = root.classList.contains('dark');
+
+    document.querySelectorAll<HTMLButtonElement>('[data-lab-theme-toggle]').forEach((button) => {
+      button.setAttribute('aria-pressed', String(dark));
+      button.hidden = false;
+    });
+
+    const background = getComputedStyle(root).getPropertyValue('--background').trim();
+    if (background) {
+      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', background);
+    }
+  }
+
+  document.addEventListener('click', (event) => {
+    if (!(event.target instanceof Element)) return;
+    if (!event.target.closest('[data-lab-theme-toggle]')) return;
+
+    const root = document.documentElement;
+    const dark = !root.classList.contains('dark');
+    root.classList.toggle('dark', dark);
+    root.classList.toggle('light', !dark);
+    root.classList.toggle('scheme-dark', dark);
+    root.classList.toggle('scheme-light', !dark);
+    syncThemeControls();
+
+    try {
+      localStorage.setItem(storageKey, dark ? 'dark' : 'light');
+    } catch {
+      // The preview still works when browser storage is unavailable.
+    }
+  });
+
+  syncThemeControls();
+  document.addEventListener('astro:page-load', syncThemeControls);
+</script>

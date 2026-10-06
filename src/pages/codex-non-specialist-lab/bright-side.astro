@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import Layout from '@/layouts/NonSpecialistLabLayout.astro';
 import Brand from '@/components/non-specialist-lab/Brand.astro';
+import ThemeToggle from '@/components/non-specialist-lab/ThemeToggle.astro';
 import CapsulePattern from '@/components/non-specialist-lab/CapsulePattern.astro';
 import PlayMark from '@/components/non-specialist-lab/PlayMark.astro';
 import BrightSideBenefitCard from '@/components/cards/BrightSideBenefitCard.svelte';
@@ -57,15 +58,20 @@ const questions = [
   page="bright-side"
 >
   <nav
-    class="border-b border-border bg-secondary-light text-caption tracking-wide"
+    class="border-b border-border bg-secondary-light dark:bg-card text-caption tracking-wide"
     aria-label="Design study"
   >
-    <div class="mx-auto flex min-h-9 max-w-315 items-center justify-between gap-3 px-6 sm:px-10">
+    <div
+      class="mx-auto flex min-h-9 max-w-315 flex-wrap items-center justify-between gap-3 px-6 py-1.5 sm:px-10"
+    >
       <a
-        class="inline-flex min-h-9 items-center gap-2.5 text-inherit no-underline focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink"
+        class="inline-flex min-h-9 items-center gap-2.5 text-inherit no-underline focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ring"
         href="/codex-non-specialist-lab"><span aria-hidden="true">←</span> Design lab</a
       >
-      <span>07 / Bright Side <span class="hidden sm:inline">— homepage study</span></span>
+      <div class="ml-auto flex flex-wrap items-center justify-end gap-4">
+        <span>07 / Bright Side <span class="hidden sm:inline">— homepage study</span></span>
+        <ThemeToggle />
+      </div>
     </div>
   </nav>
   <header
@@ -77,25 +83,25 @@ const questions = [
       aria-label="Main navigation"
     >
       <a
-        class="inline-flex min-h-11 items-center text-label text-inherit no-underline hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink"
+        class="inline-flex min-h-11 items-center text-label text-inherit no-underline hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ring"
         href="#work">Work</a
       ><a
-        class="inline-flex min-h-11 items-center text-label text-inherit no-underline hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink"
+        class="inline-flex min-h-11 items-center text-label text-inherit no-underline hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ring"
         href="#testimonials">Kind words</a
       ><a
-        class="inline-flex min-h-11 items-center text-label text-inherit no-underline hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink"
+        class="inline-flex min-h-11 items-center text-label text-inherit no-underline hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ring"
         href="#questions">Questions</a
       >
     </nav>
     <a
-      class="inline-flex min-h-11 items-center gap-2.5 text-caption font-medium text-inherit underline decoration-1 underline-offset-5 focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink sm:text-label"
+      class="inline-flex min-h-11 items-center gap-2.5 text-caption font-medium text-inherit underline decoration-1 underline-offset-5 focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ring sm:text-body"
       href={email}>Talk through your website <span aria-hidden="true">↗</span></a
     >
   </header>
   <main class="px-6 focus:outline-none sm:px-16" id="main" tabindex="-1">
     <section class="mx-auto max-w-295 pt-6 overflow-x-hidden" aria-labelledby="hero-heading">
       <div
-        class="relative isolate grid gap-7.5 rounded-2xl bg-mint px-5 py-10 text-ink sm:px-8 sm:pt-10.5 sm:pb-7 lg:grid-cols-[minmax(0,1.12fr)_minmax(0,1fr)] lg:items-center lg:px-12.5 lg:py-17"
+        class="relative isolate grid gap-7.5 rounded-2xl bg-muted px-5 py-10 text-foreground sm:px-8 sm:pt-10.5 sm:pb-7 lg:grid-cols-[minmax(0,1.12fr)_minmax(0,1fr)] lg:items-center lg:px-12.5 lg:py-17"
       >
         <div
           class="pointer-events-none absolute inset-0 -z-1 rounded-2xl lg:left-[55%]"
@@ -108,29 +114,31 @@ const questions = [
         </div>
         <div class="relative z-1 min-w-0">
           <p
-            class="text-xs leading-normal font-semibold tracking-eyebrow text-primary-strong uppercase"
+            class="text-xs leading-normal font-semibold tracking-eyebrow text-accent-foreground uppercase"
           >
             Website strategy, design & development
           </p>
-          <h1 class="mt-5.5 max-w-147.5 text-display font-black text-balance" id="hero-heading">
-            A better website starts with <em class="block text-primary-strong not-italic"
+          <h1 class="mt-5.5 max-w-147.5 font-black text-balance" id="hero-heading">
+            A better website starts with <em class="block text-accent-foreground not-italic"
               >better judgment.</em
             >
           </h1>
-          <p class="mt-6 max-w-109 text-body leading-copy text-muted-on-light lg:text-base">
+          <p
+            class="mt-6 max-w-109 text-body leading-copy text-muted-on-light dark:text-muted-on-dark"
+          >
             Your business needs a website people can understand, trust, and act on. I help you
             decide what matters, then design and build it with care.
           </p>
           <div class="mt-6.5 flex flex-wrap items-center gap-x-5 gap-y-3">
             <a
-              class="inline-flex min-h-13.5 items-center justify-between gap-5.5 rounded-md border border-primary bg-primary px-5 py-4 text-label leading-label font-medium text-ink no-underline hover:border-primary-hover hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink"
+              class="inline-flex min-h-13.5 items-center justify-between gap-5.5 rounded-md border border-primary bg-primary px-5 py-4 text-body leading-label font-medium text-primary-foreground no-underline hover:border-primary-hover hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ring"
               href={email}
               >Talk through your website <span class="text-xl font-normal" aria-hidden="true"
                 >↗</span
               ></a
             >
             <a
-              class="inline-flex min-h-11 items-center gap-5 text-label font-medium text-inherit underline decoration-1 underline-offset-5 focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink"
+              class="inline-flex min-h-11 items-center gap-5 text-label font-medium text-inherit underline decoration-1 underline-offset-5 focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ring"
               href="#work">See the design examples <span aria-hidden="true">↓</span></a
             >
           </div>
@@ -141,7 +149,7 @@ const questions = [
           <div class="relative">
             <PlayMark
               kind="arrow"
-              class="hidden lg:absolute lg:top-[10%] lg:-left-8 lg:block lg:size-13.5 lg:text-primary-strong"
+              class="hidden lg:absolute lg:top-[10%] lg:-left-8 lg:block lg:size-13.5 lg:text-accent-foreground"
             />
             <Image
               class="relative block h-auto w-full"
@@ -196,7 +204,7 @@ const questions = [
         </p><h2 class="mt-5 text-section font-black text-balance" id="work-heading">
           Good design makes<br />the next step feel obvious.
         </h2>
-        <p class="mt-5.5 max-w-116.5 text-body text-ink-muted">
+        <p class="mt-5.5 max-w-116.5 text-body text-muted-foreground">
           A website should help people find their bearings. These examples show the kind of clarity
           we can build toward.
         </p>
@@ -217,13 +225,13 @@ const questions = [
           </div>
           <figcaption>
             <p
-              class="mt-6 text-caption leading-normal font-semibold tracking-eyebrow text-ink-muted uppercase"
+              class="mt-6 text-caption leading-normal font-semibold tracking-eyebrow text-muted-foreground uppercase"
             >
               Design example / Interior services
             </p><h3 class="mt-3 text-card-title-lg font-demi text-balance">
               Space to understand the offer.
             </h3>
-            <p class="mt-3 max-w-110 text-sm text-ink-muted">
+            <p class="mt-3 max-w-110 text-muted-foreground">
               A calm hierarchy gives the service, supporting detail, and contact action room to be
               understood.
             </p>
@@ -244,19 +252,21 @@ const questions = [
           </div>
           <figcaption>
             <p
-              class="mt-6 text-caption leading-normal font-semibold tracking-eyebrow text-ink-muted uppercase"
+              class="mt-6 text-caption leading-normal font-semibold tracking-eyebrow text-muted-foreground uppercase"
             >
               Design example / Financial services
             </p><h3 class="mt-3 text-card-title-lg font-demi text-balance">
               A clear route to a conversation.
             </h3>
-            <p class="mt-3 max-w-110 text-sm text-ink-muted">
+            <p class="mt-3 max-w-110 text-muted-foreground">
               For a service business, useful information and a visible next step belong together.
             </p>
           </figcaption>
         </figure>
       </div>
-      <p class="mt-9 border-t border-border pt-5 text-caption text-ink-muted lg:col-span-full">
+      <p
+        class="mt-9 border-t border-border pt-5 text-caption text-muted-foreground lg:col-span-full"
+      >
         Design examples from the existing library
       </p>
     </section>
@@ -315,12 +325,14 @@ const questions = [
     <BrightSideServicesTabs client:load />
     <section
       id="process"
-      class="bg-secondary-light sm:-mx-10 sm:px-10"
+      class="bg-secondary-light dark:bg-card sm:-mx-10 sm:px-10"
       aria-labelledby="process-heading"
     >
       <div class="mx-auto max-w-295 py-18 lg:py-24">
         <div>
-          <p class="text-xs leading-normal font-semibold tracking-eyebrow text-ink-muted uppercase">
+          <p
+            class="text-xs leading-normal font-semibold tracking-eyebrow text-muted-foreground uppercase"
+          >
             Working together
           </p><h2
             class="mt-5 max-w-172.5 text-section font-black text-balance"
@@ -343,7 +355,7 @@ const questions = [
                   <div>
                     <>
                       <h3 class="text-card-title font-demi text-balance">{step.title}</h3>
-                      <p class="mt-3.5 text-sm leading-copy text-ink-muted">{step.body}</p>
+                      <p class="mt-3.5 text-sm leading-copy text-muted-foreground">{step.body}</p>
                     </>
                   </div>
                 </>
@@ -371,7 +383,7 @@ const questions = [
           questions.map((item) => (
             <details class="group border-t border-border last:border-b">
               <>
-                <summary class="flex min-h-16.5 cursor-pointer list-none items-center justify-between gap-5 py-6 text-sm leading-normal font-medium hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink [&::-webkit-details-marker]:hidden">
+                <summary class="flex min-h-16.5 cursor-pointer list-none items-center justify-between gap-5 py-6 leading-normal font-medium hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ring [&::-webkit-details-marker]:hidden">
                   {item.question}
                   <svg
                     class="size-3 shrink-0"
@@ -384,7 +396,7 @@ const questions = [
                     <path class="group-open:hidden" d="M6 0v12" />
                   </svg>
                 </summary>
-                <p class="max-w-140 pr-7 pb-6 text-sm leading-copy text-ink-muted">{item.answer}</p>
+                <p class="max-w-140 pr-7 pb-6 leading-copy text-muted-foreground">{item.answer}</p>
               </>
             </details>
           ))
@@ -394,7 +406,7 @@ const questions = [
     <BrightSideBlogBento />
     <section
       id="contact"
-      class="relative isolate mx-auto mb-9 max-w-295 overflow-hidden rounded-2xl bg-mint px-6 py-11.5 text-ink lg:px-11.5 lg:py-16.5"
+      class="relative isolate mx-auto mb-9 max-w-295 overflow-hidden rounded-2xl bg-muted px-6 py-11.5 text-foreground lg:px-11.5 lg:py-16.5"
       aria-labelledby="contact-heading"
     >
       <div class="pointer-events-none absolute inset-0 -z-1 rounded-2xl" aria-hidden="true">
@@ -405,20 +417,21 @@ const questions = [
       </div>
       <div class="relative mx-auto max-w-185 text-center">
         <p
-          class="text-xs leading-normal font-semibold tracking-eyebrow text-primary-strong uppercase"
+          class="text-xs leading-normal font-semibold tracking-eyebrow text-accent-foreground uppercase"
         >
           Let's start with your business
         </p><h2 class="mt-5 text-contact font-black text-balance" id="contact-heading">
-          Tell me what your<br /><em class="text-primary-strong not-italic">website needs to do.</em
+          Tell me what your<br /><em class="text-accent-foreground not-italic"
+            >website needs to do.</em
           >
         </h2>
-        <p class="mx-auto mt-6 max-w-116.5 text-body text-muted-on-light">
+        <p class="mx-auto mt-6 max-w-116.5 text-body text-muted-on-light dark:text-muted-on-dark">
           Send your current website, if you have one, and a little about what you'd like to improve.
           We'll start there.
         </p>
         <div class="mt-7 flex justify-center">
           <a
-            class="inline-flex min-h-13.5 items-center justify-between gap-5.5 rounded-md border border-primary bg-primary px-5 py-4 text-label leading-label font-medium text-ink no-underline hover:border-primary-hover hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink"
+            class="inline-flex min-h-13.5 items-center justify-between gap-5.5 rounded-md border border-primary bg-primary px-5 py-4 text-label leading-label font-medium text-primary-foreground no-underline hover:border-primary-hover hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ring"
             href={email}
             >Talk through your website <span class="text-xl font-normal" aria-hidden="true">↗</span
             ></a
@@ -430,15 +443,17 @@ const questions = [
   <footer
     class="mx-auto flex max-w-315 flex-wrap items-center gap-x-11.5 gap-y-7 px-6 py-8.5 sm:px-10"
   >
-    <Brand href="/codex-non-specialist-lab/bright-side" /><p class="text-caption text-ink-muted">
+    <Brand href="/codex-non-specialist-lab/bright-side" /><p
+      class="text-caption text-muted-foreground"
+    >
       Thoughtful websites. Independent expertise.<br />Carlsbad, California.
     </p>
     <nav class="flex flex-wrap gap-x-6.5 gap-y-3" aria-label="Footer navigation">
       <a
-        class="flex min-h-11 items-center text-caption text-inherit decoration-1 underline-offset-5 hover:underline focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink"
+        class="flex min-h-11 items-center text-caption text-inherit decoration-1 underline-offset-5 hover:underline focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ring"
         href="/codex-non-specialist-lab">Design lab</a
       ><a
-        class="flex min-h-11 items-center text-caption text-inherit decoration-1 underline-offset-5 hover:underline focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink"
+        class="flex min-h-11 items-center text-caption text-inherit decoration-1 underline-offset-5 hover:underline focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ring"
         href="#main">Back to top <span aria-hidden="true">↑</span></a
       >
     </nav>

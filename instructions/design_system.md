@@ -81,9 +81,15 @@ Green should remain the dominant chromatic family. Blue gives a section a change
 
 Chart roles `chart-1` through `chart-5` map to primary, secondary, tertiary, green, and orange respectively. Sidebar roles are also available: `sidebar` uses secondary-light, `sidebar-foreground` uses foreground, `sidebar-primary` uses primary, `sidebar-accent` uses the accent surface, and their foreground, border, and ring roles follow the corresponding semantic values. These are compatibility capabilities, not instructions to add charts or sidebars to marketing pages.
 
-### Light mode and dark compatibility
+### Light mode and dark preview
 
-The new marketing direction is **light by default**. The lab layout sets `class="light"` and `scheme-light`. Its dark testimonial uses explicit `bg-dark-green text-paper`, rather than switching the entire page into dark mode.
+The new marketing direction is **light by default**. Both lab pages have a **Dark mode** toggle for inspecting the existing theme tokens. The button exposes its state through `aria-pressed`, and the lab layout restores an explicit choice before the page is painted. The choice is saved under `outfox-non-specialist-lab-theme` in browser local storage and applies only to the non-specialist lab. Without a saved choice, or when storage is unavailable on a fresh visit, the default remains light; the operating system preference does not override it.
+
+The layout switches the root `light`/`dark` and `scheme-light`/`scheme-dark` classes together, so browser controls follow the selected scheme. The toggle still works within the current page if saving the preference fails. Without JavaScript, the page remains light and the unavailable toggle is hidden. The browser theme color follows the computed background token.
+
+Main reading text uses `text-foreground` and `text-muted-foreground`. Hero, service, scan, and contact panels use `bg-muted`, which is mint in light mode and the darker muted surface in dark mode. Their green emphasis uses `text-accent-foreground`, which changes from primary-strong to primary. The scan form and neutral editorial card use `bg-card`; blue section surfaces use `bg-secondary-light dark:bg-card`. Supporting green-toned copy can use `text-muted-on-light dark:text-muted-on-dark`.
+
+Brand primitives retain their exact colors: primary actions and the featured green blog card keep dark text on primary fill; decorative capsules, device artwork, and organic backdrops retain their colors. The testimonial remains an intentional `bg-dark-green text-paper` panel in either scheme. Use semantic roles for interfaces that follow the theme, and fixed primitive pairings for artwork or deliberate contrast blocks.
 
 The `.dark` theme retains the same primary, blue, and purple primitives while changing semantic roles:
 
@@ -99,7 +105,7 @@ The `.dark` theme retains the same primary, blue, and purple primitives while ch
 | Ring                                 | Primary                                                     |
 | Sidebar                              | Dark-green; its other roles follow the dark semantic values |
 
-Primary and secondary foregrounds remain ink. Fixed primitives such as `paper` do not change with the theme. Dark compatibility supports existing code; it does not mean a complete dark rendition of Bright Side has been approved or audited.
+Primary and secondary foregrounds remain ink. Fixed primitives such as `paper` do not change with the theme. The lab's dark preview now demonstrates these role changes across the page; it does not establish dark mode as the default marketing direction or certify a complete dark-mode accessibility audit. See [ThemeToggle](../src/components/non-specialist-lab/ThemeToggle.astro) and [Tailwind's manual dark-mode guidance](https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually).
 
 ### Contrast rules
 
@@ -118,7 +124,7 @@ These ratios were calculated from the current solid, opaque token values using t
 | Primary / paper            | 1.40:1            | Decorative color; unsuitable for meaningful text |
 | Primary / mint             | 1.36:1            | Decorative color; unsuitable for meaningful text |
 
-The brand's bright green is preserved. For new readable green text on light surfaces, use `text-primary-strong`. The reference still contains bright-green section labels, process numbers, and hover text on light surfaces; those are known contrast gaps to address during adoption, not examples to reproduce for meaningful text. Check actual backgrounds, opacity, hover, focus, selected, and error states.
+The brand's bright green is preserved. For readable green text on light surfaces, use `text-primary-strong`, or `text-accent-foreground` when it should follow the theme. The reference still contains bright-green section labels, process numbers, and hover text on light surfaces; those are known contrast gaps to address during adoption, not examples to reproduce for meaningful text. Check actual backgrounds, opacity, hover, focus, selected, and error states in both schemes.
 
 ## 3. Typography
 
@@ -141,7 +147,7 @@ Pixel equivalents below assume a 16px root size. Preserve rem-based sizing and u
 | `text-2xs`           | `0.625rem` / 10px                             | Tiny status badges only                                              |
 | `text-caption`       | `0.6875rem` / 11px                            | Brief captions and metadata                                          |
 | `text-label`         | `0.8125rem` / 13px                            | Controls and short supporting labels                                 |
-| `text-body`          | `0.9375rem` / 15px                            | Introductory and descriptive copy                                    |
+| `text-body`          | `1rem` / 16px                                 | Introductory and descriptive copy                                    |
 | `text-card-title`    | `1.3125rem` / 21px                            | Card and process headings                                            |
 | `text-benefit`       | `1.375rem` / 22px                             | Benefit headings beside animated icons                               |
 | `text-card-title-lg` | `1.4375rem` / 23px                            | Work captions and small editorial cards                              |
@@ -279,7 +285,7 @@ Use transforms and opacity for decoration, not changes to surrounding layout dim
 
 ### Actions, navigation, and focus
 
-Primary actions use green fill, ink text, `rounded-md`, and a visible focus outline. The reference uses `min-h-13.5` (54px), `px-5 py-4`, and `text-label leading-label`. Hover changes to primary-hover. Use a verb and an understandable outcome, such as “Explore website design” or “Talk through your website.” The diagonal arrow is decorative and follows the label.
+Primary actions use green fill, ink text, `rounded-md`, and a visible focus outline. The reference uses `min-h-13.5` (54px), `px-5 py-4`, and `leading-label`, with `text-label` on most actions and `text-body` on the hero action. Hover changes to primary-hover. Use a verb and an understandable outcome, such as “Explore website design” or “Talk through your website.” The diagonal arrow is decorative and follows the label.
 
 Secondary actions are underlined text links with enough space to activate them, rather than another equally prominent filled button. Give each decision area one visually dominant action. Navigation uses compact familiar labels and a persistent conversation link. The wordmark pairs the primary fox outline with Inter lettering and a blue dot.
 
@@ -415,15 +421,15 @@ The [lab layout](../src/layouts/NonSpecialistLabLayout.astro) is a useful implem
 
 ### Current implementation status
 
-| Area                                             | Status / remaining work                                                                                                                            |
-| ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Visual direction and global tokens               | Bright Side is the selected direction; tokens are implemented in the shared Tailwind stylesheet.                                                   |
-| Benefits, services, scan preview, and blog bento | Dedicated components exist. Their structure can be reused when appropriate.                                                                        |
-| Work and testimonial evidence                    | Work images are labeled design examples; the testimonial is sample content with a placeholder portrait.                                            |
-| Free scan                                        | Preview only; no scan service, data capture, or delivery is implemented.                                                                           |
-| Blog content                                     | Sample topics; real articles and destinations are still needed.                                                                                    |
-| Accessibility alignment                          | Readable token pairings exist; bright-green text on light surfaces, Lottie reduced motion, and repeating animation need attention during adoption. |
-| Font weights                                     | Current Manrope 900 requests exceed its declared 200–800 range.                                                                                    |
-| Existing page styles                             | Legacy base rules and compatibility aliases remain; migrate deliberately rather than treating all existing defaults as part of Bright Side.        |
+| Area                                             | Status / remaining work                                                                                                                                                           |
+| ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Visual direction and global tokens               | Bright Side is the selected direction; tokens are implemented in the shared Tailwind stylesheet. Light remains the default; the lab toggle previews existing dark semantic roles. |
+| Benefits, services, scan preview, and blog bento | Dedicated components exist. Their structure can be reused when appropriate.                                                                                                       |
+| Work and testimonial evidence                    | Work images are labeled design examples; the testimonial is sample content with a placeholder portrait.                                                                           |
+| Free scan                                        | Preview only; no scan service, data capture, or delivery is implemented.                                                                                                          |
+| Blog content                                     | Sample topics; real articles and destinations are still needed.                                                                                                                   |
+| Accessibility alignment                          | Readable token pairings exist; bright-green text on light surfaces, Lottie reduced motion, and repeating animation need attention during adoption.                                |
+| Font weights                                     | Current Manrope 900 requests exceed its declared 200–800 range.                                                                                                                   |
+| Existing page styles                             | Legacy base rules and compatibility aliases remain; migrate deliberately rather than treating all existing defaults as part of Bright Side.                                       |
 
 When the system evolves, update the global token source and this guide together. Preserve the design's recognizable relationships—light canvas, green identity, readable hierarchy, immersive imagery, considered playfulness, and clear actions—while allowing each page to answer its own visitor questions.

@@ -141,21 +141,21 @@
   >
     <div class="min-w-0">
       <p
-        class="text-caption leading-normal font-semibold tracking-eyebrow text-primary-strong uppercase"
+        class="text-caption leading-normal font-semibold tracking-eyebrow text-accent-foreground uppercase"
       >
         {service.fit}
       </p>
       <h3
-        class="mt-4 text-title leading-title font-extrabold tracking-title text-balance text-ink lg:text-service"
+        class="mt-4 text-title leading-title font-extrabold tracking-title text-balance text-foreground lg:text-service"
       >
-        {service.headline[0]}<br /><span class="text-primary-strong">{service.headline[1]}</span>
+        {service.headline[0]}<br /><span class="text-accent-foreground">{service.headline[1]}</span>
       </h3>
-      <p class="mt-5 max-w-130 text-body leading-copy text-ink-muted">
+      <p class="mt-5 max-w-130 text-body leading-copy text-muted-foreground">
         {service.description}
       </p>
       <ul class="mt-6 grid gap-3.5">
         {#each service.benefits as benefit}
-          <li class="flex items-start gap-3 text-sm leading-relaxed text-ink">
+          <li class="flex items-start gap-3 text-sm leading-relaxed text-foreground">
             <svg
               class="mt-0.5 shrink-0"
               width="22"
@@ -178,7 +178,7 @@
         {/each}
       </ul>
       <a
-        class="mt-7 inline-flex min-h-13.5 items-center justify-between gap-5.5 rounded-md border border-primary bg-primary px-5 py-4 text-label leading-label font-medium text-ink no-underline hover:border-primary-hover hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink"
+        class="mt-7 inline-flex min-h-13.5 items-center justify-between gap-5.5 rounded-md border border-primary bg-primary px-5 py-4 text-label leading-label font-medium text-primary-foreground no-underline hover:border-primary-hover hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ring"
         href={service.href}
       >
         {service.linkLabel}<span class="text-xl font-normal" aria-hidden="true">↗</span>
@@ -202,13 +202,15 @@
 
 <section {id} aria-labelledby={`${id}-heading`} class="mx-auto max-w-295 py-18 lg:py-24">
   <header class="mx-auto max-w-170 text-center">
-    <p class="text-xs leading-normal font-semibold tracking-eyebrow text-primary-strong uppercase">
+    <p
+      class="text-xs leading-normal font-semibold tracking-eyebrow text-accent-foreground uppercase"
+    >
       What we do
     </p>
-    <h2 id={`${id}-heading`} class="mt-4.5 text-section font-black text-balance text-ink">
+    <h2 id={`${id}-heading`} class="mt-4.5 text-section font-black text-balance text-foreground">
       The right help<br />for your website.
     </h2>
-    <p class="mt-5 text-body leading-copy text-ink-muted">
+    <p class="mt-5 text-body leading-copy text-muted-foreground">
       Design, development, and an expert review when you need a clearer starting point.
     </p>
   </header>
@@ -227,10 +229,10 @@
         aria-selected={activeService === service.id}
         aria-controls={`${id}-panel-${service.id}`}
         tabindex={activeService === service.id ? 0 : -1}
-        class={`min-h-12 cursor-pointer rounded-full px-6.5 py-3  text-sm leading-label focus-visible:outline-2 focus-visible:outline-ink focus-visible:outline-offset-4 ${
+        class={`min-h-12 cursor-pointer rounded-full px-6.5 py-3  text-sm leading-label focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-4 ${
           activeService === service.id
-            ? 'border border-primary bg-primary font-demi text-ink'
-            : 'border border-border bg-paper font-medium text-ink-muted hover:bg-mint'
+            ? 'border border-primary bg-primary font-demi text-primary-foreground'
+            : 'border border-border bg-card font-medium text-muted-foreground hover:bg-muted'
         }`}
         onclick={() => selectService(service.id)}
         onkeydown={(event) => navigateTabs(event, index)}
@@ -247,7 +249,7 @@
         role="tabpanel"
         aria-labelledby={`${id}-tab-${service.id}`}
         hidden={activeService !== service.id}
-        class="rounded-2xl bg-mint"
+        class="rounded-2xl bg-muted"
       >
         {#if activeService === service.id}
           <div in:fade={{ duration: motionAllowed ? 160 : 0 }}>
@@ -261,12 +263,12 @@
   <div class="mt-7.5 grid gap-3 md:hidden">
     {#each services as service}
       <details
-        class="group rounded-2xl bg-mint"
+        class="group rounded-2xl bg-muted"
         open={openMobileService === service.id}
         ontoggle={(event) => toggleMobileService(event, service.id)}
       >
         <summary
-          class="flex min-h-16 cursor-pointer list-none items-center justify-between gap-5 rounded-2xl px-5.5 py-4.5 text-base font-demi text-ink group-open:rounded-b-none group-open:bg-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink [&::-webkit-details-marker]:hidden"
+          class="flex min-h-16 cursor-pointer list-none items-center justify-between gap-5 rounded-2xl px-5.5 py-4.5 text-base font-demi text-foreground group-open:rounded-b-none group-open:bg-primary group-open:text-primary-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring [&::-webkit-details-marker]:hidden"
         >
           {service.label}
           <svg

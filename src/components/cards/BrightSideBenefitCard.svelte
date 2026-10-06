@@ -27,11 +27,11 @@
     <div class="size-10 shrink-0" aria-hidden="true">
       <InteractiveLottie path={lottiePath} repeat {delay} {timeLoop} {speed} {initialPlay} />
     </div>
-    <h3 class="min-w-0 text-benefit font-demi text-balance text-ink">
+    <h3 class="min-w-0 text-benefit font-demi text-balance text-foreground">
       {heading}
     </h3>
   </div>
-  <p class="text-sm leading-copy text-ink-muted">
+  <p class="text-base leading-copy text-muted-foreground">
     {body}
   </p>
 </article>

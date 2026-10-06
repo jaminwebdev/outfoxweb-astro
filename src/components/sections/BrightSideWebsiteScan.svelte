@@ -24,7 +24,7 @@
 
 <section {id} aria-labelledby={`${id}-heading`} class="mx-auto max-w-295 py-18 lg:py-24">
   <div
-    class="grid items-center gap-9 rounded-3xl bg-mint px-6 py-9 sm:px-9 md:grid-cols-[minmax(0,_1.1fr)_minmax(0,_1fr)] md:gap-12 xl:p-13"
+    class="grid items-center gap-9 rounded-3xl bg-muted px-6 py-9 sm:px-9 md:grid-cols-[minmax(0,_1.1fr)_minmax(0,_1fr)] md:gap-12 xl:p-13"
   >
     <div class="min-w-0">
       <div class="flex items-center gap-3">
@@ -44,22 +44,22 @@
           </svg>
         </span>
         <p
-          class="text-xs leading-normal font-semibold tracking-eyebrow text-primary-strong uppercase"
+          class="text-xs leading-normal font-semibold tracking-eyebrow text-accent-foreground uppercase"
         >
           A free first look
         </p>
       </div>
-      <h2 id={`${id}-heading`} class="mt-5.5 text-section font-black text-balance text-ink">
-        Not sure where<br /><span class="text-primary-strong">to start?</span>
+      <h2 id={`${id}-heading`} class="mt-5.5 text-section font-black text-balance text-foreground">
+        Not sure where<br /><span class="text-accent-foreground">to start?</span>
       </h2>
-      <p class="mt-5 max-w-117.5 text-body leading-copy text-ink-muted">
+      <p class="mt-5 max-w-117.5 text-body leading-copy text-muted-foreground">
         A simple website scan could help you spot the basics worth checking before you commit to a
         bigger project.
       </p>
-      <p class="mt-6 text-caption font-semibold tracking-label text-primary-strong uppercase">
+      <p class="mt-6 text-caption font-semibold tracking-label text-accent-foreground uppercase">
         What the scan will cover
       </p>
-      <ul class="mt-3 grid gap-3 text-sm leading-relaxed text-ink">
+      <ul class="mt-3 grid gap-3 text-sm leading-relaxed text-foreground">
         {#each ['Page speed and basic technical checks', 'Mobile usability and accessibility signals', 'A short list of useful next steps'] as check}
           <li class="flex items-start gap-3">
             <svg
@@ -85,16 +85,16 @@
       </ul>
     </div>
 
-    <div class="min-w-0 rounded-2xl border border-border bg-paper p-6 xl:p-7.5">
+    <div class="min-w-0 rounded-2xl border border-border bg-card p-6 xl:p-7.5">
       <div class="flex flex-wrap items-center justify-between gap-3">
-        <h3 class="text-card-title font-demi text-ink">Get your free website scan</h3>
+        <h3 class="text-card-title font-demi text-foreground">Get your free website scan</h3>
         <span
-          class="rounded-full bg-mint px-2.5 py-1.5 text-2xs font-semibold tracking-eyebrow text-primary-strong uppercase"
+          class="rounded-full bg-muted px-2.5 py-1.5 text-2xs font-semibold tracking-eyebrow text-accent-foreground uppercase"
         >
           Coming soon
         </span>
       </div>
-      <p id={`${id}-preview-note`} class="mt-3 text-xs leading-relaxed text-ink-muted">
+      <p id={`${id}-preview-note`} class="mt-3 text-xs leading-relaxed text-muted-foreground">
         Preview only. This form does not send or save your details.
       </p>
       <form
@@ -103,7 +103,9 @@
         aria-describedby={`${id}-preview-note`}
       >
         <div class="grid gap-2">
-          <label for={`${id}-website`} class="text-label font-semibold text-ink">Website URL</label>
+          <label for={`${id}-website`} class="text-label font-semibold text-foreground"
+            >Website URL</label
+          >
           <input
             id={`${id}-website`}
             type="url"
@@ -112,14 +114,16 @@
             placeholder="https://yourbusiness.com"
             required
             aria-describedby={`${id}-website-help`}
-            class="min-h-13 w-full min-w-0 rounded-md border border-input bg-paper px-3.5 py-3 text-sm leading-normal text-ink placeholder:text-ink-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-strong"
+            class="min-h-13 w-full min-w-0 rounded-md border border-input bg-card px-3.5 py-3 text-sm leading-normal text-foreground placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
           />
-          <p id={`${id}-website-help`} class="text-caption text-ink-muted">
+          <p id={`${id}-website-help`} class="text-caption text-muted-foreground">
             Include https:// at the beginning.
           </p>
         </div>
         <div class="grid gap-2">
-          <label for={`${id}-email`} class="text-label font-semibold text-ink">Email address</label>
+          <label for={`${id}-email`} class="text-label font-semibold text-foreground"
+            >Email address</label
+          >
           <input
             id={`${id}-email`}
             type="email"
@@ -127,13 +131,13 @@
             autocomplete="email"
             placeholder="you@yourbusiness.com"
             required
-            class="min-h-13 w-full min-w-0 rounded-md border border-input bg-paper px-3.5 py-3 text-sm leading-normal text-ink placeholder:text-ink-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-strong"
+            class="min-h-13 w-full min-w-0 rounded-md border border-input bg-card px-3.5 py-3 text-sm leading-normal text-foreground placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
           />
         </div>
         <button
           type="submit"
           disabled={!ready}
-          class="mt-0.5 flex min-h-13.5 w-full cursor-pointer items-center justify-between gap-4 rounded-md border border-primary bg-primary px-4.5 py-3.5 text-label leading-label font-semibold text-ink hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink disabled:cursor-default"
+          class="mt-0.5 flex min-h-13.5 w-full cursor-pointer items-center justify-between gap-4 rounded-md border border-primary bg-primary px-4.5 py-3.5 text-label leading-label font-semibold text-primary-foreground hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring disabled:cursor-default"
         >
           Get my free analysis <span class="text-xl font-normal" aria-hidden="true">↗</span>
         </button>
@@ -141,7 +145,7 @@
       <p
         role="status"
         aria-live="polite"
-        class="text-label leading-relaxed text-primary-strong"
+        class="text-label leading-relaxed text-accent-foreground"
         class:mt-4={previewShown}
       >
         {#if previewShown}

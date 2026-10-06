@@ -37,11 +37,11 @@
     @apply text-body-text;
   }
   body h1 {
-    @apply text-4xl md:text-[55px] leading-tight font-black;
+    @apply text-4xl md:text-[3.55rem] leading-tight font-black;
   }
 
   body h2 {
-    @apply text-3xl md:text-[40px] leading-11 font-black;
+    @apply text-3xl md:text-[2rem] leading-11 font-black;
   }
 
   body h3 {
@@ -189,7 +189,7 @@
   --text-2xs: 0.625rem;
   --text-caption: 0.6875rem;
   --text-label: 0.8125rem;
-  --text-body: 0.9375rem;
+  --text-body: 1.1rem;
   --text-card-title: 1.3125rem;
   --text-card-title--line-height: 1.35;
   --text-card-title--letter-spacing: -0.035em;

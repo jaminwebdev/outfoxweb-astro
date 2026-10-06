@@ -10,25 +10,40 @@ const { title, description, page = 'index' } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="light">
+<html lang="en" class="light scheme-light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="hsl(240, 7%, 96%)" />
+    <script is:inline>
+      (() => {
+        let dark = false;
+        try {
+          dark = localStorage.getItem('outfox-non-specialist-lab-theme') === 'dark';
+        } catch {
+          // Start in light mode when browser storage is unavailable.
+        }
+        const root = document.documentElement;
+        root.classList.toggle('dark', dark);
+        root.classList.toggle('light', !dark);
+        root.classList.toggle('scheme-dark', dark);
+        root.classList.toggle('scheme-light', !dark);
+      })();
+    </script>
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/codex-non-specialist-lab/fox.svg" />
   </head>
   <body
     class:list={[
       page,
-      'bg-background text-base/relaxed text-foreground antialiased scheme-light selection:bg-primary selection:text-ink',
+      'bg-background text-base/relaxed text-foreground antialiased selection:bg-primary selection:text-ink',
       page === 'bright-side' ? 'font-display' : 'font-sans',
     ]}
   >
     <a
-      class="absolute top-2 left-3 z-20 -translate-y-[200%] bg-ink px-5 py-3 text-paper decoration-1 underline-offset-5 hover:underline focus:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ink"
+      class="absolute top-2 left-3 z-20 -translate-y-[200%] bg-foreground px-5 py-3 text-background decoration-1 underline-offset-5 hover:underline focus:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-ring"
       href="#main">Skip to content</a
     >
     <slot />
