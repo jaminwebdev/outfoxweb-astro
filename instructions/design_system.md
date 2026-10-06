@@ -25,6 +25,7 @@ The central message is **a better website starts with better judgment**. AI can 
 
 - **A light site with green as its identity.** Paper and ink carry most reading; mint and primary green make the brand visible. The dark green testimonial panel creates a deliberate change in rhythm.
 - **An orderly layout with expressive artwork.** Text, controls, and spacing use consistent rules. Whimsy comes from the imagery, shapes, and a few motion accents.
+- **Comfortable reading sizes.** General explanations use approximately 17.6–18px text, with deliberate 16px treatments where appropriate. Small labels and captions provide hierarchy without becoming the default for useful content.
 - **Immersive imagery.** Transparent device mockups appear within the page composition. Organic backdrops and image windows give photography a considered setting.
 - **Evidence before detail.** Examples and testimonials precede the service selector and process explanation.
 - **A useful next step at several levels of commitment.** Visitors can explore examples, understand a service, eventually use a free scan, or start a conversation.
@@ -146,8 +147,8 @@ Pixel equivalents below assume a 16px root size. Preserve rem-based sizing and u
 | -------------------- | --------------------------------------------- | -------------------------------------------------------------------- |
 | `text-2xs`           | `0.625rem` / 10px                             | Tiny status badges only                                              |
 | `text-caption`       | `0.6875rem` / 11px                            | Brief captions and metadata                                          |
-| `text-label`         | `0.8125rem` / 13px                            | Controls and short supporting labels                                 |
-| `text-body`          | `1rem` / 16px                                 | Introductory and descriptive copy                                    |
+| `text-label`         | `0.8125rem` / 13px                            | Deliberately compact controls and short labels; not general prose    |
+| `text-body`          | `1.1rem` / 17.6px                             | Introductory and descriptive copy                                    |
 | `text-card-title`    | `1.3125rem` / 21px                            | Card and process headings                                            |
 | `text-benefit`       | `1.375rem` / 22px                             | Benefit headings beside animated icons                               |
 | `text-card-title-lg` | `1.4375rem` / 23px                            | Work captions and small editorial cards                              |
@@ -155,12 +156,30 @@ Pixel equivalents below assume a 16px root size. Preserve rem-based sizing and u
 | `text-step`          | `1.6875rem` / 27px                            | Process step numerals                                                |
 | `text-title`         | `1.75rem` / 28px                              | Service title at smaller widths                                      |
 | `text-service`       | `2.1875rem` / 35px                            | Service and featured-card title at larger widths                     |
-| `text-display`       | `clamp(2.375rem, 4.8vw, 3.875rem)` / 38–62px  | Homepage hero                                                        |
+| `text-display`       | `clamp(2.375rem, 4.8vw, 3.875rem)` / 38–62px  | Available fluid display role; not currently applied to the hero      |
 | `text-section`       | `clamp(1.875rem, 3.3vw, 2.6875rem)` / 30–43px | Main section headings                                                |
 | `text-contact`       | `clamp(2.125rem, 4.5vw, 3.4375rem)` / 34–55px | Closing invitation                                                   |
 | `text-editorial`     | `clamp(3rem, 6.3vw, 5.375rem)` / 48–86px      | Available editorial display role; not currently used on the homepage |
 
-Standard Tailwind sizes remain useful: the homepage uses `text-sm` (14px) for much supporting copy, `text-xs` (12px) for eyebrows, and `text-base` (16px) for selected body text. For new long articles or substantial explanations, start at `text-base leading-copy`; caption sizes are not a reading-text default.
+**General prose should use the larger reading scale.** Use `text-body` (17.6px) or the global paragraph size, `text-lg` (18px), for main explanations. Use `text-base` (16px) for a deliberate more compact treatment, as in the benefit cards and FAQ questions. For new long articles and substantial explanations, start with `text-body leading-copy` or `text-lg leading-copy`. `text-sm` (14px) and `text-label` (13px) are specific compact exceptions, not general supporting-copy defaults. These sizes express the chosen readability direction; they are not a universal accessibility minimum.
+
+### Current global defaults and page usage
+
+The page now deliberately relies on some global typography in [tailwind.css](../src/styles/tailwind.css). Removing a size class does not necessarily mean inheriting the body's 16px size: the `body p` base rule applies `text-lg` to paragraphs. Explicit size utilities override that base rule. The layout's `text-base/relaxed` remains the default for other elements without a size rule.
+
+| Context                                              | Current treatment                                                                                                                                              | Consequence for adoption                                                                                                                                                                                            |
+| ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hero h1                                              | Global `body h1`: `text-4xl` / 36px, then `md:text-[3.55rem]` / 56.8px; `leading-tight` / 1.25 and `font-black`                                                | The hero no longer uses `text-display`. Match this global h1 treatment when carrying the current hero style to another page; an explicit display token would introduce different sizing, tracking, and line-height. |
+| Hero, work, service, scan, and contact introductions | `text-body` / 17.6px                                                                                                                                           | The hero uses the same size at larger widths; the former `lg:text-base` reduction is gone.                                                                                                                          |
+| Work-example explanations                            | Paragraphs without a size utility use global `text-lg` / 18px                                                                                                  | Preserve the larger explanation text when reusing these figures.                                                                                                                                                    |
+| Benefit explanations                                 | `text-base leading-copy` / 16px with 1.8 line-height                                                                                                           | This is an intentional compact reading treatment beneath the icon and heading.                                                                                                                                      |
+| FAQ questions                                        | Summary inherits the body's 16px size, with `leading-normal` / 1.5                                                                                             | Removing `text-sm` raises the question to the normal interface size.                                                                                                                                                |
+| FAQ answers                                          | Paragraphs without a size utility use 18px, with `leading-copy` / 1.8                                                                                          | Removing `text-sm` raises the answer to the larger paragraph scale.                                                                                                                                                 |
+| Featured blog teaser                                 | Paragraph without a size utility uses 18px, with `leading-copy`                                                                                                | The prominent article's explanation gets a larger reading treatment.                                                                                                                                                |
+| Compact exceptions                                   | Process descriptions, service/scan benefit lists, and smaller blog teasers retain `text-sm`; selected navigation, form labels, and actions retain `text-label` | Record these as specific current choices. Do not spread their smaller sizes to main explanations by default.                                                                                                        |
+| Eyebrows and metadata                                | `text-xs` / 12px, `text-caption` / 11px, and occasional `text-2xs` / 10px                                                                                      | Keep these brief and secondary; do not use them for substantial instructions or paragraphs.                                                                                                                         |
+
+The global paragraph default also provides Tailwind's `text-lg` line-height, approximately 1.56 (28px at an 18px font), unless a leading utility overrides it. `leading-copy` explicitly sets 1.8. Keep this distinction when documenting or extracting a component; a paragraph with only a color class still has typography supplied by the base layer.
 
 `text-display`, `text-section`, and `text-contact` include line-height **1.13** and tracking **−0.055em**. `text-card-title`, `text-benefit`, and `text-card-title-lg` include line-height **1.35** and tracking **−0.035em**. `text-editorial` includes line-height **1.08** and tracking **−0.035em**. Avoid repeating those properties unless a component deliberately differs.
 
@@ -285,15 +304,15 @@ Use transforms and opacity for decoration, not changes to surrounding layout dim
 
 ### Actions, navigation, and focus
 
-Primary actions use green fill, ink text, `rounded-md`, and a visible focus outline. The reference uses `min-h-13.5` (54px), `px-5 py-4`, and `leading-label`, with `text-label` on most actions and `text-body` on the hero action. Hover changes to primary-hover. Use a verb and an understandable outcome, such as “Explore website design” or “Talk through your website.” The diagonal arrow is decorative and follows the label.
+Primary actions use green fill, ink text, `rounded-md`, and a visible focus outline. The reference uses `min-h-13.5` (54px), `px-5 py-4`, and `leading-label`. The hero action uses `text-body` (17.6px); the existing service, scan, and closing contact actions retain `text-label` (13px). This is the current per-context sizing, not a requirement to shrink every new action label to 13px. Hover changes to primary-hover. Use a verb and an understandable outcome, such as “Explore website design” or “Talk through your website.” The diagonal arrow is decorative and follows the label.
 
-Secondary actions are underlined text links with enough space to activate them, rather than another equally prominent filled button. Give each decision area one visually dominant action. Navigation uses compact familiar labels and a persistent conversation link. The wordmark pairs the primary fox outline with Inter lettering and a blue dot.
+Secondary actions are underlined text links with enough space to activate them, rather than another equally prominent filled button. Give each decision area one visually dominant action. Navigation uses compact familiar labels and a persistent conversation link. The header conversation link uses `text-caption` at its narrowest layout and `sm:text-body` from 640px; the main navigation and hero's secondary link retain `text-label`. The wordmark pairs the primary fox outline with Inter lettering and a blue dot.
 
 Use anchors for navigation and buttons for in-place actions. New components should use a focus recipe such as `focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring`; an ink outline also works on the current pale surfaces. Choose a contrasting outline for dark surfaces and avoid clipping it. Do not use color alone to communicate active state, errors, or link affordance.
 
 ### Benefits
 
-[BrightSideBenefitCard](../src/components/cards/BrightSideBenefitCard.svelte) is a dedicated light-design component. A **40px animated icon sits beside the heading**; the explanation follows below, left justified across the card. The card has no separate colored box background. This keeps the strip connected to the hero while giving each benefit its own grouping. Three columns begin at `xl`; narrower widths stack them.
+[BrightSideBenefitCard](../src/components/cards/BrightSideBenefitCard.svelte) is a dedicated Bright Side component. A **40px animated icon sits beside the heading**; the explanation follows below in `text-base leading-copy` (16px), left justified across the card. The card has no separate colored box background. This keeps the strip connected to the hero while giving each benefit its own grouping. Three columns begin at `xl`; narrower widths stack them.
 
 ### Work examples and testimonials
 
@@ -311,7 +330,7 @@ From `md`, use pill tabs and one visible panel. The selected tab has primary fil
 
 The pale-blue process band contains a real ordered sequence: Understand → Shape → Build & review. Brief titles, restrained numerals, and plain explanations make the engagement predictable. Keep actual steps numbered; section introductions stay unnumbered.
 
-FAQ uses native `details`/`summary`, clear questions, thin dividers, and a plus/minus indicator. It addresses remaining objections without putting every answer into the main reading path. Critical terms and promises still belong beside the relevant offer rather than only inside a closed answer.
+FAQ uses native `details`/`summary`, clear questions, thin dividers, and a plus/minus indicator. Questions use the inherited 16px interface size; answers use the global 18px paragraph size with `leading-copy`. It addresses remaining objections without putting every answer into the main reading path. Critical terms and promises still belong beside the relevant offer rather than only inside a closed answer.
 
 ### Free scan and forms
 
@@ -388,7 +407,7 @@ Aim for WCAG 2.2 AA as pages are adopted; this document records requirements and
 - Keep focus visible and unobscured. Decorations should not receive focus, intercept clicks, cover fields, or carry essential instructions.
 - Honor reduced motion and resolve repeating-animation behavior as described above. Meaningful content and actions remain available when animation or JavaScript is unavailable.
 - Give forms persistent visible labels and nearby guidance. For a working form, explain errors in plain language, identify affected fields, preserve useful input, and announce submission status.
-- Use the 10px/11px roles sparingly. Important instructions, terms, and substantial descriptions deserve a larger reading size even when a small token technically exists.
+- Use approximately 17.6–18px for general explanations and a deliberate 16px treatment where the context suits it. Reserve `text-sm`, `text-label`, and smaller roles for the compact exceptions described in the typography section. Important instructions, terms, and substantial descriptions deserve a larger reading size even when a small token technically exists.
 
 Copy should be direct, specific, and grounded in the business owner's task. Explain technical choices in terms of what they help people understand or do. Avoid exaggerated promises, manufactured urgency, unsupported metrics, and generic filler sections. Existing benefit claims such as outperforming 99.9% of competitors or having 0% downtime need evidence or revision before production publication; their presence in the study does not make them approved claims.
 
@@ -410,7 +429,7 @@ Arbitrary values remain appropriate for one-off organic radii, intentional unequ
 ### Adoption sequence
 
 1. **Confirm the page's task and content.** Decide what visitors need to understand and do; preserve useful routes and information.
-2. **Apply the light shell and typography deliberately.** Check inherited `.dark` classes, theme toggles, layout font choices, and legacy global heading/paragraph/link defaults. Removing a color override alone is not a full migration.
+2. **Apply the light shell and typography deliberately.** Check inherited `.dark` classes, theme toggles, layout font choices, and global heading/paragraph/link defaults alongside explicit component roles. The current hero deliberately uses the global h1 treatment, and paragraphs without size utilities use the global 18px default. Preserve these choices when extracting or migrating sections; do not automatically replace them with the earlier fluid hero or small supporting-copy styles. Removing a color override alone is not a full migration.
 3. **Replace legacy presentation with the shared roles.** Use background/foreground, primary actions, mint/blue surfaces, the radius scale, and normal breakpoints. The `body-*` color aliases still exist for compatibility; prefer the new names for new work.
 4. **Select relevant component patterns.** Reuse the dedicated Bright Side components where their role fits. Avoid returning to large override configurations on legacy `BenefitCard` or `ServicesTabs` solely to imitate the new direction.
 5. **Compose purposeful imagery and spacing.** Keep decoration behind readable content and preserve grouping in the mobile order.
