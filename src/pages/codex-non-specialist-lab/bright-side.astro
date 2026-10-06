@@ -9,47 +9,11 @@ import BrightSideBenefitCard from '@/components/cards/BrightSideBenefitCard.svel
 import BrightSideServicesTabs from '@/components/sections/BrightSideServicesTabs.svelte';
 import BrightSideWebsiteScan from '@/components/sections/BrightSideWebsiteScan.svelte';
 import BrightSideBlogBento from '@/components/sections/BrightSideBlogBento.astro';
+import BrightSideWork from '@/components/sections/BrightSideWork.astro';
 import Devices from '@/images/homepage_hero_img.webp';
-import Interior from '@/images/Interior_Design_Cover.webp';
-import Financial from '@/images/Financial_Cover.webp';
+import { process, questions } from '@/data/homepageStudyContent';
 
 const email = 'mailto:hello@outfoxweb.com?subject=Let%27s%20talk%20through%20my%20website';
-const process = [
-  {
-    title: 'Understand.',
-    body: 'We talk about your business, your current website, and where people get stuck. Start with the problem you want to solve.',
-  },
-  {
-    title: 'Shape.',
-    body: 'We agree on priorities, content, and a design direction. You see the thinking and have room to give feedback.',
-  },
-  {
-    title: 'Build & review.',
-    body: 'I build and check the site. We review it together, work through the details, and agree on what launch and handoff need.',
-  },
-];
-const questions = [
-  {
-    question: 'Do I need a completely new website?',
-    answer:
-      "Not necessarily. We'll look at what you have and what is getting in the way. The useful next step could be a focused improvement or a more substantial rebuild.",
-  },
-  {
-    question: 'How do you use AI in your work?',
-    answer:
-      'I use it for ideas and to speed up parts of design and development. I review the code and decisions myself. The responsibility for the finished work stays with me.',
-  },
-  {
-    question: 'What will my project cost?',
-    answer:
-      'I price each project around the value it can create for your business. We discuss your goals, scope, and expected return, then agree on the investment before work begins.',
-  },
-  {
-    question: 'What happens after the website is built?',
-    answer:
-      'We agree on the handoff, access, and any support needs as part of the project scope, so you understand how the website will be managed.',
-  },
-];
 ---
 
 <Layout
@@ -193,83 +157,7 @@ const questions = [
         client:load
       />
     </section>
-    <section
-      id="work"
-      class="mx-auto max-w-295 py-18 lg:grid lg:grid-cols-[minmax(0,_0.8fr)_minmax(0,_1.7fr)] lg:items-start lg:gap-x-11.5 lg:py-24"
-      aria-labelledby="work-heading"
-    >
-      <div class="mb-9 max-w-165">
-        <p class="text-xs leading-normal font-semibold tracking-eyebrow text-primary uppercase">
-          A closer look
-        </p><h2 class="mt-5 text-section font-black text-balance" id="work-heading">
-          Good design makes<br />the next step feel obvious.
-        </h2>
-        <p class="mt-5.5 max-w-116.5 text-body text-muted-foreground">
-          A website should help people find their bearings. These examples show the kind of clarity
-          we can build toward.
-        </p>
-      </div>
-      <div class="grid gap-10 lg:grid-cols-2 lg:gap-6.5">
-        <figure>
-          <div
-            class="relative isolate px-4 py-7.5 before:absolute before:inset-0 before:-z-1 before:[border-radius:40%_35%_8%_10%_/_45%_40%_15%_12%] before:bg-mint-soft motion-safe:before:animate-work-blob sm:px-5.5 sm:py-10 lg:px-4 lg:py-6.5"
-          >
-            <Image
-              class="block h-auto w-full rounded-sm border border-ink"
-              src={Interior}
-              alt="Interior services design example with a clear headline, spacious layout, and prominent contact action"
-              widths={[480, 700]}
-              sizes="(min-width: 1308px) 343px, (min-width: 1024px) calc(34vw - 102px), (min-width: 640px) calc(100vw - 172px), calc(100vw - 78px)"
-              loading="lazy"
-            />
-          </div>
-          <figcaption>
-            <p
-              class="mt-6 text-caption leading-normal font-semibold tracking-eyebrow text-muted-foreground uppercase"
-            >
-              Design example / Interior services
-            </p><h3 class="mt-3 text-card-title-lg font-demi text-balance">
-              Space to understand the offer.
-            </h3>
-            <p class="mt-3 max-w-110 text-muted-foreground">
-              A calm hierarchy gives the service, supporting detail, and contact action room to be
-              understood.
-            </p>
-          </figcaption>
-        </figure>
-        <figure>
-          <div
-            class="relative isolate px-4 py-7.5 before:absolute before:inset-0 before:-z-1 before:[border-radius:10%_12%_38%_30%_/_15%_15%_42%_40%] before:bg-primary motion-safe:before:animate-work-blob-offset sm:px-5.5 sm:py-10 lg:px-4 lg:py-6.5"
-          >
-            <Image
-              class="block h-auto w-full rounded-sm border border-ink"
-              src={Financial}
-              alt="Financial services design example with a service introduction and visible get-started action"
-              widths={[480, 700]}
-              sizes="(min-width: 1308px) 343px, (min-width: 1024px) calc(34vw - 102px), (min-width: 640px) calc(100vw - 172px), calc(100vw - 78px)"
-              loading="lazy"
-            />
-          </div>
-          <figcaption>
-            <p
-              class="mt-6 text-caption leading-normal font-semibold tracking-eyebrow text-muted-foreground uppercase"
-            >
-              Design example / Financial services
-            </p><h3 class="mt-3 text-card-title-lg font-demi text-balance">
-              A clear route to a conversation.
-            </h3>
-            <p class="mt-3 max-w-110 text-muted-foreground">
-              For a service business, useful information and a visible next step belong together.
-            </p>
-          </figcaption>
-        </figure>
-      </div>
-      <p
-        class="mt-9 border-t border-border pt-5 text-caption text-muted-foreground lg:col-span-full"
-      >
-        Design examples from the existing library
-      </p>
-    </section>
+    <BrightSideWork />
     <section id="testimonials" class="py-11.5" aria-labelledby="testimonials-heading">
       <div
         class="mx-auto grid max-w-295 items-center gap-7 rounded-2xl bg-dark-green px-6 py-10 text-paper sm:px-10 sm:py-12 lg:grid-cols-[18.75rem_minmax(0,_1fr)] lg:gap-14 lg:px-15 lg:py-15"

@@ -171,7 +171,7 @@ The page now deliberately relies on some global typography in [tailwind.css](../
 | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Hero h1                                              | Global `body h1`: `text-4xl` / 36px, then `md:text-[3.55rem]` / 56.8px; `leading-tight` / 1.25 and `font-black`                                                | The hero no longer uses `text-display`. Match this global h1 treatment when carrying the current hero style to another page; an explicit display token would introduce different sizing, tracking, and line-height. |
 | Hero, work, service, scan, and contact introductions | `text-body` / 17.6px                                                                                                                                           | The hero uses the same size at larger widths; the former `lg:text-base` reduction is gone.                                                                                                                          |
-| Work-example explanations                            | Paragraphs without a size utility use global `text-lg` / 18px                                                                                                  | Preserve the larger explanation text when reusing these figures.                                                                                                                                                    |
+| Work-example explanations                            | Explicit `text-lg leading-copy` / 18px with 1.8 line-height                                                                                                    | Preserve the larger explanation text and comfortable leading when reusing these figures.                                                                                                                            |
 | Benefit explanations                                 | `text-base leading-copy` / 16px with 1.8 line-height                                                                                                           | This is an intentional compact reading treatment beneath the icon and heading.                                                                                                                                      |
 | FAQ questions                                        | Summary inherits the body's 16px size, with `leading-normal` / 1.5                                                                                             | Removing `text-sm` raises the question to the normal interface size.                                                                                                                                                |
 | FAQ answers                                          | Paragraphs without a size utility use 18px, with `leading-copy` / 1.8                                                                                          | Removing `text-sm` raises the answer to the larger paragraph scale.                                                                                                                                                 |
@@ -318,6 +318,20 @@ Use anchors for navigation and buttons for in-place actions. New components shou
 
 Work examples pair a readable screenshot with an organic green backdrop, a short interpretation, and a clear description of what the example demonstrates. Label library concepts as design examples; reserve client/project/result language for substantiated work.
 
+The dedicated [BrightSideWork](../src/components/sections/BrightSideWork.astro) adopts the larger
+composition preferred from Open Studio. Place the heading and introduction above the examples,
+side by side from `lg`. Use a 12-column example grid with 7/5 column spans and a `lg:mt-16`
+offset on the second figure. At narrower widths, stack both figures without that offset.
+This gives the screenshots room to communicate the design while preserving a clear caption order.
+
+Translate the artwork into Bright Side's organic mint-soft and primary-green backdrops, rounded
+screenshot windows, and existing staggered `motion-safe:` pulse utilities. The heading and copy
+inherit Manrope from the Bright Side layout. Keep the small uppercase section eyebrow, use 16px
+example labels and the library note, and preserve 18px explanations with `leading-copy`.
+Keep the established 1180px container and page gutters; do not add another horizontal gutter
+inside the section. Open Studio's stepped and quarter-circle artwork remains specific to that
+alternative.
+
 The testimonial is a larger dark-green panel with a recognizable customer portrait, a readable quote, and attribution. Its contrast gives social proof a distinct place in the page. The current sample quote, client name, company name, and portrait are placeholders and remain labeled as such until replaced with approved authentic material.
 
 ### Service selector
@@ -456,8 +470,8 @@ The [lab layout](../src/layouts/NonSpecialistLabLayout.astro) is a useful implem
 | Benefits, services, scan preview, and blog bento | Dedicated components exist. Their structure can be reused when appropriate.                                                                                                       |
 | Work and testimonial evidence                    | Work images are labeled design examples; the testimonial is sample content with a placeholder portrait.                                                                           |
 | Free scan                                        | Preview only; no scan service, data capture, or delivery is implemented.                                                                                                          |
-| Decision guide                                   | PDF/e-guide concept and ROI worksheet outlined; no published download or lead-delivery flow yet.                                                                                |
-| Conversation action                              | Email is lab placeholder behavior; production will use a short multi-step qualification dialog.                                                                               |
+| Decision guide                                   | PDF/e-guide concept and ROI worksheet outlined; no published download or lead-delivery flow yet.                                                                                  |
+| Conversation action                              | Email is lab placeholder behavior; production will use a short multi-step qualification dialog.                                                                                   |
 | Blog content                                     | Sample topics; real articles and destinations are still needed.                                                                                                                   |
 | Accessibility alignment                          | Readable token pairings exist; bright-green text on light surfaces, Lottie reduced motion, and repeating animation need attention during adoption.                                |
 | Font weights                                     | Current Manrope 900 requests exceed its declared 200–800 range.                                                                                                                   |
