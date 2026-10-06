@@ -324,6 +324,10 @@ The testimonial is a larger dark-green panel with a recognizable customer portra
 
 [BrightSideServicesTabs](../src/components/sections/BrightSideServicesTabs.svelte) presents **Development, Website design, and Website review**. Each option includes a situation it suits, a two-part headline, a brief explanation, three checkmark benefits, a device illustration, and a link to the service page. This makes the section a decision aid with concrete value.
 
+Each panel also includes a practical details strip: **What you receive, What you bring, and Investment & timing**. Use a semantic description list, a thin separating border, and readable `text-base` (16px) copy. The details stack until `lg`, then form three columns. Keep them within the selected service panel so the information stays connected to the offer.
+
+Pricing is based on the value and expected return of each project. Scope and complexity inform the plan, but do not present page counts, hours, or a fixed package as the sole pricing basis. Timelines and collaboration vary substantially; explain that the proposal sets out the investment, scope, and milestones, with guidance and clear expectations for client input. Do not invent starting prices, uniform delivery times, or guaranteed returns.
+
 From `md`, use pill tabs and one visible panel. The selected tab has primary fill and stronger weight. Preserve tab/tabpanel associations, `aria-selected`, roving tabindex, and Left/Right/Home/End keyboard navigation. Below `md`, use labeled disclosures with the same content; do not squeeze the tabs into a narrow horizontal strip. Use the [WAI-ARIA tabs pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/) as the behavior reference. Essential service routes should remain discoverable in the wider site navigation, including without this hydrated selector.
 
 ### Process and FAQ
@@ -338,6 +342,10 @@ FAQ uses native `details`/`summary`, clear questions, thin dividers, and a plus/
 
 The scan is currently a **coming-soon design preview**. It validates locally, does not send or save input, and shows a truthful preview message. No completed analysis or delivery is implied. A working version needs defined scan scope, delivery expectations, input validation, loading/success/error behavior, and accurate information about how submitted details are used. Its destination and backend are not established by this design guide.
 
+An always-visible sample finding below the offer shows **the finding → why it matters → the first step**. Label it “Illustrative example” and keep it independent of form submission; it is not an analysis of an entered URL. Use semantic surface/text tokens and 16px reading copy, with stacked entries until `lg`. This preview makes the proposed deliverable tangible without claiming the scan exists. Distinguish basic scan signals from an expert review of messaging, visitor journeys, and business priorities.
+
+The proposed **Improve or rebuild?** resource is a PDF/e-guide that helps readers choose an appropriate level of work and estimate its potential value. It complements the technical scan. A sample page or decision matrix should be available before requesting the complete guide by email. Its decision framework, ROI worksheet, placement, and future lead flow are outlined in [website_decision_guide.md](./website_decision_guide.md); the PDF and its delivery flow are not implemented.
+
 ### Blog bento and closing contact
 
 [BrightSideBlogBento](../src/components/sections/BrightSideBlogBento.astro) uses a large primary-green featured card, smaller paper/mint cards, and a wide pale-blue card. Size signals editorial priority. It stacks on mobile, uses two columns from `sm`, and a 12-column layout from `lg`: the feature spans six columns and two rows, the two smaller cards span three columns each, and the wide card spans six.
@@ -345,6 +353,8 @@ The scan is currently a **coming-soon design preview**. It validates locally, do
 Current topics are clearly marked as samples. Until articles exist, cards are previews without fabricated links, dates, or reading times. Published cards need descriptive real links, readable reading order, and consistent focus behavior; avoid nested competing links inside a single clickable card.
 
 The closing mint contact panel returns to the hero's visual language. A centered invitation and one clear conversation action form the final decision point. The footer supplies identity, location, and useful navigation without introducing another sales section.
+
+The lab's conversation actions currently open email as placeholder behavior. The intended production interaction is a guided dialog with two or three qualification questions, leading to a project inquiry. Maintain visible progress, persistent labels, keyboard/focus behavior, and a way to go back without losing answers. Keep this inquiry path distinct from requesting the free guide.
 
 ## 9. Homepage wireframe and flow
 
@@ -446,6 +456,8 @@ The [lab layout](../src/layouts/NonSpecialistLabLayout.astro) is a useful implem
 | Benefits, services, scan preview, and blog bento | Dedicated components exist. Their structure can be reused when appropriate.                                                                                                       |
 | Work and testimonial evidence                    | Work images are labeled design examples; the testimonial is sample content with a placeholder portrait.                                                                           |
 | Free scan                                        | Preview only; no scan service, data capture, or delivery is implemented.                                                                                                          |
+| Decision guide                                   | PDF/e-guide concept and ROI worksheet outlined; no published download or lead-delivery flow yet.                                                                                |
+| Conversation action                              | Email is lab placeholder behavior; production will use a short multi-step qualification dialog.                                                                               |
 | Blog content                                     | Sample topics; real articles and destinations are still needed.                                                                                                                   |
 | Accessibility alignment                          | Readable token pairings exist; bright-green text on light surfaces, Lottie reduced motion, and repeating animation need attention during adoption.                                |
 | Font weights                                     | Current Manrope 900 requests exceed its declared 200–800 range.                                                                                                                   |

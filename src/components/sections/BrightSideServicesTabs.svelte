@@ -18,6 +18,7 @@
     headline: [string, string];
     description: string;
     benefits: string[];
+    details: { label: string; description: string }[];
     image: ImageMetadata;
     alt: string;
     href: string;
@@ -40,6 +41,21 @@
         'Keep pages focused, fast, and straightforward to use.',
         'Get a clear plan for launch, access, and handoff.',
       ],
+      details: [
+        {
+          label: 'What you receive',
+          description: 'A custom, responsive website with a plan for launch and handoff.',
+        },
+        {
+          label: 'What you bring',
+          description: 'Your goals, existing content, brand assets, and feedback along the way.',
+        },
+        {
+          label: 'Investment & timing',
+          description:
+            'Planned around your business goals, expected value, and the build’s complexity.',
+        },
+      ],
       image: DevelopmentImage,
       alt: 'Website development illustration with phone mockups and performance graphics',
       href: '/web-development',
@@ -58,6 +74,20 @@
         'Create a distinctive look around your brand.',
         'See the design direction before development begins.',
       ],
+      details: [
+        {
+          label: 'What you receive',
+          description: 'A visual direction and page layouts ready to guide development.',
+        },
+        {
+          label: 'What you bring',
+          description: 'Your offer, brand assets, content, and examples of what feels right.',
+        },
+        {
+          label: 'Investment & timing',
+          description: 'Shaped around the improvements that matter most for your business.',
+        },
+      ],
       image: DesignImage,
       alt: 'Tablet mockup showing a website design in Figma',
       href: '/web-design',
@@ -75,6 +105,20 @@
         'Find friction in the paths people need to take.',
         'Separate urgent fixes from useful later improvements.',
         'Get recommendations explained in plain language.',
+      ],
+      details: [
+        {
+          label: 'What you receive',
+          description: 'Explained findings and a prioritized set of practical next steps.',
+        },
+        {
+          label: 'What you bring',
+          description: 'Your website, business goals, and the questions you want answered.',
+        },
+        {
+          label: 'Investment & timing',
+          description: 'Scoped around the questions and decisions your business needs to resolve.',
+        },
       ],
       image: ReviewImage,
       alt: 'Laptop mockup surrounded by website review and audit graphics',
@@ -197,6 +241,18 @@
         decoding="async"
       />
     </div>
+    <div class="border-t border-border pt-6 md:col-span-2">
+      <dl class="grid gap-6 lg:grid-cols-3 lg:gap-8">
+        {#each service.details as detail}
+          <div class="min-w-0">
+            <dt class="text-base font-semibold text-accent-foreground">{detail.label}</dt>
+            <dd class="mt-2 text-base leading-relaxed text-muted-foreground">
+              {detail.description}
+            </dd>
+          </div>
+        {/each}
+      </dl>
+    </div>
   </div>
 {/snippet}
 
@@ -264,7 +320,7 @@
     {#each services as service}
       <details
         class="group rounded-2xl bg-muted"
-        open={openMobileService === service.id}
+        open
         ontoggle={(event) => toggleMobileService(event, service.id)}
       >
         <summary
